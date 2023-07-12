@@ -78,12 +78,7 @@ function Footer() {
 
     return (
         <main>
-            <section>
-                <Suspense /* fallback={<span>...</span>} */>
-                    {showbody()}
-                </Suspense>
-            </section>
-            <footer>
+            <header>
                 <nav>
                     <button id='gr' onClick={() => {
                         cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" });
@@ -94,6 +89,15 @@ function Footer() {
                     <button id='eng' onClick={() => { cookies.set('lang', 'eng', { sameSite: true }); set_language({ language: "english" }); }}>
                         <img src="/eng_flag.png" alt="ENG" />
                     </button>
+                </nav>
+            </header>
+            <section>
+                <Suspense /* fallback={<span>...</span>} */>
+                    {showbody()}
+                </Suspense>
+            </section>
+            <footer>
+                <nav>
                     <button onClick={() => { cookies.set('cont', 'name', { sameSite: true }); set_location({ location: "home" }); }}>
                         {/* <img id="logo" src="/logo_nobg.png" alt="Logo" /> */}
                         {text.landing}
@@ -110,8 +114,6 @@ function Footer() {
                     <button>
                         {text.contact}
                     </button>
-                    <span>||</span>
-
                 </nav>
             </footer>
         </main >
