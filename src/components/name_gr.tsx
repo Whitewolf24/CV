@@ -1,8 +1,8 @@
 const Name_gr = (props: any) => {
 
     return <div className="content">
-        <h1>ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
-        <h2>WEB_DEVELOPER</h2>
+        <h1 id="name">ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
+        <h2 id="job">WEB_DEVELOPER</h2>
     </div>
 }
 

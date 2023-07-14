@@ -1,10 +1,35 @@
 body {
-    background: rgb(10, 10, 10);
-    background: linear-gradient(70deg, rgba(15, 15, 15, 1) -5%, rgba(26, 26, 26, 1) 100%);
+    background-size: 110% 110% !important;
+    background: linear-gradient(70deg, rgba(22, 22, 22, 1) -5%, rgba(32, 32, 32, 1) 100%);
     display: flex;
-    justify-content: center;
-    overflow: hidden;
     height: 100vh;
+    justify-content: center;
+    letter-spacing: 1px;
+    overflow: hidden;
+    transition: background 2s;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+
+}
+
+@media only screen and (min-width: 800px) {
+    body {
+        background: linear-gradient(70deg, rgba(22, 22, 22, 1) -10%, rgba(32, 32, 32, 1) 95%);
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    body {
+        background: linear-gradient(70deg, rgb(22, 22, 22) -15%, rgb(32, 32, 32) 115%);
+    }
+}
+
+@media only screen and (min-width: 1500px) {
+    body {
+        background: linear-gradient(70deg, rgb(22, 22, 22) -50%, rgb(32, 32, 32) 130%);
+    }
 }
 
 main {
@@ -23,6 +48,7 @@ div {
 button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
     font-family: 'JetBrains Mono', 'Roboto', sans-serif;
 }
 
@@ -30,31 +56,73 @@ button {
 
 h1 {
     font-size: clamp(1.8rem, 2.5vw, 1.9rem);
+    font-weight: 800;
 }
 
 h2 {
     font-size: clamp(1.25rem, 2.5vw, 1.45rem);
+    font-weight: 600;
+}
+
+h3 {
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+}
+
+p {
+    font-size: clamp(.75rem, 2.5vw, 0.95rem);
 }
 
 //--------------------------//
 
 header {
-    bottom: 95vh;
+    animation: header 1s steps(40) 13s 1 normal forwards;
+    bottom: 92vh;
     display: flex;
     left: 10px;
+    opacity: 0%;
     position: absolute;
 
     button {
         color: white;
         font-size: clamp(0.55rem, 1.5vw, 0.8rem);
     }
+}
 
-    button img {
-        filter: contrast(60%);
-        height: 12px;
-        width: 22px;
+@keyframes header {
+    0% {
+        opacity: 0%;
     }
 
+    100% {
+        opacity: 100%;
+    }
+}
+
+.nownohover img {
+    border-bottom: 1px solid;
+    filter: grayscale(65%);
+    height: 17px;
+    object-fit: cover;
+    padding-bottom: 4px;
+    position: relative;
+    top: 6px;
+    width: 27px;
+}
+
+.nowhover img {
+    border-bottom: 0px;
+    filter: grayscale(95%);
+    height: 12px;
+    object-fit: cover;
+    width: 22px;
+}
+
+.nowhover img:hover {
+    filter: grayscale(65%);
+    height: 15px;
+    object-fit: cover;
+    width: 25px;
 }
 
 //--------------------------//
@@ -67,6 +135,80 @@ section {
     top: 30vh;
 }
 
+#name {
+    animation: typewriter 3s steps(40) 0.5s 1 normal forwards,
+        blinktext 500ms steps(40) 12 normal,
+        blinktext_none 50ms steps(60) 1 4s normal forwards;
+    border-right: 1px solid white;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0rem;
+}
+
+#job {
+    animation: typewriter_job 3s steps(40) 4s 1 normal both,
+        blinktext 500ms steps(40) 3.5s infinite normal;
+    border-right: 0;
+    overflow: hidden;
+    padding-left: 58px;
+    white-space: nowrap;
+    width: 0rem;
+}
+
+@keyframes typewriter {
+    0% {
+        width: 0;
+    }
+
+    50% {
+        width: 6em;
+    }
+
+    100% {
+        width: 11em;
+    }
+}
+
+@keyframes typewriter_job {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 4em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 9em;
+    }
+}
+
+@keyframes blinktext {
+    from {
+        border-right-color: white;
+    }
+
+    to {
+        border-right: 0;
+    }
+}
+
+@keyframes blinktext_none {
+    from {
+        border-right: 1px solid white;
+    }
+
+    to {
+        border-right: 0px solid transparent;
+    }
+}
+
 //--------------------------//
 
 footer {
@@ -77,8 +219,316 @@ footer {
     top: 95vh;
 
     button {
+        border-right: 0;
         color: white;
         font-size: clamp(0.55rem, 1.5vw, 0.8rem);
+        text-shadow: -1px 1px 0 #000,
+            1px 1px 0 #000,
+            1px -1px 0 #000,
+            -1px -1px #000;
+        overflow: hidden;
+        opacity: 0%;
+        white-space: nowrap;
+        width: 0px;
     }
 
+    span {
+        cursor: default;
+        display: inline-flex;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0rem;
+    }
+}
+
+.home {
+    animation: typewriter_home 2s steps(40) 6.5s 1 normal forwards,
+        blinktext 500ms steps(40) 6s 12 normal,
+        blinktext_none 150ms steps(60) 1 9s normal forwards,
+        appear 150ms steps(60) 1 6.55s normal forwards;
+}
+
+.knowledge {
+    animation: typewriter_knowledge 2s steps(40) 8s 1 normal forwards,
+        blinktext 500ms steps(40) 7.5s 12 normal,
+        blinktext_none 150ms steps(60) 1 10.5s normal forwards,
+        appear 150ms steps(60) 1 8.05s normal forwards;
+}
+
+.portfolio {
+    animation: typewriter_portfolio 3s steps(40) 8.5s 1 normal forwards,
+        blinktext 500ms steps(40) 8s 12 normal,
+        blinktext_none 150ms steps(60) 1 11s normal forwards,
+        appear 150ms steps(60) 1 8.55s normal forwards;
+}
+
+.contact {
+    animation: typewriter_contact 2s steps(40) 10s 1 normal forwards,
+        blinktext 500ms steps(40) 9.5s 12 normal,
+        blinktext_none 150ms steps(60) 1 11.5s normal forwards,
+        appear 150ms steps(60) 1 10.05s normal forwards;
+}
+
+.home_eng {
+    animation: typewriter_home_eng 2s steps(40) 6.5s 1 normal forwards,
+        blinktext 500ms steps(40) 6s 12 normal,
+        blinktext_none 150ms steps(60) 1 9s normal forwards,
+        appear 150ms steps(60) 1 6.55s normal forwards;
+}
+
+.knowledge_eng {
+    animation: typewriter_knowledge_eng 2s steps(40) 8s 1 normal forwards,
+        blinktext 500ms steps(40) 7.5s 12 normal,
+        blinktext_none 150ms steps(60) 1 10.5s normal forwards,
+        appear 150ms steps(60) 1 8.05s normal forwards;
+}
+
+.portfolio_eng {
+    animation: typewriter_portfolio_eng 3s steps(40) 8.5s 1 normal forwards,
+        blinktext 500ms steps(40) 8s 12 normal,
+        blinktext_none 150ms steps(60) 1 11s normal forwards,
+        appear 150ms steps(60) 1 8.55s normal forwards;
+}
+
+.contact_eng {
+    animation: typewriter_contact_eng 2s steps(40) 10s 1 normal forwards,
+        blinktext 500ms steps(40) 9.5s 12 normal,
+        blinktext_none 150ms steps(60) 1 11.5s normal forwards,
+        appear 150ms steps(60) 1 10.05s normal forwards;
+}
+
+.home_no_anime {
+    animation: none;
+}
+
+.knowledge_no_anime {
+    animation: none;
+}
+
+.portfolio_no_anime {
+    animation: none;
+}
+
+.contact_no_anime {
+    animation: none;
+}
+
+.home_eng_no_anime {
+    animation: none;
+}
+
+.knowledge_eng_no_anime {
+    animation: none;
+}
+
+.portfolio_eng_no_anime {
+    animation: none;
+}
+
+.contact_eng_no_anime {
+    animation: none;
+}
+
+span {
+    animation: typewriter_span 2s steps(40) 10s 1 normal forwards,
+        blinktext 500ms steps(40) 9.5s 12 normal,
+        blinktext_none 150ms steps(60) 1 13s normal forwards;
+}
+
+#knowledge:hover,
+#portfolio:hover,
+#contact:hover {
+    border-bottom: 1px dashed;
+}
+
+
+@keyframes appear {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
+}
+
+@keyframes typewriter_home {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 1em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 3em;
+    }
+}
+
+@keyframes typewriter_knowledge {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 3em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 6em;
+    }
+}
+
+@keyframes typewriter_portfolio {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 6em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 12em;
+    }
+}
+
+@keyframes typewriter_contact {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 4em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 8em;
+    }
+}
+
+@keyframes typewriter_home_eng {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 1em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 3em;
+    }
+}
+
+@keyframes typewriter_knowledge_eng {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 3em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 6em;
+    }
+}
+
+@keyframes typewriter_portfolio_eng {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 6em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 12em;
+    }
+}
+
+@keyframes typewriter_contact_eng {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 4em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 8em;
+    }
+}
+
+@keyframes typewriter_span {
+    0% {
+        width: 0;
+    }
+
+    1% {
+        border-right: 1px solid white;
+    }
+
+    50% {
+        border-right: 1px solid white;
+        width: 0.5em;
+    }
+
+    100% {
+        border-right: 1px solid white;
+        width: 1.5em;
+    }
 }

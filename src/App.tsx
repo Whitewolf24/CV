@@ -5,8 +5,7 @@ import Footer from './components/footer';
 
 const cookies = new Cookies();
 
-
-if (!cookies.get('lang') || !cookies.get('cont')) {
+if (!cookies.get('lang')) {
   cookies.set('lang', 'gr', { sameSite: true });
 }
 
