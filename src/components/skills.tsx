@@ -7,15 +7,15 @@ const Skills = (props: any) => {
                 <p>SELECT * FROM MYSQL</p>
                 <p>_id: MongoDB</p>
                 <p>router get('express')</p>
-                <p>{"require"}('moongoose')</p>
+                <p>{"require"} ('moongoose')</p>
                 <p>&#x007b;"JSON"&#x007d;</p>
                 <p>/(Regex)/</p>
             </div>
             <div id="frontend">
                 <h3>Frontend</h3>
                 <p>&#x003c;html&#x003e;&#x003c;/html&#x003e;</p>
-                <p>css {" {.bootstrap .sass "} <br></br> {".tailwind .postcss }"}</p>
-                <p>javascript() {"{ <%=ejs%> $jquery :typescript /react }"}</p>
+                <p>css {" {.bootstrap .sass "} <br></br> {".tailwind .postcss}"}</p>
+                <p>javascript() {"{<%=ejs%> $jquery :typescript /react}"}</p>
             </div>
             <div id="wordp">
                 <h3>Wordpress</h3>
