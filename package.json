@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "sass": "sass --watch ./src/style.scss ./src/index.css",
+    "sass": "sass --watch ./src/style.scss ./src/index.css --style=compressed ",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"

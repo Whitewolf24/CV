@@ -7,7 +7,7 @@ const cookies = new Cookies();
 
 const Name_gr = lazy(() => import('./name_gr'));
 const Name_eng = lazy(() => import('./name_eng'));
-const Skills_gr = lazy(() => import('./skills'));
+const Skills = lazy(() => import('./skills'));
 
 /* function wait(time: number) {
     return new Promise(resolve => { setTimeout(resolve, time) })
@@ -28,6 +28,45 @@ const Footer = (props: any) => {
     const [language, set_language] = useState({
         language: "greek",
     })
+
+    function first_run() {
+        if (cookies.get('lang') === 'eng') {
+            document.querySelector<HTMLElement>("section span")!.style.display = "none";
+
+            document.querySelector<HTMLElement>(".gr")!.classList.add("nowhover");
+            document.querySelector<HTMLElement>(".eng")!.classList.remove("nowhover");
+            document.querySelector<HTMLElement>(".eng")!.classList.add("nownohover");
+
+            document.querySelector<HTMLElement>(".eng")!.style.pointerEvents = "none";
+
+            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.add("home_eng");
+            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.remove("home");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.add("knowledge_eng");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.remove("knowledge");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.add("portfolio_eng");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.remove("portfolio");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.add("contact_eng");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.remove("contact");
+        }
+        else if (cookies.get('lang') === 'gr') {
+            document.querySelector<HTMLElement>("section span")!.style.display = "none";
+
+            document.querySelector<HTMLElement>(".eng")!.classList.add("nowhover");
+            document.querySelector<HTMLElement>(".gr")!.classList.remove("nowhover");
+            document.querySelector<HTMLElement>(".gr")!.classList.add("nownohover");
+
+            document.querySelector<HTMLElement>(".gr")!.style.pointerEvents = "none";
+
+            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.remove("home_eng");
+            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.add("home");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.remove("knowledge_eng");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.add("knowledge");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.remove("portfolio_eng");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.add("portfolio");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.remove("contact_eng");
+            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.add("contact");
+        }
+    }
 
     function change_text() {
         if (cookies.get('lang') === 'eng' && location.location === "home") {
@@ -104,26 +143,27 @@ const Footer = (props: any) => {
         }
     }
 
-
     function showbody() {
         if (cookies.get('lang') === 'eng') {
             document.title = 'George Marinos CV';
             if (location.location === 'home') {
+                /*  document.querySelector<HTMLElement>(".home_eng")!.addEventListener("click", function (event) {
+                     event.preventDefault()
+                 }); */
                 return <Name_eng />
             }
-
-            /*  if (location.location === 'knowledge') {
-                 document.title = 'Γεώργιος Μαρίνος CV';
-                 return <Skills_eng />
-             } */
+            if (location.location === 'knowledge') {
+                return <Skills />
+            }
         }
 
         else if (cookies.get('lang') === 'gr') {
+            document.title = 'Γεώργιος Μαρίνος CV';
             if (location.location === 'home') {
                 return <Name_gr />
             }
             if (location.location === 'knowledge') {
-                return <Skills_gr />
+                return <Skills />
             }
         }
     }
@@ -133,6 +173,8 @@ const Footer = (props: any) => {
         document.querySelector<HTMLElement>(".gr")!.classList.add("nowhover");
         document.querySelector<HTMLElement>(".eng")!.classList.remove("nowhover");
         document.querySelector<HTMLElement>(".eng")!.classList.add("nownohover");
+
+        document.querySelector<HTMLElement>(".gr")!.style.pointerEvents = "auto";
 
         document.querySelector<HTMLElement>(".home")!.classList.remove("home_no_anime");
         document.querySelector<HTMLElement>(".knowledge")!.classList.remove("knowledge_no_anime");
@@ -157,6 +199,8 @@ const Footer = (props: any) => {
         document.querySelector<HTMLElement>(".gr")!.classList.remove("nowhover");
         document.querySelector<HTMLElement>(".gr")!.classList.add("nownohover");
 
+        document.querySelector<HTMLElement>(".eng")!.style.pointerEvents = "auto";
+
         document.querySelector<HTMLElement>(".home_eng")!.classList.remove("home_eng_no_anime");
         document.querySelector<HTMLElement>(".knowledge_eng")!.classList.remove("knowledge_eng_no_anime");
         document.querySelector<HTMLElement>(".portfolio_eng")!.classList.remove("portfolio_eng_no_anime");
@@ -175,9 +219,69 @@ const Footer = (props: any) => {
         document.querySelector<HTMLElement>(".contact")!.classList.remove("contact_eng");
     }
 
+    function disable_menu() {
+        if (cookies.get('lang') === 'eng') {
+            if (location.location === 'home') {
+                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "none";
+                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
+            }
+            if (location.location === 'knowledge') {
+                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "none";
+                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
+            }
+            if (location.location === 'portfolio') {
+                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "none";
+                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
+            }
+            if (location.location === 'contact') {
+                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "none";
+            }
+        }
+        if (cookies.get('lang') === 'gr') {
+            if (location.location === 'home') {
+                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "none";
+                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
+            }
+            if (location.location === 'knowledge') {
+                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "none";
+                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
+            }
+            if (location.location === 'portfolio') {
+                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "none";
+                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
+            }
+            if (location.location === 'contact') {
+                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
+                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "none";
+            }
+        }
+    }
+
+    useEffect(() => {
+        first_run();
+    }, []);
+
     useEffect(() => {
         change_text();
         showbody();
+        disable_menu();
     }, [location, language]);
 
     return (
@@ -198,7 +302,7 @@ const Footer = (props: any) => {
                 </nav>
             </header>
             <section>
-                <Suspense /* fallback={<span>...</span>} */>
+                <Suspense fallback={<span className='loader'>.........</span>}>
                     {showbody()}
                 </Suspense>
             </section>

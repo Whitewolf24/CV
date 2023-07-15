@@ -69,14 +69,14 @@ h3 {
     font-weight: 600;
 }
 
-p {
+p:not(.content_skills p) {
     font-size: clamp(.75rem, 2.5vw, 0.95rem);
 }
 
 //--------------------------//
 
 header {
-    animation: header 1s steps(40) 13s 1 normal forwards;
+    animation: header 1s steps(40) 11s 1 normal forwards;
     bottom: 92vh;
     display: flex;
     left: 10px;
@@ -86,6 +86,10 @@ header {
     button {
         color: white;
         font-size: clamp(0.55rem, 1.5vw, 0.8rem);
+    }
+
+    span:first-of-type {
+        animation: none;
     }
 }
 
@@ -130,29 +134,69 @@ header {
 section {
     display: flex;
     position: absolute;
-    position: relative;
     text-align: center;
     top: 30vh;
 }
 
-#name {
+.loader {
+    animation: loader 3s steps(40) 3 normal both;
+    font-size: clamp(1.25rem, 2.5vw, 1.45rem);
+    font-weight: 600;
+    opacity: 0%;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 6rem;
+    white-space: nowrap;
+    width: 0rem;
+}
+
+@keyframes loader {
+    0% {
+        width: 0rem;
+    }
+
+    1% {
+        opacity: 1%;
+    }
+
+    50% {
+        opacity: 40%;
+        width: 5rem;
+    }
+
+    100% {
+        opacity: 80%;
+        width: 10rem;
+    }
+}
+
+.name_gr,
+.name_eng {
     animation: typewriter 3s steps(40) 0.5s 1 normal forwards,
-        blinktext 500ms steps(40) 12 normal,
-        blinktext_none 50ms steps(60) 1 4s normal forwards;
+        blinktext 500ms steps(40) 8 normal forwards;
     border-right: 1px solid white;
     overflow: hidden;
     white-space: nowrap;
     width: 0rem;
 }
 
-#job {
-    animation: typewriter_job 3s steps(40) 4s 1 normal both,
-        blinktext 500ms steps(40) 3.5s infinite normal;
+.job_gr,
+.job_eng {
+    animation: typewriter_job 3s steps(40) 4s 1 normal forwards,
+        blinktext 500ms steps(40) 3.5s infinite normal forwards;
     border-right: 0;
     overflow: hidden;
-    padding-left: 58px;
     white-space: nowrap;
     width: 0rem;
+}
+
+.job_gr {
+    padding-left: 58px;
+}
+
+.job_eng {
+    padding-left: 56px;
 }
 
 @keyframes typewriter {
@@ -199,15 +243,20 @@ section {
     }
 }
 
-@keyframes blinktext_none {
-    from {
-        border-right: 1px solid white;
-    }
+//--------------------------//
 
-    to {
-        border-right: 0px solid transparent;
-    }
+.content_skills {
+    display: grid;
+    grid-column-gap: 2vw;
+    grid-row-gap: 0px;
+    grid-template-columns: repeat(4, 30vw);
+    grid-template-rows: 1fr;
+    position: relative;
+    font-size: clamp(.5rem, 2.5vw, 0.6rem);
+    //margin: 0 auto;
+    //width: 10rem;
 }
+
 
 //--------------------------//
 
@@ -239,105 +288,130 @@ footer {
         white-space: nowrap;
         width: 0rem;
     }
+
+    nav {
+        white-space: nowrap;
+    }
 }
 
 .home {
     animation: typewriter_home 2s steps(40) 6.5s 1 normal forwards,
-        blinktext 500ms steps(40) 6s 12 normal,
-        blinktext_none 150ms steps(60) 1 9s normal forwards,
+        blinktext 500ms steps(40) 6s 9 normal forwards,
+        //blinktext_none 150ms steps(60) 1 9s normal forwards,
         appear 150ms steps(60) 1 6.55s normal forwards;
 }
 
 .knowledge {
     animation: typewriter_knowledge 2s steps(40) 8s 1 normal forwards,
-        blinktext 500ms steps(40) 7.5s 12 normal,
-        blinktext_none 150ms steps(60) 1 10.5s normal forwards,
+        blinktext 500ms steps(40) 7.5s 9 normal forwards,
+        //blinktext_none 150ms steps(60) 1 10.5s normal forwards,
         appear 150ms steps(60) 1 8.05s normal forwards;
 }
 
 .portfolio {
     animation: typewriter_portfolio 3s steps(40) 8.5s 1 normal forwards,
-        blinktext 500ms steps(40) 8s 12 normal,
-        blinktext_none 150ms steps(60) 1 11s normal forwards,
+        blinktext 500ms steps(40) 8s 9 normal forwards,
+        //blinktext_none 150ms steps(60) 1 11s normal forwards,
         appear 150ms steps(60) 1 8.55s normal forwards;
 }
 
 .contact {
     animation: typewriter_contact 2s steps(40) 10s 1 normal forwards,
-        blinktext 500ms steps(40) 9.5s 12 normal,
-        blinktext_none 150ms steps(60) 1 11.5s normal forwards,
+        blinktext 500ms steps(40) 9.5s 6 normal forwards,
+        //blinktext_none 150ms steps(60) 1 11.5s normal forwards,
         appear 150ms steps(60) 1 10.05s normal forwards;
 }
 
 .home_eng {
     animation: typewriter_home_eng 2s steps(40) 6.5s 1 normal forwards,
-        blinktext 500ms steps(40) 6s 12 normal,
-        blinktext_none 150ms steps(60) 1 9s normal forwards,
+        blinktext 500ms steps(40) 6s 9 normal forwards,
+        //blinktext_none 150ms steps(60) 1 7s normal forwards,
         appear 150ms steps(60) 1 6.55s normal forwards;
 }
 
 .knowledge_eng {
     animation: typewriter_knowledge_eng 2s steps(40) 8s 1 normal forwards,
-        blinktext 500ms steps(40) 7.5s 12 normal,
-        blinktext_none 150ms steps(60) 1 10.5s normal forwards,
+        blinktext 500ms steps(40) 7.5s 9 normal forwards,
+        //blinktext_none 150ms steps(60) 1 8.5s normal forwards,
         appear 150ms steps(60) 1 8.05s normal forwards;
 }
 
 .portfolio_eng {
     animation: typewriter_portfolio_eng 3s steps(40) 8.5s 1 normal forwards,
-        blinktext 500ms steps(40) 8s 12 normal,
-        blinktext_none 150ms steps(60) 1 11s normal forwards,
+        blinktext 500ms steps(40) 8s 9 normal forwards,
+        //blinktext_none 150ms steps(60) 1 9s normal forwards,
         appear 150ms steps(60) 1 8.55s normal forwards;
 }
 
 .contact_eng {
     animation: typewriter_contact_eng 2s steps(40) 10s 1 normal forwards,
-        blinktext 500ms steps(40) 9.5s 12 normal,
-        blinktext_none 150ms steps(60) 1 11.5s normal forwards,
+        blinktext 500ms steps(40) 9.5s 6 normal forwards,
+        //blinktext_none 150ms steps(60) 1 9.5s normal forwards,
         appear 150ms steps(60) 1 10.05s normal forwards;
 }
 
 .home_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 3em;
 }
 
 .knowledge_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 6em;
 }
 
 .portfolio_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 12em;
 }
 
 .contact_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 8em;
 }
 
 .home_eng_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 3em;
 }
 
 .knowledge_eng_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 7.5em;
 }
 
 .portfolio_eng_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 7.5em;
 }
 
 .contact_eng_no_anime {
     animation: none;
+    opacity: 100%;
+    width: 6em;
 }
 
 span {
     animation: typewriter_span 2s steps(40) 10s 1 normal forwards,
-        blinktext 500ms steps(40) 9.5s 12 normal,
-        blinktext_none 150ms steps(60) 1 13s normal forwards;
+        blinktext 500ms steps(40) 9.5s 5 normal forwards,
+        // blinktext_none 150ms steps(60) 1 1s normal forwards;
 }
 
-#knowledge:hover,
-#portfolio:hover,
-#contact:hover {
+.home:hover,
+.home_eng:hover,
+.knowledge:hover,
+.knowledge_eng:hover,
+.portfolio:hover,
+.portfolio_eng:hover,
+.contact:hover,
+.contact_eng:hover {
     border-bottom: 1px dashed;
 }
 
@@ -384,12 +458,12 @@ span {
 
     50% {
         border-right: 1px solid white;
-        width: 3em;
+        width: 3.5em;
     }
 
     100% {
         border-right: 1px solid white;
-        width: 6em;
+        width: 7em;
     }
 }
 
@@ -404,12 +478,12 @@ span {
 
     50% {
         border-right: 1px solid white;
-        width: 6em;
+        width: 6.5em;
     }
 
     100% {
         border-right: 1px solid white;
-        width: 12em;
+        width: 13em;
     }
 }
 
@@ -424,12 +498,12 @@ span {
 
     50% {
         border-right: 1px solid white;
-        width: 4em;
+        width: 4.5em;
     }
 
     100% {
         border-right: 1px solid white;
-        width: 8em;
+        width: 9em;
     }
 }
 
@@ -464,12 +538,12 @@ span {
 
     50% {
         border-right: 1px solid white;
-        width: 3em;
+        width: 4.5em;
     }
 
     100% {
         border-right: 1px solid white;
-        width: 6em;
+        width: 8.5em;
     }
 }
 
@@ -484,12 +558,12 @@ span {
 
     50% {
         border-right: 1px solid white;
-        width: 6em;
+        width: 4.5em;
     }
 
     100% {
         border-right: 1px solid white;
-        width: 12em;
+        width: 8.5em;
     }
 }
 
