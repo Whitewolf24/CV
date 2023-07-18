@@ -1,7 +1,7 @@
 
 import { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
-import Footer from './components/footer';
+import { Footer } from './components/footer';
 
 const cookies = new Cookies();
 

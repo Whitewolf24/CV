@@ -1,4 +1,4 @@
-const Name_eng = (props: any) => {
+const Name_eng = () => {
 
     return <div className="content">
         <h1 className="name_eng">GEORGE MARINOS</h1>

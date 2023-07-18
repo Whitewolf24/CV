@@ -1,7 +1,6 @@
 import Cookies from 'universal-cookie';
 import { useState, useEffect, lazy, Suspense } from 'react';
-//import { Name, Name_eng } from './name';
-//import { Skills, Skills_eng } from './skills';
+import { first_run, changeto_eng, changeto_gr } from './functions';
 
 const cookies = new Cookies();
 
@@ -13,7 +12,7 @@ const Skills = lazy(() => import('./skills'));
     return new Promise(resolve => { setTimeout(resolve, time) })
 } */
 
-const Footer = (props: any) => {
+export const Footer = () => {
     const [text, set_text] = useState({
         home: "",
         knowledge: "",
@@ -21,7 +20,7 @@ const Footer = (props: any) => {
         contact: "",
     });
 
-    const [location, set_location] = useState({
+    const [page, set_page] = useState({
         location: "home",
     })
 
@@ -29,47 +28,8 @@ const Footer = (props: any) => {
         language: "greek",
     })
 
-    function first_run() {
-        if (cookies.get('lang') === 'eng') {
-            document.querySelector<HTMLElement>("section span")!.style.display = "none";
-
-            document.querySelector<HTMLElement>(".gr")!.classList.add("nowhover");
-            document.querySelector<HTMLElement>(".eng")!.classList.remove("nowhover");
-            document.querySelector<HTMLElement>(".eng")!.classList.add("nownohover");
-
-            document.querySelector<HTMLElement>(".eng")!.style.pointerEvents = "none";
-
-            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.add("home_eng");
-            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.remove("home");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.add("knowledge_eng");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.remove("knowledge");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.add("portfolio_eng");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.remove("portfolio");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.add("contact_eng");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.remove("contact");
-        }
-        else if (cookies.get('lang') === 'gr') {
-            document.querySelector<HTMLElement>("section span")!.style.display = "none";
-
-            document.querySelector<HTMLElement>(".eng")!.classList.add("nowhover");
-            document.querySelector<HTMLElement>(".gr")!.classList.remove("nowhover");
-            document.querySelector<HTMLElement>(".gr")!.classList.add("nownohover");
-
-            document.querySelector<HTMLElement>(".gr")!.style.pointerEvents = "none";
-
-            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.remove("home_eng");
-            document.querySelector<HTMLElement>("footer button:first-of-type")!.classList.add("home");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.remove("knowledge_eng");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(2)")!.classList.add("knowledge");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.remove("portfolio_eng");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.classList.add("portfolio");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.remove("contact_eng");
-            document.querySelector<HTMLElement>("footer button:nth-of-type(4)")!.classList.add("contact");
-        }
-    }
-
     function change_text() {
-        if (cookies.get('lang') === 'eng' && location.location === "home") {
+        if (cookies.get('lang') === 'eng' && page.location === "home") {
             set_text(
                 {
                     home: "</G>",
@@ -78,7 +38,7 @@ const Footer = (props: any) => {
                     contact: "<CONTACT>",
                 })
         }
-        if (cookies.get('lang') === 'gr' && location.location === "home") {
+        if (cookies.get('lang') === 'gr' && page.location === "home") {
             set_text(
                 {
                     home: "</Γ>",
@@ -87,7 +47,7 @@ const Footer = (props: any) => {
                     contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
                 })
         }
-        if (cookies.get('lang') === 'eng' && location.location === "knowledge") {
+        if (cookies.get('lang') === 'eng' && page.location === "knowledge") {
             set_text(
                 {
                     home: "<G>",
@@ -96,7 +56,7 @@ const Footer = (props: any) => {
                     contact: "<CONTACT>",
                 })
         }
-        if (cookies.get('lang') === 'gr' && location.location === "knowledge") {
+        if (cookies.get('lang') === 'gr' && page.location === "knowledge") {
             set_text(
                 {
                     home: "<Γ>",
@@ -105,7 +65,7 @@ const Footer = (props: any) => {
                     contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
                 })
         }
-        if (cookies.get('lang') === 'eng' && location.location === "portfolio") {
+        if (cookies.get('lang') === 'eng' && page.location === "portfolio") {
             set_text(
                 {
                     home: "<G>",
@@ -114,7 +74,7 @@ const Footer = (props: any) => {
                     contact: "<CONTACT>",
                 })
         }
-        if (cookies.get('lang') === 'gr' && location.location === "portfolio") {
+        if (cookies.get('lang') === 'gr' && page.location === "portfolio") {
             set_text(
                 {
                     home: "<Γ>",
@@ -123,7 +83,7 @@ const Footer = (props: any) => {
                     contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
                 })
         }
-        if (cookies.get('lang') === 'eng' && location.location === "contact") {
+        if (cookies.get('lang') === 'eng' && page.location === "contact") {
             set_text(
                 {
                     home: "<G>",
@@ -132,7 +92,7 @@ const Footer = (props: any) => {
                     contact: "</CONTACT>",
                 })
         }
-        if (cookies.get('lang') === 'gr' && location.location === "contact") {
+        if (cookies.get('lang') === 'gr' && page.location === "contact") {
             set_text(
                 {
                     home: "<Γ>",
@@ -146,100 +106,49 @@ const Footer = (props: any) => {
     function showbody() {
         if (cookies.get('lang') === 'eng') {
             document.title = 'George Marinos CV';
-            if (location.location === 'home') {
+            if (page.location === 'home') {
                 /*  document.querySelector<HTMLElement>(".home_eng")!.addEventListener("click", function (event) {
-                     event.preventDefault()
+                    event.preventDefault()
                  }); */
                 return <Name_eng />
             }
-            if (location.location === 'knowledge') {
+            if (page.location === 'knowledge') {
                 return <Skills />
             }
         }
 
         else if (cookies.get('lang') === 'gr') {
             document.title = 'Γεώργιος Μαρίνος CV';
-            if (location.location === 'home') {
+            if (page.location === 'home') {
                 return <Name_gr />
             }
-            if (location.location === 'knowledge') {
+            if (page.location === 'knowledge') {
                 return <Skills />
             }
         }
     }
 
-
-    function changeto_eng() {
-        document.querySelector<HTMLElement>(".gr")!.classList.add("nowhover");
-        document.querySelector<HTMLElement>(".eng")!.classList.remove("nowhover");
-        document.querySelector<HTMLElement>(".eng")!.classList.add("nownohover");
-
-        document.querySelector<HTMLElement>(".gr")!.style.pointerEvents = "auto";
-
-        document.querySelector<HTMLElement>(".home")!.classList.remove("home_no_anime");
-        document.querySelector<HTMLElement>(".knowledge")!.classList.remove("knowledge_no_anime");
-        document.querySelector<HTMLElement>(".portfolio")!.classList.remove("portfolio_no_anime");
-        document.querySelector<HTMLElement>(".contact")!.classList.remove("contact_no_anime");
-        document.querySelector<HTMLElement>(".home")!.classList.add("home_eng_no_anime");
-        document.querySelector<HTMLElement>(".knowledge")!.classList.add("knowledge_eng_no_anime");
-        document.querySelector<HTMLElement>(".portfolio")!.classList.add("portfolio_eng_no_anime");
-        document.querySelector<HTMLElement>(".contact")!.classList.add("contact_eng_no_anime");
-        document.querySelector<HTMLElement>(".home")!.classList.add("home_eng");
-        document.querySelector<HTMLElement>(".knowledge")!.classList.add("knowledge_eng");
-        document.querySelector<HTMLElement>(".portfolio")!.classList.add("portfolio_eng");
-        document.querySelector<HTMLElement>(".contact")!.classList.add("contact_eng");
-        document.querySelector<HTMLElement>(".home_eng_no_anime")!.classList.remove("home");
-        document.querySelector<HTMLElement>(".knowledge_eng_no_anime")!.classList.remove("knowledge");
-        document.querySelector<HTMLElement>(".portfolio_eng_no_anime")!.classList.remove("portfolio");
-        document.querySelector<HTMLElement>(".contact_eng_no_anime")!.classList.remove("contact");
-    }
-
-    function changeto_gr() {
-        document.querySelector<HTMLElement>(".eng")!.classList.add("nowhover");
-        document.querySelector<HTMLElement>(".gr")!.classList.remove("nowhover");
-        document.querySelector<HTMLElement>(".gr")!.classList.add("nownohover");
-
-        document.querySelector<HTMLElement>(".eng")!.style.pointerEvents = "auto";
-
-        document.querySelector<HTMLElement>(".home_eng")!.classList.remove("home_eng_no_anime");
-        document.querySelector<HTMLElement>(".knowledge_eng")!.classList.remove("knowledge_eng_no_anime");
-        document.querySelector<HTMLElement>(".portfolio_eng")!.classList.remove("portfolio_eng_no_anime");
-        document.querySelector<HTMLElement>(".contact_eng")!.classList.remove("contact_eng_no_anime");
-        document.querySelector<HTMLElement>(".home_eng")!.classList.add("home_no_anime");
-        document.querySelector<HTMLElement>(".knowledge_eng")!.classList.add("knowledge_no_anime");
-        document.querySelector<HTMLElement>(".portfolio_eng")!.classList.add("portfolio_no_anime");
-        document.querySelector<HTMLElement>(".contact_eng")!.classList.add("contact_no_anime");
-        document.querySelector<HTMLElement>(".home_eng")!.classList.add("home");
-        document.querySelector<HTMLElement>(".knowledge_eng")!.classList.add("knowledge");
-        document.querySelector<HTMLElement>(".portfolio_eng")!.classList.add("portfolio");
-        document.querySelector<HTMLElement>(".contact_eng")!.classList.add("contact");
-        document.querySelector<HTMLElement>(".home")!.classList.remove("home_eng");
-        document.querySelector<HTMLElement>(".knowledge")!.classList.remove("knowledge_eng");
-        document.querySelector<HTMLElement>(".portfolio")!.classList.remove("portfolio_eng");
-        document.querySelector<HTMLElement>(".contact")!.classList.remove("contact_eng");
-    }
-
     function disable_menu() {
         if (cookies.get('lang') === 'eng') {
-            if (location.location === 'home') {
+            if (page.location === 'home') {
                 document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "none";
                 document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
             }
-            if (location.location === 'knowledge') {
+            if (page.location === 'knowledge') {
                 document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "none";
                 document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
             }
-            if (location.location === 'portfolio') {
+            if (page.location === 'portfolio') {
                 document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "none";
                 document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
             }
-            if (location.location === 'contact') {
+            if (page.location === 'contact') {
                 document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
@@ -247,25 +156,25 @@ const Footer = (props: any) => {
             }
         }
         if (cookies.get('lang') === 'gr') {
-            if (location.location === 'home') {
+            if (page.location === 'home') {
                 document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "none";
                 document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
             }
-            if (location.location === 'knowledge') {
+            if (page.location === 'knowledge') {
                 document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "none";
                 document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
             }
-            if (location.location === 'portfolio') {
+            if (page.location === 'portfolio') {
                 document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "none";
                 document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
             }
-            if (location.location === 'contact') {
+            if (page.location === 'contact') {
                 document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
                 document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
@@ -276,13 +185,14 @@ const Footer = (props: any) => {
 
     useEffect(() => {
         first_run();
+        disable_menu()
     }, []);
 
     useEffect(() => {
         change_text();
         showbody();
-        disable_menu();
-    }, [location, language]);
+        disable_menu()
+    }, [page, language]);
 
     return (
         <main>
@@ -308,27 +218,24 @@ const Footer = (props: any) => {
             </section>
             <footer>
                 <nav>
-                    <button className='home' onClick={() => { set_location({ location: "home" }); }}>
-                        {/* <img id="logo" src="/logo_nobg.png" alt="Logo" /> */}
+                    <button className='home' onClick={() => { set_page({ location: "home" }); }}>
                         {text.home}
                     </button>
                     <span>||</span>
-                    <button className='knowledge' onClick={() => { set_location({ location: "knowledge" }); }}>
+                    <button className='knowledge' onClick={() => { set_page({ location: "knowledge" }); }}>
                         {text.knowledge}
                     </button>
                     <span>||</span>
-                    <button className='portfolio' onClick={() => { set_location({ location: "portfolio" }); }}>
+                    <button className='portfolio' onClick={() => { set_page({ location: "portfolio" }); }}>
                         {text.portfolio}
                     </button>
                     <span>||</span>
-                    <button className='contact' onClick={() => { set_location({ location: "contact" }); }}>
+                    <button className='contact' onClick={() => { set_page({ location: "contact" }); }}>
                         {text.contact}
                     </button>
+
                 </nav>
             </footer>
         </main >
     )
-
 }
-
-export default Footer;

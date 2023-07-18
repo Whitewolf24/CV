@@ -1,4 +1,4 @@
-const Skills = (props: any) => {
+const Skills = () => {
     return <div className="content">
         <div className="content_skills">
             <div id="backend">
@@ -30,6 +30,7 @@ const Skills = (props: any) => {
                 <p>AdobeXD</p>
                 <p>Figma</p>
                 <p>Git</p>
+                <p>Jira</p>
             </div>
         </div>
     </div >
