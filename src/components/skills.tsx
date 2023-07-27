@@ -14,8 +14,8 @@ const Skills = () => {
             <div id="frontend">
                 <h3>Frontend</h3>
                 <p>&#x003c;html&#x003e;&#x003c;/html&#x003e;</p>
-                <p>css {" {.bootstrap .sass "} <br></br> {".tailwind .postcss}"}</p>
-                <p>javascript() {"{<%=ejs%> $jquery :typescript /react}"}</p>
+                <p>css {" {.bootstrap, .sass, "} <br></br> {".tailwind, .postcss}"}</p>
+                <p>javascript() {"{<%=ejs%>, $jquery, :typescript, /react}"}</p>
             </div>
             <div id="wordp">
                 <h3>Wordpress</h3>
@@ -27,7 +27,7 @@ const Skills = () => {
                 <h3>Tools</h3>
                 <p>NPM</p>
                 <p>Postman</p>
-                <p>AdobeXD</p>
+                <p>Adobe XD</p>
                 <p>Figma</p>
                 <p>Git</p>
                 <p>Jira</p>

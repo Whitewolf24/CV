@@ -69,9 +69,9 @@ h3 {
     font-weight: 600;
 }
 
-p:not(.content_skills p) {
+/* p:not(.content_skills p) {
     font-size: clamp(.75rem, 2.5vw, 0.95rem);
-}
+} */
 
 //--------------------------//
 
@@ -251,6 +251,7 @@ section {
 //--------------------------//
 
 .content_skills {
+    animation: fade_in 2s 1 ease-in-out forwards;
     bottom: 50px;
     display: grid;
     font-size: clamp(.5rem, 2.5vw, 0.6rem);
@@ -258,6 +259,7 @@ section {
     grid-row-gap: 0px;
     grid-template-columns: 27vw 25vw 27vw 10vw;
     grid-template-rows: 1fr;
+    opacity: 0;
     padding-right: 4vw;
     position: relative;
 
@@ -272,6 +274,17 @@ section {
         padding-right: 0.8vw;
     }
 }
+
+@keyframes fade_in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 
 #backend p:first-of-type,
 #frontend p:first-of-type,
@@ -390,6 +403,184 @@ section {
     }
 }
 
+//--------------------------//
+
+.content_portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    // position: absolute;
+    justify-content: center;
+    //width: 90vw;
+
+    div {
+        margin-right: 2rem;
+        margin-bottom: 1rem;
+        position: relative;
+        bottom: 6rem;
+    }
+
+    img {
+        animation: fade_in 2s 1 ease-in-out forwards;
+        height: 136px;
+        width: 206px;
+    }
+
+    p:not(.description) {
+        margin-left: 10px;
+        font-size: clamp(.52rem, 2.5vw, .72rem);
+        width: 180px;
+    }
+}
+
+@media only screen and (max-height: 750px) {
+    .content_portfolio {
+        div {
+            bottom: 7rem !important;
+            margin-bottom: -0.5rem;
+        }
+
+        p:not(.description) {
+            margin-top: -1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 482px) {
+    .content_portfolio {
+        margin-right: 0rem;
+        width: 105vw;
+
+        div {
+            bottom: 10rem;
+            margin-right: 0rem;
+        }
+
+        img {
+            height: 80px;
+            width: 140px;
+        }
+
+        p:not(.description) {
+            position: relative;
+            right: 6.5px;
+            font-size: clamp(.42rem, 2.5vw, .62rem);
+            width: 160px;
+        }
+    }
+}
+
+@media only screen and (min-width: 482px) and (max-width: 532px) {
+    .content_portfolio {
+        margin-right: 0rem;
+        width: 106vw;
+
+        div {
+            bottom: 6rem;
+            margin-right: 0rem;
+        }
+
+        img {
+            height: 80px;
+            width: 140px;
+        }
+
+        p:not(.description) {
+            position: relative;
+            right: 6.5px;
+            font-size: clamp(.42rem, 2.5vw, .62rem);
+            width: 160px;
+        }
+    }
+}
+
+
+@media only screen and (min-width: 532px) and (max-width: 600px) {
+    .content_portfolio {
+        margin-left: 0.1rem;
+        width: 107vw;
+
+        div {
+            bottom: 7rem;
+            margin-right: 0rem;
+        }
+
+        img {
+            height: 90px;
+            width: 150px;
+        }
+
+        p:not(.description) {
+            position: relative;
+            right: 6.5px;
+            font-size: clamp(.42rem, 2.5vw, .62rem);
+        }
+    }
+}
+
+
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+    .content_portfolio {
+        margin-left: 1rem;
+        width: 103vw;
+
+        div {
+            bottom: 8rem;
+            margin-right: 1rem;
+        }
+
+        img {
+            height: 110px;
+            width: 180px;
+        }
+
+        p:not(.description) {
+            position: relative;
+            right: 6.5px;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1020px) {
+    .content_portfolio {
+        margin-left: 1rem;
+        width: 103vw;
+
+        div {
+            bottom: 3rem;
+            margin-right: 1rem;
+        }
+
+        img {
+            height: 116px;
+            width: 186px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1020px) {
+    .content_portfolio {
+        width: 98vw;
+    }
+}
+
+@media only screen and (min-width: 1035px) and (max-width: 1550px) {
+    .content_portfolio {
+        width: 92vw;
+    }
+}
+
+@media only screen and (min-width: 1550px) and (max-width: 2300px) {
+    .content_portfolio {
+        width: 62vw;
+    }
+}
+
+
+@media only screen and (min-width: 2300px) {
+    .content_portfolio {
+        width: 52vw;
+    }
+}
 
 //--------------------------//
 

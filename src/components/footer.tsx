@@ -7,6 +7,8 @@ const cookies = new Cookies();
 const Name_gr = lazy(() => import('./name_gr'));
 const Name_eng = lazy(() => import('./name_eng'));
 const Skills = lazy(() => import('./skills'));
+const Portfolio_gr = lazy(() => import('./portfolio_gr'));
+const Portfolio_eng = lazy(() => import('./portfolio_eng'));
 
 /* function wait(time: number) {
     return new Promise(resolve => { setTimeout(resolve, time) })
@@ -29,79 +31,84 @@ export const Footer = () => {
     })
 
     function change_text() {
-        if (cookies.get('lang') === 'eng' && page.location === "home") {
-            set_text(
-                {
-                    home: "</G>",
-                    knowledge: "<KNOWLEDGE>",
-                    portfolio: "<PORTFOLIO>",
-                    contact: "<CONTACT>",
-                })
+        if (cookies.get('lang') === 'eng') {
+            if (page.location === "home") {
+                set_text(
+                    {
+                        home: "</G>",
+                        knowledge: "<KNOWLEDGE>",
+                        portfolio: "<PORTFOLIO>",
+                        contact: "<CONTACT>",
+                    })
+            }
+            if (page.location === "knowledge") {
+                set_text(
+                    {
+                        home: "<G>",
+                        knowledge: "</KNOWLEDGE>",
+                        portfolio: "<PORTFOLIO>",
+                        contact: "<CONTACT>",
+                    })
+            }
+            if (page.location === "portfolio") {
+                set_text(
+                    {
+                        home: "<G>",
+                        knowledge: "<KNOWLEDGE>",
+                        portfolio: "</PORTFOLIO>",
+                        contact: "<CONTACT>",
+                    })
+            }
+            if (page.location === "contact") {
+                set_text(
+                    {
+                        home: "<G>",
+                        knowledge: "<KNOWLEDGE>",
+                        portfolio: "<PORTFOLIO>",
+                        contact: "</CONTACT>",
+                    })
+            }
         }
-        if (cookies.get('lang') === 'gr' && page.location === "home") {
-            set_text(
-                {
-                    home: "</Γ>",
-                    knowledge: "<ΓΝΩΣΕΙΣ>",
-                    portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
-                })
-        }
-        if (cookies.get('lang') === 'eng' && page.location === "knowledge") {
-            set_text(
-                {
-                    home: "<G>",
-                    knowledge: "</KNOWLEDGE>",
-                    portfolio: "<PORTFOLIO>",
-                    contact: "<CONTACT>",
-                })
-        }
-        if (cookies.get('lang') === 'gr' && page.location === "knowledge") {
-            set_text(
-                {
-                    home: "<Γ>",
-                    knowledge: "</ΓΝΩΣΕΙΣ>",
-                    portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
-                })
-        }
-        if (cookies.get('lang') === 'eng' && page.location === "portfolio") {
-            set_text(
-                {
-                    home: "<G>",
-                    knowledge: "<KNOWLEDGE>",
-                    portfolio: "</PORTFOLIO>",
-                    contact: "<CONTACT>",
-                })
-        }
-        if (cookies.get('lang') === 'gr' && page.location === "portfolio") {
-            set_text(
-                {
-                    home: "<Γ>",
-                    knowledge: "<ΓΝΩΣΕΙΣ>",
-                    portfolio: "</ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
-                })
-        }
-        if (cookies.get('lang') === 'eng' && page.location === "contact") {
-            set_text(
-                {
-                    home: "<G>",
-                    knowledge: "<KNOWLEDGE>",
-                    portfolio: "<PORTFOLIO>",
-                    contact: "</CONTACT>",
-                })
-        }
-        if (cookies.get('lang') === 'gr' && page.location === "contact") {
-            set_text(
-                {
-                    home: "<Γ>",
-                    knowledge: "<ΓΝΩΣΕΙΣ>",
-                    portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "</ΕΠΙΚΟΙΝΩΝΙΑ>",
-                })
+        if (cookies.get('lang') === 'gr') {
+            if (page.location === "home") {
+                set_text(
+                    {
+                        home: "</Γ>",
+                        knowledge: "<ΓΝΩΣΕΙΣ>",
+                        portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
+                        contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
+                    })
+            }
+            if (page.location === "knowledge") {
+                set_text(
+                    {
+                        home: "<Γ>",
+                        knowledge: "</ΓΝΩΣΕΙΣ>",
+                        portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
+                        contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
+                    })
+            }
+            if (page.location === "portfolio") {
+                set_text(
+                    {
+                        home: "<Γ>",
+                        knowledge: "<ΓΝΩΣΕΙΣ>",
+                        portfolio: "</ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
+                        contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
+                    })
+            }
+            if (page.location === "contact") {
+                set_text(
+                    {
+                        home: "<Γ>",
+                        knowledge: "<ΓΝΩΣΕΙΣ>",
+                        portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
+                        contact: "</ΕΠΙΚΟΙΝΩΝΙΑ>",
+                    })
+            }
         }
     }
+
 
     function showbody() {
         if (cookies.get('lang') === 'eng') {
@@ -115,6 +122,9 @@ export const Footer = () => {
             if (page.location === 'knowledge') {
                 return <Skills />
             }
+            if (page.location === 'portfolio') {
+                return <Portfolio_eng />
+            }
         }
 
         else if (cookies.get('lang') === 'gr') {
@@ -124,6 +134,9 @@ export const Footer = () => {
             }
             if (page.location === 'knowledge') {
                 return <Skills />
+            }
+            if (page.location === 'portfolio') {
+                return <Portfolio_gr />
             }
         }
     }
@@ -201,13 +214,13 @@ export const Footer = () => {
                     <button className='gr nownohover' onClick={() => {
                         cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" }); changeto_gr()
                     }}>
-                        <img src="/gr_flag.webp" alt="EL" />
+                        <img src="gr_flag.webp" alt="EL" />
                     </button>
                     <span>||</span>
                     <button className='eng nowhover' onClick={() => {
                         cookies.set('lang', 'eng', { sameSite: true }); set_language({ language: "english" }); changeto_eng()
                     }}>
-                        <img src="/eng_flag.webp" alt="ENG" /* style={{ filter: "grayscale(95%)", height: "12px", objectFit: "cover", width: "22px" }} */ />
+                        <img src="eng_flag.webp" alt="ENG" /* style={{ filter: "grayscale(95%)", height: "12px", objectFit: "cover", width: "22px" }} */ />
                     </button>
                 </nav>
             </header>
