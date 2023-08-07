@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
 import { Footer } from './components/footer';
 
