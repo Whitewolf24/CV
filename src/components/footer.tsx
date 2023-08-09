@@ -196,6 +196,21 @@ export const Footer = () => {
         }
     }
 
+
+    onresize = (event) => {
+        if (page.location === 'portfolio') {
+            onresize = (event) => {
+                if (window.innerHeight <= 699 && window.innerWidth < 1253 || window.innerHeight <= 590 && window.innerWidth >= 1253) {
+                    document.body.style.overflowY = "scroll";
+                }
+                else if (window.innerHeight > 699) {
+                    document.body.style.overflowY = "hidden";
+                }
+            };
+        }
+    };
+
+
     useEffect(() => {
         first_run();
         disable_menu()
@@ -212,38 +227,60 @@ export const Footer = () => {
             <header>
                 <nav>
                     <button className='gr nownohover' onClick={() => {
-                        cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" }); changeto_gr()
+                        cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" });
+                        document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.style.width = "13em";
+                        changeto_gr();
                     }}>
                         <img src="gr_flag.webp" alt="EL" />
                     </button>
                     <span>||</span>
                     <button className='eng nowhover' onClick={() => {
-                        cookies.set('lang', 'eng', { sameSite: true }); set_language({ language: "english" }); changeto_eng()
+                        cookies.set('lang', 'eng', { sameSite: true }); set_language({ language: "english" });
+                        document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.style.width = "8em";
+                        changeto_eng();
                     }}>
                         <img src="eng_flag.webp" alt="ENG" /* style={{ filter: "grayscale(95%)", height: "12px", objectFit: "cover", width: "22px" }} */ />
                     </button>
                 </nav>
             </header>
-            <section>
+            <section className='content_section'>
                 <Suspense fallback={<span className='loader'>.........</span>}>
                     {showbody()}
                 </Suspense>
             </section>
             <footer>
                 <nav>
-                    <button className='home' onClick={() => { set_page({ location: "home" }); }}>
+                    <button className='home' onClick={() => {
+                        set_page({ location: "home" });
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "none"
+                    }}>
                         {text.home}
                     </button>
                     <span>||</span>
-                    <button className='knowledge' onClick={() => { set_page({ location: "knowledge" }); }}>
+                    <button className='knowledge' onClick={() => {
+                        set_page({ location: "knowledge" }); document.body.style.overflowY = "hidden";
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 50%)"
+                    }}>
                         {text.knowledge}
                     </button>
                     <span>||</span>
-                    <button className='portfolio' onClick={() => { set_page({ location: "portfolio" }); }}>
+                    <button className='portfolio' onClick={() => {
+                        set_page({ location: "portfolio" });
+                        if (window.innerHeight <= 699 && window.innerWidth < 1253 || window.innerHeight <= 590 && window.innerWidth >= 1253) {
+                            document.body.style.overflowY = "scroll";
+                        }
+                        else if (window.innerHeight > 699) {
+                            document.body.style.overflowY = "hidden";
+                        }
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 25%)"
+                    }}>
                         {text.portfolio}
                     </button>
                     <span>||</span>
-                    <button className='contact' onClick={() => { set_page({ location: "contact" }); }}>
+                    <button className='contact' onClick={() => {
+                        set_page({ location: "contact" });
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "none"
+                    }}>
                         {text.contact}
                     </button>
 
