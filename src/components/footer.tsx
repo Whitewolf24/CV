@@ -200,7 +200,13 @@ export const Footer = () => {
     onresize = (event) => {
         if (page.location === 'portfolio') {
             onresize = (event) => {
-                if (window.innerHeight <= 699 && window.innerWidth < 1253 || window.innerHeight <= 590 && window.innerWidth >= 1253) {
+                if (window.innerHeight <= 680 && window.innerWidth < 1253 && !(window.innerWidth >= 806)
+                    || window.innerHeight <= 730 && window.innerWidth <= 568
+                    || window.innerHeight <= 699 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
+                    || window.innerHeight <= 550 && window.innerWidth >= 1253 && !(window.innerWidth >= 1553)
+                    || window.innerHeight <= 785 && window.innerWidth >= 601 && !(window.innerWidth >= 806)
+                    //|| window.innerHeight <= 736 && window.innerWidth >= 805 && !(window.innerWidth >= 1253)
+                    || window.innerHeight <= 579 && window.innerWidth >= 1553) {
                     document.body.style.overflowY = "scroll";
                 }
                 else if (window.innerHeight > 699) {
@@ -266,7 +272,13 @@ export const Footer = () => {
                     <span>||</span>
                     <button className='portfolio' onClick={() => {
                         set_page({ location: "portfolio" });
-                        if (window.innerHeight <= 699 && window.innerWidth < 1253 || window.innerHeight <= 590 && window.innerWidth >= 1253) {
+                        if (window.innerHeight <= 680 && window.innerWidth < 1253 && !(window.innerWidth >= 806)
+                            || window.innerHeight <= 730 && window.innerWidth <= 568
+                            || window.innerHeight <= 699 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
+                            || window.innerHeight <= 550 && window.innerWidth >= 1253 && !(window.innerWidth >= 1553)
+                            || window.innerHeight <= 785 && window.innerWidth >= 601 && !(window.innerWidth >= 806)
+                            //|| window.innerHeight <= 736 && window.innerWidth >= 805 && !(window.innerWidth >= 1253)
+                            || window.innerHeight <= 579 && window.innerWidth >= 1553) {
                             document.body.style.overflowY = "scroll";
                         }
                         else if (window.innerHeight > 699) {
