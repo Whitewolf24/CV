@@ -9,9 +9,10 @@ const Name_eng = lazy(() => import('./name_eng'));
 const Skills = lazy(() => import('./skills'));
 const Portfolio_gr = lazy(() => import('./portfolio_gr'));
 const Portfolio_eng = lazy(() => import('./portfolio_eng'));
+const Contact_gr = lazy(() => import('./contact_gr'));
 
 /* function wait(time: number) {
-    return new Promise(resolve => { setTimeout(resolve, time) })
+    return new Promise(resolve => {setTimeout(resolve, time)})
 } */
 
 export const Footer = () => {
@@ -115,8 +116,8 @@ export const Footer = () => {
             document.title = 'George Marinos CV';
             if (page.location === 'home') {
                 /*  document.querySelector<HTMLElement>(".home_eng")!.addEventListener("click", function (event) {
-                    event.preventDefault()
-                 }); */
+        event.preventDefault()
+    }); */
                 return <Name_eng />
             }
             if (page.location === 'knowledge') {
@@ -137,6 +138,9 @@ export const Footer = () => {
             }
             if (page.location === 'portfolio') {
                 return <Portfolio_gr />
+            }
+            if (page.location === 'contact') {
+                return <Contact_gr />
             }
         }
     }
@@ -214,6 +218,17 @@ export const Footer = () => {
                 }
             };
         }
+
+        if (page.location === 'knowledge') {
+            onresize = (event) => {
+                if (window.innerHeight <= 305) {
+                    document.body.style.overflowY = "scroll";
+                }
+                else if (window.innerHeight > 305) {
+                    document.body.style.overflowY = "hidden";
+                }
+            };
+        }
     };
 
 
@@ -258,13 +273,21 @@ export const Footer = () => {
                 <nav>
                     <button className='home' onClick={() => {
                         set_page({ location: "home" });
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "none"
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 5vh)"
                     }}>
                         {text.home}
                     </button>
                     <span>||</span>
                     <button className='knowledge' onClick={() => {
                         set_page({ location: "knowledge" }); document.body.style.overflowY = "hidden";
+                        onresize = (event) => {
+                            if (window.innerHeight <= 305) {
+                                document.body.style.overflowY = "scroll";
+                            }
+                            else if (window.innerHeight > 305) {
+                                document.body.style.overflowY = "hidden";
+                            }
+                        };
                         document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 50%)"
                     }}>
                         {text.knowledge}
@@ -284,14 +307,15 @@ export const Footer = () => {
                         else if (window.innerHeight > 699) {
                             document.body.style.overflowY = "hidden";
                         }
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 25%)"
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 25%)";
                     }}>
                         {text.portfolio}
                     </button>
                     <span>||</span>
                     <button className='contact' onClick={() => {
                         set_page({ location: "contact" });
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "none"
+                        document.body.style.overflowY = "hidden";
+                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 35vh)";
                     }}>
                         {text.contact}
                     </button>
