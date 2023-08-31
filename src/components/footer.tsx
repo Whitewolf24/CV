@@ -1,8 +1,12 @@
 import Cookies from 'universal-cookie';
 import { useState, useEffect, lazy, Suspense } from 'react';
-import { first_run, changeto_eng, changeto_gr } from './functions';
+// import { first_run, changeto_eng, changeto_gr } from './functions';
 
 const cookies = new Cookies();
+
+function sleep(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 const Name_gr = lazy(() => import('./name_gr'));
 const Name_eng = lazy(() => import('./name_eng'));
@@ -11,11 +15,12 @@ const Portfolio_gr = lazy(() => import('./portfolio_gr'));
 const Portfolio_eng = lazy(() => import('./portfolio_eng'));
 const Contact_gr = lazy(() => import('./contact_gr'));
 
-/* function wait(time: number) {
-    return new Promise(resolve => {setTimeout(resolve, time)})
-} */
 
 export const Footer = () => {
+
+    const gr = document.querySelector(".gr") as HTMLButtonElement;
+    const eng = document.querySelector(".eng") as HTMLButtonElement;
+
     const [text, set_text] = useState({
         home: "",
         knowledge: "",
@@ -113,9 +118,35 @@ export const Footer = () => {
 
     function showbody() {
         if (cookies.get('lang') === 'eng') {
+
+            const home = document.querySelector(".home") as HTMLButtonElement;
+            const knowledge = document.querySelector(".knowledge") as HTMLButtonElement;
+            const portfolio = document.querySelector(".portfolio") as HTMLButtonElement;
+            const contact = document.querySelector(".contact") as HTMLButtonElement;
+
+            sleep(100).then(() => {
+
+                home?.classList.add("home_eng");
+                home?.classList.remove("home");
+                knowledge?.classList.add("knowledge_eng");
+                knowledge?.classList.remove("knowledge");
+                portfolio?.classList.add("portfolio_eng");
+                portfolio?.classList.remove("portfolio");
+                contact?.classList.add("contact_eng");
+                contact?.classList.remove("contact");
+
+                eng?.classList.add("nownohover");
+                eng?.classList.remove("nowhover");
+                gr?.classList.remove("nownohover");
+                gr?.classList.add("nowhover");
+
+                eng?.addEventListener("click", function (event) {
+                    event.preventDefault()
+                });
+            });
             document.title = 'George Marinos CV';
             if (page.location === 'home') {
-                /*  document.querySelector<HTMLElement>(".home_eng")!.addEventListener("click", function (event) {
+                /*  home_eng.addEventListener("click", function (event) {
         event.preventDefault()
     }); */
                 return <Name_eng />
@@ -129,6 +160,20 @@ export const Footer = () => {
         }
 
         else if (cookies.get('lang') === 'gr') {
+
+            sleep(100).then(() => {
+
+                gr?.classList.add("nownohover");
+                gr?.classList.remove("nowhover");
+                eng?.classList.remove("nownohover");
+                eng?.classList.add("nowhover");
+
+                gr?.addEventListener("click", function (event) {
+                    event.preventDefault()
+                });
+
+            });
+
             document.title = 'Γεώργιος Μαρίνος CV';
             if (page.location === 'home') {
                 return <Name_gr />
@@ -147,63 +192,116 @@ export const Footer = () => {
 
     function disable_menu() {
         if (cookies.get('lang') === 'eng') {
-            if (page.location === 'home') {
-                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "none";
-                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
-            }
-            if (page.location === 'knowledge') {
-                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "none";
-                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
-            }
-            if (page.location === 'portfolio') {
-                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "none";
-                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "auto";
-            }
-            if (page.location === 'contact') {
-                document.querySelector<HTMLElement>(".home_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".knowledge_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".portfolio_eng")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".contact_eng")!.style.pointerEvents = "none";
-            }
+
+            sleep(1000).then(() => {
+                const home_eng = document.querySelector(".home_eng") as HTMLButtonElement;
+                const knowledge_eng = document.querySelector(".knowledge_eng") as HTMLButtonElement;
+                const portfolio_eng = document.querySelector(".portfolio_eng") as HTMLButtonElement;
+                const contact_eng = document.querySelector(".contact_eng") as HTMLButtonElement;
+                if (page.location === 'home') {
+                    home_eng.style.pointerEvents = "none";
+                    knowledge_eng.style.pointerEvents = "auto";
+                    portfolio_eng.style.pointerEvents = "auto";
+                    contact_eng.style.pointerEvents = "auto";
+
+                    home_eng.style.cursor = "default";
+                    knowledge_eng.style.cursor = "pointer";
+                    portfolio_eng.style.cursor = "pointer";
+                    contact_eng.style.cursor = "pointer";
+                }
+                if (page.location === 'knowledge') {
+                    home_eng.style.pointerEvents = "auto";
+                    knowledge_eng.style.pointerEvents = "none";
+                    portfolio_eng.style.pointerEvents = "auto";
+                    contact_eng.style.pointerEvents = "auto";
+
+                    home_eng.style.cursor = "pointer";
+                    knowledge_eng.style.cursor = "default";
+                    portfolio_eng.style.cursor = "pointer";
+                    contact_eng.style.cursor = "pointer";
+                }
+                if (page.location === 'portfolio') {
+                    home_eng.style.pointerEvents = "auto";
+                    knowledge_eng.style.pointerEvents = "auto";
+                    portfolio_eng.style.pointerEvents = "none";
+                    contact_eng.style.pointerEvents = "auto";
+
+                    home_eng.style.cursor = "pointer";
+                    knowledge_eng.style.cursor = "pointer";
+                    portfolio_eng.style.cursor = "default";
+                    contact_eng.style.cursor = "pointer";
+                }
+                if (page.location === 'contact') {
+                    home_eng.style.pointerEvents = "auto";
+                    knowledge_eng.style.pointerEvents = "auto";
+                    portfolio_eng.style.pointerEvents = "auto";
+                    contact_eng.style.pointerEvents = "none";
+
+                    home_eng.style.cursor = "pointer";
+                    knowledge_eng.style.cursor = "pointer";
+                    portfolio_eng.style.cursor = "pointer";
+                    contact_eng.style.cursor = "default";
+                }
+            });
         }
         if (cookies.get('lang') === 'gr') {
+            const home = document.querySelector(".home") as HTMLButtonElement;
+            const knowledge = document.querySelector(".knowledge") as HTMLButtonElement;
+            const portfolio = document.querySelector(".portfolio") as HTMLButtonElement;
+            const contact = document.querySelector(".contact") as HTMLButtonElement;
+
             if (page.location === 'home') {
-                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "none";
-                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
+                home.style.pointerEvents = "none";
+                knowledge.style.pointerEvents = "auto";
+                portfolio.style.pointerEvents = "auto";
+                contact.style.pointerEvents = "auto";
+
+                home.style.cursor = "default";
+                knowledge.style.cursor = "pointer";
+                portfolio.style.cursor = "pointer";
+                contact.style.cursor = "pointer";
             }
             if (page.location === 'knowledge') {
-                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "none";
-                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
+                home.style.pointerEvents = "auto";
+                knowledge.style.pointerEvents = "none";
+                portfolio.style.pointerEvents = "auto";
+                contact.style.pointerEvents = "auto";
+
+                home.style.cursor = "pointer";
+                knowledge.style.cursor = "default";
+                portfolio.style.cursor = "pointer";
+                contact.style.cursor = "pointer";
             }
             if (page.location === 'portfolio') {
-                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "none";
-                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "auto";
+                home.style.pointerEvents = "auto";
+                knowledge.style.pointerEvents = "auto";
+                portfolio.style.pointerEvents = "none";
+                contact.style.pointerEvents = "auto";
+
+                home.style.cursor = "pointer";
+                knowledge.style.cursor = "pointer";
+                portfolio.style.cursor = "default";
+                contact.style.cursor = "pointer";
             }
             if (page.location === 'contact') {
-                document.querySelector<HTMLElement>(".home")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".knowledge")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".portfolio")!.style.pointerEvents = "auto";
-                document.querySelector<HTMLElement>(".contact")!.style.pointerEvents = "none";
+                home.style.pointerEvents = "auto";
+                knowledge.style.pointerEvents = "auto";
+                portfolio.style.pointerEvents = "auto";
+                contact.style.pointerEvents = "none";
+
+
+                home.style.cursor = "pointer";
+                knowledge.style.cursor = "pointer";
+                portfolio.style.cursor = "pointer";
+                contact.style.cursor = "default";
             }
         }
     }
 
 
-    onresize = (event) => {
+    onresize = () => {
         if (page.location === 'portfolio') {
-            onresize = (event) => {
+            onresize = () => {
                 if (window.innerHeight <= 680 && window.innerWidth < 1253 && !(window.innerWidth >= 806)
                     || window.innerHeight <= 730 && window.innerWidth <= 568
                     || window.innerHeight <= 699 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
@@ -220,7 +318,7 @@ export const Footer = () => {
         }
 
         if (page.location === 'knowledge') {
-            onresize = (event) => {
+            onresize = () => {
                 if (window.innerHeight <= 305) {
                     document.body.style.overflowY = "scroll";
                 }
@@ -231,17 +329,16 @@ export const Footer = () => {
         }
     };
 
-
     useEffect(() => {
-        first_run();
-        disable_menu()
-    }, []);
-
-    useEffect(() => {
+        disable_menu();
         change_text();
         showbody();
-        disable_menu()
-    }, [page, language]);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [language, page]);
+
+    const content_section = document.querySelector(".content_section") as HTMLDivElement;
+
+    const footer_butt = document.querySelector("footer button:nth-of-type(3)") as HTMLButtonElement;
 
     return (
         <main>
@@ -249,16 +346,86 @@ export const Footer = () => {
                 <nav>
                     <button className='gr nownohover' onClick={() => {
                         cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" });
-                        document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.style.width = "13em";
-                        changeto_gr();
+
+
+                        const home_eng = document.querySelector(".home_eng") as HTMLButtonElement;
+                        const knowledge_eng = document.querySelector(".knowledge_eng") as HTMLButtonElement;
+                        const portfolio_eng = document.querySelector(".portfolio_eng") as HTMLButtonElement;
+                        const contact_eng = document.querySelector(".contact_eng") as HTMLButtonElement;
+
+                        home_eng.classList.remove("home_eng_no_anime");
+                        knowledge_eng.classList.remove("knowledge_eng_no_anime");
+                        portfolio_eng.classList.remove("portfolio_eng_no_anime");
+                        contact_eng.classList.remove("contact_eng_no_anime");
+
+                        home_eng.classList.add("home_no_anime");
+                        knowledge_eng.classList.add("knowledge_no_anime");
+                        portfolio_eng.classList.add("portfolio_no_anime");
+                        contact_eng.classList.add("contact_no_anime");
+
+                        home_eng.classList.add("home");
+                        home_eng.classList.remove("home_eng");
+                        knowledge_eng.classList.add("knowledge");
+                        knowledge_eng.classList.remove("knowledge_eng");
+                        portfolio_eng.classList.add("portfolio");
+                        portfolio_eng.classList.remove("portfolio_eng");
+                        contact_eng.classList.add("contact");
+                        contact_eng.classList.remove("contact_eng");
+
+                        footer_butt.style.width = "13em";
+
+                        gr.classList.add("nownohover");
+                        gr.classList.remove("nowhover");
+                        eng.classList.remove("nownohover");
+                        eng.classList.add("nowhover");
+
+                        gr.addEventListener("click", function (event) {
+                            event.preventDefault()
+                        });
+
                     }}>
                         <img src="gr_flag.webp" alt="EL" />
                     </button>
                     <span>||</span>
+
                     <button className='eng nowhover' onClick={() => {
                         cookies.set('lang', 'eng', { sameSite: true }); set_language({ language: "english" });
-                        document.querySelector<HTMLElement>("footer button:nth-of-type(3)")!.style.width = "8em";
-                        changeto_eng();
+
+                        const home = document.querySelector(".home") as HTMLButtonElement;
+                        const knowledge = document.querySelector(".knowledge") as HTMLButtonElement;
+                        const portfolio = document.querySelector(".portfolio") as HTMLButtonElement;
+                        const contact = document.querySelector(".contact") as HTMLButtonElement;
+
+                        home.classList.remove("home_no_anime");
+                        knowledge.classList.remove("knowledge_no_anime");
+                        portfolio.classList.remove("portfolio_no_anime");
+                        contact.classList.remove("contact_no_anime");
+
+                        home.classList.add("home_eng_no_anime");
+                        knowledge.classList.add("knowledge_eng_no_anime");
+                        portfolio.classList.add("portfolio_eng_no_anime");
+                        contact.classList.add("contact_eng_no_anime");
+
+                        home.classList.add("home_eng");
+                        home.classList.remove("home");
+                        knowledge.classList.add("knowledge_eng");
+                        knowledge.classList.remove("knowledge");
+                        portfolio.classList.add("portfolio_eng");
+                        portfolio.classList.remove("portfolio");
+                        contact.classList.add("contact_eng");
+                        contact.classList.remove("contact");
+
+                        footer_butt.style.width = "8em";
+
+                        eng.classList.add("nownohover");
+                        eng.classList.remove("nowhover");
+                        gr.classList.remove("nownohover");
+                        gr.classList.add("nowhover");
+
+                        eng.addEventListener("click", function (event) {
+                            event.preventDefault()
+                        });
+
                     }}>
                         <img src="eng_flag.webp" alt="ENG" /* style={{ filter: "grayscale(95%)", height: "12px", objectFit: "cover", width: "22px" }} */ />
                     </button>
@@ -273,14 +440,14 @@ export const Footer = () => {
                 <nav>
                     <button className='home' onClick={() => {
                         set_page({ location: "home" });
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 5vh)"
+                        content_section.style.transform = "translate(0, 5vh)"
                     }}>
                         {text.home}
                     </button>
                     <span>||</span>
                     <button className='knowledge' onClick={() => {
                         set_page({ location: "knowledge" }); document.body.style.overflowY = "hidden";
-                        onresize = (event) => {
+                        onresize = () => {
                             if (window.innerHeight <= 305) {
                                 document.body.style.overflowY = "scroll";
                             }
@@ -288,7 +455,7 @@ export const Footer = () => {
                                 document.body.style.overflowY = "hidden";
                             }
                         };
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 50%)"
+                        content_section.style.transform = "translate(0, 50%)"
                     }}>
                         {text.knowledge}
                     </button>
@@ -307,7 +474,7 @@ export const Footer = () => {
                         else if (window.innerHeight > 699) {
                             document.body.style.overflowY = "hidden";
                         }
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 25%)";
+                        content_section.style.transform = "translate(0, 25%)";
                     }}>
                         {text.portfolio}
                     </button>
@@ -315,7 +482,7 @@ export const Footer = () => {
                     <button className='contact' onClick={() => {
                         set_page({ location: "contact" });
                         document.body.style.overflowY = "hidden";
-                        document.querySelector<HTMLElement>(".content_section")!.style.transform = "translate(0, 35vh)";
+                        content_section.style.transform = "translate(0, 35vh)";
                     }}>
                         {text.contact}
                     </button>
