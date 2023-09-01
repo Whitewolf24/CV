@@ -10,12 +10,10 @@ const Portfolio_gr = () => {
     const hover_420_top = "2.85rem";
 
     const hover_482_height = "80px";
-    const hover_482_top = "2.85rem";
 
     const hover_600_top = "3.4rem";
     const hover_600_top_alt = "3.45rem";
     const hover_600_margin = "-25px";
-    const hover_600_left = "0.8rem";
 
     const hover_800_height = "110px";
     const hover_800_margin = "-40px";
@@ -25,11 +23,13 @@ const Portfolio_gr = () => {
 
     const hover_1020_height = "116px";
     const hover_1020_margin = "-43px";
-    const hover_1020_top = "4.5rem";
+    const hover_1020_top = "4.55rem";
+    const hover_1020_left = "1.1rem";
 
     const hover_therest_height = "136px";
     const hover_therest_margin = "-52.5px";
     const hover_therest_top = "5.2rem";
+    const hover_therest_top_alt = "5.25rem";
 
     const reset_420_height = "20px";
     const reset_420_margin = "1px";
@@ -42,18 +42,17 @@ const Portfolio_gr = () => {
     const reset_800_top_alt = "6.9rem";
 
     const reset_1020_plus_margin = "0.5px";
-    const reset_1020_top = "8.5rem";
-    const reset_1020_left = "0.5rem";
-
-    const reset_1551_top = "8.55rem";
-    const reset_1551_left = "1.5rem";
-
-    const reset_2300_top = "8.5rem";
-    const reset_2300_left = "0.5rem";
+    const reset_1020_plus_top = "8.53rem";
 
     const reset_therest_height = "30px";
+
+    const hover_reset_1020_plus_left = "0.5rem";
+
+    const hover_reset_1551_left = "1.5rem";
+
     const hover_reset_therest_left = "0.8rem";
     const hover_reset_therest_left_alt = "0.82rem";
+
     const reset_therest_margin = "0px";
 
 
@@ -66,7 +65,7 @@ const Portfolio_gr = () => {
         height: reset_therest_height,
         margin: reset_therest_margin,
         top: "7.4rem",
-        left: "1.2rem"
+        left: reset_420_left
     })
 
     const [desc_eknexa, set_desc_eknexa] = useState({
@@ -87,7 +86,7 @@ const Portfolio_gr = () => {
         height: reset_therest_height,
         margin: reset_therest_margin,
         top: reset_600_top,
-        left: "1.12rem"
+        left: reset_420_left
     })
 
     const [desc_warehouse, set_desc_warehouse] = useState({
@@ -97,12 +96,12 @@ const Portfolio_gr = () => {
         left: "1.15rem"
     })
 
-    /*    const [desc_woo, set_desc_woo] = useState({
-           height: reset_therest_height,
-           margin: reset_therest_margin,
-           top: reset_600_top,
-           left: "1.15rem"
-       }) */
+    const [desc_woo, set_desc_woo] = useState({
+        height: reset_therest_height,
+        margin: reset_therest_margin,
+        top: reset_600_top,
+        left: "1.15rem"
+    })
 
     const [desc_express, set_desc_express] = useState({
         height: reset_therest_height,
@@ -111,12 +110,12 @@ const Portfolio_gr = () => {
         left: "1.1rem"
     })
 
-    /*     const [desc_cv, set_desc_cv] = useState({
-            height: reset_therest_height,
-            margin: reset_therest_margin,
-            top: "7.2rem",
-            left: "1.1rem"
-        }) */
+    const [desc_cv, set_desc_cv] = useState({
+        height: reset_therest_height,
+        margin: reset_therest_margin,
+        top: "7.2rem",
+        left: "1.1rem"
+    })
 
     /////////
 
@@ -155,10 +154,10 @@ const Portfolio_gr = () => {
         left: desc_warehouse.left
     }
     const woo_style = {
-        height: desc_warehouse.height,
-        marginBlock: desc_warehouse.margin,
-        top: desc_warehouse.top,
-        left: desc_warehouse.left
+        height: desc_woo.height,
+        marginBlock: desc_woo.margin,
+        top: desc_woo.top,
+        left: desc_woo.left
     }
 
     const express_style = {
@@ -169,10 +168,10 @@ const Portfolio_gr = () => {
     }
 
     const cv_style = {
-        height: desc_warehouse.height,
-        marginBlock: desc_warehouse.margin,
-        top: desc_warehouse.top,
-        left: desc_warehouse.left
+        height: desc_cv.height,
+        marginBlock: desc_cv.margin,
+        top: desc_cv.top,
+        left: desc_cv.left
     }
 
     onresize = () => {
@@ -182,13 +181,6 @@ const Portfolio_gr = () => {
 
     useEffect(() => {
         reset_desc();
-        /*   reset_eknexa_desc();
-          reset_eye_desc();
-          reset_swlyn_desc();
-          reset_warehouse_desc();
-          reset_woo_desc();
-          reset_express_desc();
-          reset_cv_desc(); */
     }, [width, height]);
 
 
@@ -202,7 +194,7 @@ const Portfolio_gr = () => {
                         height: hover_420_height,
                         margin: hover_420_margin,
                         top: hover_420_top,
-                        left: "1.12rem"
+                        left: reset_420_left
                     });
                     break;
                 case 2:
@@ -210,39 +202,545 @@ const Portfolio_gr = () => {
                         height: hover_420_height,
                         margin: hover_420_margin,
                         top: hover_420_top,
-                        left: "1.12rem"
+                        left: reset_420_left
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
                     });
                     break;
             }
-        }/* 
+        }
+
         if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-            set_desc_height_mouseia(hover_420_height);
-            set_desc_margin_b_mouseia(hover_420_margin);
-            set_desc_top_mouseia(hover_482_top);
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_420_height,
+                        margin: hover_420_margin,
+                        top: hover_420_top,
+                        left: reset_420_left
+                    });
+                    break;
+            }
         }
+
         if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-            set_desc_height_mouseia(hover_482_height);
-            set_desc_margin_b_mouseia(hover_600_margin);
-            set_desc_top_mouseia("3.45rem");
-            set_desc_left_mouseia(hover_600_left);
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: "3.45rem",
+                        left: hover_reset_therest_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_600_top,
+                        left: hover_reset_therest_left_alt
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_600_top_alt,
+                        left: hover_reset_therest_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_600_top_alt,
+                        left: hover_reset_therest_left_alt
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_600_top_alt,
+                        left: hover_reset_therest_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_420_top,
+                        left: hover_reset_therest_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_600_top_alt,
+                        left: hover_reset_therest_left_alt
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_482_height,
+                        margin: hover_600_margin,
+                        top: hover_600_top_alt,
+                        left: hover_reset_therest_left
+                    });
+                    break;
+            }
         }
+
         else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-            set_desc_height_mouseia(hover_800_height);
-            set_desc_margin_b_mouseia(hover_800_margin);
-            set_desc_top_mouseia("4.35rem");
-            set_desc_left_mouseia(hover_reset_800_left);
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: "4.35rem",
+                        left: hover_reset_800_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: "4.35rem",
+                        left: hover_reset_800_left_alt
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: "4.38rem",
+                        left: hover_reset_800_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: "4.38rem",
+                        left: hover_reset_800_left_alt
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: reset_420_top,
+                        left: hover_reset_800_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: reset_420_top,
+                        left: hover_reset_800_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: reset_420_top,
+                        left: hover_reset_800_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_800_height,
+                        margin: hover_800_margin,
+                        top: reset_420_top,
+                        left: hover_reset_800_left
+                    });
+                    break;
+            }
         }
+
         else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-            set_desc_height_mouseia(hover_1020_height);
-            set_desc_margin_b_mouseia(hover_1020_margin);
-            set_desc_top_mouseia(hover_1020_top);
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_1020_height,
+                        margin: hover_1020_margin,
+                        top: hover_1020_top,
+                        left: hover_1020_left
+                    });
+                    break;
+            }
         }
-        else if (window.innerWidth >= 1020) {
-            set_desc_height_mouseia(hover_therest_height);
-            set_desc_margin_b_mouseia(hover_therest_margin);
-            set_desc_top_mouseia(hover_therest_top);
-        } */
+
+        else if (window.innerWidth >= 1020 && window.innerWidth <= 1552) {
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+            }
+        }
+
+        else if (window.innerWidth >= 1553 && window.innerWidth <= 2299) {
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top_alt,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1551_left
+                    });
+                    break;
+            }
+        }
+
+        else if (window.innerWidth >= 2300) {
+            switch (number) {
+                case 1:
+                    set_desc_mouseia({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top_alt,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 2:
+                    set_desc_eknexa({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 3:
+                    set_desc_eye({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 4:
+                    set_desc_swlyn({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 5:
+                    set_desc_warehouse({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 6:
+                    set_desc_woo({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 7:
+                    set_desc_express({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+                case 8:
+                    set_desc_cv({
+                        height: hover_therest_height,
+                        margin: hover_therest_margin,
+                        top: hover_therest_top,
+                        left: hover_reset_1020_plus_left
+                    });
+                    break;
+            }
+        }
     }
+
+    //
 
     function reset_desc() {
         if (window.innerHeight <= 420) {
@@ -258,667 +756,402 @@ const Portfolio_gr = () => {
                 top: reset_420_top,
                 left: reset_420_left
             });
+            set_desc_eye({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_swlyn({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_warehouse({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_woo({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_express({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_cv({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
         }
-        /*   if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_mouseia(reset_420_height);
-              set_desc_margin_b_mouseia(reset_420_margin);
-              set_desc_top_mouseia(reset_420_top);
-              set_desc_left_mouseia(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_mouseia(reset_therest_height);
-              set_desc_margin_b_mouseia(reset_therest_margin);
-              set_desc_top_mouseia(reset_600_top);
-              set_desc_left_mouseia(hover_reset_therest_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_mouseia(reset_therest_height);
-              set_desc_margin_b_mouseia(reset_therest_margin);
-              set_desc_top_mouseia("6.9rem");
-              set_desc_left_mouseia(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_mouseia(reset_therest_height);
-              set_desc_margin_b_mouseia(reset_therest_margin);
-              set_desc_top_mouseia(reset_800_top);
-              set_desc_left_mouseia(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_mouseia(reset_therest_height);
-              set_desc_margin_b_mouseia(reset_1020_plus_margin);
-              set_desc_top_mouseia(reset_1020_top);
-              set_desc_left_mouseia(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_mouseia(reset_therest_height);
-              set_desc_margin_b_mouseia(reset_1020_plus_margin);
-              set_desc_top_mouseia(reset_1551_top);
-              set_desc_left_mouseia(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_mouseia(reset_therest_height);
-              set_desc_margin_b_mouseia(reset_1020_plus_margin);
-              set_desc_top_mouseia(reset_1551_top);
-              set_desc_left_mouseia(reset_2300_left);
-          } */
+
+        if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
+            set_desc_mouseia({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_eknexa({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_eye({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_swlyn({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_warehouse({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_woo({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_express({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+            set_desc_cv({
+                height: reset_420_height,
+                margin: reset_420_margin,
+                top: reset_420_top,
+                left: reset_420_left
+            });
+        }
+
+        if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
+            set_desc_mouseia({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left
+            });
+            set_desc_eknexa({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left_alt
+            });
+            set_desc_eye({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left
+            });
+            set_desc_swlyn({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left_alt
+            });
+            set_desc_warehouse({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left
+            });
+            set_desc_woo({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left_alt
+            });
+            set_desc_express({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left
+            });
+            set_desc_cv({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_600_top,
+                left: hover_reset_therest_left
+            });
+        }
+
+        else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
+            set_desc_mouseia({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_eknexa({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_eye({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_swlyn({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_warehouse({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_woo({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_express({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+            set_desc_cv({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top_alt,
+                left: hover_reset_800_left_alt
+            });
+        }
+
+        else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
+            set_desc_mouseia({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_eknexa({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_eye({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_swlyn({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_warehouse({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_woo({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_express({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+            set_desc_cv({
+                height: reset_therest_height,
+                margin: reset_therest_margin,
+                top: reset_800_top,
+                left: reset_420_left
+            });
+        }
+
+        else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
+            set_desc_mouseia({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_eknexa({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_eye({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_swlyn({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_warehouse({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_woo({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_express({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_cv({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+        }
+
+        else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
+            set_desc_mouseia({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_eknexa({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_eye({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_swlyn({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_warehouse({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_woo({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_express({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+            set_desc_cv({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1551_left
+            });
+        }
+
+        else if (window.innerWidth >= 2300) {
+            set_desc_mouseia({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_eknexa({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_eye({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_swlyn({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_warehouse({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_woo({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_express({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+            set_desc_cv({
+                height: reset_therest_height,
+                margin: reset_1020_plus_margin,
+                top: reset_1020_plus_top,
+                left: hover_reset_1020_plus_left
+            });
+        }
     }
 
-    /*   //
-     
-      function hover_eknexa_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_eknexa(hover_420_height);
-              set_desc_margin_b_eknexa(hover_420_margin);
-              set_desc_top_eknexa(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_eknexa(hover_420_height);
-              set_desc_margin_b_eknexa(hover_420_margin);
-              set_desc_top_eknexa(hover_482_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_eknexa(hover_482_height);
-              set_desc_margin_b_eknexa(hover_600_margin);
-              set_desc_top_eknexa(hover_600_top);
-              set_desc_left_eknexa(hover_reset_therest_left_alt);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_eknexa(hover_800_height);
-              set_desc_margin_b_eknexa(hover_800_margin);
-              set_desc_top_eknexa("4.35rem");
-              set_desc_left_eknexa(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_eknexa(hover_1020_height);
-              set_desc_margin_b_eknexa(hover_1020_margin);
-              set_desc_top_eknexa(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_eknexa(hover_therest_height);
-              set_desc_margin_b_eknexa(hover_therest_margin);
-              set_desc_top_eknexa(hover_therest_top);
-          }
-      }
-     
-      function reset_eknexa_desc() {
-          if (window.innerWidth <= 482 && window.innerHeight <= 420) {
-              set_desc_height_eknexa(reset_420_height);
-              set_desc_margin_b_eknexa(reset_420_margin);
-              set_desc_top_eknexa(reset_420_top);
-              set_desc_left_eknexa(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_eknexa(reset_420_height);
-              set_desc_margin_b_eknexa(reset_420_margin);
-              set_desc_top_eknexa(reset_420_top);
-              set_desc_left_eknexa(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_eknexa(reset_therest_height);
-              set_desc_margin_b_eknexa(reset_therest_margin);
-              set_desc_top_eknexa(reset_600_top);
-              set_desc_left_eknexa(hover_reset_therest_left_alt);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_eknexa(reset_therest_height);
-              set_desc_margin_b_eknexa(reset_therest_margin);
-              set_desc_top_eknexa(reset_800_top);
-              set_desc_left_eknexa(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_eknexa(reset_therest_height);
-              set_desc_margin_b_eknexa(reset_therest_margin);
-              set_desc_top_eknexa(reset_800_top);
-              set_desc_left_eknexa(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_eknexa(reset_therest_height);
-              set_desc_margin_b_eknexa(reset_1020_plus_margin);
-              set_desc_top_eknexa(reset_1020_top);
-              set_desc_left_eknexa(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_eknexa(reset_therest_height);
-              set_desc_margin_b_eknexa(reset_1020_plus_margin);
-              set_desc_top_eknexa(reset_1551_top);
-              set_desc_left_eknexa(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_eknexa(reset_therest_height);
-              set_desc_margin_b_eknexa(reset_1020_plus_margin);
-              set_desc_top_eknexa(reset_1551_top);
-              set_desc_left_eknexa(reset_2300_left);
-          }
-      }
-     
-      //
-     
-      function hover_eye_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_eye(hover_420_height);
-              set_desc_margin_b_eye(hover_420_margin);
-              set_desc_top_eye(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_eye(hover_420_height);
-              set_desc_margin_b_eye(hover_420_margin);
-              set_desc_top_eye(hover_482_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_eye(hover_482_height);
-              set_desc_margin_b_eye(hover_600_margin);
-              set_desc_top_eye(hover_600_top_alt);
-              set_desc_left_eye(hover_600_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_eye(hover_800_height);
-              set_desc_margin_b_eye(hover_800_margin);
-              set_desc_top_eye("4.38rem");
-              set_desc_left_eye(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_eye(hover_1020_height);
-              set_desc_margin_b_eye(hover_1020_margin);
-              set_desc_top_eye(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_eye(hover_therest_height);
-              set_desc_margin_b_eye(hover_therest_margin);
-              set_desc_top_eye(hover_therest_top);
-          }
-      }
-     
-      function reset_eye_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_eye(reset_420_height);
-              set_desc_margin_b_eye(reset_420_margin);
-              set_desc_top_eye(reset_420_top);
-              set_desc_left_eye(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_eye(reset_420_height);
-              set_desc_margin_b_eye(reset_420_margin);
-              set_desc_top_eye(reset_420_top);
-              set_desc_left_eye(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_eye(reset_therest_height);
-              set_desc_margin_b_eye(reset_therest_margin);
-              set_desc_top_eye(reset_600_top);
-              set_desc_left_eye(hover_600_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_eye(reset_therest_height);
-              set_desc_margin_b_eye(reset_therest_margin);
-              set_desc_top_eye("6.9rem");
-              set_desc_left_eye(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_eye(reset_therest_height);
-              set_desc_margin_b_eye(reset_therest_margin);
-              set_desc_top_eye(reset_800_top);
-              set_desc_left_eye(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_eye(reset_therest_height);
-              set_desc_margin_b_eye(reset_1020_plus_margin);
-              set_desc_top_eye(reset_1020_top);
-              set_desc_left_eye(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_eye(reset_therest_height);
-              set_desc_margin_b_eye(reset_1020_plus_margin);
-              set_desc_top_eye(reset_1551_top);
-              set_desc_left_eye(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_eye(reset_therest_height);
-              set_desc_margin_b_eye(reset_1020_plus_margin);
-              set_desc_top_eye(reset_1551_top);
-              set_desc_left_eye(reset_2300_left);
-          }
-      }
-     
-      //
-     
-      function hover_swlyn_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_swlyn(hover_420_height);
-              set_desc_margin_b_swlyn(hover_420_margin);
-              set_desc_top_swlyn(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_swlyn(hover_420_height);
-              set_desc_margin_b_swlyn(hover_420_margin);
-              set_desc_top_swlyn(hover_482_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_swlyn(hover_482_height);
-              set_desc_margin_b_swlyn(hover_600_margin);
-              set_desc_top_swlyn(hover_600_top_alt);
-              set_desc_left_swlyn(hover_reset_therest_left_alt);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_swlyn(hover_800_height);
-              set_desc_margin_b_swlyn(hover_800_margin);
-              set_desc_top_swlyn("4.38rem");
-              set_desc_left_swlyn(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_swlyn(hover_1020_height);
-              set_desc_margin_b_swlyn(hover_1020_margin);
-              set_desc_top_swlyn(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_swlyn(hover_therest_height);
-              set_desc_margin_b_swlyn(hover_therest_margin);
-              set_desc_top_swlyn(hover_therest_top);
-          }
-      }
-     
-      function reset_swlyn_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_swlyn(reset_420_height);
-              set_desc_margin_b_swlyn(reset_420_margin);
-              set_desc_top_swlyn(reset_420_top);
-              set_desc_left_swlyn(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_swlyn(reset_420_height);
-              set_desc_margin_b_swlyn(reset_420_margin);
-              set_desc_top_swlyn(reset_420_top);
-              set_desc_left_swlyn(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_swlyn(reset_therest_height);
-              set_desc_margin_b_swlyn(reset_therest_margin);
-              set_desc_top_swlyn(reset_600_top);
-              set_desc_left_swlyn(hover_reset_therest_left_alt);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_swlyn(reset_therest_height);
-              set_desc_margin_b_swlyn(reset_therest_margin);
-              set_desc_top_swlyn("6.9rem");
-              set_desc_left_swlyn(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_swlyn(reset_therest_height);
-              set_desc_margin_b_swlyn(reset_therest_margin);
-              set_desc_top_swlyn(reset_800_top);
-              set_desc_left_swlyn(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_swlyn(reset_therest_height);
-              set_desc_margin_b_swlyn(reset_1020_plus_margin);
-              set_desc_top_swlyn(reset_1020_top);
-              set_desc_left_swlyn(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_swlyn(reset_therest_height);
-              set_desc_margin_b_swlyn(reset_1020_plus_margin);
-              set_desc_top_swlyn(reset_1551_top);
-              set_desc_left_swlyn(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_swlyn(reset_therest_height);
-              set_desc_margin_b_swlyn(reset_1020_plus_margin);
-              set_desc_top_swlyn(reset_1551_top);
-              set_desc_left_swlyn(reset_2300_left);
-          }
-      }
-     
-      //
-     
-      function hover_warehouse_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_warehouse(hover_420_height);
-              set_desc_margin_b_warehouse(hover_420_margin);
-              set_desc_top_warehouse(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_warehouse(hover_420_height);
-              set_desc_margin_b_warehouse(hover_420_margin);
-              set_desc_top_warehouse(hover_482_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_warehouse(hover_482_height);
-              set_desc_margin_b_warehouse(hover_600_margin);
-              set_desc_top_warehouse(hover_600_top_alt);
-              set_desc_left_warehouse(hover_600_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_warehouse(hover_800_height);
-              set_desc_margin_b_warehouse(hover_800_margin);
-              set_desc_top_warehouse(reset_420_top);
-              set_desc_left_warehouse(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_warehouse(hover_1020_height);
-              set_desc_margin_b_warehouse(hover_1020_margin);
-              set_desc_top_warehouse(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_warehouse(hover_therest_height);
-              set_desc_margin_b_warehouse(hover_therest_margin);
-              set_desc_top_warehouse(hover_therest_top);
-          }
-      }
-     
-      function reset_warehouse_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_warehouse(reset_420_height);
-              set_desc_margin_b_warehouse(reset_420_margin)
-              set_desc_top_warehouse(reset_420_top);
-              set_desc_left_warehouse(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_warehouse(reset_420_height);
-              set_desc_margin_b_warehouse(reset_420_margin);
-              set_desc_top_warehouse(reset_420_top);
-              set_desc_left_warehouse(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_warehouse(reset_therest_height);
-              set_desc_margin_b_warehouse(reset_therest_margin);
-              set_desc_top_warehouse(reset_600_top);
-              set_desc_left_warehouse(hover_600_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_warehouse(reset_therest_height);
-              set_desc_margin_b_warehouse(reset_therest_margin);
-              set_desc_top_warehouse(reset_800_top_alt);
-              set_desc_left_warehouse(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_warehouse(reset_therest_height);
-              set_desc_margin_b_warehouse(reset_therest_margin);
-              set_desc_top_warehouse(reset_800_top);
-              set_desc_left_warehouse(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_warehouse(reset_therest_height);
-              set_desc_margin_b_warehouse(reset_1020_plus_margin);
-              set_desc_top_warehouse(reset_1020_top);
-              set_desc_left_warehouse(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_warehouse(reset_therest_height);
-              set_desc_margin_b_warehouse(reset_1020_plus_margin);
-              set_desc_top_warehouse(reset_1020_top);
-              set_desc_left_warehouse(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_warehouse(reset_therest_height);
-              set_desc_margin_b_warehouse(reset_1020_plus_margin);
-              set_desc_top_warehouse(reset_1551_top);
-              set_desc_left_warehouse(reset_2300_left);
-          }
-      }
-     
-      //
-     
-      function hover_woo_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_woo(hover_420_height);
-              set_desc_margin_b_woo(hover_420_margin);
-              set_desc_top_woo(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_woo(hover_420_height);
-              set_desc_margin_b_woo(hover_420_margin);
-              set_desc_top_woo(hover_482_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_woo(hover_482_height);
-              set_desc_margin_b_woo(hover_600_margin);
-              set_desc_top_woo(hover_600_top_alt);
-              set_desc_left_woo(hover_reset_therest_left_alt);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_woo(hover_800_height);
-              set_desc_margin_b_woo(hover_800_margin);
-              set_desc_top_woo(reset_420_top);
-              set_desc_left_woo(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_woo(hover_1020_height);
-              set_desc_margin_b_woo(hover_1020_margin);
-              set_desc_top_woo(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_woo(hover_therest_height);
-              set_desc_margin_b_woo(hover_therest_margin);
-              set_desc_top_woo(hover_therest_top);
-          }
-      }
-     
-      function reset_woo_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_woo(reset_420_height);
-              set_desc_margin_b_woo(reset_420_margin);
-              set_desc_top_woo(reset_420_top);
-              set_desc_left_woo(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_woo(reset_420_height);
-              set_desc_margin_b_woo(reset_420_margin);
-              set_desc_top_woo(reset_420_top);
-              set_desc_left_woo(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_woo(reset_therest_height);
-              set_desc_margin_b_woo(reset_therest_margin);
-              set_desc_top_woo(reset_600_top);
-              set_desc_left_woo(hover_reset_therest_left_alt);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_woo(reset_therest_height);
-              set_desc_margin_b_woo(reset_therest_margin);
-              set_desc_top_woo(reset_800_top_alt);
-              set_desc_left_woo(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_woo(reset_therest_height);
-              set_desc_margin_b_woo(reset_therest_margin);
-              set_desc_top_woo(reset_800_top);
-              set_desc_left_woo(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_woo(reset_therest_height);
-              set_desc_margin_b_woo(reset_1020_plus_margin);
-              set_desc_top_woo(reset_1020_top);
-              set_desc_left_woo(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_woo(reset_therest_height);
-              set_desc_margin_b_woo(reset_1020_plus_margin);
-              set_desc_top_woo(reset_1020_top);
-              set_desc_left_woo(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_woo(reset_therest_height);
-              set_desc_margin_b_woo(reset_1020_plus_margin);
-              set_desc_top_woo(reset_2300_top);
-              set_desc_left_woo(reset_2300_left);
-          }
-      }
-     
-      //
-     
-      function hover_express_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_express(hover_420_height);
-              set_desc_margin_b_express(hover_420_margin);
-              set_desc_top_express(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_express(hover_420_height);
-              set_desc_margin_b_express(hover_420_margin);
-              set_desc_top_express(hover_420_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_express(hover_482_height);
-              set_desc_margin_b_express(hover_600_margin);
-              set_desc_top_express("3.45rem");
-              set_desc_left_express(hover_reset_therest_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_express(hover_800_height);
-              set_desc_margin_b_express(hover_800_margin);
-              set_desc_top_express(reset_420_top);
-              set_desc_left_express(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_express(hover_1020_height);
-              set_desc_margin_b_express(hover_1020_margin);
-              set_desc_top_express(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_express(hover_therest_height);
-              set_desc_margin_b_express(hover_therest_margin);
-              set_desc_top_express(hover_therest_top);
-          }
-      }
-     
-      function reset_express_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_express(reset_420_height);
-              set_desc_margin_b_express(reset_420_margin)
-              set_desc_top_express(reset_420_top);
-              set_desc_left_express(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_express(reset_420_height);
-              set_desc_margin_b_express(reset_420_margin);
-              set_desc_top_express(reset_420_top);
-              set_desc_left_express(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_express(reset_therest_height);
-              set_desc_margin_b_express(reset_therest_margin);
-              set_desc_top_express(reset_600_top);
-              set_desc_left_express(hover_reset_therest_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_express(reset_therest_height);
-              set_desc_margin_b_express(reset_therest_margin);
-              set_desc_top_express(reset_800_top_alt);
-              set_desc_left_express(hover_reset_800_left);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_express(reset_therest_height);
-              set_desc_margin_b_express(reset_therest_margin);
-              set_desc_top_express(reset_800_top);
-              set_desc_left_express(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_express(reset_therest_height);
-              set_desc_margin_b_express(reset_1020_plus_margin);
-              set_desc_top_express(reset_1020_top);
-              set_desc_left_express(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_express(reset_therest_height);
-              set_desc_margin_b_express(reset_1020_plus_margin);
-              set_desc_top_express(reset_1020_top);
-              set_desc_left_express(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_express(reset_therest_height);
-              set_desc_margin_b_express(reset_1020_plus_margin);
-              set_desc_top_express(reset_2300_top);
-              set_desc_left_express(reset_2300_left);
-          }
-      }
-     
-      //
-     
-      function hover_cv_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_cv(hover_420_height);
-              set_desc_margin_b_cv(hover_420_margin);
-              set_desc_top_cv(hover_420_top);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_cv(hover_420_height);
-              set_desc_margin_b_cv(hover_420_margin);
-              set_desc_top_cv(hover_420_top);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_cv(hover_482_height);
-              set_desc_margin_b_cv(hover_600_margin);
-              set_desc_top_cv(hover_600_top_alt);
-              set_desc_left_cv(hover_reset_therest_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_cv(hover_800_height);
-              set_desc_margin_b_cv(hover_800_margin);
-              set_desc_top_cv(reset_420_top);
-              set_desc_left_cv(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_cv(hover_1020_height);
-              set_desc_margin_b_cv(hover_1020_margin);
-              set_desc_top_cv(hover_1020_top);
-          }
-          else if (window.innerWidth >= 1020) {
-              set_desc_height_cv(hover_therest_height);
-              set_desc_margin_b_cv(hover_therest_margin);
-              set_desc_top_cv(hover_therest_top);
-          }
-      }
-     
-      function reset_cv_desc() {
-          if (window.innerHeight <= 420) {
-              set_desc_height_cv(reset_420_height);
-              set_desc_margin_b_cv(reset_420_margin)
-              set_desc_top_cv(reset_420_top);
-              set_desc_left_cv(reset_420_left);
-          }
-          if (window.innerWidth <= 482 && !(window.innerHeight <= 420)) {
-              set_desc_height_cv(reset_420_height);
-              set_desc_margin_b_cv(reset_420_margin);
-              set_desc_top_cv(reset_420_top);
-              set_desc_left_cv(reset_420_left);
-          }
-          if (window.innerWidth >= 482 && window.innerWidth <= 600 || window.innerWidth <= 482 && window.innerHeight >= 730) {
-              set_desc_height_cv(reset_therest_height);
-              set_desc_margin_b_cv(reset_therest_margin);
-              set_desc_top_cv(reset_600_top);
-              set_desc_left_cv(hover_reset_therest_left);
-          }
-          else if (window.innerWidth >= 600 && window.innerWidth <= 800) {
-              set_desc_height_cv(reset_therest_height);
-              set_desc_margin_b_cv(reset_therest_margin);
-              set_desc_top_cv(reset_800_top_alt);
-              set_desc_left_cv(hover_reset_800_left_alt);
-          }
-          else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
-              set_desc_height_cv(reset_therest_height);
-              set_desc_margin_b_cv(reset_therest_margin);
-              set_desc_top_cv(reset_800_top);
-              set_desc_left_cv(reset_420_left);
-          }
-          else if (window.innerWidth >= 1020 && window.innerWidth <= 1550) {
-              set_desc_height_cv(reset_therest_height);
-              set_desc_margin_b_cv(reset_1020_plus_margin);
-              set_desc_top_cv(reset_1020_top);
-              set_desc_left_cv(reset_1020_left);
-          }
-          else if (window.innerWidth >= 1551 && window.innerWidth <= 2299) {
-              set_desc_height_cv(reset_therest_height);
-              set_desc_margin_b_cv(reset_1020_plus_margin);
-              set_desc_top_cv(reset_1020_top);
-              set_desc_left_cv(reset_1551_left);
-          }
-          else if (window.innerWidth >= 2300) {
-              set_desc_height_cv(reset_therest_height);
-              set_desc_margin_b_cv(reset_1020_plus_margin);
-              set_desc_top_cv(reset_2300_top);
-              set_desc_left_cv(reset_2300_left);
-          }
-      }
-    */
     //----------//
 
     return <div className="content">
@@ -949,7 +1182,7 @@ const Portfolio_gr = () => {
                 <div className="description_div eye_desc" style={eye_style}>
                     <p>EYE</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <img className="fake" src="#" onMouseEnter={() => { number = 3; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
 
                 <img src="eye.webp"></img>
                 <div className="tech _2016_tech">
@@ -961,7 +1194,7 @@ const Portfolio_gr = () => {
                 <div className="description_div swlyn_desc" style={swlyn_style}>
                     <p>ΣΩΛΥΝ</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <img className="fake" src="#" onMouseEnter={() => { number = 4; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
 
                 <img src="swlyn.webp" ></img>
                 <div className="tech">
@@ -973,7 +1206,7 @@ const Portfolio_gr = () => {
                 <div className="description_div warehouse_desc" style={warehouse_style}>
                     <p>ΑΠΟΘΗΚΗ</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <img className="fake" src="#" onMouseEnter={() => { number = 5; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
 
                 <img src="warehouse.webp"></img>
                 <div className="tech _2020_tech">
@@ -985,7 +1218,7 @@ const Portfolio_gr = () => {
                 <div className="description_div woocomerce_desc" style={woo_style}>
                     <p>E-KIOSK</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <img className="fake" src="#" onMouseEnter={() => { number = 6; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
 
                 <img src="woocommerce.webp" ></img>
                 <div className="tech _2021_tech">
@@ -997,7 +1230,7 @@ const Portfolio_gr = () => {
                 <div className="description_div express_desc" style={express_style}>
                     <p>MONGOXPRESS</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
                 <img src="express.webp"></img>
                 <div className="tech _2022_tech">
                     <p className="year _2022">2022
@@ -1008,7 +1241,7 @@ const Portfolio_gr = () => {
                 <div className="description_div cv_desc" style={cv_style}>
                     <p>CV</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <img className="fake" src="#" onMouseEnter={() => { number = 8; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
                 <img src="#"></img>
                 <div className="tech _2023_tech">
                     <p className="year _2023">2020-2023&nbsp;

@@ -339,30 +339,6 @@ section {
             font-size: clamp(.85rem, 2.5vw, .95rem);
         }
     }
-
-    /*  #backend {
-        p:nth-child(3) {
-            visibility: hidden;
-        }
-
-        p:nth-child(3)::after {
-            border-right: 1px dashed;
-            content: "SELECT * \a FROM MYSQL";
-            display: block;
-            height: 4.5vh;
-            margin-left: 4vw;
-            padding-right: 2.8vw;
-            position: relative;
-            visibility: visible;
-            white-space: pre-line;
-            width: 20vw;
-        }
-
-        p:nth-child(4) {
-            margin-top: 5vh;
-        }
-    }
- */
 }
 
 //
@@ -1006,7 +982,7 @@ $tech_height: 2rem;
         margin-top: -5px;
 
         p {
-            bottom: 0.3rem;
+            bottom: 0.45rem;
         }
     }
 
@@ -1108,8 +1084,8 @@ $tech_height: 2rem;
         height: calc($tech_height + 2.5rem);
 
         p {
+            bottom: 0.5rem;
             left: 5.5rem;
-
         }
 
         span {
@@ -1183,7 +1159,7 @@ $tech_height: 2rem;
         }
     }
 
-    s ._2022_tech {
+    ._2022_tech {
         height: calc($tech_height + 2.5rem);
 
         p {
