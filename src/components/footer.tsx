@@ -298,37 +298,6 @@ export const Footer = () => {
         }
     }
 
-
-    onresize = () => {
-        if (page.location === 'portfolio') {
-            onresize = () => {
-                if (window.innerHeight <= 680 && window.innerWidth < 1253 && !(window.innerWidth >= 806)
-                    || window.innerHeight <= 730 && window.innerWidth <= 568
-                    || window.innerHeight <= 699 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
-                    || window.innerHeight <= 550 && window.innerWidth >= 1253 && !(window.innerWidth >= 1553)
-                    || window.innerHeight <= 785 && window.innerWidth >= 601 && !(window.innerWidth >= 806)
-                    //|| window.innerHeight <= 736 && window.innerWidth >= 805 && !(window.innerWidth >= 1253)
-                    || window.innerHeight <= 579 && window.innerWidth >= 1553) {
-                    document.body.style.overflowY = "scroll";
-                }
-                else if (window.innerHeight > 699) {
-                    document.body.style.overflowY = "hidden";
-                }
-            };
-        }
-
-        if (page.location === 'knowledge') {
-            onresize = () => {
-                if (window.innerHeight <= 305) {
-                    document.body.style.overflowY = "scroll";
-                }
-                else if (window.innerHeight > 305) {
-                    document.body.style.overflowY = "hidden";
-                }
-            };
-        }
-    };
-
     useEffect(() => {
         disable_menu();
         change_text();
@@ -447,14 +416,6 @@ export const Footer = () => {
                     <span>||</span>
                     <button className='knowledge' onClick={() => {
                         set_page({ location: "knowledge" }); document.body.style.overflowY = "hidden";
-                        onresize = () => {
-                            if (window.innerHeight <= 305) {
-                                document.body.style.overflowY = "scroll";
-                            }
-                            else if (window.innerHeight > 305) {
-                                document.body.style.overflowY = "hidden";
-                            }
-                        };
                         content_section.style.transform = "translate(0, 50%)"
                     }}>
                         {text.knowledge}
@@ -462,18 +423,6 @@ export const Footer = () => {
                     <span>||</span>
                     <button className='portfolio' onClick={() => {
                         set_page({ location: "portfolio" });
-                        if (window.innerHeight <= 680 && window.innerWidth < 1253 && !(window.innerWidth >= 806)
-                            || window.innerHeight <= 730 && window.innerWidth <= 568
-                            || window.innerHeight <= 699 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
-                            || window.innerHeight <= 550 && window.innerWidth >= 1253 && !(window.innerWidth >= 1553)
-                            || window.innerHeight <= 785 && window.innerWidth >= 601 && !(window.innerWidth >= 806)
-                            //|| window.innerHeight <= 736 && window.innerWidth >= 805 && !(window.innerWidth >= 1253)
-                            || window.innerHeight <= 579 && window.innerWidth >= 1553) {
-                            document.body.style.overflowY = "scroll";
-                        }
-                        else if (window.innerHeight > 699) {
-                            document.body.style.overflowY = "hidden";
-                        }
                         content_section.style.transform = "translate(0, 25%)";
                     }}>
                         {text.portfolio}
@@ -482,7 +431,7 @@ export const Footer = () => {
                     <button className='contact' onClick={() => {
                         set_page({ location: "contact" });
                         document.body.style.overflowY = "hidden";
-                        content_section.style.transform = "translate(0, 35vh)";
+                        content_section.style.transform = "translate(0, -4vh)";
                     }}>
                         {text.contact}
                     </button>

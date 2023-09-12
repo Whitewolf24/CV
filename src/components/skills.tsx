@@ -1,4 +1,17 @@
 const Skills = () => {
+
+    onresize = () => {
+        if (window.innerHeight <= 305) {
+            document.body.style.overflowY = "scroll";
+        }
+        else document.body.style.overflowY = "hidden";
+    };
+
+    if (window.innerHeight <= 305) {
+        document.body.style.overflowY = "scroll";
+    }
+    else document.body.style.overflowY = "hidden";
+
     return <div className="content">
         <div className="content_skills">
             <div id="backend">
