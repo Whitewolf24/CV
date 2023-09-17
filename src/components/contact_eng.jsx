@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-const Contact_gr = () => {
+const Contact_eng = () => {
 
     const form = useRef();
 
@@ -57,12 +57,12 @@ const Contact_gr = () => {
         <div className="content_contact">
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)} /*method="POST"  data-sitekey="vlmZE8H22O2e_lQFj"*/>
                 <div>
-                    <input className="email_form" type="email" name="email" placeholder="Email Επικοινωνίας" title=""
+                    <input className="email_form" type="email" name="email" placeholder="Contact Email" title=""
                         required onInput={() => {
                             const email_form = document.querySelector(".email_form");
 
                             if (email_form.value.length === 0 || email_form.value.trim() == "" || email_form.validity.typeMismatch) {
-                                email_form.setCustomValidity("Συμπληρώστε αυτό το πεδίο με ένα έγκυρο email");
+                                email_form.setCustomValidity("PLease type a valid email");
                             }
                             else email_form.setCustomValidity("");
                         }}
@@ -70,12 +70,12 @@ const Contact_gr = () => {
                 </div>
 
                 <div>
-                    <textarea className="msg_form" name="message" placeholder="Μήνυμα" title="" required
+                    <textarea className="msg_form" name="message" placeholder="Message" title="" required
                         onInput={() => {
                             const msg_form = document.querySelector(".msg_form");
 
                             if (msg_form.value.length === 0 || msg_form.value.trim() == "") {
-                                msg_form.setCustomValidity("Συμπληρώστε αυτό το πεδίο");
+                                msg_form.setCustomValidity("Please fill this field");
                             }
                             else msg_form.setCustomValidity("");
                         }}
@@ -84,11 +84,11 @@ const Contact_gr = () => {
 
                 <button className="submit_butt" disabled={isSubmitting} type="submit" value="Send">
                     {isSubmitting}
-                    Aποστολή</button>
-                <p className="success_message" hidden>Μήνυμα εστάλη</p>
+                    Send</button>
+                <p className="success_message" hidden>Message Sent</p>
             </form>
         </div>
     </div>
 }
 
-export default Contact_gr;
+export default Contact_eng;

@@ -2,16 +2,19 @@
 const Name_gr = () => {
 
     onresize = () => {
-        if (window.innerHeight <= 240) {
+        if (window.innerHeight <= 230) {
             document.body.style.overflowY = "scroll";
         }
         else document.body.style.overflowY = "hidden";
     };
 
-    if (window.innerHeight <= 240) {
+    if (window.innerHeight <= 230) {
         document.body.style.overflowY = "scroll";
     }
-    else document.body.style.overflowY = "hidden";
+    else {
+        document.body.style.overflowY = "hidden";
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
     return <div className="content">
         <div className="content_name">

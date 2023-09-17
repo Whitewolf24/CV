@@ -14,7 +14,7 @@ const Skills = lazy(() => import('./skills'));
 const Portfolio_gr = lazy(() => import('./portfolio_gr'));
 const Portfolio_eng = lazy(() => import('./portfolio_eng'));
 const Contact_gr = lazy(() => import('./contact_gr'));
-
+const Contact_eng = lazy(() => import('./contact_eng'));
 
 export const Footer = () => {
 
@@ -144,6 +144,7 @@ export const Footer = () => {
                     event.preventDefault()
                 });
             });
+
             document.title = 'George Marinos CV';
             if (page.location === 'home') {
                 /*  home_eng.addEventListener("click", function (event) {
@@ -156,6 +157,9 @@ export const Footer = () => {
             }
             if (page.location === 'portfolio') {
                 return <Portfolio_eng />
+            }
+            if (page.location === 'contact') {
+                return <Contact_eng />
             }
         }
 
@@ -394,7 +398,6 @@ export const Footer = () => {
                         eng.addEventListener("click", function (event) {
                             event.preventDefault()
                         });
-
                     }}>
                         <img src="eng_flag.webp" alt="ENG" /* style={{ filter: "grayscale(95%)", height: "12px", objectFit: "cover", width: "22px" }} */ />
                     </button>
