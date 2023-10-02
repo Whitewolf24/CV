@@ -426,7 +426,7 @@ export const Footer = () => {
                     <span>||</span>
                     <button className='portfolio' onClick={() => {
                         set_page({ location: "portfolio" });
-                        content_section.style.transform = "translate(0, 25%)";
+                        content_section.style.transform = "translate(0, 20%)";
                     }}>
                         {text.portfolio}
                     </button>

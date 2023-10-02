@@ -2,18 +2,22 @@
 const Name_gr = () => {
 
     onresize = () => {
+        const content_name = document.querySelector(".content_name") as HTMLDivElement;
         if (window.innerHeight <= 230) {
             document.body.style.overflowY = "scroll";
         }
         else document.body.style.overflowY = "hidden";
+        content_name.style.transform = "translate(0, 26%)"
     };
 
-    if (window.innerHeight <= 230) {
-        document.body.style.overflowY = "scroll";
-    }
-    else {
-        document.body.style.overflowY = "hidden";
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    onload = () => {
+        if (window.innerHeight <= 230) {
+            document.body.style.overflowY = "scroll";
+        }
+        else {
+            document.body.style.overflowY = "hidden";
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
     }
 
     return <div className="content">

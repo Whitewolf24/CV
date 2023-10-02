@@ -1,16 +1,28 @@
 const Skills = () => {
 
     onresize = () => {
-        if (window.innerHeight <= 305) {
+        const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
+        if (window.innerHeight <= 350) {
             document.body.style.overflowY = "scroll";
+            content_skills.style.paddingBottom = "1rem";
         }
-        else document.body.style.overflowY = "hidden";
+        else {
+            document.body.style.overflowY = "hidden";
+            content_skills.style.paddingBottom = "0rem";
+        }
     };
 
-    if (window.innerHeight <= 305) {
-        document.body.style.overflowY = "scroll";
+    onload = () => {
+        const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
+        if (window.innerHeight <= 350) {
+            document.body.style.overflowY = "scroll";
+            content_skills.style.paddingBottom = "1rem";
+        }
+        else {
+            document.body.style.overflowY = "hidden";
+            content_skills.style.paddingBottom = "0rem";
+        }
     }
-    else document.body.style.overflowY = "hidden";
 
     return <div className="content">
         <div className="content_skills">
