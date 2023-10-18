@@ -1866,7 +1866,7 @@ const Portfolio_gr = () => {
                 <img src="eye.webp"></img>
                 <div className="tech _2016_tech">
                     <p className="year _eknexa016">2016&nbsp;
-                    <span className="libraries">&#123;bootstrap,jquery,php mysql,responsive&#125;</span></p>
+                        <span className="libraries">&#123;bstrap,jquery,php mysql,responsive&#125;</span></p>
                 </div>
             </div>
             <div className="swlyn">
