@@ -158,7 +158,7 @@ export const Footer = () => {
                 lang_element.setAttribute('lang', 'eng');
             }
 
-            document.title = 'George Marinos CV';
+            document.title = 'George Marinos, Web Developer Portfolio';
             if (page.location === 'home') {
                 /*  home_eng.addEventListener("click", function (event) {
         event.preventDefault()
@@ -204,7 +204,7 @@ export const Footer = () => {
                 lang_element.setAttribute('lang', 'gr');
             }
 
-            document.title = 'Γεώργιος Μαρίνος CV';
+            document.title = 'Γεώργιος Μαρίνος, Web Developer Portfolio';
             if (page.location === 'home') {
                 return <Name_gr />
             }
