@@ -294,7 +294,7 @@ section {
 .content_skills {
     animation: fade_in 2s 1 ease-in-out forwards;
     //bottom: 50px;
-    transform: translate(-36vw, 16vh);
+    transform: translate(-36vw, 10vh);
     display: grid;
     font-size: clamp(.5rem, 2.5vw, 0.6rem);
     grid-column-gap: 4vw;
@@ -319,7 +319,7 @@ section {
 
     @media only screen and (max-width: 600px) {
         grid-template-columns: 23vw 27vw 26vw 10vw;
-        transform: translate(-49%, 20%);
+        transform: translate(-49%, 15%);
         font-size: clamp(.4rem, 2.5vw, .5rem);
 
         h3 {
@@ -329,7 +329,7 @@ section {
 
     @media only screen and (min-width: 600px) and (max-width: 800px) {
         grid-template-columns: 27vw 25vw 23vw 10vw;
-        transform: translate(-49%, 20%);
+        transform: translate(-49%, 15%);
 
         h3 {
             font-size: clamp(.85rem, 2.5vw, .95rem);
@@ -389,11 +389,11 @@ section {
     //
 
     @media only screen and (min-height: 420px) and (max-height: 600px) {
-        transform: translate(-49%, 20%);
+        transform: translate(-49%, 10%);
     }
 
     @media only screen and (max-height: 420px) {
-        transform: translate(-49%, 12%);
+        transform: translate(-49%, 8%);
 
         p:not(#frontend p, #wordp p) {
             margin-block: 0.9rem;

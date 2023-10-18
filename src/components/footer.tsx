@@ -145,6 +145,19 @@ export const Footer = () => {
                 });
             });
 
+            const meta = document.getElementsByTagName("meta");
+            const lang = document.getElementsByTagName("html");
+
+            if (meta.length > 0) {
+                const meta_element = meta[2];
+                meta_element.setAttribute('description', 'Portfolio of Web Developer George Marinos.');
+            }
+
+            if (lang.length > 0) {
+                const lang_element = lang[0];
+                lang_element.setAttribute('lang', 'eng');
+            }
+
             document.title = 'George Marinos CV';
             if (page.location === 'home') {
                 /*  home_eng.addEventListener("click", function (event) {
@@ -177,6 +190,19 @@ export const Footer = () => {
                 });
 
             });
+
+            const meta = document.getElementsByTagName("meta");
+            const lang = document.getElementsByTagName("html");
+
+            if (meta.length > 0) {
+                const meta_element = meta[2];
+                meta_element.setAttribute('description', 'Portfolio του Web Developer Γεώργιος Μαρίνος.');
+            }
+
+            if (lang.length > 0) {
+                const lang_element = lang[0];
+                lang_element.setAttribute('lang', 'gr');
+            }
 
             document.title = 'Γεώργιος Μαρίνος CV';
             if (page.location === 'home') {
