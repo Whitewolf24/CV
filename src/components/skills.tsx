@@ -29,8 +29,10 @@ const Skills = () => {
             <div id="backend">
                 <h3>Backend</h3>
                 <p>{"<?php?>"}</p>
+                <p>@laravel</p>
                 <p>SELECT * FROM MYSQL</p>
                 <p>_id: MongoDB</p>
+                <p>Next</p>
                 <p>router get('express')</p>
                 <p>{"require"} ('moongoose')</p>
                 <p>&#x007b;"JSON"&#x007d;</p>

@@ -1834,7 +1834,9 @@ const Portfolio_gr = () => {
                 <div className="description_div mouseia_desc" style={mouseia_style}>
                     <p>ΜΟΥΣΕΙΑ ΛΕΣΒΟΥ</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { number = 1; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="https://mouseia.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 1; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
                 <img src="mouseia.webp"></img>
                 <div className="tech">
                     <p className="year _2013">2013&nbsp;
@@ -1845,7 +1847,9 @@ const Portfolio_gr = () => {
                 <div className="description_div eknexa_desc" style={eknexa_style}>
                     <p>ΣΤΗΝ ΠΛΑΤΕΙΑ</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { number = 2; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="https://eknexa.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 2; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
                 <img src="eknexa.webp"></img>
                 <div className="tech">
                     <p className="year _2014">2014&nbsp;
@@ -1856,22 +1860,23 @@ const Portfolio_gr = () => {
                 <div className="description_div eye_desc" style={eye_style}>
                     <p>EYE</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { number = 3; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-
+                <a href="https://eye.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 3; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
                 <img src="eye.webp"></img>
                 <div className="tech _2016_tech">
                     <p className="year _eknexa016">2016&nbsp;
-                        <span className="libraries">&#123;bootstrap,jquery, responsive&#125;</span></p>
+                    <span className="libraries">&#123;bootstrap,jquery,php mysql,responsive&#125;</span></p>
                 </div>
             </div>
             <div className="swlyn">
                 <div className="description_div swlyn_desc" style={swlyn_style}>
                     <p>ΣΩΛΥΝ</p>
                     <span>testosaijdoiksajdlsajdlkjlaksldj</span>
-
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { number = 4; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-
+                <a href="https://swlyn.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 4; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
                 <img src="swlyn.webp" ></img>
                 <div className="tech">
                     <p className="year _2018">2018&nbsp;
@@ -1883,11 +1888,13 @@ const Portfolio_gr = () => {
                     <p>ΑΠΟΘΗΚΗ</p>
                     {/*                     <span id='explanation_warehouse'>testosaijdoiksajdlsajdlkjlaksldj</span>
  */}                </div>
-                <img className="fake" src="#" onMouseEnter={() => { number = 5; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="https://warehouse.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 5; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
                 <img src="warehouse.webp"></img>
                 <div className="tech _2020_tech">
                     <p className="year _2020">2020&nbsp;
-                        <span className="libraries">&#123;JS,sass,laravel, mysql,responsive&#125;</span></p>
+                        <span className="libraries">&#123;JS,sass,php, mysql,responsive&#125;</span></p>
                 </div>
             </div >
             <div className="woocommerce">
@@ -1895,7 +1902,7 @@ const Portfolio_gr = () => {
                     <p>E-KIOSK</p>
                     {/*                     <span id='explanation_kiosk'>testosaijdoiksajdlsajdlkjlaksldj</span>
  */}                </div>
-                <a>
+                <a href="https://woocomerce.marinoscv.website/" target="_blank">
                     <img className="fake" src="#" onMouseEnter={() => { number = 6; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
                 </a>
                 <img src="woocommerce.webp" ></img>
@@ -1908,7 +1915,9 @@ const Portfolio_gr = () => {
                 <div className="description_div express_desc" style={express_style}>
                     <p>MONGOXPRESS</p>
                 </div>
-                <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="https://xblog.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
                 <img src="express.webp"></img>
                 <div className="tech _2022_tech">
                     <p className="year _2022">2022
