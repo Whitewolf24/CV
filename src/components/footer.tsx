@@ -150,7 +150,7 @@ export const Footer = () => {
 
             if (meta.length > 0) {
                 const meta_element = meta[2];
-                meta_element.setAttribute('description', 'Portfolio of Web Developer George Marinos.');
+                meta_element.setAttribute('content', 'Portfolio of Web Developer George Marinos.');
             }
 
             if (lang.length > 0) {
@@ -196,7 +196,7 @@ export const Footer = () => {
 
             if (meta.length > 0) {
                 const meta_element = meta[2];
-                meta_element.setAttribute('description', 'Portfolio του Web Developer Γεώργιος Μαρίνος.');
+                meta_element.setAttribute('content', 'Portfolio του Web Developer Γεώργιος Μαρίνος.');
             }
 
             if (lang.length > 0) {
