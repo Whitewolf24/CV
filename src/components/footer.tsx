@@ -149,8 +149,8 @@ export const Footer = () => {
             const lang = document.getElementsByTagName("html");
 
             if (meta.length > 0) {
-                const meta_element = meta[2];
-                meta_element.setAttribute('content', 'Im George Marinos, Fullstack Web Developer. On this webpage you will find my CV and my Portfolio, and also a contact form, if you want to talk to me.');
+                const meta_element = meta[3];
+                meta_element.setAttribute('content', 'Im George Marinos, Fullstack Web Developer. On this webpage you will find my Portfolio, and references to all my knowledge surrounding Frontend, Backend and Wordpress Web Development, as well as related software and tools.');
             }
 
             if (lang.length > 0) {
@@ -158,7 +158,7 @@ export const Footer = () => {
                 lang_element.setAttribute('lang', 'eng');
             }
 
-            document.title = 'George Marinos, Fullstack Web Developer - CV & Portfolio';
+            document.title = 'George Marinos, Fullstack Web Developer Portfolio';
             if (page.location === 'home') {
                 /*  home_eng.addEventListener("click", function (event) {
         event.preventDefault()
@@ -195,8 +195,8 @@ export const Footer = () => {
             const lang = document.getElementsByTagName("html");
 
             if (meta.length > 0) {
-                const meta_element = meta[2];
-                meta_element.setAttribute('content', 'Είμαι ο Γεώργιος Μαρίνος, Fullstack Web Developer. Σε αυτήν την ιστοσελίδα μπορείτε να δείτε το CV και το Portfolio μου, καθώς και να επικοινωνήσετε μαζί μου.');
+                const meta_element = meta[3];
+                meta_element.setAttribute('content', 'Είμαι ο Γεώργιος Μαρίνος, Fullstack Web Developer. Αυτή η ιστοσελίδα αποτελείται από το Portfolio μου, και επίσης αναφέρει όλες τις γνώσεις μου γύρω από το Frontend, Backend και Wordpress Web Development, και διάφορα σχετικά βοηθητικά εργαλεία.');
             }
 
             if (lang.length > 0) {
@@ -204,7 +204,7 @@ export const Footer = () => {
                 lang_element.setAttribute('lang', 'gr');
             }
 
-            document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer - CV & Portfolio';
+            document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
             if (page.location === 'home') {
                 return <Name_gr />
             }
