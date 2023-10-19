@@ -2033,8 +2033,15 @@ footer span {
 //--------------------------//
 
 @media (hover: none) {
-    html {
-        background-size: 120vh;
-        height: 60svh;
+    @supports (-moz-appearance:none) {
+        html {
+            background-size: 120vh;
+            position: relative;
+            bottom: 10rem;
+        }
+
+        /*   footer {
+        top: 82vh;
+    } */
     }
 }
