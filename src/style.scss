@@ -2028,3 +2028,13 @@ footer span {
         width: 1.5em;
     }
 }
+
+
+//--------------------------//
+
+@media (hover: none) {
+    html {
+        height: 90dvh;
+        width: 90dvw;
+    }
+}

@@ -150,7 +150,7 @@ export const Footer = () => {
 
             if (meta.length > 0) {
                 const meta_element = meta[3];
-                meta_element.setAttribute('content', 'Im George Marinos, Fullstack Web Developer. On this webpage you will find my Portfolio, and references to all my knowledge surrounding Frontend, Backend and Wordpress Web Development, as well as related software and tools.');
+                meta_element.setAttribute('content', 'George Marinos, Fullstack Web Developer. On this webpage you will find my Portfolio, and references to all my knowledge surrounding Frontend, Backend and Wordpress Web Development.');
             }
 
             if (lang.length > 0) {
@@ -196,7 +196,7 @@ export const Footer = () => {
 
             if (meta.length > 0) {
                 const meta_element = meta[3];
-                meta_element.setAttribute('content', 'Είμαι ο Γεώργιος Μαρίνος, Fullstack Web Developer. Αυτή η ιστοσελίδα αποτελείται από το Portfolio μου, και επίσης αναφέρει όλες τις γνώσεις μου γύρω από το Frontend, Backend και Wordpress Web Development, και διάφορα σχετικά βοηθητικά εργαλεία.');
+                meta_element.setAttribute('content', 'Γεώργιος Μαρίνος, Fullstack Web Developer. Αυτή η ιστοσελίδα αποτελείται από το Portfolio μου, και αναφέρει όλες τις γνώσεις μου γύρω από το Frontend, Backend και Wordpress Web Development.');
             }
 
             if (lang.length > 0) {
