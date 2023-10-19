@@ -9,15 +9,15 @@ function sleep(ms: number) {
 }
 
 if (navigator.userAgent.match(/Chrome/i) && navigator.userAgent.match(/Mobile/i)) {
-    const header = document.querySelector("header") as HTMLDivElement;
-    const footer = document.querySelector("footer") as HTMLDivElement;
-    const content_portfolio = document.querySelector("content_portfolio") as HTMLDivElement;
+    const header = document?.querySelector("header") as HTMLDivElement;
+    const footer = document?.querySelector("footer") as HTMLDivElement;
+    const content_portfolio = document?.querySelector("content_portfolio") as HTMLDivElement;
 
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = "rgb(30, 29, 34)";
     document.body.style.overflow = "scroll";
 
-    header.style.bottom = "8vh";
+    header.style.bottom = "18vh";
 
     footer.style.top = "88vh";
     footer.style.height = "12vh";
