@@ -2033,21 +2033,19 @@ footer span {
 //--------------------------//
 
 @media (hover: none) {
-    @supports (-moz-appearance:none) {
-        body {
-            background-image: none;
-            background-color: rgb(30, 29, 34);
-            overflow: scroll !important;
-        }
+    body {
+        background-image: none;
+        background-color: rgb(30, 29, 34);
+        overflow: scroll !important;
+    }
 
-        footer {
-            height: 12vh;
-            top: 88vh;
-        }
+    footer {
+        height: 12vh;
+        top: 88vh;
+    }
 
-        .content_portfolio {
-            position: relative;
-            right: 2rem;
-        }
+    .content_portfolio {
+        position: relative;
+        right: 2rem;
     }
 }
