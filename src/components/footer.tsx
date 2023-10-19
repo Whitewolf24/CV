@@ -13,9 +13,9 @@ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi
         //const header = document.querySelector("header") as HTMLElement;
         const footer = document?.querySelector("footer") as HTMLElement;
 
-        document.body.style.backgroundImage = "none";
-        document.body.style.backgroundColor = "rgb(30, 29, 34)";
-        document.body.style.overflowY = "scroll !important";
+        //document.body.style.backgroundImage = "none";
+        //document.body.style.backgroundColor = "rgb(30, 29, 34)";
+        document.body.style.overflowY = "scroll";
 
         //header.style.bottom = "88vh";
 
