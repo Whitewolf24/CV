@@ -11,19 +11,19 @@ function sleep(ms: number) {
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     const header = document?.querySelector("header") as HTMLDivElement;
     const footer = document?.querySelector("footer") as HTMLDivElement;
-    const content_portfolio = document?.querySelector("content_portfolio") as HTMLDivElement;
+    //const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
     document.body.style.backgroundImage = "none";
     document.body.style.backgroundColor = "rgb(30, 29, 34)";
     document.body.style.overflow = "scroll";
 
-    header.style.bottom = "85vh";
+    header.style.bottom = "88vh";
 
     footer.style.top = "88vh";
     footer.style.height = "12vh";
 
-    content_portfolio.style.position = "relative";
-    content_portfolio.style.position = "2rem";
+    //content_portfolio.style.position = "relative";
+    //content_portfolio.style.position = "2rem";
 }
 
 const Name_gr = lazy(() => import('./name_gr'));
