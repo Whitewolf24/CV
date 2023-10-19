@@ -2034,12 +2034,13 @@ footer span {
 
 @media (hover: none) {
     @supports (-moz-appearance:none) {
-        html {
-            background-size: 120vh;
+        body {
+            background-size: 100vh;
+            overflow: scroll !important;
         }
 
         footer {
-            top: 87vh;
+            top: 88vh;
         }
     }
 }
