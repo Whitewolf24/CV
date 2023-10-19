@@ -2048,22 +2048,40 @@ footer span {
         position: relative;
         right: 2rem;
     }
-}
 
-@supports (-ms-ime-align: auto) {
-    body {
-        background-image: none;
-        background-color: rgb(30, 29, 34);
-        overflow: scroll !important;
+    @supports (-ms-ime-align: auto) {
+        body {
+            background-image: none;
+            background-color: rgb(30, 29, 34);
+            overflow: scroll !important;
+        }
+
+        footer {
+            height: 12vh;
+            top: 88vh;
+        }
+
+        .content_portfolio {
+            position: relative;
+            right: 2rem;
+        }
     }
 
-    footer {
-        height: 12vh;
-        top: 8vh;
-    }
+    @supports (-webkit-appearance:none) {
+        body {
+            background-image: none;
+            background-color: rgb(30, 29, 34);
+            overflow: scroll !important;
+        }
 
-    .content_portfolio {
-        position: relative;
-        right: 2rem;
+        footer {
+            height: 12vh;
+            top: 88vh;
+        }
+
+        .content_portfolio {
+            position: relative;
+            right: 2rem;
+        }
     }
 }
