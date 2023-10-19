@@ -2035,18 +2035,19 @@ footer span {
 @media (hover: none) {
     @supports (-moz-appearance:none) {
         body {
-            background-size: 200vh !important;
+            background-image: none;
+            background-color: rgb(30, 29, 34);
             overflow: scroll !important;
         }
 
         footer {
-            height: 10vh;
+            height: 11vh;
             top: 88vh;
         }
 
         .content_portfolio {
             position: relative;
-            right: 12rem;
+            right: 8rem;
         }
     }
 }
