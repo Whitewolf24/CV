@@ -9,8 +9,8 @@ function sleep(ms: number) {
 }
 
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    const header = document?.querySelector("header") as HTMLDivElement;
-    const footer = document?.querySelector("footer") as HTMLDivElement;
+    const header = document?.querySelector("header") as HTMLElement;
+    const footer = document?.querySelector("footer") as HTMLElement;
     //const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
     document.body.style.backgroundImage = "none";
