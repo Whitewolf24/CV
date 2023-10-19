@@ -8,7 +8,7 @@ function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-if (navigator.userAgent.match("Chrome") && navigator.userAgent.match("Mobile")) {
+if (navigator.userAgent.includes("Chrome") && /Mobi|Android/i.test(navigator.userAgent)) {
     const header = document?.querySelector("header") as HTMLDivElement;
     const footer = document?.querySelector("footer") as HTMLDivElement;
     const content_portfolio = document?.querySelector("content_portfolio") as HTMLDivElement;
@@ -17,7 +17,7 @@ if (navigator.userAgent.match("Chrome") && navigator.userAgent.match("Mobile")) 
     document.body.style.backgroundColor = "rgb(30, 29, 34)";
     document.body.style.overflow = "scroll";
 
-    header.style.bottom = "70vh";
+    header.style.bottom = "78vh";
 
     footer.style.top = "88vh";
     footer.style.height = "12vh";
