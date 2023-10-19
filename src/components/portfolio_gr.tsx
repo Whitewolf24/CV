@@ -1828,7 +1828,7 @@ const Portfolio_gr = () => {
     }, [width, height]);
 
 
-    return <div className="content">
+    return <div className="content" style={{}}>
         <div className="content_portfolio">
             <div className="mouseia">
                 <div className="description_div mouseia_desc" style={mouseia_style}>

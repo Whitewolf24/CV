@@ -341,7 +341,7 @@ export const Footer = () => {
 
     return (
         <main>
-            <header>
+            <header style={{}}>
                 <nav>
                     <button className='gr nownohover' onClick={() => {
                         cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" });
@@ -434,7 +434,7 @@ export const Footer = () => {
                     {showbody()}
                 </Suspense>
             </section>
-            <footer>
+            <footer style={{}}>
                 <nav>
                     <button className='home' onClick={() => {
                         set_page({ location: "home" });

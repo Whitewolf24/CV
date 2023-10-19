@@ -1831,7 +1831,7 @@ const Portfolio_eng = () => {
 
 
     return <div className="content">
-        <div className="content_portfolio">
+        <div className="content_portfolio" style={{}}>
             <div className="mouseia">
                 <div className="description_div mouseia_desc" style={mouseia_style}>
                     <p>MUSEUMS OF LESVOS</p>
