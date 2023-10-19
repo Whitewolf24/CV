@@ -10,17 +10,17 @@ function sleep(ms: number) {
 
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
     onload = () => {
-        const header = document.querySelector("header") as HTMLElement;
+        const header = document?.querySelector("header") as HTMLElement;
         const footer = document?.querySelector("footer") as HTMLElement;
 
         //document.body.style.backgroundImage = "none";
         //document.body.style.backgroundColor = "rgb(30, 29, 34)";
         document.body.style.overflowX = "hidden";
-        document.body.style.overflowY = "scroll";
+        document.body.style.cssText = "overflow-y: scroll !important";
 
-        header.style.bottom = "68vh";
+        header.style.cssText = "bottom: 78vh !important";
 
-        //footer.style.top = "88vh";
+        footer.style.cssText = "top: 88vh !important";
         footer.style.height = "12vh";
     }
 }

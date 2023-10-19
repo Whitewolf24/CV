@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 
 
 const Portfolio_gr = () => {
+    if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
+        onload = () => {
+            const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
-    onload = () => {
-        const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
-
-        content_portfolio.style.position = "relative";
-        content_portfolio.style.right = "6rem";
+            content_portfolio.style.cssText = "position: relative !important";
+            content_portfolio.style.cssText = "right: 2rem !important";
+        }
     }
 
     let number = 0;
