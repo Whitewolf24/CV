@@ -8,23 +8,6 @@ function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
-    onload = () => {
-        const header = document?.querySelector("header") as HTMLElement;
-        const footer = document?.querySelector("footer") as HTMLElement;
-
-        //document.body.style.backgroundImage = "none";
-        //document.body.style.backgroundColor = "rgb(30, 29, 34)";
-        document.body.style.overflowX = "hidden";
-        document.body.style.setProperty("overflow-y", "scroll", "important");
-
-        header.style.setProperty("bottom", "78vh", "important");
-
-        footer.style.setProperty("top", "88vh", "important");
-        footer.style.height = "12vh";
-    }
-}
-
 const Name_gr = lazy(() => import('./name_gr'));
 const Name_eng = lazy(() => import('./name_eng'));
 const Skills = lazy(() => import('./skills'));
@@ -486,4 +469,21 @@ export const Footer = () => {
             </footer>
         </main >
     )
+}
+
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+    onload = () => {
+        const header = document?.querySelector("header") as HTMLElement;
+        const footer = document?.querySelector("footer") as HTMLElement;
+
+        //document.body.style.backgroundImage = "none";
+        //document.body.style.backgroundColor = "rgb(30, 29, 34)";
+        document.body.style.overflowX = "hidden";
+        document.body.style.setProperty("overflow-y", "scroll", "important");
+
+        header.style.setProperty("bottom", "78vh", "important");
+
+        footer.style.setProperty("top", "88vh", "important");
+        footer.style.height = "12vh";
+    }
 }

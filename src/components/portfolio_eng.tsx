@@ -1943,7 +1943,7 @@ const Portfolio_eng = () => {
     </div >
 }
 
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     onload = () => {
         const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
