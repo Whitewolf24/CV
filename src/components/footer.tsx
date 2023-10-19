@@ -10,14 +10,15 @@ function sleep(ms: number) {
 
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
     onload = () => {
-        //const header = document.querySelector("header") as HTMLElement;
+        const header = document.querySelector("header") as HTMLElement;
         const footer = document?.querySelector("footer") as HTMLElement;
 
         //document.body.style.backgroundImage = "none";
         //document.body.style.backgroundColor = "rgb(30, 29, 34)";
+        document.body.style.overflowX = "hidden";
         document.body.style.overflowY = "scroll";
 
-        //header.style.bottom = "88vh";
+        header.style.bottom = "68vh";
 
         //footer.style.top = "88vh";
         footer.style.height = "12vh";

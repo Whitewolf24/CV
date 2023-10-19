@@ -7,9 +7,9 @@ const Portfolio_gr = () => {
         const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
         content_portfolio.style.position = "relative";
-        content_portfolio.style.right = "2rem";
+        content_portfolio.style.right = "6rem";
     }
-    
+
     let number = 0;
 
     /* const explanation_mouseia = document.querySelector("#explanation_mouseia") as HTMLSpanElement;

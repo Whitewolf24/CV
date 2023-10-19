@@ -7,7 +7,7 @@ const Portfolio_eng = () => {
         const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
         content_portfolio.style.position = "relative";
-        content_portfolio.style.right = "2rem";
+        content_portfolio.style.right = "6rem";
     }
 
     let number = 0;

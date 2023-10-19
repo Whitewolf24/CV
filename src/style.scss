@@ -221,7 +221,7 @@ section {
     animation: typewriter 2.5s steps(40) 0.5s 1 normal forwards,
         blinktext 500ms steps(40) 6 normal forwards;
     border-right: 1px solid white;
-    overflow: hidden;
+    //overflow: hidden;
     white-space: nowrap;
     width: 0rem;
 }
