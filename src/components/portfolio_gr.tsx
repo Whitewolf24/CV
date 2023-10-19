@@ -6,8 +6,8 @@ const Portfolio_gr = () => {
         onload = () => {
             const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
 
-            content_portfolio.style.cssText = "position: relative !important";
-            content_portfolio.style.cssText = "right: 2rem !important";
+            content_portfolio.setAttribute("style", "position: relative !important");
+            content_portfolio.setAttribute("style", "right: 2rem !important");
         }
     }
 
