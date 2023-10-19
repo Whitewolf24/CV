@@ -2036,12 +2036,10 @@ footer span {
     @supports (-moz-appearance:none) {
         html {
             background-size: 120vh;
-            position: relative;
-            bottom: 10rem;
         }
 
-        /*   footer {
-        top: 82vh;
-    } */
+        footer {
+            top: 82vh;
+        }
     }
 }
