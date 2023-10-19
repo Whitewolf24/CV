@@ -26,7 +26,7 @@ export const Footer = () => {
             //document.body.style.backgroundImage = "none";
             //document.body.style.backgroundColor = "rgb(30, 29, 34)";
             document.body.style.overflowX = "hidden";
-            document.body.style.setProperty("overflow-y", "scroll", "important");
+            document.body.style.cssText = "scroll !important";
 
             document.head.style.cssText = "bottom: 78vh !important";
 
