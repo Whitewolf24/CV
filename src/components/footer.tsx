@@ -16,11 +16,11 @@ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi
         //document.body.style.backgroundImage = "none";
         //document.body.style.backgroundColor = "rgb(30, 29, 34)";
         document.body.style.overflowX = "hidden";
-        document.body.setAttribute("style", "overflow-y: scroll !important");
+        document.body.style.setProperty("overflow-y", "scroll", "important");
 
-        header.setAttribute("style", "bottom: 78vh !important");
+        header.style.setProperty("bottom", "78vh", "important");
 
-        footer.setAttribute("style", "top: 88vh !important");
+        footer.style.setProperty("top", "88vh", "important");
         footer.style.height = "12vh";
     }
 }

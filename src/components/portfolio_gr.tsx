@@ -2,14 +2,6 @@ import { useEffect, useState } from 'react';
 
 
 const Portfolio_gr = () => {
-    if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
-        onload = () => {
-            const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
-
-            content_portfolio.setAttribute("style", "position: relative !important");
-            content_portfolio.setAttribute("style", "right: 2rem !important");
-        }
-    }
 
     let number = 0;
 
@@ -1947,6 +1939,15 @@ const Portfolio_gr = () => {
             </div >
         </div >
     </div >
+}
+
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobile")) {
+    onload = () => {
+        const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
+
+        content_portfolio.style.setProperty("position", "relative", "important");
+        content_portfolio.style.setProperty("right", "2rem", "important");
+    }
 }
 
 export default Portfolio_gr;
