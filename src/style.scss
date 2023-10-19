@@ -2035,7 +2035,7 @@ footer span {
 @media (hover: none) {
     @supports (-moz-appearance:none) {
         body {
-            background-size: 120vh 100vw;
+            background-size: 120vw 120vh;
             overflow: scroll !important;
         }
 
@@ -2043,8 +2043,8 @@ footer span {
             top: 88vh;
         }
 
-        .content_portfolio {
-            transform: translate(-5%);
+        .content_portfolio div {
+            left: 5rem
         }
     }
 }
