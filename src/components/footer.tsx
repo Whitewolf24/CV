@@ -8,7 +8,7 @@ function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-if (navigator.userAgent.includes("Chrome") || navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi") || navigator.userAgent.includes("Android")) {
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     const header = document?.querySelector("header") as HTMLDivElement;
     const footer = document?.querySelector("footer") as HTMLDivElement;
     const content_portfolio = document?.querySelector("content_portfolio") as HTMLDivElement;
