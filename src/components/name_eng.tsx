@@ -1,14 +1,14 @@
 const Name_eng = () => {
 
     onresize = () => {
-        const content_name = document.querySelector(".content_name") as HTMLDivElement;
+        //const content_name = document.querySelector(".content_name") as HTMLDivElement;
         if (window.innerHeight <= 230) {
             document.body.style.overflowY = "scroll";
         }
         else {
             if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
                 document.body.style.overflowY = "hidden";
-                content_name.style.transform = "translate(0, 26%)"
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         }
     };
