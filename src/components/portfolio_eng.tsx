@@ -1837,6 +1837,7 @@ const Portfolio_eng = () => {
 
                 content_portfolio.style.cssText += "position: relative !important";
                 content_portfolio.style.cssText += "right:2rem !important";
+                content_portfolio.style.cssText += "top: 1rem !important";
             }
         }}>
             <div className="mouseia">
