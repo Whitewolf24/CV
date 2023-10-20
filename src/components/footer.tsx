@@ -342,8 +342,10 @@ export const Footer = () => {
     return (
         <main>
             <header onAnimationStart={() => {
-                const header = document?.querySelector("header") as HTMLDivElement;
-                header.style.cssText = "bottom: 78vh !important";
+                if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                    const header = document?.querySelector("header") as HTMLDivElement;
+                    header.style.cssText = "bottom: 78vh !important";
+                }
             }}>
                 <nav>
                     <button className='gr nownohover' onClick={() => {
