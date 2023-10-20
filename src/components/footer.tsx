@@ -20,18 +20,19 @@ export const Footer = () => {
 
     onload = () => {
         if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-            const header = document?.querySelector("header") as HTMLElement;
+            const header = document?.querySelector("header") as HTMLDivElement;
             const footer = document?.querySelector("footer") as HTMLElement;
 
             //document.body.style.backgroundImage = "none";
             //document.body.style.backgroundColor = "rgb(30, 29, 34)";
-            document.body.style.overflowX = "hidden";
-            document.body.style.cssText = "scroll !important";
+            //document.body.style.overflowX = "hidden";
 
-            header.style.cssText = "bottom: 78vh !important";
+            document.body.style.cssText += "overflow-y: scroll !important";
 
-            footer.style.cssText = "top: 88vh !important";
-            footer.style.cssText = "height: 12vh !important";
+            header.style.cssText += "bottom: 78vh !important";
+
+            footer.style.cssText += "top: 88vh !important";
+            footer.style.cssText += "height: 12vh !important";
         }
     }
 
