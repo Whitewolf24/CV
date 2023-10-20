@@ -6,8 +6,7 @@ const cookies = new Cookies();
 
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     onanimationstart = () => {
-        document.body.style.cssText += "overflow-y: scroll !important";
-        document.body.style.cssText += "overflow-x: hidden !important";
+        document.body.style.cssText += "overflow: hidden scroll !important";
     }
 }
 
