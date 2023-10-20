@@ -161,7 +161,7 @@ export const Footer = () => {
 
             if (lang.length > 0) {
                 const lang_element = lang[0];
-                lang_element.setAttribute('lang', 'eng');
+                lang_element.setAttribute('lang', 'en');
             }
 
             document.title = 'George Marinos, Fullstack Web Developer Portfolio';
@@ -182,7 +182,7 @@ export const Footer = () => {
             }
         }
 
-        else if (cookies.get('lang') === 'gr') {
+        else if (cookies.get('lang') === 'el') {
 
             sleep(100).then(() => {
 
@@ -353,9 +353,9 @@ export const Footer = () => {
                     header.style.cssText += "bottom: 46rem !important";
                 }
 
-               /*  else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
-                    header.style.cssText += "bottom: 45.5rem !important";
-                } */
+                /*  else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
+                     header.style.cssText += "bottom: 45.5rem !important";
+                 } */
             }}>
                 <nav>
                     <button className='gr nownohover' onClick={() => {
@@ -459,20 +459,20 @@ export const Footer = () => {
                         footer.style.cssText += "position: relative !important";
                     }
 
-                   /*   else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
-                        footer.style.cssText += "top: 42vh !important";
-                        footer.style.cssText += "height: 12vh !important";
-                        footer.style.cssText += "width: 26.8rem !important";
-                        footer.style.cssText += "position: relative !important";
-                    }
-
-                    if (navigator.userAgent.includes("Kiwi") && navigator.userAgent.includes("Mobi")) {
-                         const footer = document?.querySelector("footer") as HTMLDivElement;
+                    /*   else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
                          footer.style.cssText += "top: 42vh !important";
                          footer.style.cssText += "height: 12vh !important";
-                         footer.style.cssText += "width: 23.3rem !important";
+                         footer.style.cssText += "width: 26.8rem !important";
                          footer.style.cssText += "position: relative !important";
-                     }  */
+                     }
+ 
+                     if (navigator.userAgent.includes("Kiwi") && navigator.userAgent.includes("Mobi")) {
+                          const footer = document?.querySelector("footer") as HTMLDivElement;
+                          footer.style.cssText += "top: 42vh !important";
+                          footer.style.cssText += "height: 12vh !important";
+                          footer.style.cssText += "width: 23.3rem !important";
+                          footer.style.cssText += "position: relative !important";
+                      }  */
                 }}>
                 <nav>
                     <button className='home' onClick={() => {
