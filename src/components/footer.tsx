@@ -4,6 +4,12 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 
 const cookies = new Cookies();
 
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+    onanimationstart = () => {
+        document.body.style.cssText += "overflow-y: scroll !important";
+    }
+}
+
 function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -344,7 +350,7 @@ export const Footer = () => {
             <header onAnimationStart={() => {
                 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                     const header = document?.querySelector("header") as HTMLDivElement;
-                    header.style.cssText = "bottom: 78vh !important";
+                    header.style.cssText += "bottom: 88vh !important";
                 }
             }}>
                 <nav>
@@ -439,7 +445,14 @@ export const Footer = () => {
                     {showbody()}
                 </Suspense>
             </section>
-            <footer>
+            <footer
+                onAnimationStart={() => {
+                    if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                        const footer = document?.querySelector("footer") as HTMLDivElement;
+                        footer.style.cssText += "top: 88vh !important";
+                        footer.style.cssText += "height: 12vh !important";
+                    }
+                }}>
                 <nav>
                     <button className='home' onClick={() => {
                         set_page({ location: "home" });
@@ -475,22 +488,3 @@ export const Footer = () => {
         </main >
     )
 }
-
-
-/* if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    onanimationstart = () => {
-
-        const footer = document?.querySelector("footer") as HTMLElement;
-
-        //document.body.style.backgroundImage = "none";
-        //document.body.style.backgroundColor = "rgb(30, 29, 34)";
-        //document.body.style.overflowX = "hidden";
-
-        document.body.style.cssText += "overflow-y: scroll !important";
-
-
-
-        footer.style.cssText += "top: 88vh !important";
-        footer.style.cssText += "height: 12vh !important";
-    }
-} */

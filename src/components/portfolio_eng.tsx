@@ -1831,7 +1831,14 @@ const Portfolio_eng = () => {
 
 
     return <div className="content">
-        <div className="content_portfolio" style={{}}>
+        <div className="content_portfolio" onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
+
+                content_portfolio.style.cssText += "position: relative important";
+                content_portfolio.style.cssText += "right:2rem !important";
+            }
+        }}>
             <div className="mouseia">
                 <div className="description_div mouseia_desc" style={mouseia_style}>
                     <p>MUSEUMS OF LESVOS</p>
@@ -1941,15 +1948,6 @@ const Portfolio_eng = () => {
             </div >
         </div >
     </div >
-}
-
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    onload = () => {
-        const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
-
-        content_portfolio.style.setProperty("position", "relative", "important");
-        content_portfolio.style.setProperty("right", "2rem", "important");
-    }
 }
 
 export default Portfolio_eng;

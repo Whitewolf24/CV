@@ -1829,7 +1829,14 @@ const Portfolio_gr = () => {
 
 
     return <div className="content" style={{}}>
-        <div className="content_portfolio">
+        <div className="content_portfolio" onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
+
+                content_portfolio.style.cssText += "position: relative important";
+                content_portfolio.style.cssText += "right: 2rem !important";
+            }
+        }}>
             <div className="mouseia">
                 <div className="description_div mouseia_desc" style={mouseia_style}>
                     <p>ΜΟΥΣΕΙΑ ΛΕΣΒΟΥ</p>
