@@ -350,7 +350,7 @@ export const Footer = () => {
             <header onAnimationStart={() => {
                 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                     const header = document?.querySelector("header") as HTMLDivElement;
-                    header.style.cssText += "bottom: 88vh !important";
+                    header.style.cssText += "bottom: 89vh !important";
                 }
             }}>
                 <nav>

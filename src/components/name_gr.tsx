@@ -6,8 +6,12 @@ const Name_gr = () => {
         if (window.innerHeight <= 230) {
             document.body.style.overflowY = "scroll";
         }
-        else document.body.style.overflowY = "hidden";
-        content_name.style.transform = "translate(0, 26%)"
+        else {
+            if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
+                document.body.style.overflowY = "hidden";
+                content_name.style.transform = "translate(0, 26%)"
+            }
+        }
     };
 
     onload = () => {
@@ -15,8 +19,10 @@ const Name_gr = () => {
             document.body.style.overflowY = "scroll";
         }
         else {
-            document.body.style.overflowY = "hidden";
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
+                document.body.style.overflowY = "hidden";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
     }
 
