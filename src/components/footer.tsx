@@ -18,24 +18,6 @@ const Contact_eng = lazy(() => import('./contact_eng'));
 
 export const Footer = () => {
 
-    onload = () => {
-        if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-            const header = document?.querySelector("header") as HTMLDivElement;
-            const footer = document?.querySelector("footer") as HTMLElement;
-
-            //document.body.style.backgroundImage = "none";
-            //document.body.style.backgroundColor = "rgb(30, 29, 34)";
-            //document.body.style.overflowX = "hidden";
-
-            document.body.style.cssText += "overflow-y: scroll !important";
-
-            header.style.cssText += "bottom: 78vh !important";
-
-            footer.style.cssText += "top: 88vh !important";
-            footer.style.cssText += "height: 12vh !important";
-        }
-    }
-
     const gr = document.querySelector(".gr") as HTMLButtonElement;
     const eng = document.querySelector(".eng") as HTMLButtonElement;
 
@@ -487,4 +469,21 @@ export const Footer = () => {
             </footer>
         </main >
     )
+}
+
+
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+    const header = document?.querySelector("header") as HTMLDivElement;
+    const footer = document?.querySelector("footer") as HTMLElement;
+
+    //document.body.style.backgroundImage = "none";
+    //document.body.style.backgroundColor = "rgb(30, 29, 34)";
+    //document.body.style.overflowX = "hidden";
+
+    document.body.style.cssText += "overflow-y: scroll !important";
+
+    header.style.cssText += "bottom: 78vh !important";
+
+    footer.style.cssText += "top: 88vh !important";
+    footer.style.cssText += "height: 12vh !important";
 }
