@@ -348,8 +348,12 @@ export const Footer = () => {
     return (
         <main>
             <header onAnimationStart={() => {
-                if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                    const header = document?.querySelector("header") as HTMLDivElement;
+                const header = document?.querySelector("header") as HTMLDivElement;
+                if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
+                    header.style.cssText += "bottom: 47rem !important";
+                }
+
+                else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
                     header.style.cssText += "bottom: 45.5rem !important";
                 }
             }}>
@@ -447,8 +451,8 @@ export const Footer = () => {
             </section>
             <footer
                 onAnimationStart={() => {
+                    const footer = document?.querySelector("footer") as HTMLDivElement;
                     if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
-                        const footer = document?.querySelector("footer") as HTMLDivElement;
                         footer.style.cssText += "top: 42vh !important";
                         footer.style.cssText += "height: 12vh !important";
                         footer.style.cssText += "width: 27.4rem !important";
@@ -456,7 +460,6 @@ export const Footer = () => {
                     }
 
                     else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
-                        const footer = document?.querySelector("footer") as HTMLDivElement;
                         footer.style.cssText += "top: 42vh !important";
                         footer.style.cssText += "height: 12vh !important";
                         footer.style.cssText += "width: 26.8rem !important";
