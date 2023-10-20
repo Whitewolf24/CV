@@ -350,7 +350,7 @@ export const Footer = () => {
             <header onAnimationStart={() => {
                 const header = document?.querySelector("header") as HTMLDivElement;
                 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
-                    header.style.cssText += "bottom: 47rem !important";
+                    header.style.cssText += "bottom: 46rem !important";
                 }
 
                 else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
