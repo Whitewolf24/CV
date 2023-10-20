@@ -341,7 +341,10 @@ export const Footer = () => {
 
     return (
         <main>
-            <header>
+            <header onAnimationStart={() => {
+                const header = document?.querySelector("header") as HTMLDivElement;
+                header.style.cssText = "bottom: 78vh !important";
+            }}>
                 <nav>
                     <button className='gr nownohover' onClick={() => {
                         cookies.set('lang', 'gr', { sameSite: true }); set_language({ language: "greek" });
@@ -472,18 +475,20 @@ export const Footer = () => {
 }
 
 
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    const header = document?.querySelector("header") as HTMLDivElement;
-    const footer = document?.querySelector("footer") as HTMLElement;
+/* if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+    onanimationstart = () => {
 
-    //document.body.style.backgroundImage = "none";
-    //document.body.style.backgroundColor = "rgb(30, 29, 34)";
-    //document.body.style.overflowX = "hidden";
+        const footer = document?.querySelector("footer") as HTMLElement;
 
-    document.body.style.cssText += "overflow-y: scroll !important";
+        //document.body.style.backgroundImage = "none";
+        //document.body.style.backgroundColor = "rgb(30, 29, 34)";
+        //document.body.style.overflowX = "hidden";
 
-    header.style.cssText += "bottom: 78vh !important";
+        document.body.style.cssText += "overflow-y: scroll !important";
 
-    footer.style.cssText += "top: 88vh !important";
-    footer.style.cssText += "height: 12vh !important";
-}
+
+
+        footer.style.cssText += "top: 88vh !important";
+        footer.style.cssText += "height: 12vh !important";
+    }
+} */
