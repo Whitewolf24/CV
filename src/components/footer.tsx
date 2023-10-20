@@ -7,6 +7,7 @@ const cookies = new Cookies();
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     onanimationstart = () => {
         document.body.style.cssText += "overflow-y: scroll !important";
+        document.body.style.cssText += "overflow-x: hidden !important";
     }
 }
 
@@ -449,8 +450,9 @@ export const Footer = () => {
                 onAnimationStart={() => {
                     if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                         const footer = document?.querySelector("footer") as HTMLDivElement;
-                        footer.style.cssText += "top: 88vh !important";
+                        footer.style.cssText += "top: 42vh !important";
                         footer.style.cssText += "height: 12vh !important";
+                        footer.style.cssText += "width: 35rem !important";
                         footer.style.cssText += "position: relative !important";
                     }
                 }}>

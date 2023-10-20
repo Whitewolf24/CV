@@ -2038,16 +2038,17 @@ footer span {
             background-image: none;
             background-color: rgb(30, 29, 34);
             overflow-y: scroll !important;
+            overflow-x: hidden !important;
         }
 
         header {
-            bottom: 88vh;
+            bottom: 88vh !important;
         }
 
         footer {
-            height: 12vh;
-            top: 88vh;
-            position: relative;
+            height: 12vh !important;
+            top: 88vh !important;
+            position: relative !important;
         }
 
         .content_portfolio {
