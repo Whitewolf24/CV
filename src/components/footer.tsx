@@ -451,6 +451,7 @@ export const Footer = () => {
                         const footer = document?.querySelector("footer") as HTMLDivElement;
                         footer.style.cssText += "top: 88vh !important";
                         footer.style.cssText += "height: 12vh !important";
+                        footer.style.cssText += "position: relative !important";
                     }
                 }}>
                 <nav>
