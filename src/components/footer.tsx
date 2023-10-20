@@ -353,9 +353,9 @@ export const Footer = () => {
                     header.style.cssText += "bottom: 46rem !important";
                 }
 
-                else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
+               /*  else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
                     header.style.cssText += "bottom: 45.5rem !important";
-                }
+                } */
             }}>
                 <nav>
                     <button className='gr nownohover' onClick={() => {
@@ -459,14 +459,14 @@ export const Footer = () => {
                         footer.style.cssText += "position: relative !important";
                     }
 
-                    else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
+                   /*   else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
                         footer.style.cssText += "top: 42vh !important";
                         footer.style.cssText += "height: 12vh !important";
                         footer.style.cssText += "width: 26.8rem !important";
                         footer.style.cssText += "position: relative !important";
                     }
 
-                    /*  if (navigator.userAgent.includes("Kiwi") && navigator.userAgent.includes("Mobi")) {
+                    if (navigator.userAgent.includes("Kiwi") && navigator.userAgent.includes("Mobi")) {
                          const footer = document?.querySelector("footer") as HTMLDivElement;
                          footer.style.cssText += "top: 42vh !important";
                          footer.style.cssText += "height: 12vh !important";
