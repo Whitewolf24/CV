@@ -451,25 +451,25 @@ export const Footer = () => {
                         const footer = document?.querySelector("footer") as HTMLDivElement;
                         footer.style.cssText += "top: 42vh !important";
                         footer.style.cssText += "height: 12vh !important";
-                        footer.style.cssText += "width: 23rem !important";
+                        footer.style.cssText += "width: 23.2rem !important";
                         footer.style.cssText += "position: relative !important";
                     }
 
-                    if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
+                    else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
                         const footer = document?.querySelector("footer") as HTMLDivElement;
                         footer.style.cssText += "top: 42vh !important";
                         footer.style.cssText += "height: 12vh !important";
-                        footer.style.cssText += "width: 24rem !important";
+                        footer.style.cssText += "width: 25rem !important";
                         footer.style.cssText += "position: relative !important";
                     }
 
-                    if (navigator.userAgent.includes("Kiwi") && navigator.userAgent.includes("Mobi")) {
-                        const footer = document?.querySelector("footer") as HTMLDivElement;
-                        footer.style.cssText += "top: 42vh !important";
-                        footer.style.cssText += "height: 12vh !important";
-                        footer.style.cssText += "width: 23.3rem !important";
-                        footer.style.cssText += "position: relative !important";
-                    }
+                    /*  if (navigator.userAgent.includes("Kiwi") && navigator.userAgent.includes("Mobi")) {
+                         const footer = document?.querySelector("footer") as HTMLDivElement;
+                         footer.style.cssText += "top: 42vh !important";
+                         footer.style.cssText += "height: 12vh !important";
+                         footer.style.cssText += "width: 23.3rem !important";
+                         footer.style.cssText += "position: relative !important";
+                     } */
                 }}>
                 <nav>
                     <button className='home' onClick={() => {
