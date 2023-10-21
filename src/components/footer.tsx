@@ -4,6 +4,15 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 
 const cookies = new Cookies();
 
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+    const meta = document.getElementsByTagName("meta");
+
+    if (meta.length > 0) {
+        const meta_element = meta[1];
+        meta_element.setAttribute('content', 'width=device-width,initial-scale=0.9');
+    }
+}
+
 function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -452,6 +461,10 @@ export const Footer = () => {
                         //footer.style.cssText += "position: relative !important";
                         footer.style.cssText += "top: 43rem !important";
                         footer.style.cssText += "width: 27.4rem !important";
+                    }
+
+                    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+                        footer.style.cssText += "top: 53rem !important";
                     }
 
                     /*   else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {

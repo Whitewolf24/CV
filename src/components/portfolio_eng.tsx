@@ -1830,15 +1830,23 @@ const Portfolio_eng = () => {
     }, [width, height]);
 
 
-    return <div className="content">
+    return <div className="content"
+        onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content = document?.querySelector(".content") as HTMLDivElement;
+
+                content.style.cssText += "overflow: hidden scroll !important";
+            }
+        }}>
         <div className="content_portfolio" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
-                content_portfolio.style.cssText += "height: fit-content !important";
+                //content_portfolio.style.cssText += "height: fit-content !important";
                 content_portfolio.style.cssText += "position: relative !important";
-                content_portfolio.style.cssText += "right:2rem !important";
-                content_portfolio.style.cssText += "top: 1rem !important";
-                content_portfolio.style.cssText += "overflow: hidden scroll !important";
+                content_portfolio.style.cssText += "right: 2rem !important";
+                content_portfolio.style.cssText += "top: 21rem !important";
+                content_portfolio.style.cssText += "width: 120vw !important";
+                //content_portfolio.style.cssText += "overflow: hidden scroll !important";
             }
         }}>
             <div className="mouseia">
