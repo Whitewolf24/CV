@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
     const footer = document?.querySelector("footer") as HTMLDivElement;
-    footer.style.cssText += "top: 53rem !important";
+    footer.style.cssText += "top: 30rem !important";
 }
 
 const Portfolio_eng = () => {
