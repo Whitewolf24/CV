@@ -463,10 +463,6 @@ export const Footer = () => {
                         footer.style.cssText += "width: 27.4rem !important";
                     }
 
-                    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-                        footer.style.cssText += "top: 53rem !important";
-                    }
-
                     /*   else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
                          footer.style.cssText += "top: 42vh !important";
                          footer.style.cssText += "height: 12vh !important";
