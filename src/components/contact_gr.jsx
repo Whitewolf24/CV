@@ -71,6 +71,11 @@ const Contact_gr = () => {
                             }
                             else email_form.setCustomValidity("");
                         }}
+
+                        onload={() => {
+                            const email_form = document?.querySelector(".email_form");
+                            email_form.style.cssText += "width: 16rem !important";
+                        }}
                     />
                 </div>
 
@@ -84,7 +89,13 @@ const Contact_gr = () => {
                             }
                             else msg_form.setCustomValidity("");
                         }}
-                    ></textarea>
+
+                        onload={() => {
+                            const msg_form = document?.querySelector(".email_form");
+                            msg_form.style.cssText += "width: 16rem !important";
+                        }}
+                    >
+                    </textarea>
                 </div>
 
                 <button className="submit_butt" disabled={isSubmitting} type="submit" value="Send">

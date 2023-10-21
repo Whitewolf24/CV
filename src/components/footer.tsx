@@ -4,12 +4,6 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 
 const cookies = new Cookies();
 
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    onanimationstart = () => {
-        document.body.style.cssText += "overflow: hidden scroll !important";
-    }
-}
-
 function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
