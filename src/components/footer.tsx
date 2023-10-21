@@ -349,7 +349,8 @@ export const Footer = () => {
             <header onAnimationStart={() => {
                 const header = document?.querySelector("header") as HTMLDivElement;
                 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
-                    header.style.cssText += "bottom: 46rem !important";
+                    header.style.cssText += "top: 0 !important";
+                    header.style.cssText += "position: fixed !important";
                 }
 
                 /*  else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
@@ -452,10 +453,11 @@ export const Footer = () => {
                 onAnimationStart={() => {
                     const footer = document?.querySelector("footer") as HTMLDivElement;
                     if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
-                        footer.style.cssText += "top: 42vh !important";
-                        footer.style.cssText += "height: 12vh !important";
+                        //footer.style.cssText += "top: 42vh !important";
+                        //footer.style.cssText += "height: 12vh !important";
+                        //footer.style.cssText += "position: relative !important";
+                        footer.style.cssText += "top: 43rem !important";
                         footer.style.cssText += "width: 27.4rem !important";
-                        footer.style.cssText += "position: relative !important";
                     }
 
                     /*   else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {

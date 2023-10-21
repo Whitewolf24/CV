@@ -25,7 +25,12 @@ const Skills = () => {
     }
 
     return <div className="content">
-        <div className="content_skills">
+        <div className="content_skills" onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content_skills = document?.querySelector(".content_skills") as HTMLDivElement;
+                content_skills.style.cssText += "height: fit-content !important";
+            }
+        }}>
             <div id="backend">
                 <h3>Backend</h3>
                 <p>{"<?php?>"}</p>

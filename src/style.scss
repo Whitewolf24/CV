@@ -2042,16 +2042,31 @@ footer span {
         }
 
         header {
-            bottom: 88vh !important;
+            //bottom: 88vh !important;
+            top: 0;
+            position: fixed;
         }
 
         footer {
-            height: 12vh !important;
-            top: 88vh !important;
-            position: relative !important;
+            /*   height: 12vh !important;*/
+            top: 43rem !important;
+            position: fixed !important;
+        }
+
+        .content_name {
+            height: fit-content !important;
+        }
+
+        .content_skills {
+            height: fit-content !important;
+        }
+
+        .content_contact {
+            height: fit-content !important;
         }
 
         .content_portfolio {
+            height: fit-content !important;
             position: relative;
             right: 2rem;
         }

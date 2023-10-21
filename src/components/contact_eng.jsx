@@ -54,7 +54,12 @@ const Contact_eng = () => {
     else document.body.style.overflowY = "hidden";
 
     return <div className="content">
-        <div className="content_contact">
+        <div className="content_contact" onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content_contact = document?.querySelector(".content_contact");
+                content_contact.style.cssText += "height: fit-content !important";
+            }
+        }}>
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)} /*method="POST"  data-sitekey="vlmZE8H22O2e_lQFj"*/>
                 <div>
                     <input className="email_form" type="email" name="email" placeholder="Contact Email" title=""

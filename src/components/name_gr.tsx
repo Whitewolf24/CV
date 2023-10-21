@@ -27,7 +27,12 @@ const Name_gr = () => {
     }
 
     return <div className="content">
-        <div className="content_name">
+        <div className="content_name" onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content_name = document?.querySelector(".content_name") as HTMLDivElement;
+                content_name.style.cssText += "height: fit-content !important";
+            }
+        }}>
             <h1 className="name_gr">ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
             <h2 className="job_gr">WEB_DEVELOPER</h2>
         </div>
