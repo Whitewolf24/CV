@@ -353,6 +353,9 @@ export const Footer = () => {
                 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
                     header.style.cssText += "top: 0 !important";
                     header.style.cssText += "position: fixed !important";
+                    header.style.cssText += "height: fit-content !important";
+                    header.style.cssText += "width: 100%  !important";
+                    header.style.cssText += "background-color: rgb(30, 29, 34) !important;"
                 }
 
                 /*  else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
@@ -456,8 +459,8 @@ export const Footer = () => {
                     const footer = document?.querySelector("footer") as HTMLDivElement;
                     if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
                         //footer.style.cssText += "top: 42vh !important";
-                        //footer.style.cssText += "height: 12vh !important";
                         //footer.style.cssText += "position: fixed !important";
+                        footer.style.cssText += "height: 4rem !important";
                         footer.style.cssText += "bottom: 0rem !important";
                         footer.style.cssText += "top: auto !important";
                         footer.style.cssText += "width: 27.4rem !important";
