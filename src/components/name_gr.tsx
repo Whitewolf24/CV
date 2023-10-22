@@ -25,16 +25,16 @@ const Name_gr = () => {
         }
     }
 
-    if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef")) {
-        onload = () => {
-            const footer = document?.querySelector("footer") as HTMLDivElement;
-            /*document.body.style.cssText += "overflow: hidden scroll !important";*/
-            footer.style.cssText += "position: fixed !important";
-            footer.style.cssText += "bottom: 0rem !important";
-            footer.style.cssText += "top: auto !important";
-            //footer.style.cssText += "height: 4rem !important";
-        }
-    }
+    /* if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef")) {
+         onload = () => {
+             const footer = document?.querySelector("footer") as HTMLDivElement;
+             document.body.style.cssText += "overflow: hidden scroll !important";
+             footer.style.cssText += "position: fixed !important";
+             footer.style.cssText += "bottom: 0rem !important";
+             footer.style.cssText += "top: auto !important";
+             //footer.style.cssText += "height: 4rem !important";
+         }
+     }*/
 
     return <div className="content"
         onAnimationStart={() => {

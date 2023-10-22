@@ -1966,7 +1966,7 @@ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi
     }
 }
 
-if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef")) {
+/* if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef")) {
     onload = () => {
         const footer = document?.querySelector("footer") as HTMLDivElement;
         //document.body.style.cssText += "overflow: hidden scroll !important";
@@ -1975,6 +1975,6 @@ if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef"
         footer.style.cssText = "position: relative !important";
         //footer.style.cssText = "height: 12rem !important";
     }
-}
+} */
 
 export default Portfolio_gr;
