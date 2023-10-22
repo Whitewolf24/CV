@@ -1829,23 +1829,18 @@ const Portfolio_eng = () => {
     }, [width, height]);
 
 
-    return <div className="content"
-        onAnimationStart={() => {
-            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                const content = document?.querySelector(".content") as HTMLDivElement;
-
-                content.style.cssText += "overflow: hidden scroll !important";
-            }
-        }}>
+    return <div className="content">
         <div className="content_portfolio" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
+                document.body.style.cssText += "overflow-y: scroll";
                 //content_portfolio.style.cssText += "height: fit-content !important";
                 content_portfolio.style.cssText += "position: relative !important";
                 content_portfolio.style.cssText += "right: 2rem !important";
                 content_portfolio.style.cssText += "top: 21rem !important";
                 content_portfolio.style.cssText += "width: 120vw !important";
-                //content_portfolio.style.cssText += "overflow: hidden scroll !important";
+
+                content_portfolio.style.cssText += "transform: scale(0.8);";
             }
         }}>
             <div className="mouseia">
@@ -1957,16 +1952,6 @@ const Portfolio_eng = () => {
             </div >
         </div >
     </div >
-}
-
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    onload = () => {
-        const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
-        
-        content_portfolio.style.cssText += "transform: scale(0.8)";
-        content_portfolio.style.setProperty("position", "relative", "important");
-        content_portfolio.style.setProperty("right", "2rem", "important");
-    }
 }
 
 export default Portfolio_eng;
