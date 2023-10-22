@@ -25,26 +25,15 @@ const Name_eng = () => {
         }
     }
 
-
-    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-        onload = () => {
-            const footer = document?.querySelector("footer") as HTMLDivElement;
-            /*document.body.style.cssText += "overflow: hidden scroll !important";
-          footer.style.cssText += "bottom: 0rem !important";
-            footer.style.cssText += "position: fixed !important"; */
-            footer.style.cssText += "top: auto !important";
-        }
-    }
-
-
     return <div className="content"
-        onAnimationStart={() => {
+       /*  onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content = document?.querySelector(".content") as HTMLDivElement;
 
                 content.style.cssText += "overflow: hidden !important";
             }
-        }}>        <div className="content_name" onAnimationStart={() => {
+        }} */>
+        <div className="content_name" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_name = document?.querySelector(".content_name") as HTMLDivElement;
                 content_name.style.cssText += "height: fit-content !important";
