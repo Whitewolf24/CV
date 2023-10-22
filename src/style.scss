@@ -2050,9 +2050,9 @@ footer span {
         }
 
         footer {
-            //height: 20rem !important;
-            top: 43rem !important;
-            //bottom: 0 !important;
+            height: 6rem !important;
+            top: auto !important;
+            bottom: 0 !important;
             position: fixed !important;
         }
 
@@ -2062,10 +2062,11 @@ footer span {
         }
 
         .content_skills {
+            bottom: 1rem !important;
             font-size: clamp(.3rem, 2vw, .6rem);
             height: fit-content !important;
             padding-right: 0;
-            top: 2rem;
+            right: 1rem !important;
             width: fit-content !important;
         }
 
