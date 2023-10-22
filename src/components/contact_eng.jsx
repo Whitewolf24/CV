@@ -105,7 +105,7 @@ const Contact_eng = () => {
 
 if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
     const footer = document?.querySelector("footer");
-    footer.style.cssText += "top: 0rem !important";
+    footer.style.cssText += "top: 43rem !important";
 }
 
 
