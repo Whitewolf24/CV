@@ -1966,14 +1966,14 @@ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi
     }
 }
 
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+/*if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
     onload = () => {
         const footer = document?.querySelector("footer") as HTMLDivElement;
-        /*document.body.style.cssText += "overflow: hidden scroll !important";
+        document.body.style.cssText += "overflow: hidden scroll !important";
         footer.style.cssText = "bottom: auto !important";
-        footer.style.cssText = "position: relative !important";*/
+        footer.style.cssText = "position: relative !important";
         footer.style.cssText = "height: 12rem !important";
     }
-}
+}*/
 
 export default Portfolio_gr;
