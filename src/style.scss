@@ -2042,9 +2042,11 @@ footer span {
         }
 
         header {
+            background-color: rgb(30, 29, 34) !important;
             //bottom: 88vh !important;
             top: 0;
             position: fixed;
+            width: 100%;
         }
 
         footer {
@@ -2078,7 +2080,7 @@ footer span {
 
         .email_form,
         .msg_form {
-            background-color: white;
+            background-color: white !important;
             width: 15rem !important;
         }
     }
