@@ -2045,6 +2045,7 @@ footer span {
             background-color: rgb(30, 29, 34) !important;
             //bottom: 88vh !important;
             top: 0;
+            height: 4rem !important;
             position: fixed;
             width: 100%;
         }
@@ -2075,10 +2076,10 @@ footer span {
         }
 
         .content_portfolio {
-            //height: fit-content !important;
+            height: fit-content !important;
             position: relative;
-            right: 7rem !important;
-            width: 120vw !important;
+            right: 1rem !important;
+            width: 140vw !important;
         }
 
         .email_form,
