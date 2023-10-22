@@ -2045,7 +2045,7 @@ footer span {
             background-color: rgb(30, 29, 34) !important;
             //bottom: 88vh !important;
             top: 0;
-            height: 4rem !important;
+            height: fit-content;
             position: fixed;
             width: 100%;
         }
@@ -2078,7 +2078,8 @@ footer span {
         .content_portfolio {
             height: fit-content !important;
             position: relative;
-            right: 1rem !important;
+            top: 4rem !important;
+            left: 3rem !important;
             width: 140vw !important;
         }
 
