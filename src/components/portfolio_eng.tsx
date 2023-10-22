@@ -1837,7 +1837,7 @@ const Portfolio_eng = () => {
                 //content_portfolio.style.cssText += "height: fit-content !important";
                 content_portfolio.style.cssText += "position: relative !important";
                 content_portfolio.style.cssText += "right: 2.5rem !important";
-                content_portfolio.style.cssText += "top: 6rem !important";
+                content_portfolio.style.cssText += "top: 8rem !important";
                 content_portfolio.style.cssText += "width: 120vw !important";
 
                 content_portfolio.style.cssText += "transform: scale(0.85);";

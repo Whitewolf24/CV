@@ -76,7 +76,7 @@ const Contact_eng = () => {
                         onAnimationStart={() => {
                             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                                 const email_form = document?.querySelector(".email_form");
-                                email_form.style.cssText += "width: 15rem !important";
+                                email_form.style.cssText += "width: 20rem !important";
                             }
                         }}
                     />
