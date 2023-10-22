@@ -3,10 +3,16 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 // import { first_run, changeto_eng, changeto_gr } from './functions';
 
 const cookies = new Cookies();
+const meta = document.getElementsByTagName("meta");
+
+if (window.matchMedia('(hover: none)').matches) {
+    if (meta.length > 0) {
+        const meta_element = meta[1];
+        meta_element.setAttribute('content', 'width=device-width,initial-scale=0.9');
+    }
+}
 
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-    const meta = document.getElementsByTagName("meta");
-
     if (meta.length > 0) {
         const meta_element = meta[1];
         meta_element.setAttribute('content', 'width=device-width,initial-scale=0.9');
@@ -458,8 +464,9 @@ export const Footer = () => {
                     if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
                         //footer.style.cssText += "top: 42vh !important";
                         //footer.style.cssText += "height: 12vh !important";
-                        //footer.style.cssText += "position: relative !important";
-                        footer.style.cssText += "top: 43rem !important";
+                        //footer.style.cssText += "position: fixed !important";
+                        footer.style.cssText += "bottom: 0rem !important";
+                        footer.style.cssText += "top: auto !important";
                         footer.style.cssText += "width: 27.4rem !important";
                     }
 
