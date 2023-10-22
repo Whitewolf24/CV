@@ -1,8 +1,3 @@
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer") as HTMLDivElement;
-    footer.style.cssText += "top: 53rem !important";
-}
-
 const Name_gr = () => {
 
     onresize = () => {
@@ -27,6 +22,13 @@ const Name_gr = () => {
                 document.body.style.overflowY = "hidden";
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+        }
+    }
+
+    onload = () => {
+        if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+            const footer = document?.querySelector("footer") as HTMLDivElement;
+            footer.style.cssText += "top: 0rem !important";
         }
     }
 

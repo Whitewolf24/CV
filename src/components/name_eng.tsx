@@ -1,8 +1,3 @@
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer") as HTMLDivElement;
-    footer.style.cssText += "top: 53rem !important";
-}
-
 const Name_eng = () => {
 
     onresize = () => {
@@ -30,6 +25,12 @@ const Name_eng = () => {
         }
     }
 
+    onload = () => {
+        if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+            const footer = document?.querySelector("footer") as HTMLDivElement;
+            footer.style.cssText += "top: 0rem !important";
+        }
+    }
 
     return <div className="content"
         onAnimationStart={() => {

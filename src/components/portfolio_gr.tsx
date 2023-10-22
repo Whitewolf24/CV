@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
 
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer") as HTMLDivElement;
-    footer.style.cssText += "top: 48rem !important";
-}
-
 const Portfolio_gr = () => {
 
     let number = 0;
@@ -1968,6 +1963,13 @@ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi
 
         content_portfolio.style.setProperty("position", "relative", "important");
         content_portfolio.style.setProperty("right", "2rem", "important");
+    }
+}
+
+onload = () => {
+    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+        const footer = document?.querySelector("footer") as HTMLDivElement;
+        footer.style.cssText += "top: 50rem !important";
     }
 }
 

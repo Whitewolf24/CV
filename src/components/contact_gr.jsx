@@ -2,11 +2,6 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer");
-    footer.style.cssText += "top: 53rem !important";
-}
-
 const Contact_gr = () => {
 
     const form = useRef();
@@ -116,6 +111,11 @@ const Contact_gr = () => {
             </form>
         </div>
     </div>
+}
+
+if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+    const footer = document?.querySelector("footer");
+    footer.style.cssText += "top: 0rem !important";
 }
 
 export default Contact_gr;

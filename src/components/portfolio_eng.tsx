@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
 
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer") as HTMLDivElement;
-    footer.style.cssText += "top: 48rem !important";
-}
-
 const Portfolio_eng = () => {
 
     let number = 0;
@@ -1962,6 +1957,22 @@ const Portfolio_eng = () => {
             </div >
         </div >
     </div >
+}
+
+if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+    onload = () => {
+        const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
+
+        content_portfolio.style.setProperty("position", "relative", "important");
+        content_portfolio.style.setProperty("right", "2rem", "important");
+    }
+}
+
+onload = () => {
+    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+        const footer = document?.querySelector("footer") as HTMLDivElement;
+        footer.style.cssText += "top: 50rem !important";
+    }
 }
 
 export default Portfolio_eng;
