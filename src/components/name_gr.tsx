@@ -25,7 +25,7 @@ const Name_gr = () => {
         }
     }
 
-    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+    if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef")) {
         onload = () => {
             const footer = document?.querySelector("footer") as HTMLDivElement;
             /*document.body.style.cssText += "overflow: hidden scroll !important";*/
