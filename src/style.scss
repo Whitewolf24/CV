@@ -2064,10 +2064,9 @@ footer span {
         .content_skills {
             top: -0.2rem !important;
             font-size: clamp(.3rem, 2vw, .6rem);
-            //height: fit-content !important;
+            height: fit-content !important;
             padding-right: 0;
-            margin-bottom: -10rem;
-            left: 1rem !important;
+            left: -1rem !important;
             width: fit-content !important;
         }
 
@@ -2076,8 +2075,9 @@ footer span {
         }
 
         .content_portfolio {
-            height: fit-content !important;
+            //height: fit-content !important;
             position: relative;
+            margin-bottom: -10rem;
             right: 2rem;
         }
 
