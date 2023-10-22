@@ -5,7 +5,7 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 const cookies = new Cookies();
 const meta = document.getElementsByTagName("meta");
 
-if (window.matchMedia('(hover: none)').matches) {
+if (window.matchMedia('(hover: none)')) {
     if (meta.length > 0) {
         const meta_element = meta[1];
         meta_element.setAttribute('content', 'width=device-width,initial-scale=0.9');
