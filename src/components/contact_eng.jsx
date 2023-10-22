@@ -57,8 +57,14 @@ const Contact_eng = () => {
     return <div className="content">
         <div className="content_contact" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                const content_contact = document?.querySelector(".content_contact");
+                const content_contact = document.querySelector(".content_contact");
+                const content_contact_input = document.getElementsByTagName("input");
                 content_contact.style.cssText += "height: fit-content !important";
+
+                if (content_contact_input.length > 0) {
+                    const content_contact_input_element = content_contact_input[0];
+                    content_contact_input_element.style.cssText += "width: 15rem !important";
+                }
             }
         }}>
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)} /*method="POST"  data-sitekey="vlmZE8H22O2e_lQFj"*/>
@@ -72,13 +78,6 @@ const Contact_eng = () => {
                             }
                             else email_form.setCustomValidity("");
                         }}
-
-                        onAnimationStart={() => {
-                            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                                const email_form = document?.querySelector(".email_form");
-                                email_form.style.cssText += "width: 20rem !important";
-                            }
-                        }}
                     />
                 </div>
 
@@ -91,13 +90,6 @@ const Contact_eng = () => {
                                 msg_form.setCustomValidity("Please fill this field");
                             }
                             else msg_form.setCustomValidity("");
-                        }}
-
-                        onAnimationStart={() => {
-                            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                                const msg_form = document?.querySelector(".msg_form");
-                                msg_form.style.cssText += "width: 15rem !important";
-                            }
                         }}>
                     </textarea>
                 </div>
