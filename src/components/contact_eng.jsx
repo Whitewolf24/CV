@@ -2,6 +2,11 @@ import { useRef } from "react";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
+if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+    const footer = document?.querySelector("footer");
+    footer.style.cssText += "top: 43rem !important";
+}
+
 const Contact_eng = () => {
 
     const form = useRef();
@@ -53,8 +58,14 @@ const Contact_eng = () => {
     }
     else document.body.style.overflowY = "hidden";
 
-    return <div className="content">
-        <div className="content_contact" onAnimationStart={() => {
+    return <div className="content"
+        onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content = document?.querySelector(".content");
+
+                content.style.cssText += "overflow: hidden !important";
+            }
+        }}>        <div className="content_contact" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_contact = document?.querySelector(".content_contact");
                 content_contact.style.cssText += "height: fit-content !important";

@@ -1,3 +1,7 @@
+if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+    const footer = document?.querySelector("footer") as HTMLDivElement;
+    footer.style.cssText += "top: 43rem !important";
+}
 
 const Name_gr = () => {
 
@@ -26,7 +30,14 @@ const Name_gr = () => {
         }
     }
 
-    return <div className="content">
+    return <div className="content"
+        onAnimationStart={() => {
+            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                const content = document?.querySelector(".content") as HTMLDivElement;
+
+                content.style.cssText += "overflow: hidden !important";
+            }
+        }}>
         <div className="content_name" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_name = document?.querySelector(".content_name") as HTMLDivElement;
