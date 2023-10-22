@@ -220,15 +220,6 @@ export const Footer = () => {
                 return <Skills />
             }
             if (page.location === 'portfolio') {
-                if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-                    onload = () => {
-                        const footer = document?.querySelector("footer") as HTMLDivElement;
-                        /*document.body.style.cssText += "overflow: hidden scroll !important";
-                        footer.style.cssText = "bottom: auto !important";
-                        footer.style.cssText = "position: relative !important";*/
-                        footer.style.cssText += "height: 12vw !important";
-                    }
-                }
                 return <Portfolio_gr />
             }
             if (page.location === 'contact') {
