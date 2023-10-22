@@ -226,7 +226,7 @@ export const Footer = () => {
                         /*document.body.style.cssText += "overflow: hidden scroll !important";
                         footer.style.cssText = "bottom: auto !important";
                         footer.style.cssText = "position: relative !important";*/
-                        footer.style.cssText = "height: 12rem !important";
+                        footer.style.cssText += "height: 12vw !important";
                     }
                 }
                 return <Portfolio_gr />
