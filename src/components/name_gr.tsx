@@ -37,13 +37,13 @@ const Name_gr = () => {
      }*/
 
     return <div className="content"
-        onAnimationStart={() => {
+     /*    onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content = document?.querySelector(".content") as HTMLDivElement;
 
                 content.style.cssText += "overflow: hidden !important";
             }
-        }}>
+        }} */>
         <div className="content_name" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_name = document?.querySelector(".content_name") as HTMLDivElement;
