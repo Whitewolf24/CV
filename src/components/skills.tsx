@@ -1,8 +1,3 @@
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer") as HTMLDivElement;
-    footer.style.cssText += "top: 43rem !important";
-}
-
 const Skills = () => {
 
     onresize = () => {
@@ -79,6 +74,13 @@ const Skills = () => {
             </div>
         </div>
     </div >
+}
+
+onload = () => {
+    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+        const footer = document?.querySelector("footer") as HTMLDivElement;
+        footer.style.cssText += "top: 0rem !important";
+    }
 }
 
 export default Skills;
