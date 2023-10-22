@@ -2078,9 +2078,10 @@ footer span {
 
         .content_portfolio {
             height: fit-content !important;
+            left: 1rem !important;
             position: relative;
             top: 10rem !important;
-            left: 1rem !important;
+            //transform: scale(0.5);
             width: 140vw !important;
         }
 
