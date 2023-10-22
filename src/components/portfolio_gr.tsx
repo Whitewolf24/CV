@@ -1972,7 +1972,7 @@ if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mob
         /*document.body.style.cssText += "overflow: hidden scroll !important";
       footer.style.cssText += "bottom: 0rem !important";
         footer.style.cssText += "position: fixed !important"; */
-        footer.style.cssText += "top: 42rem !important";
+        footer.style.cssText += "top: 52rem !important";
     }
 }
 
