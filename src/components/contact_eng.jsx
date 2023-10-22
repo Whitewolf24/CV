@@ -104,12 +104,13 @@ const Contact_eng = () => {
 }
 
 if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    const footer = document?.querySelector("footer");
-    //document.body.style.cssText += "overflow: hidden !important";
-    footer.style.cssText += "top: auto !important";
-    footer.style.cssText += "bottom: 0rem !important";
-    footer.style.cssText += "position: fixed !important";
+    onload = () => {
+        const footer = document?.querySelector("footer");
+        /*document.body.style.cssText += "overflow: hidden scroll !important";
+      footer.style.cssText += "bottom: 0rem !important";
+        footer.style.cssText += "position: fixed !important"; */
+        footer.style.cssText += "top: auto !important";
+    }
 }
-
 
 export default Contact_eng;

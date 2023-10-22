@@ -221,7 +221,7 @@ section {
     animation: typewriter 2.5s steps(40) 0.5s 1 normal forwards,
         blinktext 500ms steps(40) 6 normal forwards;
     border-right: 1px solid white;
-    //overflow: hidden;
+    overflow: hidden;
     white-space: nowrap;
     width: 0rem;
 }
@@ -2034,12 +2034,12 @@ footer span {
 
 @media (hover: none) {
     @supports (-moz-appearance:none) {
-        /*    body {
+           body {
             background-image: none;
             background-color: rgb(30, 29, 34);
             overflow-y: scroll !important;
             overflow-x: hidden !important;
-        } */
+        }
 
         header {
             //bottom: 88vh !important;
@@ -2047,29 +2047,31 @@ footer span {
             position: fixed;
         }
 
-        /*  footer {
-              height: 12vh !important;
-            top: 43rem !important;
+        footer {
+            //height: 12vh !important;
+            //top: auto !important;
+            bottom: 0;
             position: fixed !important;
         }
 
+
         .content_name {
             height: fit-content !important;
-        }*/
+        }
 
         .content_skills {
-            //height: fit-content !important;
+            height: fit-content !important;
             padding-right: 0;
             top: 3rem;
             width: fit-content !important;
         }
 
-        /*  .content_contact {
+        .content_contact {
             height: fit-content !important;
-        } */
+        }
 
         .content_portfolio {
-            // height: fit-content !important;
+            height: fit-content !important;
             position: relative;
             right: 2rem;
         }
