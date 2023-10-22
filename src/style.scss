@@ -2061,7 +2061,7 @@ footer span {
             height: fit-content !important;
             padding-right: 0;
             top: 3rem;
-            //width: fit-content !important;
+            width: fit-content !important;
         }
 
         .content_contact {
@@ -2076,6 +2076,7 @@ footer span {
 
         .email_form,
         .msg_form {
+            background-color: white;
             width: 15rem !important;
         }
     }

@@ -76,11 +76,12 @@ const Skills = () => {
     </div >
 }
 
-onload = () => {
-    if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
+    onload = () => {
         const footer = document?.querySelector("footer") as HTMLDivElement;
         document.body.style.cssText += "overflow: hidden !important";
-        footer.style.cssText += "top: 0rem !important";
+        footer.style.cssText += "top: auto !important";
+        footer.style.cssText += "bottom: 0 !important";
         footer.style.cssText += "position: fixed !important";
     }
 }
