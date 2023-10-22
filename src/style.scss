@@ -299,7 +299,7 @@ section {
     font-size: clamp(.5rem, 2.5vw, 0.6rem);
     grid-column-gap: 4vw;
     grid-row-gap: 0px;
-    grid-template-columns: 27vw 25vw 27vw 10vw;
+    grid-template-columns: 27vw 25vw 27vw 11vw;
     grid-template-rows: 1fr;
     opacity: 0;
     padding-right: 4vw;
@@ -309,7 +309,7 @@ section {
         border-right: 1px dashed;
         height: 5vh;
         margin-block: 1rem;
-        padding-right: 1.1vw;
+        padding-right: 1vw;
         white-space: pre-line;
     }
 
