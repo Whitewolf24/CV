@@ -1834,11 +1834,11 @@ const Portfolio_gr = () => {
                 document.body.style.cssText += "overflow-y: scroll";
                 //content_portfolio.style.cssText += "height: fit-content !important";
                 content_portfolio.style.cssText += "position: relative !important";
-                content_portfolio.style.cssText += "right: 2rem !important";
-                content_portfolio.style.cssText += "top: 21rem !important";
+                content_portfolio.style.cssText += "right: 2.5rem !important";
+                content_portfolio.style.cssText += "top: 6rem !important";
                 content_portfolio.style.cssText += "width: 120vw !important";
 
-                content_portfolio.style.cssText += "transform: scale(0.8);";
+                content_portfolio.style.cssText += "transform: scale(0.85);";
             }
         }}>
             <div className="mouseia">

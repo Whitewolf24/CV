@@ -54,14 +54,8 @@ const Contact_eng = () => {
     }
     else document.body.style.overflowY = "hidden";
 
-    return <div className="content"
-        onAnimationStart={() => {
-            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                const content = document?.querySelector(".content");
-
-                content.style.cssText += "overflow: hidden !important";
-            }
-        }}>        <div className="content_contact" onAnimationStart={() => {
+    return <div className="content">
+        <div className="content_contact" onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_contact = document?.querySelector(".content_contact");
                 content_contact.style.cssText += "height: fit-content !important";
@@ -78,6 +72,13 @@ const Contact_eng = () => {
                             }
                             else email_form.setCustomValidity("");
                         }}
+
+                        onAnimationStart={() => {
+                            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                                const email_form = document?.querySelector(".email_form");
+                                email_form.style.cssText += "width: 15rem !important";
+                            }
+                        }}
                     />
                 </div>
 
@@ -91,7 +92,14 @@ const Contact_eng = () => {
                             }
                             else msg_form.setCustomValidity("");
                         }}
-                    ></textarea>
+
+                        onAnimationStart={() => {
+                            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+                                const msg_form = document?.querySelector(".msg_form");
+                                msg_form.style.cssText += "width: 15rem !important";
+                            }
+                        }}>
+                    </textarea>
                 </div>
 
                 <button className="submit_butt" disabled={isSubmitting} type="submit" value="Send">
