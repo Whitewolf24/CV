@@ -1970,9 +1970,9 @@ if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mob
     onload = () => {
         const footer = document?.querySelector("footer") as HTMLDivElement;
         /*document.body.style.cssText += "overflow: hidden scroll !important";*/
-        footer.style.cssText += "bottom: auto !important";
-        footer.style.cssText += "position: relative !important";
-        footer.style.cssText += "top: 103rem !important";
+        footer.style.cssText = "bottom: auto !important";
+        footer.style.cssText = "position: relative !important";
+        footer.style.cssText = "top: 103rem !important";
     }
 }
 
