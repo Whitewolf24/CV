@@ -28,6 +28,8 @@ const Name_gr = () => {
     onload = () => {
         if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
             const footer = document?.querySelector("footer") as HTMLDivElement;
+            document.body.style.cssText += "overflow: hidden !important";
+
             footer.style.cssText += "top: 0rem !important";
             footer.style.cssText += "position: fixed !important";
         }

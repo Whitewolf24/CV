@@ -115,6 +115,8 @@ const Contact_gr = () => {
 
 if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
     const footer = document?.querySelector("footer");
+    document.body.style.cssText += "overflow: hidden !important";
+
     footer.style.cssText += "top: 43rem !important";
     footer.style.cssText += "position: fixed !important";
 

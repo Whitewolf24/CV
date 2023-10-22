@@ -1969,6 +1969,7 @@ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi
 onload = () => {
     if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
         const footer = document?.querySelector("footer") as HTMLDivElement;
+        document.body.style.cssText += "overflow: hidden scroll !important";
         footer.style.cssText += "top: 43rem !important";
         footer.style.cssText += "position: relative !important";
     }
