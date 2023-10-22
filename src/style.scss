@@ -2034,7 +2034,7 @@ footer span {
 
 @media (hover: none) {
     @supports (-moz-appearance:none) {
-           body {
+        body {
             background-image: none;
             background-color: rgb(30, 29, 34);
             overflow-y: scroll !important;
@@ -2051,7 +2051,7 @@ footer span {
             //height: 12vh !important;
             //top: auto !important;
             bottom: 0;
-            position: fixed !important;
+            position: relative !important;
         }
 
 
