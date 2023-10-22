@@ -58,11 +58,18 @@ const Contact_gr = () => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_contact = document.querySelector(".content_contact");
                 const content_contact_input = document.getElementsByTagName("input");
+                const content_contact_textarea = document.getElementsByTagName("textarea");
+
                 content_contact.style.cssText += "height: fit-content !important";
 
                 if (content_contact_input.length > 0) {
                     const content_contact_input_element = content_contact_input[0];
                     content_contact_input_element.style.cssText += "width: 15rem !important";
+                }
+
+                if (content_contact_textarea.length > 0) {
+                    const content_contact_textarea_element = content_contact_textarea[0];
+                    content_contact_textarea_element.style.cssText += "width: 15rem !important";
                 }
             }
         }}>
