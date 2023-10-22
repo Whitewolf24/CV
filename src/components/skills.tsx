@@ -76,14 +76,4 @@ const Skills = () => {
     </div >
 }
 
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    onload = () => {
-        const footer = document?.querySelector("footer") as HTMLDivElement;
-        /*document.body.style.cssText += "overflow: hidden scroll !important";
-      footer.style.cssText += "bottom: 0rem !important";
-        footer.style.cssText += "position: fixed !important"; */
-        footer.style.cssText += "top: auto !important";
-    }
-}
-
 export default Skills;

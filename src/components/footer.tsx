@@ -3,15 +3,16 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 // import { first_run, changeto_eng, changeto_gr } from './functions';
 
 const cookies = new Cookies();
-const meta = document.getElementsByTagName("meta");
 
-if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
+/*const meta = document.getElementsByTagName("meta");
+
+ if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     if (meta.length > 0) {
         const meta_element = meta[1];
         meta_element.setAttribute('content', 'width=device-width,initial-scale=0.9');
     }
 }
-
+ */
 function sleep(ms: number) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }

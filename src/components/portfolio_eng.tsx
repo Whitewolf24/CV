@@ -1962,20 +1962,10 @@ const Portfolio_eng = () => {
 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
     onload = () => {
         const content_portfolio = document?.querySelector(".content_portfolio") as HTMLDivElement;
-
+        
+        content_portfolio.style.cssText += "transform: scale(0.8)";
         content_portfolio.style.setProperty("position", "relative", "important");
         content_portfolio.style.setProperty("right", "2rem", "important");
-    }
-}
-
-
-if (navigator.userAgent.includes("Firefox") && navigator.userAgent.includes("Mobi")) {
-    onload = () => {
-        const footer = document?.querySelector("footer") as HTMLDivElement;
-        /*document.body.style.cssText += "overflow: hidden scroll !important";
-      footer.style.cssText += "bottom: 0rem !important";
-        footer.style.cssText += "position: fixed !important"; */
-        footer.style.cssText += "top: auto !important";
     }
 }
 
