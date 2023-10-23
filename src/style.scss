@@ -2102,6 +2102,16 @@ footer span {
             width: 140vw !important;
         }
 
+        @media only screen and (max-width : 420px) {
+            .cv {
+                margin-top: -8px;
+            }
+
+            .woocommerce {
+                margin-top: 7px;
+            }
+        }
+
         .email_form,
         .msg_form {
             color: white !important;
