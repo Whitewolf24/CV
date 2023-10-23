@@ -209,8 +209,6 @@ const Portfolio_eng = () => {
 
     //
 
-
-
     function hover_desc() {
 
         /*   switch (number) {
@@ -1247,9 +1245,9 @@ const Portfolio_eng = () => {
                 left: hover_reset_therest_left_alt
             });
             set_desc_cv({
-                height: reset_420_height,
-                margin: reset_420_margin,
-                top: reset_420_top,
+                height: "70px",
+                margin: "-25px",
+                top: "2.8rem",
                 left: hover_reset_therest_left_alt
             });
         }
@@ -1298,9 +1296,9 @@ const Portfolio_eng = () => {
                 left: "0.7rem"
             });
             set_desc_cv({
-                height: "20px",
-                margin: reset_therest_margin,
-                top: "6.9rem",
+                height: "110px",
+                margin: "-46px",
+                top: "4rem",
                 left: "0.7rem"
             });
         }
@@ -1349,9 +1347,9 @@ const Portfolio_eng = () => {
                 left: hover_reset_therest_left_alt
             });
             set_desc_cv({
-                height: "20px",
-                margin: reset_therest_margin,
-                top: "6.9rem",
+                height: "110px",
+                margin: "-46px",
+                top: "4rem",
                 left: hover_reset_therest_left_alt
             });
         }
@@ -1400,9 +1398,9 @@ const Portfolio_eng = () => {
                 left: hover_reset_therest_left
             });
             set_desc_cv({
-                height: "20px",
-                margin: reset_therest_margin,
-                top: "6.9rem",
+                height: "110px",
+                margin: "-46px",
+                top: "4rem",
                 left: hover_reset_therest_left
             });
         }
@@ -1451,9 +1449,9 @@ const Portfolio_eng = () => {
                 left: hover_reset_therest_left_alt
             });
             set_desc_cv({
-                height: "20px",
-                margin: reset_therest_margin,
-                top: "6.9rem",
+                height: "110px",
+                margin: "-46px",
+                top: "4rem",
                 left: hover_reset_therest_left_alt
             });
         }
@@ -1554,9 +1552,9 @@ const Portfolio_eng = () => {
                 left: "0.7rem"
             });
             set_desc_cv({
-                height: reset_420_height,
-                margin: reset_420_margin,
-                top: "7rem",
+                height: "110px",
+                margin: "-40px",
+                top: "4.35rem",
                 left: "0.7rem"
             });
         }
@@ -1604,14 +1602,14 @@ const Portfolio_eng = () => {
                 left: hover_reset_therest_left
             });
             set_desc_cv({
-                height: reset_therest_height,
-                margin: reset_therest_margin,
-                top: reset_800_top_alt,
+                height: "110px",
+                margin: "-40px",
+                top: "4.35rem",
                 left: hover_reset_therest_left
             });
         }
 
-        else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
+        else if (window.innerWidth >= 800 && window.innerWidth < 1018) {
             set_desc_mouseia({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
@@ -1655,14 +1653,14 @@ const Portfolio_eng = () => {
                 left: "1rem"
             });
             set_desc_cv({
-                height: reset_therest_height,
-                margin: reset_therest_margin,
-                top: reset_800_top,
+                height: "110px",
+                margin: "-40px",
+                top: "4.35rem",
                 left: "1rem"
             });
         }
 
-        else if (window.innerWidth >= 1020 && window.innerWidth <= 1552) {
+        else if (window.innerWidth >= 1018 && window.innerWidth <= 1552) {
             set_desc_mouseia({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
@@ -1706,9 +1704,9 @@ const Portfolio_eng = () => {
                 left: hover_reset_therest_left
             });
             set_desc_cv({
-                height: reset_therest_height,
-                margin: reset_1020_plus_margin,
-                top: reset_1020_plus_top,
+                height: "136px",
+                margin: "-53px",
+                top: "5.2rem",
                 left: hover_reset_therest_left
             });
         }
@@ -1757,9 +1755,9 @@ const Portfolio_eng = () => {
                 left: "0.7rem"
             });
             set_desc_cv({
-                height: reset_therest_height,
-                margin: reset_1020_plus_margin,
-                top: reset_1020_plus_top,
+                height: "136px",
+                margin: "-53px",
+                top: "5.2rem",
                 left: "0.7rem"
             });
         }
@@ -1808,9 +1806,9 @@ const Portfolio_eng = () => {
                 left: hover_reset_1020_plus_left
             });
             set_desc_cv({
-                height: reset_therest_height,
-                margin: reset_1020_plus_margin,
-                top: reset_1020_plus_top,
+                height: "136px",
+                margin: "-53px",
+                top: "5.2rem",
                 left: hover_reset_1020_plus_left
             });
         }
@@ -1843,71 +1841,30 @@ const Portfolio_eng = () => {
                 content_portfolio.style.cssText += "transform: scale(0.85);";
             }
         }}>
-            <div className="mouseia">
-                <div className="description_div mouseia_desc" style={mouseia_style}>
-                    <p>MUSEUMS OF LESVOS</p>
+            <div className="cv">
+                <div className="description_div cv_desc" style={cv_style}>
+                    <p>MARINOS.WEBSITE</p>
                 </div>
-                <a href="https://mouseia.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 1; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-                </a>
-                <img src="mouseia.webp"></img>
-                <div className="tech">
-                    <p className="year _2013">2013&nbsp;
-                        <span className="libraries">&#123;jquery&#125;</span></p>
-                </div>
-            </div>
-            <div className="eknexa">
-                <div className="description_div eknexa_desc" style={eknexa_style}>
-                    <p>EKNEXA</p>
-                </div>
-                <a href="https://eknexa.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 2; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-                </a>
-                <img src="eknexa.webp"></img>
-                <div className="tech">
-                    <p className="year _2014">2014&nbsp;
-                        <span className="libraries">&#123;php,responsive&#125;</span></p>
-                </div>
-            </div>
-            <div className="eye">
-                <div className="description_div eye_desc" style={eye_style}>
-                    <p>EYE</p>
-                </div>
-                <a href="https://eye.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 3; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-                </a>
-                <img src="eye.webp"></img>
-                <div className="tech _2016_tech">
-                    <p className="year _eknexa016">2016&nbsp;
-                        <span className="libraries">&#123;bstrap,jquery,php mysql,responsive&#125;</span></p>
-                </div>
-            </div>
-            <div className="swlyn">
-                <div className="description_div swlyn_desc" style={swlyn_style}>
-                    <p>SWLYN</p>
-                    <span>testosaijdoiksajdlsajdlkjlaksldj</span>
-                </div>
-                <a href="https://swlyn.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 4; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-                </a>
-                <img src="swlyn.webp" ></img>
-                <div className="tech">
-                    <p className="year _2018">2018&nbsp;
-                        <span className="libraries">&#123;JS,responsive&#125;</span></p>
+                {/* 
+                <img className="fake" src="#" onMouseEnter={() => { number = 8; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                */}
+                <img src="cv.webp"></img>
+                <div className="tech _2023_tech">
+                    <p className="year _2023">2020-2023&nbsp;
+                        <span className="libraries">&#123;react18,sass, typescript, responsive&#125;</span></p>
                 </div>
             </div >
-            <div className="warehouse">
-                <div className="description_div warehouse_desc" style={warehouse_style}>
-                    <p>WAREHOUSE</p>
-                    {/*                     <span id='explanation_warehouse'>testosaijdoiksajdlsajdlkjlaksldj</span>
- */}                </div>
-                <a href="https://warehouse.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 5; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+            <div className="express">
+                <div className="description_div express_desc" style={express_style}>
+                    <p>MONGOXPRESS</p>
+                </div>
+                <a href="https://xblog.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); const test = document.querySelector("test") as HTMLParagraphElement; test.style.visibility = "visible"; }} onMouseLeave={() => { reset_desc(); }} />
                 </a>
-                <img src="warehouse.webp"></img>
-                <div className="tech _2020_tech">
-                    <p className="year _2020">2020&nbsp;
-                        <span className="libraries">&#123;JS,sass,php, mysql,responsive&#125;</span></p>
+                <img src="express.webp"></img>
+                <div className="tech _2022_tech">
+                    <p className="year _2022">2022
+                        <span className="libraries">&#123;js,ejs,postcss,mongo, tailwind,express, moongoose,responsive&#125;</span></p>
                 </div>
             </div >
             <div className="woocommerce">
@@ -1924,32 +1881,73 @@ const Portfolio_eng = () => {
                         <span className="libraries">&#123;elementor,woo- comerce,responsive&#125;</span></p>
                 </div>
             </div >
-            <div className="express">
-                <div className="description_div express_desc" style={express_style}>
-                    <p>MONGOXPRESS</p>
-                </div>
-                <a href="https://xblog.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+            <div className="warehouse">
+                <div className="description_div warehouse_desc" style={warehouse_style}>
+                    <p>WAREHOUSE</p>
+                    {/*                     <span id='explanation_warehouse'>testosaijdoiksajdlsajdlkjlaksldj</span>
+ */}                </div>
+                <a href="https://warehouse.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 5; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
                 </a>
-                <img src="express.webp"></img>
-                <div className="tech _2022_tech">
-                    <p className="year _2022">2022
-                        <span className="libraries">&#123;JS,ejs,postcss,mongo, tailwind,express, moongoose,responsive&#125;</span></p>
+                <img src="warehouse.webp"></img>
+                <div className="tech _2020_tech">
+                    <p className="year _2020">2020&nbsp;
+                        <span className="libraries">&#123;js,sass,php, mysql,responsive&#125;</span></p>
                 </div>
             </div >
-            <div className="cv">
-                <div className="description_div cv_desc" style={cv_style}>
-                    <p>CV</p>
+            <div className="swlyn">
+                <div className="description_div swlyn_desc" style={swlyn_style}>
+                    <p>SWLYN</p>
+                    <span>testosaijdoiksajdlsajdlkjlaksldj</span>
                 </div>
-                {/* 
-                <img className="fake" src="#" onMouseEnter={() => { number = 8; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
-                */}
-                <img src="cv.webp"></img>
-                <div className="tech _2023_tech">
-                    <p className="year _2023">2020-2023&nbsp;
-                        <span className="libraries">&#123;react18,sass, typescript, responsive&#125;</span></p>
+                <a href="https://swlyn.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 4; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
+                <img src="swlyn.webp" ></img>
+                <div className="tech">
+                    <p className="year _2018">2018&nbsp;
+                        <span className="libraries">&#123;js,responsive&#125;</span></p>
                 </div>
             </div >
+            <div className="eye">
+                <div className="description_div eye_desc" style={eye_style}>
+                    <p>EYE LOGIN</p>
+                </div>
+                <a href="https://eye.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 3; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
+                <img src="eye.webp"></img>
+                <div className="tech _2016_tech">
+                    <p className="year _eknexa016">2016&nbsp;
+                        <span className="libraries">&#123;bstrap,jquery,php mysql,responsive&#125;</span></p>
+                </div>
+            </div>
+            <div className="eknexa">
+                <div className="description_div eknexa_desc" style={eknexa_style}>
+                    <p>EKNEXA</p>
+                </div>
+                <a href="https://eknexa.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 2; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
+                <img src="eknexa.webp"></img>
+                <div className="tech">
+                    <p className="year _2014">2014&nbsp;
+                        <span className="libraries">&#123;php,responsive&#125;</span></p>
+                </div>
+            </div>
+            <div className="mouseia">
+                <div className="description_div mouseia_desc" style={mouseia_style}>
+                    <p>MUSEUMS OF LESVOS</p>
+                </div>
+                <a href="https://mouseia.marinoscv.website/" target="_blank">
+                    <img className="fake" src="#" onMouseEnter={() => { number = 1; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                </a>
+                <img src="mouseia.webp"></img>
+                <div className="tech">
+                    <p className="year _2013">2013&nbsp;
+                        <span className="libraries">&#123;jquery&#125;</span></p>
+                </div>
+            </div>
         </div >
     </div >
 }

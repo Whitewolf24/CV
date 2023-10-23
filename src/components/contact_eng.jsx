@@ -74,6 +74,8 @@ const Contact_eng = () => {
                 }
             }
         }}>
+            <p style={{ fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", whiteSpace: "pre-line", width: "58ch" }}>To contact me fill the form bellow with<br />your email address and message, or email<br /> me at&nbsp;
+                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a> </p>
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)} /*method="POST"  data-sitekey="vlmZE8H22O2e_lQFj"*/>
                 <div>
                     <input className="email_form" type="email" name="email" placeholder="Contact Email" title=""
