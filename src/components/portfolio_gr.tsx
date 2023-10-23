@@ -1193,12 +1193,12 @@ const Portfolio_gr = () => {
                 top: reset_420_top,
                 left: hover_reset_therest_left
             });
-            /*        set_desc_cv({
-                       height: reset_420_height,
-                       margin: reset_420_margin,
-                       top: reset_420_top,
-                       left: reset_420_left
-                   }); */
+            set_desc_cv({
+                height: "70px",
+                margin: "-24.1px",
+                top: "2.8rem",
+                left: hover_reset_therest_left_alt
+            });
         }
 
         if (window.innerWidth < 482 && !(window.innerHeight <= 420)) {
@@ -1299,7 +1299,7 @@ const Portfolio_gr = () => {
                 height: "110px",
                 margin: "-46px",
                 top: "4rem",
-                left: "0.1rem"
+                left: "0.7rem"
             });
         }
 
