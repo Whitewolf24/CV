@@ -2088,6 +2088,10 @@ footer span {
             height: fit-content !important;
         }
 
+        .content_contact p:first-of-type {
+            font-size: clamp(.5rem, 2.5vw, .6rem);
+        }
+
         .content_portfolio {
             height: fit-content !important;
             right: 2rem !important;
