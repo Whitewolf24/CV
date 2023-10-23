@@ -356,7 +356,7 @@ export const Footer = () => {
                     header.style.cssText += "position: fixed !important";
                     header.style.cssText += "height: fit-content !important";
                     header.style.cssText += "width: 100%  !important";
-                    header.style.cssText += "background-color: rgb(30, 29, 34) !important;"
+                    //header.style.cssText += "background-color: rgb(30, 29, 34) !important;"
                 }
 
                 /*  else if (navigator.userAgent.includes("Edg") && navigator.userAgent.includes("Mobi")) {
