@@ -1246,7 +1246,7 @@ const Portfolio_gr = () => {
             });
             set_desc_cv({
                 height: "70px",
-                margin: "-25px",
+                margin: "-24.1px",
                 top: "2.8rem",
                 left: hover_reset_therest_left_alt
             });
@@ -1399,7 +1399,7 @@ const Portfolio_gr = () => {
             });
             set_desc_cv({
                 height: "110px",
-                margin: "-46px",
+                margin: "-45px",
                 top: "4rem",
                 left: hover_reset_therest_left
             });
