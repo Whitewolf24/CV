@@ -1297,9 +1297,9 @@ const Portfolio_gr = () => {
             });
             set_desc_cv({
                 height: "110px",
-                margin: "-44px",
+                margin: "-46px",
                 top: "4rem",
-                left: "0.7rem"
+                left: "0.1rem"
             });
         }
 
