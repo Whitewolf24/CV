@@ -2047,14 +2047,14 @@ footer span {
 @media (hover: none) {
     @supports (-moz-appearance:none) {
         body {
-            background-image: none;
-            background-color: rgb(30, 29, 34);
+
+            background-image: none !important;
+            background-color: #21202a !important;
             overflow-y: scroll !important;
             overflow-x: hidden !important;
         }
 
         header {
-            background-color: rgb(30, 29, 34) !important;
             //bottom: 88vh !important;
             top: 0;
             height: fit-content;
@@ -2068,6 +2068,7 @@ footer span {
             top: auto !important;
             bottom: 0 !important;
             position: fixed !important;
+            width: 100%;
         }
 
 
@@ -2094,12 +2095,22 @@ footer span {
 
         .content_portfolio {
             height: fit-content !important;
-            right: 1.5rem !important;
+            margin: 0 auto;
             //left: 0rem !important;
             position: relative;
             top: 7rem !important;
             transform: scale(0.8);
-            width: 140vw !important;
+            width: 115vw !important;
+        }
+
+        ._2013,
+        ._2014 {
+            top: -0.3rem !important;
+        }
+
+        ._2013 span,
+        ._2014 span {
+            top: -0.01rem !important
         }
 
         @media only screen and (max-width : 420px) {
@@ -2109,6 +2120,10 @@ footer span {
 
             .woocommerce {
                 margin-top: 7px;
+            }
+
+            .eye_desc {
+                left: 0.5rem !important;
             }
         }
 

@@ -1837,7 +1837,7 @@ const Portfolio_gr = () => {
                 document.body.style.cssText += "overflow-y: scroll";
                 //content_portfolio.style.cssText += "height: fit-content !important";
                 content_portfolio.style.cssText += "position: relative !important";
-                content_portfolio.style.cssText += "right: 2.5rem !important";
+                content_portfolio.style.cssText += "margin: 0 auto;";
                 content_portfolio.style.cssText += "top: 9rem !important";
                 content_portfolio.style.cssText += "width: 120vw !important";
                 content_portfolio.style.cssText += "transform: scale(0.85)";
@@ -1950,7 +1950,7 @@ const Portfolio_gr = () => {
                 <img src="mouseia.webp"></img>
                 <div className="tech">
                     <p className="year _2013">2013&nbsp;
-                        <span className="libraries">&#123;jquery&#125;</span></p>
+                        <span className="libraries">&#123;jquery,responsive&#125;</span></p>
                 </div>
             </div>
         </div >
