@@ -44,6 +44,7 @@ const Skills = () => {
                 <p>@laravel</p>
                 <p>SELECT * FROM MYSQL</p>
                 <p>_id: MongoDB</p>
+                <p>rPush(Redis)</p>
                 <p>Next.</p>
                 <p>router get('express')</p>
                 <p>{"require"} ('moongoose')</p>
