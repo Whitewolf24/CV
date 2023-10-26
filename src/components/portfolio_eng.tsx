@@ -1869,7 +1869,7 @@ const Portfolio_eng = () => {
                 <img src="express.webp"></img>
                 <div className="tech _2022_tech">
                     <p className="year _2022">2022
-                        <span className="libraries">&#123;js,ejs,postcss,mongo, tailwind,express, moongoose,responsive&#125;</span></p>
+                        <span className="libraries">&#123;js,ejs,postcss,tailwind, mongo,redis,express, moongoose,responsive&#125;</span></p>
                 </div>
             </div >
             <div className="woocommerce">
@@ -1883,7 +1883,7 @@ const Portfolio_eng = () => {
                 <img src="woocommerce.webp" ></img>
                 <div className="tech _2021_tech">
                     <p className="year _2021">2021&nbsp;
-                        <span className="libraries">&#123;elementor,woo- comerce,responsive&#125;</span></p>
+                        <span className="libraries">&#123;wordpress, elementor,woo- comerce,responsive&#125;</span></p>
                 </div>
             </div >
             <div className="warehouse">
@@ -1897,7 +1897,7 @@ const Portfolio_eng = () => {
                 <img src="warehouse.webp"></img>
                 <div className="tech _2020_tech">
                     <p className="year _2020">2020&nbsp;
-                        <span className="libraries">&#123;js,sass,php, mysql,responsive&#125;</span></p>
+                        <span className="libraries">&#123;jquery,sass,php, mysql,responsive&#125;</span></p>
                 </div>
             </div >
             <div className="swlyn">
