@@ -2,7 +2,9 @@ const Skills = () => {
 
     onresize = () => {
         const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
-        if (window.innerHeight <= 509) {
+        if (window.innerHeight <= 580 && window.innerWidth <= 450
+            || window.innerHeight <= 592 && window.innerWidth >= 450 && !(window.innerWidth == 800)
+            || window.innerHeight <= 509 && window.innerWidth >= 800) {
             document.body.style.overflowY = "scroll";
             content_skills.style.paddingBottom = "0.1rem";
         }
@@ -14,7 +16,9 @@ const Skills = () => {
 
     onload = () => {
         const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
-        if (window.innerHeight <= 509) {
+        if (window.innerHeight <= 580 && window.innerWidth <= 450
+            || window.innerHeight <= 592 && window.innerWidth >= 450 && !(window.innerWidth == 800)
+            || window.innerHeight <= 509 && window.innerWidth >= 800) {
             document.body.style.overflowY = "scroll";
             content_skills.style.paddingBottom = "0.1rem";
         }

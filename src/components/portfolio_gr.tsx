@@ -31,7 +31,7 @@ const Portfolio_gr = () => {
     const reset_420_height = "20px";
     const reset_420_margin = "1px";
     const reset_420_top = "4.45rem";
-    const reset_420_left = "1.12rem";
+    const reset_420_left = "1.32rem";
 
     const reset_600_top = "5rem";
 
@@ -43,12 +43,12 @@ const Portfolio_gr = () => {
 
     const reset_therest_height = "30px";
 
-    const hover_reset_1020_plus_left = "0.5rem";
+    //const hover_reset_1020_plus_left = "0.8rem";
 
-    const hover_reset_therest_left = "0.8rem";
-    const hover_reset_therest_left_alt = "0.82rem";
+    const hover_reset_therest_left = "1rem";
+    const hover_reset_therest_left_alt = "1.1rem";
 
-    const hover_reset_1020_left = "1.1rem";
+    const hover_reset_1020_left = "1.4rem";
 
     const reset_therest_margin = "0px";
 
@@ -176,7 +176,7 @@ const Portfolio_gr = () => {
 
         if (
             window.innerHeight <= 615 && window.innerWidth <= 568
-            || window.innerHeight <= 700 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
+            || window.innerHeight <= 650 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
             || window.innerHeight <= 730 && window.innerWidth >= 1253 && !(window.innerWidth >= 1553)
             || window.innerHeight <= 700 && window.innerWidth >= 601 && !(window.innerWidth > 799)
             /*             || window.innerHeight <= 660 && window.innerWidth >= 800 && !(window.innerWidth >= 1253) */
@@ -193,7 +193,7 @@ const Portfolio_gr = () => {
     onanimationend = () => {
         if (
             window.innerHeight <= 615 && window.innerWidth <= 568
-            || window.innerHeight <= 700 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
+            || window.innerHeight <= 650 && window.innerWidth < 1253 && !(window.innerWidth <= 568)
             || window.innerHeight <= 730 && window.innerWidth >= 1253 && !(window.innerWidth >= 1553)
             || window.innerHeight <= 700 && window.innerWidth >= 601 && !(window.innerWidth > 799)
             /*             || window.innerHeight <= 660 && window.innerWidth >= 800 && !(window.innerWidth >= 1253) */
@@ -347,7 +347,7 @@ const Portfolio_gr = () => {
                     set_desc_warehouse({
                         height: hover_420_height,
                         margin: hover_420_margin,
-                        top: hover_420_top,
+                        top: "2.9rem",
                         left: hover_reset_therest_left_alt
                     });
                     break;
@@ -355,7 +355,7 @@ const Portfolio_gr = () => {
                     set_desc_woo({
                         height: hover_420_height,
                         margin: hover_420_margin,
-                        top: hover_420_top,
+                        top: "2.9rem",
                         left: hover_reset_therest_left_alt
                     });
                     break;
@@ -385,7 +385,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.05rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 2:
@@ -393,7 +393,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.05rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 3:
@@ -401,7 +401,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.1rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 4:
@@ -409,7 +409,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.06rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 5:
@@ -417,7 +417,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.05rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 6:
@@ -425,7 +425,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.05rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 7:
@@ -433,7 +433,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-45px",
                         top: "4.05rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 /*   case 8:
@@ -729,7 +729,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-44px",
                         top: "4.1rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 2:
@@ -737,15 +737,15 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-44px",
                         top: "4.1rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 3:
                     set_desc_eye({
                         height: hover_800_height,
                         margin: "-44px",
-                        top: "4.1rem",
-                        left: "0.7rem"
+                        top: "4.15rem",
+                        left: "0.5rem"
                     });
                     break;
                 case 4:
@@ -753,23 +753,23 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-44px",
                         top: "4.1rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 5:
                     set_desc_warehouse({
                         height: hover_800_height,
-                        margin: "-44px",
-                        top: "4.1rem",
-                        left: "0.7rem"
+                        margin: "-40px",
+                        top: "4.35rem",
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 6:
                     set_desc_woo({
                         height: hover_800_height,
                         margin: "-44px",
-                        top: "4.1rem",
-                        left: "0.7rem"
+                        top: "4.15rem",
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 7:
@@ -777,7 +777,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: "-44px",
                         top: "4.1rem",
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 /*   case 8:
@@ -798,7 +798,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: "4.38rem",
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 2:
@@ -806,7 +806,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: "4.35rem",
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 3:
@@ -814,7 +814,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: "4.38rem",
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 4:
@@ -822,7 +822,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: "4.38rem",
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 5:
@@ -830,7 +830,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: "4.38rem",
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 6:
@@ -838,7 +838,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: "4.38rem",
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 7:
@@ -846,7 +846,7 @@ const Portfolio_gr = () => {
                         height: hover_800_height,
                         margin: hover_800_margin,
                         top: reset_420_top,
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 /*  case 8:
@@ -860,14 +860,14 @@ const Portfolio_gr = () => {
             }
         }
 
-        else if (window.innerWidth >= 800 && window.innerWidth <= 1020) {
+        else if (window.innerWidth >= 800 && window.innerWidth < 1018) {
             switch (number) {
                 case 1:
                     set_desc_mouseia({
                         height: hover_1020_height,
                         margin: hover_1020_margin,
-                        top: "4.6rem",
-                        left: "1rem"
+                        top: hover_1020_top,
+                        left: reset_420_left
                     });
                     break;
                 case 2:
@@ -875,15 +875,15 @@ const Portfolio_gr = () => {
                         height: hover_1020_height,
                         margin: hover_1020_margin,
                         top: hover_1020_top,
-                        left: "1rem"
+                        left: reset_420_left
                     });
                     break;
                 case 3:
                     set_desc_eye({
                         height: hover_1020_height,
                         margin: hover_1020_margin,
-                        top: "4.6rem",
-                        left: "1rem"
+                        top: hover_1020_top,
+                        left: reset_420_left
                     });
                     break;
                 case 4:
@@ -891,7 +891,7 @@ const Portfolio_gr = () => {
                         height: hover_1020_height,
                         margin: hover_1020_margin,
                         top: hover_1020_top,
-                        left: "1rem"
+                        left: reset_420_left
                     });
                     break;
                 case 5:
@@ -899,7 +899,7 @@ const Portfolio_gr = () => {
                         height: hover_1020_height,
                         margin: hover_1020_margin,
                         top: hover_1020_top,
-                        left: "1rem"
+                        left: reset_420_left
                     });
                     break;
                 case 6:
@@ -907,7 +907,7 @@ const Portfolio_gr = () => {
                         height: hover_1020_height,
                         margin: hover_1020_margin,
                         top: hover_1020_top,
-                        left: "1rem"
+                        left: reset_420_left
                     });
                     break;
                 case 7:
@@ -915,7 +915,7 @@ const Portfolio_gr = () => {
                         height: hover_1020_height,
                         margin: hover_1020_margin,
                         top: hover_1020_top,
-                        left: "1rem"
+                        left: reset_420_left
                     });
                     break;
                 /*   case 8:
@@ -929,7 +929,7 @@ const Portfolio_gr = () => {
             }
         }
 
-        else if (window.innerWidth >= 1020 && window.innerWidth <= 1552) {
+        else if (window.innerWidth >= 1018 && window.innerWidth <= 1552) {
             switch (number) {
                 case 1:
                     set_desc_mouseia({
@@ -944,7 +944,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_therest_left
+                        left: "1.15rem"
                     });
                     break;
                 case 3:
@@ -952,31 +952,31 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_therest_left
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 4:
                     set_desc_swlyn({
                         height: hover_therest_height,
                         margin: hover_therest_margin,
-                        top: "5.25rem",
-                        left: hover_reset_therest_left_alt
+                        top: hover_therest_top_alt,
+                        left: "1.15rem"
                     });
                     break;
                 case 5:
                     set_desc_warehouse({
                         height: hover_therest_height,
                         margin: hover_therest_margin,
-                        top: "5.25rem",
-                        left: hover_reset_therest_left
+                        top: hover_therest_top_alt,
+                        left: "1.15rem"
                     });
                     break;
                 case 6:
                     set_desc_woo({
                         height: hover_therest_height,
                         margin: hover_therest_margin,
-                        top: "5.25rem",
-                        left: hover_reset_therest_left
+                        top: hover_therest_top_alt,
+                        left: hover_reset_therest_left_alt
                     });
                     break;
                 case 7:
@@ -984,7 +984,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_therest_left
+                        left: "1.15rem"
                     });
                     break;
                 /*      case 8:
@@ -1005,7 +1005,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 2:
@@ -1013,7 +1013,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: "0.65rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 3:
@@ -1021,7 +1021,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 4:
@@ -1029,7 +1029,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 5:
@@ -1037,15 +1037,15 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 6:
                     set_desc_woo({
                         height: hover_therest_height,
                         margin: hover_therest_margin,
-                        top: hover_therest_top_alt,
-                        left: "0.65rem"
+                        top: hover_therest_top,
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 7:
@@ -1053,7 +1053,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: "0.7rem"
+                        left: hover_reset_therest_left
                     });
                     break;
                 /*     case 8:
@@ -1074,7 +1074,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top_alt,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 2:
@@ -1082,7 +1082,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 3:
@@ -1090,7 +1090,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 4:
@@ -1098,7 +1098,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 5:
@@ -1106,7 +1106,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 6:
@@ -1114,7 +1114,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 case 7:
@@ -1122,7 +1122,7 @@ const Portfolio_gr = () => {
                         height: hover_therest_height,
                         margin: hover_therest_margin,
                         top: hover_therest_top,
-                        left: hover_reset_1020_plus_left
+                        left: hover_reset_therest_left
                     });
                     break;
                 /*     case 8:
@@ -1257,49 +1257,49 @@ const Portfolio_gr = () => {
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.65rem"
+                left: hover_reset_therest_left
             });
             set_desc_eknexa({
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_eye({
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_swlyn({
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_warehouse({
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_woo({
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_express({
                 height: "20px",
                 margin: reset_therest_margin,
                 top: "6.9rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_cv({
                 height: "110px",
                 margin: "-46px",
                 top: "4rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
         }
 
@@ -1513,49 +1513,50 @@ const Portfolio_gr = () => {
                 height: reset_420_height,
                 margin: reset_420_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_eknexa({
                 height: reset_420_height,
                 margin: reset_420_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
+
             set_desc_eye({
                 height: reset_420_height,
                 margin: reset_420_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: "0.5rem"
             });
             set_desc_swlyn({
                 height: reset_420_height,
                 margin: reset_420_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_warehouse({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_woo({
                 height: reset_420_height,
                 margin: reset_420_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_express({
                 height: reset_420_height,
                 margin: reset_420_margin,
                 top: "7rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_cv({
                 height: "110px",
                 margin: "-40px",
                 top: "4.35rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
         }
         else if (window.innerWidth >= 600 && window.innerWidth < 800) {
@@ -1563,49 +1564,49 @@ const Portfolio_gr = () => {
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: "7rem",
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_eknexa({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top_alt,
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_eye({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: "7rem",
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_swlyn({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: "7rem",
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_warehouse({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top_alt,
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_woo({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top_alt,
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_express({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top_alt,
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_cv({
                 height: "110px",
                 margin: "-40px",
                 top: "4.35rem",
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
         }
 
@@ -1614,43 +1615,43 @@ const Portfolio_gr = () => {
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_eknexa({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_eye({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_swlyn({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_warehouse({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_woo({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_express({
                 height: reset_therest_height,
                 margin: reset_therest_margin,
                 top: reset_800_top,
-                left: "1rem"
+                left: reset_420_left
             });
             set_desc_cv({
                 height: "110px",
@@ -1671,37 +1672,37 @@ const Portfolio_gr = () => {
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_therest_left
+                left: "1.15rem"
             });
             set_desc_eye({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_swlyn({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_therest_left_alt
+                left: "1.15rem"
             });
             set_desc_warehouse({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_therest_left
+                left: "1.15rem"
             });
             set_desc_woo({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_therest_left
+                left: hover_reset_therest_left_alt
             });
             set_desc_express({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_therest_left
+                left: "1.15rem"
             });
             set_desc_cv({
                 height: "136px",
@@ -1716,49 +1717,49 @@ const Portfolio_gr = () => {
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_eknexa({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.65rem"
+                left: hover_reset_therest_left
             });
             set_desc_eye({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_swlyn({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_warehouse({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_woo({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.65rem"
+                left: hover_reset_therest_left
             });
             set_desc_express({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
             set_desc_cv({
                 height: "136px",
                 margin: "-53px",
                 top: "5.2rem",
-                left: "0.7rem"
+                left: hover_reset_therest_left
             });
         }
 
@@ -1767,49 +1768,49 @@ const Portfolio_gr = () => {
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_eknexa({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_eye({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_swlyn({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_warehouse({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_woo({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_express({
                 height: reset_therest_height,
                 margin: reset_1020_plus_margin,
                 top: reset_1020_plus_top,
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
             set_desc_cv({
                 height: "136px",
                 margin: "-53px",
                 top: "5.2rem",
-                left: hover_reset_1020_plus_left
+                left: hover_reset_therest_left
             });
         }
     }
@@ -1838,7 +1839,7 @@ const Portfolio_gr = () => {
                 //content_portfolio.style.cssText += "height: fit-content !important";
                 content_portfolio.style.cssText += "position: relative !important";
                 content_portfolio.style.cssText += "margin: 0 auto;";
-                content_portfolio.style.cssText += "top: 9rem !important";
+                content_portfolio.style.cssText += "top: 17.5rem !important";
                 content_portfolio.style.cssText += "width: 120vw !important";
                 content_portfolio.style.cssText += "transform: scale(0.85)";
 
@@ -1864,18 +1865,18 @@ const Portfolio_gr = () => {
                     <p>MONGOXPRESS</p>
                 </div>
                 <a href="https://mongoxpress.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); const test = document.querySelector("test") as HTMLParagraphElement; test.style.visibility = "visible"; }} onMouseLeave={() => { reset_desc(); }} />
+                    <img className="fake" src="#" onMouseEnter={() => { number = 7; hover_desc(); /* const test = document.querySelector("test") as HTMLParagraphElement; test.style.visibility = "visible";  */ }} onMouseLeave={() => { reset_desc(); }} />
                 </a>
                 <img src="express.webp"></img>
                 <div className="tech _2022_tech">
                     <p className="year _2022">2022
-                        <span className="libraries">&#123;js,ejs,postcss,tailwind, mongo,redis,express, moongoose,responsive&#125;</span></p>
+                        <span className="libraries">&#123;js,ejs,postcss,tailw, mongo,redis,express, mongoose,responsive&#125;</span></p>
                 </div>
             </div >
             <div className="woocommerce">
                 <div className="description_div woocomerce_desc" style={woo_style}>
                     <p>E-KIOSK</p>
-                    {/*                     <span id='explanation_kiosk'>testosaijdoiksajdlsajdlkjlaksldj</span>
+                    {/* <span id='explanation_kiosk'>testosaijdoiksajdlsajdlkjlaksldj</span>
  */}                </div>
                 <a href="https://woocomerce.marinoscv.website/" target="_blank">
                     <img className="fake" src="#" onMouseEnter={() => { number = 6; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
@@ -1903,7 +1904,7 @@ const Portfolio_gr = () => {
             <div className="swlyn">
                 <div className="description_div swlyn_desc" style={swlyn_style}>
                     <p>ΣΩΛΥΝ</p>
-                    <span>testosaijdoiksajdlsajdlkjlaksldj</span>
+                    {/* <span>testosaijdoiksajdlsajdlkjlaksldj</span> */}
                 </div>
                 <a href="https://swlyn.marinoscv.website/" target="_blank">
                     <img className="fake" src="#" onMouseEnter={() => { number = 4; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
@@ -1948,7 +1949,7 @@ const Portfolio_gr = () => {
                     <img className="fake" src="#" onMouseEnter={() => { number = 1; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
                 </a>
                 <img src="mouseia.webp"></img>
-                <div className="tech">
+                <div className="tech _2013_tech">
                     <p className="year _2013">2013&nbsp;
                         <span className="libraries">&#123;jquery,responsive&#125;</span></p>
                 </div>
