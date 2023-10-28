@@ -2360,11 +2360,11 @@ footer span {
         }
 
         header {
-            /* background-image: none !important;
+            background-image: none !important;
             background-color: transparent !important;
-            bottom: 88vh !important; */
+            /*  bottom: 88vh !important; */
             top: 0;
-            height: 1rem;
+            height: 0rem;
             position: fixed;
             width: 100%;
             padding-right: 5rem !important;
@@ -2381,11 +2381,11 @@ footer span {
         /*  .content {
             background-color: transparent !important;
             height: fit-content !important;
-        }
+        }*/
 
         .content_name {
             height: fit-content !important;
-        } */
+        }
 
         .content_skills {
             top: -0.8rem !important;
@@ -2396,9 +2396,9 @@ footer span {
             width: fit-content !important;
         }
 
-        /*   .content_contact {
+        .content_contact {
             height: fit-content !important;
-        } */
+        }
 
         .contact_desc {
             font-size: clamp(.5rem, 2.5vw, .6rem) !important;
