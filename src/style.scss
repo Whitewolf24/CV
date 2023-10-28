@@ -2352,8 +2352,8 @@ footer span {
 @media (hover: none) {
     @supports (-moz-appearance:none) {
         body {
-            background-image: none !important;
-            background-color: #21202a !important;
+            /*   background-image: none !important;
+            background-color: #21202a !important; */
             overflow-y: scroll !important;
             overflow-x: hidden !important;
         }
@@ -2377,14 +2377,14 @@ footer span {
             width: 100%;
         }
 
-        .content {
+        /*  .content {
             background-color: transparent !important;
             height: fit-content !important;
         }
 
         .content_name {
             height: fit-content !important;
-        }
+        } */
 
         .content_skills {
             top: -0.8rem !important;
@@ -2395,9 +2395,9 @@ footer span {
             width: fit-content !important;
         }
 
-        .content_contact {
+        /*   .content_contact {
             height: fit-content !important;
-        }
+        } */
 
         .contact_desc {
             font-size: clamp(.5rem, 2.5vw, .6rem) !important;
