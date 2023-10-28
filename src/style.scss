@@ -173,6 +173,7 @@ header {
 
 .content_section {
     background-color: transparent !important;
+    height: fit-content !important;
 }
 
 //--------------------------//
@@ -2241,7 +2242,7 @@ footer span {
 
     100% {
         border-right: 1px solid white;
-        width: 9.2em;
+        width: 9.1em;
     }
 }
 
@@ -2381,7 +2382,7 @@ footer span {
         }
 
         .content_skills {
-            top: -0.2rem !important;
+            top: -0.8rem !important;
             font-size: clamp(.3rem, 2vw, .6rem);
             height: fit-content !important;
             padding-right: 0;
@@ -2402,7 +2403,7 @@ footer span {
             margin: 0 auto;
             //left: 0rem !important;
             position: relative;
-            top: -1rem !important;
+            top: -1.2rem !important;
             transform: scale(0.8);
             width: 125vw !important;
         }
