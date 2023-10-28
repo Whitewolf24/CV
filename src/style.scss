@@ -2241,7 +2241,7 @@ footer span {
 
     100% {
         border-right: 1px solid white;
-        width: 9em;
+        width: 9.2em;
     }
 }
 
@@ -2358,11 +2358,11 @@ footer span {
         }
 
         header {
-            //background-image: none !important;
-            //background-color: transparent !important;
+            background-image: none !important;
+            background-color: transparent !important;
             //bottom: 88vh !important;
             top: 0;
-            height: fit-content;
+            height: 0rem;
             position: fixed;
             width: 100%;
             padding-right: 5rem !important;

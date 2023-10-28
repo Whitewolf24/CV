@@ -62,7 +62,7 @@ const Contact_eng = () => {
                 const content_contact_textarea = document.getElementsByTagName("textarea");
 
                 content_contact.style.cssText += "height: fit-content !important";
-                content_contact.style.cssText += "bottom: 1rem !important";
+                content_contact.style.cssText += "bottom: 1.5rem !important";
                 content_contact.style.cssText += "position: relative !important";
 
                 if (content_contact_input.length > 0) {
