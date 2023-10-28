@@ -343,7 +343,7 @@ export const Footer = () => {
         //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [language, page]);
 
-    const content_section = document.querySelector(".content_section") as HTMLDivElement;
+    //const content_section = document.querySelector(".content_section") as HTMLDivElement;
 
     const footer_butt = document.querySelector("footer button:nth-of-type(3)") as HTMLButtonElement;
 
@@ -485,14 +485,14 @@ export const Footer = () => {
                 <nav>
                     <button className='home' onClick={() => {
                         set_page({ location: "home" });
-                        content_section.style.transform = "translate(0, 5vh)"
+                        //content_section.style.transform = "translate(0, 5vh)"
                     }}>
                         {text.home}
                     </button>
                     <span>||</span>
                     <button className='knowledge' onClick={() => {
                         set_page({ location: "knowledge" }); document.body.style.overflowY = "hidden";
-                        content_section.style.transform = "translate(0, 50%)"
+                        //content_section.style.transform = "translate(0, 50%)"
                     }}>
                         {text.knowledge}
                     </button>
@@ -507,7 +507,7 @@ export const Footer = () => {
                     <button className='contact' onClick={() => {
                         set_page({ location: "contact" });
                         document.body.style.overflowY = "hidden";
-                        content_section.style.transform = "translate(0, -4vh)";
+                        //content_section.style.transform = "translate(0, -4vh)";
                     }}>
                         {text.contact}
                     </button>
