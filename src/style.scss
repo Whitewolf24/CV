@@ -170,6 +170,13 @@ header {
 
 //--------------------------//
 
+
+.content_section {
+    background-color: transparent !important;
+}
+
+//--------------------------//
+
 .loader {
     animation: loader 3s steps(40) 3 normal both;
     font-size: clamp(1.25rem, 2.5vw, 1.45rem);
@@ -2351,11 +2358,11 @@ footer span {
         }
 
         header {
-            background-image: none !important;
-            background-color: transparent !important;
+            //background-image: none !important;
+            //background-color: transparent !important;
             //bottom: 88vh !important;
             top: 0;
-            height: 1rem;
+            height: fit-content;
             position: fixed;
             width: 100%;
             padding-right: 5rem !important;
@@ -2369,13 +2376,12 @@ footer span {
             width: 100%;
         }
 
-
         .content_name {
             height: fit-content !important;
         }
 
         .content_skills {
-            top: 0rem !important;
+            top: -0.2rem !important;
             font-size: clamp(.3rem, 2vw, .6rem);
             height: fit-content !important;
             padding-right: 0;
@@ -2396,7 +2402,7 @@ footer span {
             margin: 0 auto;
             //left: 0rem !important;
             position: relative;
-            top: -0.8rem !important;
+            top: -0.9rem !important;
             transform: scale(0.8);
             width: 125vw !important;
         }

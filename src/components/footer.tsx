@@ -354,7 +354,7 @@ export const Footer = () => {
                 if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi") && !(navigator.userAgent.includes("Edg"))) {
                     header.style.cssText += "top: 0 !important";
                     header.style.cssText += "position: fixed !important";
-                    header.style.cssText += "height: fit-content !important";
+                    header.style.cssText += "height: 0rem !important";
                     header.style.cssText += "width: 100%  !important";
                     //header.style.cssText += "background-color: rgb(30, 29, 34) !important;"
                 }
