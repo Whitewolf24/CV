@@ -2377,6 +2377,11 @@ footer span {
             width: 100%;
         }
 
+        .content {
+            background-color: transparent !important;
+            height: fit-content !important;
+        }
+
         .content_name {
             height: fit-content !important;
         }
