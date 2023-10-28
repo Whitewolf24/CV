@@ -40,7 +40,6 @@ const Skills = () => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content_skills = document?.querySelector(".content_skills") as HTMLDivElement;
                 content_skills.style.cssText += "height: fit-content !important";
-                content_skills.style.cssText += "right: 0.2rem !important";
             }
         }}>
             <div id="backend">

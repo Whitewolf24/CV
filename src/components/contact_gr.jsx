@@ -61,6 +61,8 @@ const Contact_gr = () => {
                 const content_contact_textarea = document.getElementsByTagName("textarea");
 
                 content_contact.style.cssText += "height: fit-content !important";
+                content_contact.style.cssText += "bottom: 1rem !important";
+                content_contact.style.cssText += "position: relative !important";
 
                 if (content_contact_input.length > 0) {
                     const content_contact_input_element = content_contact_input[0];

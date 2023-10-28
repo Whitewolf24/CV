@@ -2402,9 +2402,14 @@ footer span {
             margin: 0 auto;
             //left: 0rem !important;
             position: relative;
-            top: -0.9rem !important;
+            top: -1rem !important;
             transform: scale(0.8);
             width: 125vw !important;
+        }
+
+        .content_contact {
+            bottom: 1rem !important;
+            position: relative !important;
         }
 
         ._2013 {
