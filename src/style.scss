@@ -2352,10 +2352,12 @@ footer span {
 @media (hover: none) {
     @supports (-moz-appearance:none) {
         body {
-            background-image: #21202a !important;
+            background-image: none !important;
             background-color: #21202a !important;
             overflow-y: scroll !important;
             overflow-x: hidden !important;
+            width: 100%;
+            height: 100%;
         }
 
         header {
