@@ -2462,21 +2462,38 @@ footer span {
             }
         }
 
+        /* 
+        ._2020_tech {
+            p {
+                top: 0rem !important;
+            }
+        } */
+
         ._2021_tech {
             p {
-                top: 0.25rem !important;
+                top: 0.5rem !important;
             }
         }
 
         ._2022_tech {
+            p {
+                left: 4.5rem !important;
+            }
+
             span {
                 right: 5rem !important;
             }
         }
 
-        ._2023 span {
-            right: 5.2rem !important;
-            top: 0.9rem !important;
+        ._2023_tech {
+            p {
+                left: 3.2rem !important;
+            }
+
+            span {
+                right: 5rem !important;
+                top: 0.9rem !important;
+            }
         }
 
         .cv {
