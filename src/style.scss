@@ -2432,6 +2432,10 @@ footer span {
             position: relative !important;
         }
 
+        .swlyn {
+            right: 0.6rem !important;
+        }
+
         ._2013 {
             top: -0.3rem !important;
         }
@@ -2458,7 +2462,7 @@ footer span {
         }
 
         ._2021 {
-            top: 0.4rem !important;
+            top: 0.6rem !important;
         }
 
         ._2022_tech {
@@ -2468,7 +2472,7 @@ footer span {
         }
 
         ._2023 span {
-            right: 5.4rem !important;
+            right: 5.2rem !important;
             top: 0.9rem !important;
         }
 
@@ -2477,18 +2481,16 @@ footer span {
             top: -0.01rem !important
         } */
 
-        @media only screen and (max-width : 420px) {
-            .cv {
-                margin-top: -8px;
-            }
+        .cv {
+            margin-top: -8px;
+        }
 
-            .woocommerce {
-                margin-top: 7px;
-            }
+        .woocommerce {
+            margin-top: 7px;
+        }
 
-            .eye_desc {
-                left: 0.5rem !important;
-            }
+        .eye_desc {
+            left: 0.5rem !important;
         }
 
         .email_form,
