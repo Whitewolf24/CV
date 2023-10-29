@@ -2356,7 +2356,7 @@ footer span {
             background-color: #21202a !important;
             overflow-y: scroll !important;
             overflow-x: hidden !important;
-            height: 0%;
+            //height: 0%;
         }
 
         header {
@@ -2376,6 +2376,10 @@ footer span {
             bottom: 0 !important;
             position: fixed !important;
             width: 100%;
+        }
+
+        main {
+            background-color: #21202a !important;
         }
 
         /*  .content {
