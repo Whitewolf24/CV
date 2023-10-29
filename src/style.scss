@@ -2454,15 +2454,17 @@ footer span {
         }
 
         ._2018 {
-            top: -0.1rem !important;
+            top: -0.2rem !important;
 
             span {
                 top: -0.005rem !important;
             }
         }
 
-        ._2021 {
-            top: 0.6rem !important;
+        ._2021_tech {
+            p {
+                top: 0.25rem !important;
+            }
         }
 
         ._2022_tech {
@@ -2475,11 +2477,6 @@ footer span {
             right: 5.2rem !important;
             top: 0.9rem !important;
         }
-
-        /* ._2013 span,
-        ._2014 span {
-            top: -0.01rem !important
-        } */
 
         .cv {
             margin-top: -8px;
