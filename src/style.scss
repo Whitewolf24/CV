@@ -2352,7 +2352,8 @@ footer span {
 @media (hover: none) {
     @supports (-moz-appearance:none) {
 
-        html {
+        html,
+        main {
             -moz-background-size: cover;
             -o-background-size: cover;
             -webkit-background-size: cover;
@@ -2364,8 +2365,8 @@ footer span {
         }
 
         body {
-            //background-image: none !important;
-            //background-color: #21202a !important;
+            background-image: none !important;
+            background-color: transparent !important;
             overflow-y: scroll !important;
             overflow-x: hidden !important;
             //height: 0%;
@@ -2388,10 +2389,6 @@ footer span {
             bottom: 0 !important;
             position: fixed !important;
             width: 100%;
-        }
-
-        main {
-            background-image: repeating-linear-gradient(to left bottom, #181818, #1a1a1c, #1d1c21, #1f1e25, #21202a, #21202a, #21202a, #21202a, #1f1e25, #1d1c21, #1a1a1c, #181818);
         }
 
         /*  .content {
