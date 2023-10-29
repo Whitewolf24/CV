@@ -2360,7 +2360,8 @@ footer span {
             background-image: repeating-linear-gradient(to left bottom, #181818, #1a1a1c, #1d1c21, #1f1e25, #21202a, #21202a, #21202a, #21202a, #1f1e25, #1d1c21, #1a1a1c, #181818);
             background-position: center;
             background-repeat: no-repeat;
-            background-size: cover;        }
+            background-size: cover;
+        }
 
         body {
             //background-image: none !important;
@@ -2424,7 +2425,7 @@ footer span {
             margin: 0 auto;
             //left: 0rem !important;
             position: relative;
-            top: -1.4rem !important;
+            top: -2rem !important;
             transform: scale(0.8);
             width: 125vw !important;
         }
