@@ -1840,7 +1840,7 @@ const Portfolio_gr = () => {
                 content_portfolio.style.cssText += "position: relative !important";
                 content_portfolio.style.cssText += "margin: 0 auto;";
                 content_portfolio.style.cssText += "top: 0.5rem !important";
-                content_portfolio.style.cssText += "width: 120vw !important";
+                content_portfolio.style.cssText += "width: 115vw !important";
                 content_portfolio.style.cssText += "transform: scale(0.85)";
 
                 cv.style.cssText += "margin-top: -8px";
