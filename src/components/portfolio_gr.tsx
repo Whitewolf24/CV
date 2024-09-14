@@ -54,6 +54,12 @@ const Portfolio_gr = () => {
 
     ///////////
 
+    const [hover_warehouse, set_hover_warehouse] = useState(false);
+    const [hover_eye, set_hover_eye] = useState(false);
+    const [hover_eknexa, set_hover_eknexa] = useState(false);
+
+    ///////////
+
     const [desc_mouseia, set_desc_mouseia] = useState({
         height: reset_therest_height,
         margin: reset_therest_margin,
@@ -1889,11 +1895,11 @@ const Portfolio_gr = () => {
             </div >
             <div className="warehouse">
                 <div className="description_div warehouse_desc" style={warehouse_style}>
-                    <p>ΑΠΟΘΗΚΗ</p>
+                    <p>{hover_warehouse ? 'ΠΡΟΣΩΡΙΝΑ ΜΗ ΔΙΑΘΕΣΙΜΟ' : 'ΑΠΟΘΗΚΗ'}</p>
                     {/*                     <span id='explanation_warehouse'>testosaijdoiksajdlsajdlkjlaksldj</span>
  */}                </div>
-                <a href="https://warehouse.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 5; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="#">
+                    <img className="fake" src="#" onMouseEnter={() => { set_hover_warehouse(true); number = 5; hover_desc(); }} onMouseLeave={() => { set_hover_warehouse(false); reset_desc(); }} />
                 </a>
                 <img src="warehouse.webp"></img>
                 <div className="tech _2020_tech">
@@ -1917,10 +1923,10 @@ const Portfolio_gr = () => {
             </div >
             <div className="eye">
                 <div className="description_div eye_desc" style={eye_style}>
-                    <p>EYE LOGIN</p>
+                    <p>{hover_eye ? 'ΠΡΟΣΩΡΙΝΑ ΜΗ ΔΙΑΘΕΣΙΜΟ' : 'EYE'}</p>
                 </div>
-                <a href="https://eye.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 3; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="#">
+                    <img className="fake" src="#" onMouseEnter={() => { set_hover_eye(true); number = 3; hover_desc(); }} onMouseLeave={() => { set_hover_eye(false); reset_desc(); }} />
                 </a>
                 <img src="eye.webp"></img>
                 <div className="tech _2016_tech">
@@ -1930,10 +1936,10 @@ const Portfolio_gr = () => {
             </div>
             <div className="eknexa">
                 <div className="description_div eknexa_desc" style={eknexa_style}>
-                    <p>ΣΤΗΝ ΠΛΑΤΕΙΑ</p>
+                    <p>{hover_eknexa ? 'ΠΡΟΣΩΡΙΝΑ ΜΗ ΔΙΑΘΕΣΙΜΟ' : 'ΣΤΗΝ ΠΛΑΤΕΙΑ'}</p>                  <p></p>
                 </div>
-                <a href="https://eknexa.marinoscv.website/" target="_blank">
-                    <img className="fake" src="#" onMouseEnter={() => { number = 2; hover_desc(); }} onMouseLeave={() => { reset_desc(); }} />
+                <a href="#">
+                    <img className="fake" src="#" onMouseEnter={() => { set_hover_eknexa(true); number = 2; hover_desc(); }} onMouseLeave={() => { set_hover_eknexa(false); reset_desc(); }} />
                 </a>
                 <img src="eknexa.webp"></img>
                 <div className="tech">
