@@ -47,11 +47,10 @@ const Skills = () => {
             <div id="backend">
                 <h3>Backend</h3>
                 <p>{"<?php?>"}</p>
-                <p>@laravel</p>
-                <p>SELECT * FROM MYSQL</p>
+                <p>SELECT * FROM MYSQL, POSTGRE</p>
                 <p>_id: MongoDB</p>
                 <p>rPush(Redis)</p>
-                <p>Next.</p>
+                <p>res.Node</p>
                 <p>router get('express')</p>
                 <p>{"require"} ('moongoose')</p>
                 <p>&#x007b;"JSON"&#x007d;</p>
@@ -71,12 +70,9 @@ const Skills = () => {
             </div>
             <div id="tools">
                 <h3>Tools</h3>
-                <p>NPM</p>
                 <p>Git</p>
                 <p>SEO</p>
-                <p>Postman</p>
-                <p>Jira</p>
-                <p>Adobe XD</p>
+                <p>Adobe</p>
                 <p>Figma</p>
             </div>
         </div>
