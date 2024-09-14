@@ -1895,7 +1895,7 @@ const Portfolio_eng = () => {
             </div >
             <div className="warehouse">
                 <div className="description_div warehouse_desc" style={warehouse_style}>
-                    <p>{hover_warehouse ? 'TEMPORALLY OFFLINE' : 'WAREHOUSE'}</p>
+                    <p>{hover_warehouse ? 'TEMPORARILY OFFLINE' : 'WAREHOUSE'}</p>
                     {/*                     <span id='explanation_warehouse'>testosaijdoiksajdlsajdlkjlaksldj</span>
  */}                </div>
                 <a href="#">
@@ -1923,7 +1923,7 @@ const Portfolio_eng = () => {
             </div >
             <div className="eye">
                 <div className="description_div eye_desc" style={eye_style}>
-                    <p>{hover_eye ? 'TEMPORALLY OFFLINE' : 'EYE'}</p>
+                    <p>{hover_eye ? 'TEMPORARILY OFFLINE' : 'EYE'}</p>
                 </div>
                 <a href="#">
                     <img className="fake" src="#" onMouseEnter={() => { set_hover_eye(true); number = 3; hover_desc(); }} onMouseLeave={() => { set_hover_eye(false); reset_desc(); }} />
@@ -1936,7 +1936,7 @@ const Portfolio_eng = () => {
             </div>
             <div className="eknexa">
                 <div className="description_div eknexa_desc" style={eknexa_style}>
-                    <p>{hover_eknexa ? 'TEMPORALLY OFFLINE' : 'EKNEXA'}</p>
+                    <p>{hover_eknexa ? 'TEMPORARILY OFFLINE' : 'EKNEXA'}</p>
                 </div>
                 <a href="#">
                     <img className="fake" src="#" onMouseEnter={() => { set_hover_eknexa(true); number = 2; hover_desc(); }} onMouseLeave={() => { set_hover_eknexa(false); reset_desc(); }} />
