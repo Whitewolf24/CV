@@ -299,6 +299,62 @@ section {
 
 //--------------------------//
 
+.anime_stop {
+    bottom: 41vh;
+    border: 1px solid white;
+    border-radius: 50%;
+    color: white;
+    position: relative;
+    scale: 0.6;
+    height: 13ch;
+    width: 13ch;
+}
+
+@media only screen and (min-height: 815px) {
+    .anime_stop {
+        bottom: 39vh;
+    }
+}
+
+@media only screen and (max-height: 690px) and (min-height:590px) {
+    .anime_stop {
+        bottom: 44vh;
+    }
+}
+
+@media only screen and (max-height: 590px) and (min-height:540px) {
+    .anime_stop {
+        bottom: 46vh;
+    }
+}
+
+@media only screen and (max-height: 540px) and (min-height:440px) {
+    .anime_stop {
+        bottom: 48vh;
+    }
+}
+
+@media only screen and (max-height: 440px) and (min-height:350px) {
+    .anime_stop {
+        bottom: 56vh;
+    }
+}
+
+@media only screen and (max-height: 350px) and (min-height:310px) {
+    .anime_stop {
+        bottom: 60vh;
+    }
+}
+
+@media only screen and (max-height: 310px) {
+    .anime_stop {
+        bottom: 69vh;
+        scale: 0.5;
+    }
+}
+
+//--------------------------//
+
 .content_skills {
     animation: fade_in 2s 1 ease-in-out forwards;
     //bottom: 50px;

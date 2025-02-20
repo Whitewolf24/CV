@@ -1,59 +1,100 @@
-const Name_gr = () => {
+import { useState, useEffect } from "react";
 
-    onresize = () => {
-        //const content_name = document.querySelector(".content_name") as HTMLDivElement;
-        if (window.innerHeight <= 230) {
-            document.body.style.overflowY = "scroll";
-        }
-        else {
-            if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
-                document.body.style.overflowY = "hidden";
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+const Name_gr = () => {
+    const [show_butt, show_butt_state] = useState(false);
+
+    useEffect(() => {
+        const resize_scale = () => {
+            if (window.innerHeight <= 230) {
+                document.body.style.overflowY = "scroll";
+            } else {
+                if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
+                    document.body.style.overflowY = "hidden";
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                }
             }
-        }
+        };
+
+        resize_scale();
+        window.addEventListener("resize", resize_scale);
+
+        return () => {
+            window.removeEventListener("resize", resize_scale);
+        };
+    }, []);
+
+    useEffect(() => {
+        const timein = setTimeout(() => {
+            show_butt_state(true);
+        }, 500);
+
+        const timeout = setTimeout(() => {
+            show_butt_state(false);
+        }, 9500);
+
+        return () => {
+            clearTimeout(timein);
+            clearTimeout(timeout);
+        };
+    }, []);
+
+    const anime_stop = () => {
+        document.querySelectorAll("*").forEach((el) => {
+            const element = el as HTMLElement;
+            const comp_style = window.getComputedStyle(element);
+            const anime = comp_style.animationName;
+            show_butt_state(false);
+
+            if (anime) {
+                element.style.animation = "none";
+
+                if (["fade_in", "appear", "header"].includes(anime)) {
+                    element.style.opacity = "100%";
+                }
+
+                const final_width: Record<string, string> = {
+                    typewriter: "11em",
+                    typewriter_home: "3em",
+                    typewriter_job: "9em",
+                    typewriter_knowledge: "7em",
+                    typewriter_portfolio: "13em",
+                    typewriter_contact: "9em",
+                    typewriter_span: "1.5em",
+                };
+
+                anime.split(", ").forEach((a) => {
+                    if (final_width[a]) {
+                        element.style.width = final_width[a];
+                        element.style.borderRight = "none";
+                        element.style.opacity = "100%";
+                    }
+                });
+
+                if (element.classList.contains("contact")) {
+                    element.style.animation = "blinktext 700ms steps(40) infinite normal forwards";
+                    element.style.borderRight = "1px solid white";
+                }
+            }
+        });
     };
 
-    onload = () => {
-        if (window.innerHeight <= 230) {
-            document.body.style.overflowY = "scroll";
-        }
-        else {
-            if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
-                document.body.style.overflowY = "hidden";
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-    }
-
-    /* if (navigator.userAgent.includes("Mobi") && navigator.userAgent.includes("Firef")) {
-         onload = () => {
-             const footer = document?.querySelector("footer") as HTMLDivElement;
-             document.body.style.cssText += "overflow: hidden scroll !important";
-             footer.style.cssText += "position: fixed !important";
-             footer.style.cssText += "bottom: 0rem !important";
-             footer.style.cssText += "top: auto !important";
-             //footer.style.cssText += "height: 4rem !important";
-         }
-     }*/
-
-    return <div className="content"
-     /*    onAnimationStart={() => {
-            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                const content = document?.querySelector(".content") as HTMLDivElement;
-
-                content.style.cssText += "overflow: hidden !important";
-            }
-        }} */>
-        <div className="content_name" onAnimationStart={() => {
-            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                const content_name = document?.querySelector(".content_name") as HTMLDivElement;
-                content_name.style.cssText += "height: fit-content !important";
-            }
-        }}>
-            <h1 className="name_gr">ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
-            <h2 className="job_gr">WEB_DEVELOPER</h2>
+    return (
+        <div className="content">
+            <div className="content_name">
+                <h1 className="name_gr">ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
+                <h2 className="job_gr">WEB_DEVELOPER</h2>
+                <button
+                    className="anime_stop"
+                    onClick={anime_stop}
+                    style={{
+                        opacity: show_butt ? 1 : 0,
+                        transition: "opacity 0.5s ease-in",
+                    }}>
+                    Παράλειψη animations
+                </button>
+            </div>
         </div>
-    </div>
-}
+    );
+};
 
 export default Name_gr;

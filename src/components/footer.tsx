@@ -167,7 +167,7 @@ export const Footer = () => {
                 lang_element.setAttribute('lang', 'en');
             }
 
-            document.title = 'George Marinos, Fullstack Web Developer Portfolio';
+            document.title = 'George Marinos, Fullstack WebDev';
             if (page.location === 'home') {
                 /*  home_eng.addEventListener("click", function (event) {
         event.preventDefault()
@@ -212,7 +212,7 @@ export const Footer = () => {
                 lang_element.setAttribute('lang', 'el');
             }
 
-            document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
+            document.title = 'Γεώργιος Μαρίνος, Fullstack WebDev';
             if (page.location === 'home') {
                 return <Name_gr />
             }
