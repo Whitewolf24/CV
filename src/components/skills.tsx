@@ -47,11 +47,11 @@ const Skills = () => {
             <div id="backend">
                 <h3>Backend</h3>
                 <p>{"<?php"}</p>
-                <p>{"route::get('/laravel')"}</p>
+                <p>&#x007b;route::get ('/laravel')&#x007d;</p>
                 <p>SELECT * FROM mysql JOIN postgre</p>
                 <p>_id: MongoDB</p>
                 <p>rPush(Redis)</p>
-                <p>router.get('express')</p>
+                <p>router.get ('express')</p>
                 <p>&#x007b;"JSON"&#x007d;</p>
             </div>
             <div id="frontend">

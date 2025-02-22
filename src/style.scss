@@ -123,7 +123,7 @@ header {
     cursor: default;
     filter: grayscale(60%);
     height: 15px;
-    object-fit: cover;
+    object-fit: contain;
     padding-bottom: 4px;
     position: relative;
     top: 6px;
@@ -135,15 +135,17 @@ header {
     border-bottom: 0px;
     cursor: pointer;
     filter: grayscale(85%);
-    height: 11px;
-    object-fit: cover;
+    height: 20px;
+    top: 4.5px;
+    position: relative;
+    object-fit: contain;
     width: 20px;
 }
 
 .nowhover img:hover {
     filter: grayscale(65%);
-    height: 15px;
-    object-fit: cover;
+    height: 20px;
+    object-fit: contain;
     width: 25px;
 }
 
@@ -363,7 +365,7 @@ section {
     font-size: clamp(.5rem, 2.5vw, 0.6rem);
     grid-column-gap: 4vw;
     grid-row-gap: 0px;
-    grid-template-columns: 27vw 25vw 27vw 10vw;
+    grid-template-columns: repeat(4, 17vw);
     grid-template-rows: 1fr;
     opacity: 0;
     padding-right: 4vw;
@@ -371,14 +373,15 @@ section {
 
     p {
         border-right: 1px dashed;
-        height: 5vh;
-        margin-block: 1rem;
+        height: fit-content;
+        margin-block: 1.5rem;
         padding-right: 1vw;
+        width: 24ch;
         white-space: pre-line;
     }
 
     h3 {
-        padding-right: 0.8vw;
+        width: 16ch;
     }
 
     div {
@@ -386,9 +389,11 @@ section {
     }
 
     @media only screen and (max-width: 600px) {
-        grid-template-columns: 23vw 27vw 26vw 10vw;
-        transform: translate(-48%, 10%);
+        //grid-template-columns: 23vw 27vw 26vw 10vw;
+        transform: translate(-58%, 10%);
         font-size: clamp(.4rem, 2.5vw, .5rem);
+        grid-column-gap: 10vw;
+            scale: 0.9;
 
         h3 {
             font-size: clamp(.8rem, 2.5vw, .9rem);
@@ -396,8 +401,10 @@ section {
     }
 
     @media only screen and (min-width: 600px) and (max-width: 800px) {
-        grid-template-columns: 27vw 25vw 23vw 10vw;
-        transform: translate(-49%, 10%);
+       // grid-template-columns: 27vw 25vw 23vw 10vw;
+        transform: translate(-55%, 10%);
+        grid-column-gap: 8vw;
+        scale: 0.95;
 
         h3 {
             font-size: clamp(.85rem, 2.5vw, .95rem);
@@ -407,8 +414,7 @@ section {
 
     @media only screen and (min-width: 800px) and (max-width: 1000px) {
         font-size: clamp(.5rem, 2.5vw, 0.7rem);
-        grid-template-columns: 17vw 22vw 20vw 8vw;
-        top: -3rem;
+        //grid-template-columns: 17vw 22vw 20vw 8vw;
 
         h3 {
             font-size: clamp(.95rem, 2.5vw, 1.05rem);
@@ -422,8 +428,7 @@ section {
 
     @media only screen and (min-width: 1000px) and (max-width: 1500px) {
         font-size: clamp(.5rem, 2.5vw, 0.7rem);
-        grid-template-columns: 17vw 22vw 16vw 8vw;
-        top: -3rem;
+        //grid-template-columns: repeat(4,17vw);
 
         h3 {
             font-size: clamp(.95rem, 2.5vw, 1.1rem);
@@ -434,7 +439,6 @@ section {
         font-size: clamp(.5rem, 2.5vw, 0.7rem);
         grid-template-columns: 15vw 18vw 12vw 6vw;
         grid-column-gap: 6vw;
-        top: -3rem;
 
         h3 {
             font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -446,7 +450,6 @@ section {
         font-size: clamp(.5rem, 2.5vw, 0.7rem);
         grid-template-columns: 12vw 15vw 10vw 5vw;
         grid-column-gap: 7vw;
-        top: -3rem;
 
         h3 {
             font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -485,11 +488,11 @@ section {
 }
 
 
-#backend p:first-of-type,
-#frontend p:first-of-type,
+/* #backend p:first-of-type,
+#frontend p:first-of-type, 
 #wordp p {
     height: 4vh;
-}
+}*/
 
 //--------------------------//
 
