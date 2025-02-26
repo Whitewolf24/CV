@@ -1,38 +1,25 @@
 const Skills = () => {
 
-    onresize = () => {
+    const overflow = () => {
         const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
-        if (window.innerHeight <= 580 && window.innerWidth <= 450
-            || window.innerHeight <= 592 && window.innerWidth >= 450 && !(window.innerWidth == 800)
-            || window.innerHeight <= 509 && window.innerWidth >= 800) {
+
+        if (!content_skills) return;
+
+        if (window.innerHeight <= 415) {
             document.body.style.overflowY = "scroll";
-            content_skills.style.paddingBottom = "0.1rem";
         }
         else {
             document.body.style.overflowY = "hidden";
-            content_skills.style.paddingBottom = "0rem";
         }
     };
 
-    onload = () => {
-        const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
-        if (window.innerHeight <= 580 && window.innerWidth <= 450
-            || window.innerHeight <= 592 && window.innerWidth >= 450 && !(window.innerWidth == 800)
-            || window.innerHeight <= 509 && window.innerWidth >= 800) {
-            document.body.style.overflowY = "scroll";
-            content_skills.style.paddingBottom = "0.1rem";
-        }
-        else {
-            document.body.style.overflowY = "hidden";
-            content_skills.style.paddingBottom = "0rem";
-        }
-    }
+    overflow();
+    window.addEventListener("resize", overflow);
 
     return <div className="content"
         onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content = document?.querySelector(".content") as HTMLDivElement;
-
                 content.style.cssText += "overflow: hidden !important";
             }
         }}>
