@@ -1,106 +1,142 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const Portfolio_gr = () => {
-    const [width, set_width] = useState(window.innerWidth);
-    const [height, set_height] = useState(window.innerHeight);
-    const [hoverNumber, set_number] = useState<number | null>(null);
-    const [selected, set_selected] = useState<{ id: number, title: string, img: string } | null>(null);
-
-    useEffect(() => {
-        const handle_resize = () => {
-            set_width(window.innerWidth);
-            set_height(window.innerHeight);
-        };
-
-        window.addEventListener("resize", handle_resize);
-        return () => window.removeEventListener("resize", handle_resize);
-    }, []);
-
-    const hover_desc = (num: number | null) => {
-        set_number(num);
-    };
+    const [hover_number, set_number] = useState<number | null>(null);
+    const [selected, set_selected] = useState<{ id: number, title: string, img: string, vid?: string } | null>(null);
+    const [fadeOut, fade_out] = useState(false);
 
     const projects = [
-        { id: 1, title: "JOYSPOT", img: "cv.webp" },
-        { id: 2, title: "MARINOS.WEBSITE", img: "cv.webp" },
-        { id: 3, title: "MONGOXPRESS", img: "express.webp" },
-        { id: 4, title: "E-KIOSK", img: "cv.webp" },
-        { id: 5, title: "ΑΠΟΘΗΚΗ", img: "warehouse.webp" },
-        { id: 6, title: "SWLYN", img: "express.webp" },
-        { id: 7, title: "EYE LOGIN", img: "warehouse.webp" },
-        { id: 8, title: "ΕΚΝΕΧΑ", img: "cv.webp" },
-        { id: 9, title: "ΜΟΥΣΕΙΑ ΛΕΣΒΟΥ", img: "cv.webp" },
+        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
+        { id: 2, title: "ΗΜΕΡΟΛΟΓΙΟ JOYSPOT", img: "joyspot.webp" },
+        { id: 3, title: "MARINOS.WEBSITE v1", img: "cv.webp" },
+        { id: 4, title: "MONGOXPRESS", img: "express.webp" },
+        { id: 5, title: "E-KIOSK", img: "woocommerce.webp" },
+        { id: 6, title: "ΑΠΟΘΗΚΗ", img: "warehouse.webp" },
+        { id: 7, title: "SWLYN", img: "swlyn.webp" },
+        { id: 8, title: "EYE LOGIN", img: "eye.webp" },
+        { id: 9, title: "ΕΚΝΕΧΑ", img: "eknexa.webp" },
+        { id: 10, title: "ΜΟΥΣΕΙΑ ΛΕΣΒΟΥ", img: "mouseia.webp", vid: "vid_mouseia.webp" },
     ];
 
-    const overflow = () => {
-        if (window.innerHeight <= 630) {
-            document.body.style.overflowY = "scroll";
-        }
-        else document.body.style.overflowY = "hidden";
+    useEffect(() => {
+        const overflow = () => {
+            if (window.innerWidth < 1240 || (window.innerWidth >= 1240 && window.innerHeight <= 610)) {
+                document.body.style.overflowY = "scroll";
+            } else {
+                document.body.style.overflowY = "hidden";
+            }
+        };
+
+        overflow();
+        window.addEventListener("resize", overflow);
+        return () => window.removeEventListener("resize", overflow);
+    }, []);
+
+    const open_overlay = (id: number, title: string, img: string, vid?: string) => {
+        set_selected({ id, title, img, vid });
+        fade_out(false);
     };
 
-
-    overflow();
-    window.addEventListener("resize", overflow);
+    const close_overlay = () => {
+        fade_out(true);
+        setTimeout(() => {
+            set_selected(null);
+            fade_out(false);
+        }, 300);
+    };
 
     return (
         <div className="content">
             {selected && (
-                <div className="overlay" onClick={() => set_selected(null)} style={{
-                    position: "fixed",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    background: "rgba(0, 0, 0, 0.7)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    zIndex: 1000,
-                }}>
-                    <div className="content" onClick={(e) => e.stopPropagation()} style={{
-                        background: "white",
-                        padding: "20px",
-                        borderRadius: "10px",
-                        width: "400px",
-                        textAlign: "center",
-                        position: "relative",
-                    }}>
-                        <button onClick={() => set_selected(null)} style={{
-                            position: "absolute",
-                            top: "10px",
-                            right: "10px",
-                            background: "red",
-                            color: "white",
-                            border: "none",
-                            borderRadius: "50%",
-                            width: "30px",
-                            height: "30px",
-                            cursor: "pointer",
-                        }}>X</button>
+                <div
+                    className={`overlay${fadeOut ? " fade_out" : " fade_in"}`}
+                    onClick={close_overlay}
+                    style={{
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100%",
+                        height: "100%",
+                        background: "rgba(0, 0, 0, 0.7)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        zIndex: 1000,
+                    }}
+                >
+                    <div
+                        className="content"
+                        onClick={(e) => e.stopPropagation()}
+                        style={{
+                            background: "linear-gradient(135deg, rgb(40, 44, 52), rgb(20, 22, 30))",
+                            borderRadius: "30px",
+                            boxShadow: "8px 8px 10px rgba(0, 0, 0, 0.3)",
+                            padding: "20px",
+                            textAlign: "center",
+                            position: "relative",
+                            width: "400px",
+                        }}
+                    >
+                        <button
+                            className="close_butt"
+                            onClick={close_overlay}
+                            style={{
+                                position: "absolute",
+                                top: "10px",
+                                right: "10px",
+                                color: "white",
+                                border: "none",
+                                borderRadius: "50%",
+                                width: "30px",
+                                height: "30px",
+                                cursor: "pointer",
+                            }}
+                        >
+                            X
+                        </button>
                         <h2>{selected.title}</h2>
-                        <img src={selected.img} alt={selected.title} style={{ width: "100%", borderRadius: "10px" }} />
+                        {selected.vid ? (
+                            <img
+                                src={selected.vid}
+                                loading="lazy"
+                                style={{ width: "100%", borderRadius: "10px" }}
+                            />
+                        ) : (
+                            <img
+                                src={selected.img}
+                                alt={selected.title}
+                                loading="lazy"
+                                style={{ width: "100%", borderRadius: "10px" }}
+                            />
+                        )}
                         <p>More details about {selected.title} will go here.</p>
                     </div>
                 </div>
             )}
+
             <div className="content_portfolio">
-                {projects.map(({ id, title, img }) => (
-                    <div key={id} className="portfolio_item"
-                        onMouseEnter={() => hover_desc(id)}
-                        onMouseLeave={() => hover_desc(null)}
-                        onClick={() => set_selected({ id, title, img })}
+                {projects.map(({ id, title, img, vid }) => (
+                    <div
+                        key={id}
+                        className="portfolio_item"
+                        onMouseEnter={() => set_number(id)}
+                        onMouseLeave={() => set_number(null)}
                     >
                         <div
                             className="description_div"
-                            style={{ opacity: hoverNumber === id ? 1 : 0 }}
+                            style={{
+                                opacity: hover_number === id ? 1 : 0,
+                                animation: hover_number === id ? "fade_in 0.3s ease-in forwards" : "fade_out 0.3s ease-in forwards",
+                            }}
                         >
-                            <p>{title}</p>
+                            <p style={{ pointerEvents: "none" }}>{title}</p>
                         </div>
                         <img
                             className="portfolio_img"
                             src={img}
                             alt={title}
+                            onClick={() => open_overlay(id, title, img, vid)}
+                            style={{ cursor: "pointer" }}
                         />
                     </div>
                 ))}

@@ -1,22 +1,49 @@
-
-//import { useEffect, useState } from 'react';
-import Cookies from 'universal-cookie';
+import { useState, lazy, Suspense } from 'react';
+import { Header } from './components/header';
 import { Footer } from './components/footer';
+import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
+const lang = cookies.get('lang');
 
-if (!cookies.get('lang')) {
-  cookies.set('lang', 'gr', { sameSite: true });
-}
+const NameGr = lazy(() => import('./components/name_gr'));
+const NameEng = lazy(() => import('./components/name_eng'));
+const Knowledge = lazy(() => import('./components/skills'));
+const PortfolioGr = lazy(() => import('./components/portfolio_gr'));
+const PortfolioEng = lazy(() => import('./components/portfolio_eng'));
+const ContactGr = lazy(() => import('./components/contact_gr'));
+const ContactEng = lazy(() => import('./components/contact_eng'));
 
 function App() {
+  const [page, setPage] = useState("home");
+  const [lang, setLang] = useState(cookies.get('lang'));
 
-  return <div>
-    {/* <Main name={name} job={"Web Developer"} />
-     <Footer lang_gr={change_lang("ελληνικά")} lang_eng={change_lang("ελληνικά")} knowhow_butt={"knowledge"} projects_butt={"projects"} contact_butt={"contact"} />
-  content items={["",""]} render={(items:string) => <p>{items}</p>} */}
-    <Footer />
-  </div>
+  const render_page = () => {
+    switch (page) {
+      case "knowledge":
+        return <Knowledge />;
+      case "portfolio":
+        return lang === 'eng' ? <PortfolioEng /> : <PortfolioGr />;
+      case "contact":
+        return lang === 'eng' ? <ContactEng /> : <ContactGr />;
+      default:
+        return lang === 'eng' ? <NameEng /> : <NameGr />;
+    }
+  };
+
+  return (
+    <div>
+      <Header />
+      <main>
+        <section className='content_section'>
+          <Suspense fallback={<span className='loader'>.........</span>}>
+            {render_page()}
+          </Suspense>
+        </section>
+      </main>
+      <Footer setPage={setPage} page={page} />
+    </div>
+  );
 }
 
 export default App;

@@ -5,13 +5,9 @@ const Name_eng = () => {
 
     useEffect(() => {
         const resize_scale = () => {
-            if (window.innerHeight <= 230) {
-                document.body.style.overflowY = "scroll";
-            } else {
-                if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
-                    document.body.style.overflowY = "hidden";
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+            if (!navigator.userAgent.includes("Chrome") && !navigator.userAgent.includes("Mobi")) {
+                document.body.style.overflowY = "hidden";
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         };
 
@@ -81,18 +77,18 @@ const Name_eng = () => {
 
     return (
         <div className="content">
+            <button
+                className="anime_stop"
+                onClick={anime_stop}
+                style={{
+                    opacity: show_butt ? 1 : 0,
+                    transition: "opacity 0.5s ease-in",
+                }}>
+                Skip animations
+            </button>
             <div className="content_name">
                 <h1 className="name_eng">GEORGE_MARINOS</h1>
                 <h2 className="job_eng">WEB_DEVELOPER</h2>
-                <button
-                    className="anime_stop"
-                    onClick={anime_stop}
-                    style={{
-                        opacity: show_butt ? 1 : 0,
-                        transition: "opacity 0.5s ease-in",
-                    }}>
-                    Skip animations
-                </button>
             </div>
         </div>
     );
