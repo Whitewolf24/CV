@@ -174,11 +174,13 @@ header {
     font-weight: 600;
     opacity: 0%;
     overflow: hidden;
-    position: relative;
+    position: absolute;
     text-align: center;
-    top: 42vh;
     white-space: nowrap;
     width: 0rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 @keyframes loader {
@@ -322,14 +324,15 @@ header {
     grid-template-columns: repeat(4, 17vw);
     grid-template-rows: 1fr;
     opacity: 0;
-    padding-right: 4vw;
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     p {
         border-right: 1px dashed;
         height: fit-content;
         margin-block: 1.5rem;
-        padding-right: 1vw;
         width: 24ch;
         white-space: pre-line;
     }
@@ -344,9 +347,9 @@ header {
 
     @media only screen and (max-width: 600px) {
         //grid-template-columns: 23vw 27vw 26vw 10vw;
-        transform: translate(-58%, 10%);
         font-size: clamp(.4rem, 2.5vw, .5rem);
         grid-column-gap: 10vw;
+        transform: translate(-58%, -55%);
         scale: 0.9;
 
         h3 {
@@ -356,9 +359,9 @@ header {
 
     @media only screen and (min-width: 600px) and (max-width: 800px) {
         // grid-template-columns: 27vw 25vw 23vw 10vw;
-        transform: translate(-55%, 10%);
+        transform: translate(-55%, -55%);
         grid-column-gap: 8vw;
-        scale: 0.95;
+        scale: 0.92;
 
         h3 {
             font-size: clamp(.85rem, 2.5vw, .95rem);
@@ -469,7 +472,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    position: relative;
+    left: 20vw;
 
     div {
         margin-right: 1rem;
@@ -487,21 +491,25 @@ header {
 
     @media only screen and (max-width: 600px) {
         scale: 0.9;
+        margin-top: -3rem;
         margin-bottom: 1rem;
+        left: 2rem;
         text-rendering: optimizeLegibility;
         width: 90vw;
     }
 
     @media only screen and (min-width: 600px) and (max-width: 800px) {
-        margin-top: 3rem;
+        margin-top: -1rem;
         margin-bottom: 8rem;
+        left: 7rem;
         text-rendering: optimizeLegibility;
-        width: 65vw;
+        width: 70vw;
     }
 
     @media only screen and (min-width: 800px) and (max-width: 1000px) {
-        margin-top: 6rem;
+        margin-top: 4rem;
         margin-bottom: 10rem;
+        left: 8rem;
         scale: 1.2;
         width: 74vw;
         -webkit-font-smoothing: antialiased;
@@ -509,52 +517,52 @@ header {
     }
 
     @media only screen and (min-width: 1000px) and (max-width: 1240px) {
-        margin-top: 6rem;
+        margin-top: 3rem;
         margin-bottom: 10rem;
         scale: 1.2;
-        width: 60vw;
+        width: 62vw;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     @media only screen and (min-width: 1240px) and (max-width: 1409px) {
-        margin-top: 10rem;
+        margin-top: 2rem;
         scale: 1.2;
-        width: 80vw;
+        width: 75vw;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     @media only screen and (min-width: 1409px) and (max-width: 1680px) {
         margin-bottom: 12rem;
-        margin-top: 10rem;
+        margin-top: 6rem;
         scale: 1.4;
-        width: 67vw;
+        width: 60vw;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     @media only screen and (min-width: 1680px) and (max-width: 1910px) {
         margin-bottom: 12rem;
-        margin-top: 10rem;
+        margin-top: 3rem;
         scale: 1.4;
-        width: 59vw;
+        width: 61vw;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     @media only screen and (min-width: 1910px) and (max-width: 2250px) {
         margin-bottom: 12rem;
-        margin-top: 10rem;
+        margin-top: 3rem;
         scale: 1.4;
-        width: 50vw;
+        width: 53vw;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
     @media only screen and (min-width: 2250px) {
         margin-bottom: 12rem;
-        margin-top: 10rem;
+        margin-top: 3rem;
         scale: 1.4;
         width: 45vw;
         -webkit-font-smoothing: antialiased;
@@ -563,7 +571,7 @@ header {
 }
 
 .description_div {
-    align-items: center;
+    text-align: center;
     cursor: default;
     font-size: clamp(.62rem, 2.5vw, .82rem);
     z-index: 99;
@@ -571,6 +579,44 @@ header {
 
 .portfolio_img {
     cursor: pointer;
+}
+
+.content {
+    @media only screen and (min-width: 900px) and (max-width: 1050px) {
+        width: 60% !important;
+    }
+
+    @media only screen and (min-width: 1050px) and (max-width: 1400px) {
+        width: 50% !important;
+    }
+
+    @media only screen and (min-width: 1400px) and (max-width: 1550px) {
+        width: 45% !important;
+    }
+
+    @media only screen and (min-width: 1550px) and (max-width: 1750px) {
+        width: 40% !important;
+    }
+
+    @media only screen and (min-width: 1750px) and (max-width: 1950px) {
+        width: 35% !important;
+    }
+
+    @media only screen and (min-width: 1950px) and (max-width: 2250px) {
+        width: 30% !important;
+    }
+
+    @media only screen and (min-width: 2250px) and (max-width: 2500px) {
+        width: 27% !important;
+    }
+
+    @media only screen and (min-width: 2500px) and (max-width: 2700px) {
+        width: 24% !important;
+    }
+
+    @media only screen and (min-width: 2700px) {
+        width: 20% !important;
+    }
 }
 
 .overlay {
@@ -597,19 +643,25 @@ header {
 
 .content_contact {
     animation: fade_in 2s 1 ease-in-out forwards;
-    transform: translate(0, 17vh);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 
     input {
         border-radius: 10px 17px;
         height: 3.5vh;
-        width: 40vw;
+        padding-inline: 1rem;
+        width: 80%;
     }
 
     textarea {
         border-radius: 10px;
         height: 30vh;
         margin-block: 2rem;
-        width: 40vw;
+        padding: 0.5rem;
+        width: 80%;
     }
 
     ::placeholder {
@@ -626,29 +678,6 @@ header {
     button:hover {
         background-color: rgb(93, 101, 106);
         color: #161616;
-    }
-
-    @media only screen and (max-height: 435px) {
-        transform: translate(0, 18vh);
-        height: 100vh;
-
-        ::placeholder {
-            font-size: clamp(.55rem, 2.5vw, .65rem);
-        }
-
-        input {
-            height: 8vh;
-            width: 40vw;
-        }
-
-        textarea {
-            height: 50vh;
-        }
-
-        button {
-            font-size: 0.65rem;
-            margin-bottom: 10rem;
-        }
     }
 }
 
@@ -1128,7 +1157,7 @@ footer span {
 
 //--------------------------//
 
-/* @media (hover: none) {
+@media (hover: none) {
     @supports (-moz-appearance:none) {
 
         html,
@@ -1151,6 +1180,12 @@ footer span {
             //height: 0%;
         }
 
+
+        .description_div {
+            opacity: 1 !important;
+        }
+
+        /*
         header {
             background-image: none !important;
             background-color: transparent !important;
@@ -1207,6 +1242,6 @@ footer span {
             color: white !important;
             //background-color: white !important;
             width: 15rem !important;
-        }
+        }*/
     }
-} */
+}

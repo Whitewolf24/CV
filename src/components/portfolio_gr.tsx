@@ -6,15 +6,15 @@ const Portfolio_gr = () => {
     const [fadeOut, fade_out] = useState(false);
 
     const projects = [
-        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
-        { id: 2, title: "ΗΜΕΡΟΛΟΓΙΟ JOYSPOT", img: "joyspot.webp" },
-        { id: 3, title: "MARINOS.WEBSITE v1", img: "cv.webp" },
-        { id: 4, title: "MONGOXPRESS", img: "express.webp" },
-        { id: 5, title: "E-KIOSK", img: "woocommerce.webp" },
-        { id: 6, title: "ΑΠΟΘΗΚΗ", img: "warehouse.webp" },
-        { id: 7, title: "SWLYN", img: "swlyn.webp" },
-        { id: 8, title: "EYE LOGIN", img: "eye.webp" },
-        { id: 9, title: "ΕΚΝΕΧΑ", img: "eknexa.webp" },
+        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp", vid: "vid_cv2.webp" },
+        { id: 2, title: "ΗΜΕΡΟΛΟΓΙΟ JOYSPOT", img: "joyspot.webp", vid: "vid_joyspot.webp" },
+        { id: 3, title: "MARINOS.WEBSITE v1", img: "cv.webp", vid: "vid_cv.webp" },
+        { id: 4, title: "MONGOXPRESS", img: "express.webp", vid: "vid_express.webp" },
+        { id: 5, title: "E-KIOSK", img: "woocommerce.webp", vid: "vid_woocomerce.webp" },
+        { id: 6, title: "ΑΠΟΘΗΚΗ", img: "warehouse.webp", vid: "vid_warehouse.webp" },
+        { id: 7, title: "SWLYN", img: "swlyn.webp", vid: "vid_swlyn.webp" },
+        { id: 8, title: "EYE LOGIN", img: "eye.webp", vid: "vid_eye.webp" },
+        { id: 9, title: "ΕΚΝΕΧΑ", img: "eknexa.webp", vid: "vid_eknexa.webp" },
         { id: 10, title: "ΜΟΥΣΕΙΑ ΛΕΣΒΟΥ", img: "mouseia.webp", vid: "vid_mouseia.webp" },
     ];
 
@@ -74,7 +74,7 @@ const Portfolio_gr = () => {
                             padding: "20px",
                             textAlign: "center",
                             position: "relative",
-                            width: "400px",
+                            width: "70%",
                         }}
                     >
                         <button
@@ -100,6 +100,7 @@ const Portfolio_gr = () => {
                                 src={selected.vid}
                                 loading="lazy"
                                 style={{ width: "100%", borderRadius: "10px" }}
+                                draggable="false"
                             />
                         ) : (
                             <img
@@ -107,6 +108,7 @@ const Portfolio_gr = () => {
                                 alt={selected.title}
                                 loading="lazy"
                                 style={{ width: "100%", borderRadius: "10px" }}
+                                draggable="false"
                             />
                         )}
                         <p>More details about {selected.title} will go here.</p>
@@ -137,6 +139,7 @@ const Portfolio_gr = () => {
                             alt={title}
                             onClick={() => open_overlay(id, title, img, vid)}
                             style={{ cursor: "pointer" }}
+                            draggable="false"
                         />
                     </div>
                 ))}

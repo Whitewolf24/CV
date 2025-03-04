@@ -1,43 +1,41 @@
 import { useState, useEffect } from 'react';
+import { use_language } from './header'; // Import the language context
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
 
-export const Footer = ({ setPage, page }: { setPage: (page: string) => void, page: string }) => {
-    const [text, setText] = useState({
+export const Footer = ({ set_page, page }: { set_page: (page: string) => void, page: string }) => {
+    const { language, switch_lang } = use_language();
+
+    const [text, set_text] = useState({
         home: "",
         knowledge: "",
         portfolio: "",
         contact: "",
     });
 
-    const [language, setLanguage] = useState(cookies.get('lang') || 'gr'); // Track current language
-
-    // Update text and language settings based on cookies
     useEffect(() => {
         if (language === 'eng') {
-            setText({
+            set_text({
                 home: "</G>",
                 knowledge: "<KNOWLEDGE>",
                 portfolio: "<PORTFOLIO>",
                 contact: "<CONTACT>",
             });
             document.title = 'George Marinos, Fullstack Web Developer Portfolio';
-            // Update meta description
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
                 meta.setAttribute('content', 'On this page you will find my Portfolio, and references to all my knowledge surrounding Frontend, Backend and Wordpress Web Development.');
             }
             document.documentElement.setAttribute('lang', 'en');
         } else {
-            setText({
+            set_text({
                 home: "</Γ>",
                 knowledge: "<ΓΝΩΣΕΙΣ>",
                 portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
                 contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
             });
             document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
-            // Update meta description
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
                 meta.setAttribute('content', "Αυτή η ιστοσελίδα περιέχει το Portfolio μου, και αναφορές στις γνώσεις μου, γύρω από το Frontend, Backend και Wordpress Web Development.");
@@ -45,22 +43,14 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
             document.documentElement.setAttribute('lang', 'el');
         }
 
-        // Disable/enable menu items based on the page and language
         disable_menu();
-        // Change text based on the page and language
-        change_text();
-    }, [language, page]);
 
-    const switch_lang = (lang: string) => {
-        cookies.set('lang', lang, { path: '/' });
-        setLanguage(lang);
-    };
+    }, [language, page]);
 
     const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
     const disable_menu = () => {
         if (cookies.get('lang') === 'eng') {
-
             sleep(1000).then(() => {
                 const home_eng = document.querySelector(".home_eng") as HTMLButtonElement;
                 const knowledge_eng = document.querySelector(".knowledge_eng") as HTMLButtonElement;
@@ -72,7 +62,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                     knowledge_eng.style.pointerEvents = "auto";
                     portfolio_eng.style.pointerEvents = "auto";
                     contact_eng.style.pointerEvents = "auto";
-
                     home_eng.style.cursor = "default";
                     knowledge_eng.style.cursor = "pointer";
                     portfolio_eng.style.cursor = "pointer";
@@ -83,7 +72,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                     knowledge_eng.style.pointerEvents = "none";
                     portfolio_eng.style.pointerEvents = "auto";
                     contact_eng.style.pointerEvents = "auto";
-
                     home_eng.style.cursor = "pointer";
                     knowledge_eng.style.cursor = "default";
                     portfolio_eng.style.cursor = "pointer";
@@ -94,7 +82,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                     knowledge_eng.style.pointerEvents = "auto";
                     portfolio_eng.style.pointerEvents = "none";
                     contact_eng.style.pointerEvents = "auto";
-
                     home_eng.style.cursor = "pointer";
                     knowledge_eng.style.cursor = "pointer";
                     portfolio_eng.style.cursor = "default";
@@ -105,7 +92,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                     knowledge_eng.style.pointerEvents = "auto";
                     portfolio_eng.style.pointerEvents = "auto";
                     contact_eng.style.pointerEvents = "none";
-
                     home_eng.style.cursor = "pointer";
                     knowledge_eng.style.cursor = "pointer";
                     portfolio_eng.style.cursor = "pointer";
@@ -124,7 +110,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                 knowledge.style.pointerEvents = "auto";
                 portfolio.style.pointerEvents = "auto";
                 contact.style.pointerEvents = "auto";
-
                 home.style.cursor = "default";
                 knowledge.style.cursor = "pointer";
                 portfolio.style.cursor = "pointer";
@@ -135,7 +120,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                 knowledge.style.pointerEvents = "none";
                 portfolio.style.pointerEvents = "auto";
                 contact.style.pointerEvents = "auto";
-
                 home.style.cursor = "pointer";
                 knowledge.style.cursor = "default";
                 portfolio.style.cursor = "pointer";
@@ -146,7 +130,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                 knowledge.style.pointerEvents = "auto";
                 portfolio.style.pointerEvents = "none";
                 contact.style.pointerEvents = "auto";
-
                 home.style.cursor = "pointer";
                 knowledge.style.cursor = "pointer";
                 portfolio.style.cursor = "default";
@@ -157,7 +140,6 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
                 knowledge.style.pointerEvents = "auto";
                 portfolio.style.pointerEvents = "auto";
                 contact.style.pointerEvents = "none";
-
                 home.style.cursor = "pointer";
                 knowledge.style.cursor = "pointer";
                 portfolio.style.cursor = "pointer";
@@ -166,119 +148,98 @@ export const Footer = ({ setPage, page }: { setPage: (page: string) => void, pag
         }
     };
 
-    const change_text = () => {
-        if (cookies.get('lang') === 'eng') {
-            if (page === "home") {
-                setText({
-                    home: "</G>",
-                    knowledge: "<KNOWLEDGE>",
-                    portfolio: "<PORTFOLIO>",
-                    contact: "<CONTACT>",
-                });
+    const applyLanguageStyles = (language: string) => {
+        const home = document.querySelector('.home') as HTMLElement | null;
+        const knowledge = document.querySelector('.knowledge') as HTMLElement | null;
+        const portfolio = document.querySelector('.portfolio') as HTMLElement | null;
+        const contact = document.querySelector('.contact') as HTMLElement | null;
+
+        const homeEng = document.querySelector('.home_eng') as HTMLElement | null;
+        const knowledgeEng = document.querySelector('.knowledge_eng') as HTMLElement | null;
+        const portfolioEng = document.querySelector('.portfolio_eng') as HTMLElement | null;
+        const contactEng = document.querySelector('.contact_eng') as HTMLElement | null;
+
+        if (language === 'eng') {
+            if (homeEng) {
+                homeEng.style.animation = 'none';
+                homeEng.style.opacity = '100%';
+                homeEng.style.width = '3em';
             }
-            if (page === "knowledge") {
-                setText({
-                    home: "<G>",
-                    knowledge: "</KNOWLEDGE>",
-                    portfolio: "<PORTFOLIO>",
-                    contact: "<CONTACT>",
-                });
+
+            if (knowledgeEng) {
+                knowledgeEng.style.animation = 'none';
+                knowledgeEng.style.opacity = '100%';
+                knowledgeEng.style.width = '7.5em';
             }
-            if (page === "portfolio") {
-                setText({
-                    home: "<G>",
-                    knowledge: "<KNOWLEDGE>",
-                    portfolio: "</PORTFOLIO>",
-                    contact: "<CONTACT>",
-                });
+
+            if (portfolioEng) {
+                portfolioEng.style.animation = 'none';
+                portfolioEng.style.opacity = '100%';
+                portfolioEng.style.width = '7.5em';
             }
-            if (page === "contact") {
-                setText({
-                    home: "<G>",
-                    knowledge: "<KNOWLEDGE>",
-                    portfolio: "<PORTFOLIO>",
-                    contact: "</CONTACT>",
-                });
+
+            if (contactEng) {
+                contactEng.style.animation = 'blinktext 700ms steps(40) 1s infinite normal forwards';
+                contactEng.style.borderRight = '1px solid white';
+                contactEng.style.opacity = '100%';
+                contactEng.style.width = '6.5em';
             }
-        }
-        if (cookies.get('lang') === 'gr') {
-            if (page === "home") {
-                setText({
-                    home: "</Γ>",
-                    knowledge: "<ΓΝΩΣΕΙΣ>",
-                    portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
-                });
+        } else {
+            if (home) {
+                home.style.animation = 'none';
+                home.style.opacity = '100%';
+                home.style.width = '3em';
             }
-            if (page === "knowledge") {
-                setText({
-                    home: "<Γ>",
-                    knowledge: "</ΓΝΩΣΕΙΣ>",
-                    portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
-                });
+
+            if (knowledge) {
+                knowledge.style.animation = 'none';
+                knowledge.style.opacity = '100%';
+                knowledge.style.width = '7em';
             }
-            if (page === "portfolio") {
-                setText({
-                    home: "<Γ>",
-                    knowledge: "<ΓΝΩΣΕΙΣ>",
-                    portfolio: "</ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
-                });
+
+            if (portfolio) {
+                portfolio.style.animation = 'none';
+                portfolio.style.opacity = '100%';
+                portfolio.style.width = '12em';
             }
-            if (page === "contact") {
-                setText({
-                    home: "<Γ>",
-                    knowledge: "<ΓΝΩΣΕΙΣ>",
-                    portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                    contact: "</ΕΠΙΚΟΙΝΩΝΙΑ>",
-                });
+
+            if (contact) {
+                contact.style.animation = 'blinktext 700ms steps(40) 1s infinite normal forwards';
+                contact.style.borderRight = '1px solid white';
+                contact.style.opacity = '100%';
+                contact.style.width = '9em';
             }
         }
     };
 
+    useEffect(() => {
+        applyLanguageStyles(language);
+    }, [language]);
+
     return (
         <footer>
             <nav>
-                <button
-                    className={language === 'eng' ? 'home_eng' : 'home'}
-                    onClick={() => setPage("home")}
-                >
+                <button className={language === 'eng' ? 'home_eng' : 'home'} onClick={() => set_page("home")}>
                     {text.home}
                 </button>
                 <span>||</span>
-                <button
-                    className={language === 'eng' ? 'knowledge_eng' : 'knowledge'}
-                    onClick={() => setPage("knowledge")}
-                >
+                <button className={language === 'eng' ? 'knowledge_eng' : 'knowledge'} onClick={() => set_page("knowledge")}>
                     {text.knowledge}
                 </button>
                 <span>||</span>
-                <button
-                    className={language === 'eng' ? 'portfolio_eng' : 'portfolio'}
-                    onClick={() => setPage("portfolio")}
-                >
+                <button className={language === 'eng' ? 'portfolio_eng' : 'portfolio'} onClick={() => set_page("portfolio")}>
                     {text.portfolio}
                 </button>
                 <span>||</span>
-                <button
-                    className={language === 'eng' ? 'contact_eng' : 'contact'}
-                    onClick={() => setPage("contact")}
-                >
+                <button className={language === 'eng' ? 'contact_eng' : 'contact'} onClick={() => set_page("contact")}>
                     {text.contact}
                 </button>
             </nav>
             <div>
-                <button
-                    onClick={() => switch_lang('eng')}
-                    className={language === 'eng' ? "nownohover" : "nowhover"}
-                >
+                <button onClick={() => switch_lang('eng')} className={language === 'eng' ? "nownohover" : "nowhover"}>
                     English
                 </button>
-                <button
-                    onClick={() => switch_lang('gr')}
-                    className={language === 'gr' ? "nownohover" : "nowhover"}
-                >
+                <button onClick={() => switch_lang('gr')} className={language === 'gr' ? "nownohover" : "nowhover"}>
                     Greek
                 </button>
             </div>

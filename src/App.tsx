@@ -1,10 +1,7 @@
 import { useState, lazy, Suspense } from 'react';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
-import Cookies from 'universal-cookie';
-
-const cookies = new Cookies();
-const lang = cookies.get('lang');
+import { LanguageProvider, use_language } from './components/header'; // Import the context
 
 const NameGr = lazy(() => import('./components/name_gr'));
 const NameEng = lazy(() => import('./components/name_eng'));
@@ -14,20 +11,20 @@ const PortfolioEng = lazy(() => import('./components/portfolio_eng'));
 const ContactGr = lazy(() => import('./components/contact_gr'));
 const ContactEng = lazy(() => import('./components/contact_eng'));
 
-function App() {
-  const [page, setPage] = useState("home");
-  const [lang, setLang] = useState(cookies.get('lang'));
+function AppContent() {
+  const [page, set_page] = useState("home");
+  const { language } = use_language(); // Get language from context
 
   const render_page = () => {
     switch (page) {
       case "knowledge":
         return <Knowledge />;
       case "portfolio":
-        return lang === 'eng' ? <PortfolioEng /> : <PortfolioGr />;
+        return language === 'eng' ? <PortfolioEng /> : <PortfolioGr />;
       case "contact":
-        return lang === 'eng' ? <ContactEng /> : <ContactGr />;
+        return language === 'eng' ? <ContactEng /> : <ContactGr />;
       default:
-        return lang === 'eng' ? <NameEng /> : <NameGr />;
+        return language === 'eng' ? <NameEng /> : <NameGr />;
     }
   };
 
@@ -41,8 +38,16 @@ function App() {
           </Suspense>
         </section>
       </main>
-      <Footer setPage={setPage} page={page} />
+      <Footer set_page={set_page} page={page} />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 
