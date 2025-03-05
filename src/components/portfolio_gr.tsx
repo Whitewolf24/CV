@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 const Portfolio_gr = () => {
     const [hover_number, set_number] = useState<number | null>(null);
     const [selected, set_selected] = useState<{ id: number, title: string, img: string, vid?: string } | null>(null);
-    const [fadeOut, fade_out] = useState(false);
+    const [fade_out, func_fade_out] = useState(false);
 
     const projects = [
-        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp", vid: "vid_cv2.webp" },
+        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
         { id: 2, title: "ΗΜΕΡΟΛΟΓΙΟ JOYSPOT", img: "joyspot.webp", vid: "vid_joyspot.webp" },
         { id: 3, title: "MARINOS.WEBSITE v1", img: "cv.webp", vid: "vid_cv.webp" },
         { id: 4, title: "MONGOXPRESS", img: "express.webp", vid: "vid_express.webp" },
@@ -34,14 +34,15 @@ const Portfolio_gr = () => {
 
     const open_overlay = (id: number, title: string, img: string, vid?: string) => {
         set_selected({ id, title, img, vid });
-        fade_out(false);
+        func_fade_out(false);
     };
 
     const close_overlay = () => {
-        fade_out(true);
+        func_fade_out(true);
+        set_selected((prev) => prev ? { ...prev, vid: undefined } : null);
         setTimeout(() => {
             set_selected(null);
-            fade_out(false);
+            func_fade_out(false);
         }, 300);
     };
 
@@ -49,7 +50,7 @@ const Portfolio_gr = () => {
         <div className="content">
             {selected && (
                 <div
-                    className={`overlay${fadeOut ? " fade_out" : " fade_in"}`}
+                    className={`overlay${fade_out ? " func_fade_out" : " fade_in"}`}
                     onClick={close_overlay}
                     style={{
                         position: "fixed",
@@ -65,7 +66,7 @@ const Portfolio_gr = () => {
                     }}
                 >
                     <div
-                        className="content"
+                        id="overlay_content"
                         onClick={(e) => e.stopPropagation()}
                         style={{
                             background: "linear-gradient(135deg, rgb(40, 44, 52), rgb(20, 22, 30))",
@@ -86,15 +87,23 @@ const Portfolio_gr = () => {
                                 right: "10px",
                                 color: "white",
                                 border: "none",
-                                borderRadius: "50%",
                                 width: "30px",
                                 height: "30px",
                                 cursor: "pointer",
+                                backgroundColor: "rgb(55,55,65) ",
+                                margin: "10px",
+                                paddingInline: "10px",
+                                borderRadius: "5px 10px 5px",
                             }}
                         >
                             X
                         </button>
-                        <h2>{selected.title}</h2>
+                        <h2 style={{
+                            borderBottom: "3px dashed",
+                            width: "fit-content",
+                            marginBottom: "35px",
+                            marginInline: "auto"
+                        }}>{selected.title}</h2>
                         {selected.vid ? (
                             <img
                                 src={selected.vid}
@@ -111,7 +120,53 @@ const Portfolio_gr = () => {
                                 draggable="false"
                             />
                         )}
-                        <p>More details about {selected.title} will go here.</p>
+                        <p style={{ marginBottom: "50px" }}> {selected.title}</p>
+                        <button
+                            className="www"
+                            onClick={close_overlay}
+                            disabled={selected?.id === 1}
+                            style={{
+                                position: "absolute",
+                                bottom: "0px",
+                                left: "10px",
+                                color: "white",
+                                borderRadius: "5px 20px 5px",
+                                height: "30px",
+                                cursor: selected?.id === 1 ? "default" : "pointer",
+                                fontSize: "1ch",
+                                letterSpacing: "1.5px",
+                                backgroundColor: "rgb(40,55,70) ",
+                                margin: "10px",
+                                paddingInline: "10px",
+                                pointerEvents: selected?.id === 1 ? "none" : "auto",
+                                filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`,
+                                boxShadow: selected?.id === 1
+                                    ? "inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3)"
+                                    : "none"
+                            }}
+                        >
+                            {selected?.id === 1 ? "ΒΡΙΣΚΕΣΤΕ ΕΔΩ" : "ΕΠΙΣΚΕΦΤΕΙΤΕ"}
+                        </button>
+                        <button
+                            className="git"
+                            onClick={close_overlay}
+                            style={{
+                                position: "absolute",
+                                bottom: "0px",
+                                right: "10px",
+                                color: "white",
+                                borderRadius: "5px 10px 5px",
+                                height: "30px",
+                                cursor: "pointer",
+                                fontSize: "1ch",
+                                letterSpacing: "1.5px",
+                                backgroundColor: "rgb(40,55,70) ",
+                                margin: "10px",
+                                paddingInline: "10px",
+                            }}
+                        >
+                            GIT
+                        </button>
                     </div>
                 </div>
             )}

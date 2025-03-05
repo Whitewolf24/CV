@@ -631,12 +631,55 @@ header {
     }
 }
 
+#overlay_content {
+    @media only screen and (max-height: 730px) and (min-height: 640px) {
+        scale: 0.9;
+    }
+
+    @media only screen and (max-height: 640px) and (min-height: 580px) {
+        scale: 0.8;
+    }
+
+    @media only screen and (max-height: 580px) and (min-height: 490px) {
+        scale: 0.7;
+    }
+
+    @media only screen and (max-height: 490px) and (min-height: 430px) {
+        scale: 0.6;
+    }
+
+    @media only screen and (max-height: 430px) and (min-height: 350px) {
+        scale: 0.5;
+    }
+
+    @media only screen and (max-height: 350px) and (min-height: 280px) {
+        scale: 0.4;
+    }
+
+    @media only screen and (max-height: 280px) {
+        scale: 0.3;
+    }
+}
+
 .overlay.fade_in {
     animation: fade_in 0.5s ease-in forwards;
 }
 
 .overlay.fade_out {
     animation: fade_out 0.4s ease-out forwards;
+}
+
+.www:hover,
+.git:hover,
+.close_butt:hover {
+    filter: brightness(0.85);
+}
+
+.www:active,
+.git:active,
+.close_butt:active {
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3);
+    filter: brightness(0.6);
 }
 
 //-----------------------//
