@@ -62,7 +62,7 @@ const Portfolio_gr = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        zIndex: 1000,
+                        zIndex: 9999,
                     }}
                 >
                     <div
@@ -76,6 +76,10 @@ const Portfolio_gr = () => {
                             textAlign: "center",
                             position: "relative",
                             width: "70%",
+                            height: "90vh",
+                            display: "flex",
+                            flexDirection: "column",
+                            overflow: "hidden",
                         }}
                     >
                         <button
@@ -94,6 +98,7 @@ const Portfolio_gr = () => {
                                 margin: "10px",
                                 paddingInline: "10px",
                                 borderRadius: "5px 10px 5px",
+                                zIndex: "99"
                             }}
                         >
                             X
@@ -102,13 +107,22 @@ const Portfolio_gr = () => {
                             borderBottom: "3px dashed",
                             width: "fit-content",
                             marginBottom: "35px",
-                            marginInline: "auto"
+                            marginInline: "auto",
+                            position: "relative",
+                            zIndex: "99",
                         }}>{selected.title}</h2>
                         {selected.vid ? (
                             <img
                                 src={selected.vid}
                                 loading="lazy"
-                                style={{ width: "100%", borderRadius: "10px" }}
+                                style={{
+                                    width: "62vw",
+                                    height: "40vh",
+                                    borderRadius: "10px",
+                                    marginBottom: "30px",
+                                    position: "relative",
+                                    alignSelf: "center"
+                                }}
                                 draggable="false"
                             />
                         ) : (
@@ -116,60 +130,117 @@ const Portfolio_gr = () => {
                                 src={selected.img}
                                 alt={selected.title}
                                 loading="lazy"
-                                style={{ width: "100%", borderRadius: "10px" }}
+                                style={{
+                                    width: "62vw",
+                                    height: "40vh",
+                                    borderRadius: "10px",
+                                    marginBottom: "5px",
+                                    position: "relative",
+                                    alignSelf: "center"
+                                }}
                                 draggable="false"
                             />
                         )}
-                        <p style={{ marginBottom: "50px" }}> {selected.title}</p>
-                        <button
-                            className="www"
-                            onClick={close_overlay}
-                            disabled={selected?.id === 1}
+                        <p style={{
+                            position: "relative",
+                            alignSelf: "center"
+                        }}>  {selected?.id === 1 ? "Η ανανεωμένη έκδοση της portfolio ιστοσελίδας μου, με ένα καλύτερο γραφικό περιβάλλον, καθώς και προγραμματιστικές βελτιώσεις για γρηγορότερη απόκριση και πιο δυνατό SEO" :
+                            selected?.id === 2 ? "Text for ID 2"
+                                :
+                                selected?.id === 3 ? "Text for ID 2"
+                                    :
+                                    selected?.id === 4 ? "Text for ID 2"
+                                        :
+                                        selected?.id === 5 ? "Text for ID 2"
+                                            :
+                                            selected?.id === 6 ? "Text for ID 2"
+                                                :
+                                                selected?.id === 7 ? "Text for ID 2" :
+                                                    selected?.id === 8 ? "Text for ID 2"
+                                                        :
+                                                        selected?.id === 9 ? "Text for ID 2"
+                                                            : selected?.id === 10 ? "Text for ID 2"
+                                                                : ""}
+                        </p>
+                        <p className="overlay_skillz"
                             style={{
                                 position: "absolute",
-                                bottom: "0px",
-                                left: "10px",
-                                color: "white",
-                                borderRadius: "5px 20px 5px",
-                                height: "30px",
-                                cursor: selected?.id === 1 ? "default" : "pointer",
-                                fontSize: "1ch",
-                                letterSpacing: "1.5px",
-                                backgroundColor: "rgb(40,55,70) ",
-                                margin: "10px",
-                                paddingInline: "10px",
-                                pointerEvents: selected?.id === 1 ? "none" : "auto",
-                                filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`,
-                                boxShadow: selected?.id === 1
-                                    ? "inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3)"
-                                    : "none"
-                            }}
-                        >
-                            {selected?.id === 1 ? "ΒΡΙΣΚΕΣΤΕ ΕΔΩ" : "ΕΠΙΣΚΕΦΤΕΙΤΕ"}
-                        </button>
-                        <button
-                            className="git"
-                            onClick={close_overlay}
-                            style={{
-                                position: "absolute",
-                                bottom: "0px",
-                                right: "10px",
-                                color: "white",
-                                borderRadius: "5px 10px 5px",
-                                height: "30px",
-                                cursor: "pointer",
-                                fontSize: "1ch",
-                                letterSpacing: "1.5px",
-                                backgroundColor: "rgb(40,55,70) ",
-                                margin: "10px",
-                                paddingInline: "10px",
-                            }}
-                        >
-                            GIT
-                        </button>
+                                alignSelf: "center",
+                                width: "30vw",
+                                bottom: "0",
+                            }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
+                                selected?.id === 2 ? "Text for ID 2"
+                                    :
+                                    selected?.id === 3 ? "Text for ID 2"
+                                        :
+                                        selected?.id === 4 ? "Text for ID 2"
+                                            :
+                                            selected?.id === 5 ? "Text for ID 2"
+                                                :
+                                                selected?.id === 6 ? "Text for ID 2"
+                                                    :
+                                                    selected?.id === 7 ? "Text for ID 2" :
+                                                        selected?.id === 8 ? "Text for ID 2"
+                                                            :
+                                                            selected?.id === 9 ? "Text for ID 2"
+                                                                : selected?.id === 10 ? "Text for ID 2"
+                                                                    : ""}
+                        </p>
+                        <div className="overlay_buttons_div">
+                            <button
+                                className="www"
+                                onClick={close_overlay}
+                                disabled={selected?.id === 1}
+                                style={{
+                                    position: "absolute",
+                                    bottom: "0",
+                                    left: "-0.25rem",
+                                    color: "white",
+                                    borderRadius: "5px 20px 5px",
+                                    height: "40px",
+                                    cursor: selected?.id === 1 ? "default" : "pointer",
+                                    fontSize: "1ch",
+                                    letterSpacing: "1.5px",
+                                    backgroundColor: "rgb(40,55,70) ",
+                                    marginInline: "10px",
+                                    marginBottom: "6px",
+                                    paddingInline: "10px",
+                                    paddingTop: "2px",
+                                    width: "16ch",
+                                    pointerEvents: selected?.id === 1 ? "none" : "auto",
+                                    filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`,
+                                    boxShadow: selected?.id === 1
+                                        ? "inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3)"
+                                        : "none"
+                                }}
+                            >
+                                {selected?.id === 1 ? "ΒΡΙΣΚΕΣΤΕ ΕΔΩ" : "ΕΠΙΣΚΕΦΤΕΙΤΕ"}
+                            </button>
+                            <button
+                                className="git"
+                                onClick={close_overlay}
+                                style={{
+                                    position: "absolute",
+                                    bottom: "0x",
+                                    right: "10px",
+                                    color: "white",
+                                    borderRadius: "5px 10px 5px",
+                                    height: "30px",
+                                    cursor: "pointer",
+                                    fontSize: "1ch",
+                                    letterSpacing: "1.5px",
+                                    backgroundColor: "rgb(40,55,70) ",
+                                    margin: "10px",
+                                    paddingInline: "10px",
+                                }}
+                            >
+                                GIT
+                            </button>
+                        </div>
                     </div>
                 </div>
-            )}
+            )
+            }
 
             <div className="content_portfolio">
                 {projects.map(({ id, title, img, vid }) => (
@@ -199,7 +270,7 @@ const Portfolio_gr = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
 

@@ -581,7 +581,7 @@ header {
     cursor: pointer;
 }
 
-.content {
+/* .content {
     @media only screen and (min-width: 900px) and (max-width: 1050px) {
         width: 60% !important;
     }
@@ -617,7 +617,7 @@ header {
     @media only screen and (min-width: 2700px) {
         width: 20% !important;
     }
-}
+} */
 
 .overlay {
     opacity: 0;
@@ -632,24 +632,250 @@ header {
 }
 
 #overlay_content {
-    @media only screen and (max-height: 730px) and (min-height: 640px) {
-        scale: 0.9;
+
+    height: 90vh !important;
+
+
+    @media only screen and (min-width: 2500px) {
+        img {
+            bottom: 1rem;
+            width: 20vw !important;
+        }
+
+        p {
+            width: 65ch;
+        }
     }
 
-    @media only screen and (max-height: 640px) and (min-height: 580px) {
+    @media only screen and (min-width: 1850px) and (max-width: 2500px) {
+        img {
+            bottom: 1rem;
+            width: 25vw !important;
+        }
+
+        p {
+            width: 65ch;
+        }
+    }
+
+    @media only screen and (min-width: 1350px) and (max-width: 1850px) {
+        img {
+            bottom: 1rem;
+            width: 35vw !important;
+        }
+
+        p {
+            width: 65ch;
+        }
+    }
+
+
+    @media only screen and (min-width: 850px) and (max-width: 1350px) {
+        img {
+            bottom: 1rem;
+            width: 45vw !important;
+        }
+
+        p {
+            width: 65ch;
+        }
+    }
+
+    @media only screen and (min-width: 850px) and (max-width: 1350px) {
+        img {
+            bottom: 1rem;
+            width: 45vw !important;
+        }
+
+        p {
+            width: 65ch;
+        }
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 850px) {
+        img {
+            bottom: 2rem;
+        }
+
+        p:not(.overlay_skillz) {
+            bottom: 2.5rem;
+            width: 55ch;
+        }
+
+        p {
+            width: 55ch;
+        }
+    }
+
+
+    @media only screen and (max-width: 600px) and (min-width: 400px) {
+        h2 {
+            margin-bottom: 1rem !important;
+        }
+
+        img {
+            bottom: 1rem;
+        }
+
+        p:not(.overlay_skillz) {
+            bottom: 2.5rem;
+            scale: 0.8;
+        }
+
+        h2,
+        img,
+        button {
+            scale: 0.9;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+
+        //height: 65vh !important;
+
+        img {
+            height: 25vh !important;
+            bottom: 1.25rem;
+        }
+
+        h2 {
+            scale: 0.75;
+            white-space: nowrap;
+            right: 2rem;
+            top: 0.5rem;
+        }
+
+        button {
+            scale: 0.7;
+        }
+
+        p {
+            bottom: 2rem;
+            scale: 0.8;
+            width: 38ch !important;
+        }
+    }
+
+    @media only screen and (min-height: 830px) and (max-width: 1850px) {
+
+        h2 {
+            margin-bottom: 3rem !important;
+        }
+
+        img {
+            height: 35vh !important;
+            margin-bottom: 1rem !important;
+        }
+    }
+
+    @media only screen and (min-height: 650px) and (max-height: 830px) and (max-width:600px) {
+        // height: 75vh !important;
+
+        h2 {
+            margin-bottom: 2rem !important;
+        }
+
+        img {
+            height: 25vh !important;
+            margin-bottom: 1rem !important;
+        }
+
+        p {
+            width: 37ch;
+        }
+    }
+
+    @media only screen and (max-height: 650px) and (min-height: 450px) and (max-width:600px) {
+        // height: 90vh !important;
+
+        h2 {
+            margin-bottom: 1rem !important;
+            scale: 0.8;
+        }
+
+        img {
+            width: 55vw !important;
+        }
+
+        p:not(.overlay_skillz) {
+            bottom: 2rem;
+            scale: 0.8;
+            width: 37ch;
+        }
+
+        button {
+            scale: 0.7;
+        }
+    }
+
+    @media only screen and (max-height: 450px) and (max-width:600px) {
+        // height: 90vh !important;
+
+        h2 {
+            scale: 0.65;
+            margin-top: -1.5rem;
+            right: 0.1rem;
+            width: 15ch !important;
+            white-space: pre-wrap;
+        }
+
+        img {
+            bottom: 1.8rem;
+            height: 30vh !important;
+            width: 30vw !important;
+        }
+
+        p:not(.overlay_skillz) {
+            width: 50ch !important;
+            left: 0.25rem;
+            margin-top: 0rem;
+        }
+
+        p {
+            scale: 0.7;
+        }
+
+        button {
+            scale: 0.65;
+        }
+    }
+
+
+    @media only screen and (max-height: 450px) and (min-width:600px) {
+        // height: 90vh !important;
+
+        h2 {
+            scale: 0.65;
+            margin-top: 0rem;
+        }
+
+        img {
+            bottom: 1.8rem;
+
+            width: 30vw !important;
+        }
+
+        p:not(.overlay_skillz) {
+            bottom: 3rem;
+            width: 65ch !important;
+            left: 0.25rem;
+        }
+
+        p {
+            scale: 0.7;
+        }
+
+        button {
+            scale: 0.65;
+        }
+    }
+
+    /* 
+ 
+
+    @media only screen and (max-height: 470px) and (min-height: 350px) {
         scale: 0.8;
-    }
-
-    @media only screen and (max-height: 580px) and (min-height: 490px) {
-        scale: 0.7;
-    }
-
-    @media only screen and (max-height: 490px) and (min-height: 430px) {
-        scale: 0.6;
-    }
-
-    @media only screen and (max-height: 430px) and (min-height: 350px) {
-        scale: 0.5;
+        width: 90% !important;
     }
 
     @media only screen and (max-height: 350px) and (min-height: 280px) {
@@ -657,9 +883,56 @@ header {
     }
 
     @media only screen and (max-height: 280px) {
-        scale: 0.3;
+        scale: 0.35;
+    } */
+}
+
+.overlay_skillz {
+
+    @media only screen and (min-height: 500px) and (max-width: 600px) {
+        scale: 0.8;
+    }
+
+    @media only screen and (max-height: 500px) {
+        scale: 0.8;
+        width: 30ch !important;
     }
 }
+
+/*    bottom: 2rem;
+
+    @media only screen and (max-width: 600px) and (min-width: 400px) and (max-height: 650px) {
+        bottom: 4rem;
+    }
+
+    @media only screen and (min-width: 600px) and (max-width: 850px) and (max-height: 600px) {
+        bottom: 3.5rem;
+    }
+
+    @media only screen and (max-width: 400px) {
+        margin-top: 0.25rem;
+    }
+
+    @media only screen and (min-height: 700px) {
+        top: 1rem;
+    }
+
+    @media only screen and (min-height: 650px) and (max-width: 600px) {
+        bottom: 3rem;
+    }
+
+    @media only screen and (max-height: 650px) and (min-height: 450px) and (max-width:600px) {
+        bottom: 4rem;
+    }
+
+    @media only screen and (max-height: 450px) and (min-width: 600px) {
+        bottom: 4rem;
+    }
+
+    @media only screen and (max-height: 450px) and (max-width:600px) {
+        width: 30ch !important;
+    }
+} */
 
 .overlay.fade_in {
     animation: fade_in 0.5s ease-in forwards;
@@ -668,6 +941,47 @@ header {
 .overlay.fade_out {
     animation: fade_out 0.4s ease-out forwards;
 }
+
+.close_butt {
+    @media only screen and (max-width: 400px) {
+        top: -0.1rem !important;
+    }
+
+    @media only screen and (max-height: 450px) {
+        right: -0.15rem !important;
+    }
+}
+
+
+.www {
+
+
+    @media only screen and (max-width: 400px) {
+        bottom: 2rem !important;
+        left: 3rem !important;
+    }
+
+    @media only screen and (max-height: 450px) {
+        left: -1rem !important;
+        bottom: -0.25rem !important;
+    }
+}
+
+.git {
+    @media only screen and (max-width: 400px) {
+        right: 4.35rem !important;
+    }
+
+    @media only screen and (max-height: 450px) {
+        right: -0.5rem !important;
+        bottom: -0.25rem !important;
+    }
+}
+
+
+
+
+/* .git:hover, */
 
 .www:hover,
 .git:hover,
