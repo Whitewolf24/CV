@@ -63,7 +63,7 @@ const Portfolio_eng = () => {
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        zIndex: 1000,
+                        zIndex: 9999,
                     }}
                 >
                     <div
@@ -77,6 +77,10 @@ const Portfolio_eng = () => {
                             textAlign: "center",
                             position: "relative",
                             width: "70%",
+                            height: "90vh",
+                            display: "flex",
+                            flexDirection: "column",
+                            overflow: "hidden",
                         }}
                     >
                         <button
@@ -95,6 +99,7 @@ const Portfolio_eng = () => {
                                 margin: "10px",
                                 paddingInline: "10px",
                                 borderRadius: "5px 10px 5px",
+                                zIndex: "99"
                             }}
                         >
                             X
@@ -103,13 +108,22 @@ const Portfolio_eng = () => {
                             borderBottom: "3px dashed",
                             width: "fit-content",
                             marginBottom: "35px",
-                            marginInline: "auto"
+                            marginInline: "auto",
+                            position: "relative",
+                            zIndex: "99",
                         }}>{selected.title}</h2>
                         {selected.vid ? (
                             <img
                                 src={selected.vid}
                                 loading="lazy"
-                                style={{ width: "100%", borderRadius: "10px" }}
+                                style={{
+                                    width: "62vw",
+                                    height: "40vh",
+                                    borderRadius: "10px",
+                                    marginBottom: "30px",
+                                    position: "relative",
+                                    alignSelf: "center"
+                                }}
                                 draggable="false"
                             />
                         ) : (
@@ -117,57 +131,117 @@ const Portfolio_eng = () => {
                                 src={selected.img}
                                 alt={selected.title}
                                 loading="lazy"
-                                style={{ width: "100%", borderRadius: "10px" }}
+                                style={{
+                                    width: "62vw",
+                                    height: "40vh",
+                                    borderRadius: "10px",
+                                    marginBottom: "5px",
+                                    position: "relative",
+                                    alignSelf: "center"
+                                }}
                                 draggable="false"
                             />
                         )}
-                        <p style={{ marginBottom: "50px" }}> {selected.title}</p>
-                        <button
-                            className="www"
-                            onClick={close_overlay}
-                            disabled={selected?.id === 1}
+                        <p style={{
+                            position: "relative",
+                            alignSelf: "center"
+                        }}>  {selected?.id === 1 ? "A modernized version of my portfolio website with an improved user interface and enhanced architecture. This resulted in stronger SEO, and by utilizing React 19, it achieves faster response times and optimal performance." :
+                            selected?.id === 2 ? "A web application which I worked on as a freelance developer. I customized a WordPress calendar plugin and modified the applied theme to meet the specific needs of a gym. The modifications included booking restrictions based on customer subscription type, availability checks, as well as design and performance improvements."
+                                :
+                                selected?.id === 3 ? "My first portfolio, which started as a test project in React and evolved into a professional website designed to showcase my projects and skills."
+                                    :
+                                    selected?.id === 4 ? "A fully functional online platform where users can register, post, and edit content, as well as read posts from other users. Developed with Express and using MongoDB for data storage."
+                                        :
+                                        selected?.id === 5 ? "A fully operational e-commerce site built on WordPress. The interface was designed using Elementor, while product management is handled through WooCommerce."
+                                            :
+                                            selected?.id === 6 ? "A website built for product cataloging, developed using jQuery for interactivity and Laravel for the backend. Later, the backend was migrated from MySQL to PostgreSQL due to new hosting requirements."
+                                                :
+                                                    selected?.id === 7 ? `A personal project for practicing CSS and JavaScript, where I recreated YouTube’s interface. It is purely a design and frontend project, with the only functional part being the homepage, which dynamically generates unlimited "videos" via JavaScript. It also includes options for changing the language and color theme` :
+                                                        selected?.id === 8 ? "A personal project for practicing jQuery, with a focus on PHP and MySQL. It includes a simple user registration and login form, programmed to enforce strong passwords and display warnings using Bootstrap notifications. If the user is already registered, they are redirected to a secondary page. Later, the backend was migrated from MySQL to PostgreSQL due to new hosting requirements."
+                                                        :
+                                                            selected?.id === 9 ? "A web application created to fulfill the needs of the office where I completed my internship. Through a form, text was stored in local .txt files via PHP, and images were saved locally whenever a post was created. The current version was upgraded to Laravel and modified to store text and images in Backblaze cloud storage"
+                                                                : selected?.id === 10 ? "A project developed during my studies. It serves as a prototype for a website designed to promote museums and the natural beauty of the island of Lesvos."
+                                                                : ""}
+                        </p>
+                        <p className="overlay_skillz"
                             style={{
                                 position: "absolute",
-                                bottom: "0px",
-                                left: "10px",
-                                color: "white",
-                                borderRadius: "5px 20px 5px",
-                                height: "30px",
-                                cursor: selected?.id === 1 ? "default" : "pointer",
-                                fontSize: "1ch",
-                                letterSpacing: "1.5px",
-                                backgroundColor: "rgb(40,55,70) ",
-                                margin: "10px",
-                                paddingInline: "10px",
-                                pointerEvents: selected?.id === 1 ? "none" : "auto",
-                                filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`
-                            }}
-                        >
-                            {selected?.id === 1 ? "YOU ARE HERE" : "VISIT"}
-                        </button>
-                        <button
-                            className="git"
-                            onClick={close_overlay}
-                            style={{
-                                position: "absolute",
-                                bottom: "0px",
-                                right: "10px",
-                                color: "white",
-                                borderRadius: "5px 10px 5px",
-                                height: "30px",
-                                cursor: "pointer",
-                                fontSize: "1ch",
-                                letterSpacing: "1.5px",
-                                backgroundColor: "rgb(40,55,70) ",
-                                margin: "10px",
-                                paddingInline: "10px",
-                            }}
-                        >
-                            GIT
-                        </button>
+                                alignSelf: "center",
+                                width: "30vw",
+                                bottom: "0",
+                            }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
+                                selected?.id === 2 ? "Text for ID 2"
+                                    :
+                                    selected?.id === 3 ? "Text for ID 2"
+                                        :
+                                        selected?.id === 4 ? "Text for ID 2"
+                                            :
+                                            selected?.id === 5 ? "Text for ID 2"
+                                                :
+                                                selected?.id === 6 ? "Text for ID 2"
+                                                    :
+                                                    selected?.id === 7 ? "Text for ID 2" :
+                                                        selected?.id === 8 ? "Text for ID 2"
+                                                            :
+                                                            selected?.id === 9 ? "Text for ID 2"
+                                                                : selected?.id === 10 ? "Text for ID 2"
+                                                                    : ""}
+                        </p>
+                        <div className="overlay_buttons_div">
+                            <button
+                                className="www"
+                                onClick={close_overlay}
+                                disabled={selected?.id === 1}
+                                style={{
+                                    position: "absolute",
+                                    bottom: "0",
+                                    left: "-0.25rem",
+                                    color: "white",
+                                    borderRadius: "5px 20px 5px",
+                                    height: "40px",
+                                    cursor: selected?.id === 1 ? "default" : "pointer",
+                                    fontSize: "1ch",
+                                    letterSpacing: "1.5px",
+                                    backgroundColor: "rgb(40,55,70) ",
+                                    marginInline: "10px",
+                                    marginBottom: "6px",
+                                    paddingInline: "10px",
+                                    paddingTop: "2px",
+                                    width: "16ch",
+                                    pointerEvents: selected?.id === 1 ? "none" : "auto",
+                                    filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`,
+                                    boxShadow: selected?.id === 1
+                                        ? "inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3)"
+                                        : "none"
+                                }}
+                            >
+                                {selected?.id === 1 ? "YOU ARE HERE" : "VISIT"}
+                            </button>
+                            <button
+                                className="git"
+                                onClick={close_overlay}
+                                style={{
+                                    position: "absolute",
+                                    bottom: "0x",
+                                    right: "10px",
+                                    color: "white",
+                                    borderRadius: "5px 10px 5px",
+                                    height: "30px",
+                                    cursor: "pointer",
+                                    fontSize: "1ch",
+                                    letterSpacing: "1.5px",
+                                    backgroundColor: "rgb(40,55,70) ",
+                                    margin: "10px",
+                                    paddingInline: "10px",
+                                }}
+                            >
+                                GIT
+                            </button>
+                        </div>
                     </div>
                 </div>
-            )}
+            )
+            }
 
             <div className="content_portfolio">
                 {projects.map(({ id, title, img, vid }) => (
@@ -197,9 +271,10 @@ const Portfolio_eng = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     );
 };
+
 
 
 export default Portfolio_eng;
