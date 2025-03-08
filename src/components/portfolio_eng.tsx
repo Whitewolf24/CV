@@ -156,11 +156,11 @@ const Portfolio_eng = () => {
                                             :
                                             selected?.id === 6 ? "A website built for product cataloging, developed using jQuery for interactivity and Laravel for the backend. Later, the backend was migrated from MySQL to PostgreSQL due to new hosting requirements."
                                                 :
-                                                    selected?.id === 7 ? `A personal project for practicing CSS and JavaScript, where I recreated YouTube’s interface. It is purely a design and frontend project, with the only functional part being the homepage, which dynamically generates unlimited "videos" via JavaScript. It also includes options for changing the language and color theme` :
-                                                        selected?.id === 8 ? "A personal project for practicing jQuery, with a focus on PHP and MySQL. It includes a simple user registration and login form, programmed to enforce strong passwords and display warnings using Bootstrap notifications. If the user is already registered, they are redirected to a secondary page. Later, the backend was migrated from MySQL to PostgreSQL due to new hosting requirements."
+                                                selected?.id === 7 ? `A personal project for practicing CSS and JavaScript, where I recreated YouTube’s interface. It is purely a design and frontend project, with the only functional part being the homepage, which dynamically generates unlimited "videos" via JavaScript. It also includes options for changing the language and color theme` :
+                                                    selected?.id === 8 ? "A personal project for practicing jQuery, with a focus on PHP and MySQL. It includes a simple user registration and login form, programmed to enforce strong passwords and display warnings using Bootstrap notifications. If the user is already registered, they are redirected to a secondary page. Later, the backend was migrated from MySQL to PostgreSQL due to new hosting requirements."
                                                         :
-                                                            selected?.id === 9 ? "A web application created to fulfill the needs of the office where I completed my internship. Through a form, text was stored in local .txt files via PHP, and images were saved locally whenever a post was created. The current version was upgraded to Laravel and modified to store text and images in Backblaze cloud storage"
-                                                                : selected?.id === 10 ? "A project developed during my studies. It serves as a prototype for a website designed to promote museums and the natural beauty of the island of Lesvos."
+                                                        selected?.id === 9 ? "A web application created to fulfill the needs of the office where I completed my internship. Through a form, text was stored in local .txt files via PHP, and images were saved locally whenever a post was created. The current version was upgraded to Laravel and modified to store text and images in Backblaze cloud storage"
+                                                            : selected?.id === 10 ? "A project developed during my studies. It serves as a prototype for a website designed to promote museums and the natural beauty of the island of Lesvos."
                                                                 : ""}
                         </p>
                         <p className="overlay_skillz"
@@ -170,21 +170,21 @@ const Portfolio_eng = () => {
                                 width: "30vw",
                                 bottom: "0",
                             }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
-                                selected?.id === 2 ? "Text for ID 2"
+                                selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
                                     :
-                                    selected?.id === 3 ? "Text for ID 2"
+                                    selected?.id === 3 ? `<2020-2021, 2023> : "react18", "sass", "typescript", "vite", "responsive"`
                                         :
-                                        selected?.id === 4 ? "Text for ID 2"
-                                            :
-                                            selected?.id === 5 ? "Text for ID 2"
-                                                :
-                                                selected?.id === 6 ? "Text for ID 2"
+                                        selected?.id === 4 ? `<2022, 2024> : "api", "ejs", "postcss", "tailwind", "mongodb", "redis", "express", "node", "responsive"`
+                                            : selected?.id === 5 ? `<2021>: "wordpress", "woocomerce", "elementor", "responsive"` :
+                                                selected?.id === 6 ? `<2020, 2024> : "jquery", "sass", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
                                                     :
-                                                    selected?.id === 7 ? "Text for ID 2" :
-                                                        selected?.id === 8 ? "Text for ID 2"
+                                                    selected?.id === 7 ? `<2018> : "js", "css", "responsive"`
+                                                        :
+                                                        selected?.id === 8 ? `<2016, 2024> : "jquery", "bootstrap", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
                                                             :
-                                                            selected?.id === 9 ? "Text for ID 2"
-                                                                : selected?.id === 10 ? "Text for ID 2"
+                                                            selected?.id === 9 ? `<2014, 2024>: "api", "js", "css", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
+                                                                :
+                                                                selected?.id === 10 ? `<2013>: "jquery", "css"`
                                                                     : ""}
                         </p>
                         <div className="overlay_buttons_div">

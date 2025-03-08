@@ -169,21 +169,21 @@ const Portfolio_gr = () => {
                                 width: "30vw",
                                 bottom: "0",
                             }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
-                                selected?.id === 2 ? "Text for ID 2"
+                                selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
                                     :
-                                    selected?.id === 3 ? "Text for ID 2"
+                                    selected?.id === 3 ? `<2020-2021, 2023> : "react18", "sass", "typescript", "vite", "responsive"`
                                         :
-                                        selected?.id === 4 ? "Text for ID 2"
-                                            :
-                                            selected?.id === 5 ? "Text for ID 2"
-                                                :
-                                                selected?.id === 6 ? "Text for ID 2"
+                                        selected?.id === 4 ? `<2022, 2024> : "api", "ejs", "postcss", "tailwind", "mongodb", "redis", "express", "node", "responsive"`
+                                            : selected?.id === 5 ? `<2021>: "wordpress", "woocomerce", "elementor", "responsive"` :
+                                                selected?.id === 6 ? `<2020, 2024> : "jquery", "sass", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
                                                     :
-                                                    selected?.id === 7 ? "Text for ID 2" :
-                                                        selected?.id === 8 ? "Text for ID 2"
+                                                    selected?.id === 7 ? `<2018> : "js", "css", "responsive"`
+                                                        :
+                                                        selected?.id === 8 ? `<2016, 2024> : "jquery", "bootstrap", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
                                                             :
-                                                            selected?.id === 9 ? "Text for ID 2"
-                                                                : selected?.id === 10 ? "Text for ID 2"
+                                                            selected?.id === 9 ? `<2014, 2024>: "api", "js", "css", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
+                                                                :
+                                                                selected?.id === 10 ? `<2013>: "jquery", "css"`
                                                                     : ""}
                         </p>
                         <div className="overlay_buttons_div">
