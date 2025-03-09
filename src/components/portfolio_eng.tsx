@@ -222,7 +222,7 @@ const Portfolio_eng = () => {
                                 onClick={close_overlay}
                                 style={{
                                     position: "absolute",
-                                    bottom: "0x",
+                                    bottom: "0",
                                     right: "10px",
                                     color: "white",
                                     borderRadius: "5px 10px 5px",

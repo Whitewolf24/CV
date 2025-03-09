@@ -106,9 +106,10 @@ const Portfolio_gr = () => {
                         <h2 style={{
                             borderBottom: "3px dashed",
                             width: "fit-content",
-                            marginBottom: "35px",
+                            marginBottom: "25px",
                             marginInline: "auto",
                             position: "relative",
+                            marginTop: "0px",
                             zIndex: "99",
                         }}>{selected.title}</h2>
                         {selected.vid ? (
@@ -116,10 +117,7 @@ const Portfolio_gr = () => {
                                 src={selected.vid}
                                 loading="lazy"
                                 style={{
-                                    width: "62vw",
-                                    height: "40vh",
                                     borderRadius: "10px",
-                                    marginBottom: "30px",
                                     position: "relative",
                                     alignSelf: "center"
                                 }}
@@ -131,10 +129,7 @@ const Portfolio_gr = () => {
                                 alt={selected.title}
                                 loading="lazy"
                                 style={{
-                                    width: "62vw",
-                                    height: "40vh",
                                     borderRadius: "10px",
-                                    marginBottom: "5px",
                                     position: "relative",
                                     alignSelf: "center"
                                 }}
@@ -142,9 +137,12 @@ const Portfolio_gr = () => {
                             />
                         )}
                         <p style={{
+                            alignSelf: "center",
                             position: "relative",
-                            alignSelf: "center"
-                        }}>  {selected?.id === 1 ? "Μια εκσυγχρονισμένη έκδοση της portfolio ιστοσελίδας μου, με βελτιωμένο γραφικό περιβάλλον και αναβαθμισμένη αρχιτεκτονική. Αυτό οδήγησε σε ενισχυμένο SEO, και χρησιμοποιώντας React 19, ταχύτερη απόκριση και βέλτιστη απόδοση" :
+                            textAlign: "justify",
+                            marginTop: "0",
+
+                        }}>  {selected?.id === 1 ? "Μια εκσυγχρονισμένη έκδοση της portfolio ιστοσελίδας μου, με βελτιωμένο γραφικό περιβάλλον και αναβαθμισμένη αρχιτεκτονική. Αυτό οδήγησε σε ενισχυμένο SEO, και χρησιμοποιώντας React 19, ταχύτερη απόκριση και βέλτιστη απόδοση." :
                             selected?.id === 2 ? "Μια διαδικτυακή εφαρμογή, στην οποία συμμετείχα ως ελεύθερος επαγγελματίας. Εργάστηκα πάνω στην προσαρμογή ενός WordPress plugin ημερολογίου και στη διαμόρφωση του εφαρμοσμένου theme, ώστε να καλύπτει τις εξειδικευμένες ανάγκες ενός γυμναστηρίου. Οι τροποποιήσεις περιλάμβαναν λειτουργίες όπως περιορισμοί στις κρατήσεις ανάλογα με τη συνδρομή του πελάτη, έλεγχος διαθεσιμότητας, καθώς και βελτιώσεις στον σχεδιασμό και την απόκριση."
                                 :
                                 selected?.id === 3 ? "Το πρώτο μου portfolio, το οποίο ξεκίνησε ως ένα δοκιμαστικό project στην react και εξελίχθηκε σε μια επαγγελματική ιστοσελίδα με σκοπό να παρουσιάσει τα project μου και τις δεξιότητές μου."
@@ -166,7 +164,6 @@ const Portfolio_gr = () => {
                             style={{
                                 position: "absolute",
                                 alignSelf: "center",
-                                width: "30vw",
                                 bottom: "0",
                             }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
                                 selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
@@ -197,16 +194,17 @@ const Portfolio_gr = () => {
                                     left: "-0.25rem",
                                     color: "white",
                                     borderRadius: "5px 20px 5px",
-                                    height: "40px",
+                                    height: selected?.id === 1
+                                        ? "40px" : "35px",
                                     cursor: selected?.id === 1 ? "default" : "pointer",
-                                    fontSize: "1ch",
+                                    fontSize: "10px",
                                     letterSpacing: "1.5px",
                                     backgroundColor: "rgb(40,55,70) ",
-                                    marginInline: "10px",
-                                    marginBottom: "6px",
-                                    paddingInline: "10px",
-                                    paddingTop: "2px",
-                                    width: "16ch",
+                                    marginLeft: "12px",
+                                    marginBottom: selected?.id === 1
+                                        ? "5.8px" : "8px",
+                                    width: selected?.id === 1
+                                        ? "4.5rem" : "5rem",
                                     pointerEvents: selected?.id === 1 ? "none" : "auto",
                                     filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`,
                                     boxShadow: selected?.id === 1
@@ -214,14 +212,14 @@ const Portfolio_gr = () => {
                                         : "none"
                                 }}
                             >
-                                {selected?.id === 1 ? "ΒΡΙΣΚΕΣΤΕ ΕΔΩ" : "ΕΠΙΣΚΕΦΤΕΙΤΕ"}
+                                {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : "ΑΝΟΙΞΤΕ"}
                             </button>
                             <button
                                 className="git"
                                 onClick={close_overlay}
                                 style={{
                                     position: "absolute",
-                                    bottom: "0x",
+                                    bottom: "0",
                                     right: "10px",
                                     color: "white",
                                     borderRadius: "5px 10px 5px",
