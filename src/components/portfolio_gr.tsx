@@ -4,6 +4,7 @@ const Portfolio_gr = () => {
     const [hover_number, set_number] = useState<number | null>(null);
     const [selected, set_selected] = useState<{ id: number, title: string, img: string, vid?: string } | null>(null);
     const [fade_out, func_fade_out] = useState(false);
+    const [window_height, set_window_height] = useState(window.innerHeight);
 
     const projects = [
         { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
@@ -45,6 +46,47 @@ const Portfolio_gr = () => {
             func_fade_out(false);
         }, 300);
     };
+
+    useEffect(() => {
+        const detect_height = () => set_window_height(window.innerHeight);
+        detect_height();
+        window.addEventListener('resize', detect_height);
+
+        return () => {
+            window.removeEventListener('resize', detect_height);
+        };
+    }, []);
+
+
+    const p_top = selected?.id === 2 ? "0vh" : "";
+    const p_top_media = window_height <= 360 ? "3vh" : p_top;
+
+    const p_top_8 = selected?.id === 8 ? "-1vh" : "";
+    const p_top_media_8 = window_height <= 500 ? "0vh" : (window_height <= 600 ? "-6vh" : p_top_8);
+
+    const p_top_9 = selected?.id === 9 ? "0vh" : "";
+    const p_top_media_9 = window_height <= 560 ? "-1vh" : p_top_9;
+
+    const p_scroll = selected?.id === 2 ? "hidden" : "hidden";
+    const p_scroll_media = window_height <= 600 ? "scroll" : p_scroll;
+
+    const p_scroll_7 = selected?.id === 7 ? "hidden" : "hidden";
+    const p_scroll_media_7 = window_height <= 465 ? "scroll" : p_scroll_7;
+
+    const p_scroll_8 = selected?.id === 8 ? "hidden" : "hidden";
+    const p_scroll_media_8 = window_height <= 600 ? "scroll" : p_scroll_8;
+
+    const p_scroll_9 = selected?.id === 8 ? "hidden" : "hidden";
+    const p_scroll_media_9 = window_height <= 500 ? "scroll" : p_scroll_9;
+
+    const p_scale = selected?.id === 2 ? "0.9" : "";
+    const p_scale_media = window_height <= 600 ? "0.7" : p_scale;
+
+    const p_scale_8 = selected?.id === 8 ? "0.9" : "";
+    const p_scale_media_8 = window_height <= 600 ? "0.7" : p_scale_8;
+
+    const skillz_bottom_10 = selected?.id === 10 ? "0.5rem" : "";
+    const skillz_bottom_media_10 = window_height <= 370 ? "5rem" : skillz_bottom_10;
 
     return (
         <div className="content">
@@ -107,7 +149,6 @@ const Portfolio_gr = () => {
                             borderBottom: "3px dashed",
                             width: "fit-content",
                             marginBottom: "25px",
-                            marginInline: "auto",
                             position: "relative",
                             marginTop: "0px",
                             zIndex: "99",
@@ -140,7 +181,11 @@ const Portfolio_gr = () => {
                             alignSelf: "center",
                             position: "relative",
                             textAlign: "justify",
-                            marginTop: "0",
+                            paddingRight: "1rem",
+                            scale: selected?.id === 2 ? p_scale_media : selected?.id === 8 ? p_scale_media_8 : "",
+                            overflowY: selected?.id === 2 ? p_scroll_media : selected?.id === 7 ? p_scroll_media_7 : selected?.id === 8 ? p_scroll_media_8 : selected?.id === 9 ? p_scroll_media_9 : "hidden",
+                            top: selected?.id === 2 ? p_top_media : selected?.id === 8 ? p_top_media_8 : selected?.id === 9 ? p_top_media_9 : "",
+                            width: selected?.id === 2 ? "70vw" : "",
 
                         }}>  {selected?.id === 1 ? "Μια εκσυγχρονισμένη έκδοση της portfolio ιστοσελίδας μου, με βελτιωμένο γραφικό περιβάλλον και αναβαθμισμένη αρχιτεκτονική. Αυτό οδήγησε σε ενισχυμένο SEO, και χρησιμοποιώντας React 19, ταχύτερη απόκριση και βέλτιστη απόδοση." :
                             selected?.id === 2 ? "Μια διαδικτυακή εφαρμογή, στην οποία συμμετείχα ως ελεύθερος επαγγελματίας. Εργάστηκα πάνω στην προσαρμογή ενός WordPress plugin ημερολογίου και στη διαμόρφωση του εφαρμοσμένου theme, ώστε να καλύπτει τις εξειδικευμένες ανάγκες ενός γυμναστηρίου. Οι τροποποιήσεις περιλάμβαναν λειτουργίες όπως περιορισμοί στις κρατήσεις ανάλογα με τη συνδρομή του πελάτη, έλεγχος διαθεσιμότητας, καθώς και βελτιώσεις στον σχεδιασμό και την απόκριση."
@@ -164,7 +209,7 @@ const Portfolio_gr = () => {
                             style={{
                                 position: "absolute",
                                 alignSelf: "center",
-                                bottom: "0",
+                                bottom: selected?.id === 10 ? skillz_bottom_media_10 : "",
                             }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
                                 selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
                                     :
@@ -210,8 +255,8 @@ const Portfolio_gr = () => {
                                     boxShadow: selected?.id === 1
                                         ? "inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3)"
                                         : "none"
-                                }}
-                            >
+                                }}>
+
                                 {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : "ΑΝΟΙΞΤΕ"}
                             </button>
                             <button

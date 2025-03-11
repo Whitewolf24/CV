@@ -4,6 +4,7 @@ const Portfolio_eng = () => {
     const [hover_number, set_number] = useState<number | null>(null);
     const [selected, set_selected] = useState<{ id: number, title: string, img: string, vid?: string } | null>(null);
     const [fade_out, func_fade_out] = useState(false);
+    const [window_height, set_window_height] = useState(window.innerHeight);
 
     const projects = [
         { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
@@ -17,7 +18,6 @@ const Portfolio_eng = () => {
         { id: 9, title: "EKNEXA", img: "eknexa.webp", vid: "vid_eknexa.webp" },
         { id: 10, title: "MUSEUMS OF LESVOS", img: "mouseia.webp", vid: "vid_mouseia.webp" },
     ];
-
 
     useEffect(() => {
         const overflow = () => {
@@ -46,6 +46,25 @@ const Portfolio_eng = () => {
             func_fade_out(false);
         }, 300);
     };
+
+    useEffect(() => {
+        const detect_height = () => set_window_height(window.innerHeight);
+        detect_height();
+        window.addEventListener('resize', detect_height);
+
+        return () => {
+            window.removeEventListener('resize', detect_height);
+        };
+    }, []);
+
+    const p_top = selected?.id === 2 ? "0vh" : "";
+    const p_top_media = window_height <= 360 ? "3vh" : p_top;
+
+    const p_scroll = selected?.id === 2 ? "hidden" : "hidden";
+    const p_scroll_media = window_height <= 600 ? "scroll" : p_scroll;
+
+    const p_scale = selected?.id === 2 ? "0.9" : "";
+    const p_scale_media = window_height <= 600 ? "0.7" : p_scale;
 
     return (
         <div className="content">
@@ -107,9 +126,9 @@ const Portfolio_eng = () => {
                         <h2 style={{
                             borderBottom: "3px dashed",
                             width: "fit-content",
-                            marginBottom: "35px",
-                            marginInline: "auto",
+                            marginBottom: "25px",
                             position: "relative",
+                            marginTop: "0px",
                             zIndex: "99",
                         }}>{selected.title}</h2>
                         {selected.vid ? (
@@ -117,10 +136,7 @@ const Portfolio_eng = () => {
                                 src={selected.vid}
                                 loading="lazy"
                                 style={{
-                                    width: "62vw",
-                                    height: "40vh",
                                     borderRadius: "10px",
-                                    marginBottom: "30px",
                                     position: "relative",
                                     alignSelf: "center"
                                 }}
@@ -132,10 +148,7 @@ const Portfolio_eng = () => {
                                 alt={selected.title}
                                 loading="lazy"
                                 style={{
-                                    width: "62vw",
-                                    height: "40vh",
                                     borderRadius: "10px",
-                                    marginBottom: "5px",
                                     position: "relative",
                                     alignSelf: "center"
                                 }}
@@ -143,8 +156,14 @@ const Portfolio_eng = () => {
                             />
                         )}
                         <p style={{
+                            alignSelf: "center",
                             position: "relative",
-                            alignSelf: "center"
+                            textAlign: "justify",
+                            scale: selected?.id === 2 ? p_scale_media : "",
+                            overflowY: selected?.id === 2 ? p_scroll_media : "hidden",
+                            top: selected?.id === 2 ? p_top_media : "",
+                            width: selected?.id === 2 ? "70vw" : "",
+
                         }}>  {selected?.id === 1 ? "A modernized version of my portfolio website with an improved user interface and enhanced architecture. This resulted in stronger SEO, and by utilizing React 19, it achieves faster response times and optimal performance." :
                             selected?.id === 2 ? "A web application which I worked on as a freelance developer. I customized a WordPress calendar plugin and modified the applied theme to meet the specific needs of a gym. The modifications included booking restrictions based on customer subscription type, availability checks, as well as design and performance improvements."
                                 :
@@ -167,7 +186,6 @@ const Portfolio_eng = () => {
                             style={{
                                 position: "absolute",
                                 alignSelf: "center",
-                                width: "30vw",
                                 bottom: "0",
                             }}>  {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
                                 selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
@@ -198,23 +216,23 @@ const Portfolio_eng = () => {
                                     left: "-0.25rem",
                                     color: "white",
                                     borderRadius: "5px 20px 5px",
-                                    height: "40px",
+                                    height: selected?.id === 1
+                                        ? "40px" : "35px",
                                     cursor: selected?.id === 1 ? "default" : "pointer",
-                                    fontSize: "1ch",
+                                    fontSize: "10px",
                                     letterSpacing: "1.5px",
                                     backgroundColor: "rgb(40,55,70) ",
-                                    marginInline: "10px",
-                                    marginBottom: "6px",
-                                    paddingInline: "10px",
-                                    paddingTop: "2px",
-                                    width: "16ch",
+                                    marginLeft: "12px",
+                                    marginBottom: selected?.id === 1
+                                        ? "5.8px" : "8px",
+                                    width: selected?.id === 1
+                                        ? "4.5rem" : "5rem",
                                     pointerEvents: selected?.id === 1 ? "none" : "auto",
                                     filter: `brightness(${selected?.id === 1 ? 0.6 : 1})`,
                                     boxShadow: selected?.id === 1
                                         ? "inset 0 4px 6px rgba(0, 0, 0, 0.5), inset 0 1px 4px rgba(0, 0, 0, 0.3)"
                                         : "none"
-                                }}
-                            >
+                                }}>
                                 {selected?.id === 1 ? "YOU ARE HERE" : "VISIT"}
                             </button>
                             <button
@@ -274,7 +292,6 @@ const Portfolio_eng = () => {
         </div >
     );
 };
-
 
 
 export default Portfolio_eng;

@@ -15,12 +15,13 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
     });
 
     useEffect(() => {
+        // Initial load: Set "home" as active page with "/"
         if (language === 'eng') {
             set_text({
-                home: "</G>",
-                knowledge: "<KNOWLEDGE>",
-                portfolio: "<PORTFOLIO>",
-                contact: "<CONTACT>",
+                home: page === 'home' || page === '' ? "</G>" : "<G>", // Set / on home initially
+                knowledge: page === 'knowledge' ? "</KNOWLEDGE>" : "<KNOWLEDGE>",
+                portfolio: page === 'portfolio' ? "</PORTFOLIO>" : "<PORTFOLIO>",
+                contact: page === 'contact' ? "</CONTACT>" : "<CONTACT>",
             });
             document.title = 'George Marinos, Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
@@ -30,10 +31,10 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.documentElement.setAttribute('lang', 'en');
         } else {
             set_text({
-                home: "</Γ>",
-                knowledge: "<ΓΝΩΣΕΙΣ>",
-                portfolio: "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
-                contact: "<ΕΠΙΚΟΙΝΩΝΙΑ>",
+                home: page === 'home' || page === '' ? "</Γ>" : "<Γ>", // Set / on home initially
+                knowledge: page === 'knowledge' ? "</ΓΝΩΣΕΙΣ>" : "<ΓΝΩΣΕΙΣ>",
+                portfolio: page === 'portfolio' ? "</ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>" : "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
+                contact: page === 'contact' ? "</ΕΠΙΚΟΙΝΩΝΙΑ>" : "<ΕΠΙΚΟΙΝΩΝΙΑ>",
             });
             document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
@@ -47,174 +48,90 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
 
     }, [language, page]);
 
-    const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
-
     const disable_menu = () => {
-        if (cookies.get('lang') === 'eng') {
-            sleep(1000).then(() => {
-                const home_eng = document.querySelector(".home_eng") as HTMLButtonElement;
-                const knowledge_eng = document.querySelector(".knowledge_eng") as HTMLButtonElement;
-                const portfolio_eng = document.querySelector(".portfolio_eng") as HTMLButtonElement;
-                const contact_eng = document.querySelector(".contact_eng") as HTMLButtonElement;
+        const langPrefix = cookies.get('lang') === 'eng' ? 'eng' : 'gr';
+        const pages = ['home', 'knowledge', 'portfolio', 'contact'];
 
-                if (page === 'home') {
-                    home_eng.style.pointerEvents = "none";
-                    knowledge_eng.style.pointerEvents = "auto";
-                    portfolio_eng.style.pointerEvents = "auto";
-                    contact_eng.style.pointerEvents = "auto";
-                    home_eng.style.cursor = "default";
-                    knowledge_eng.style.cursor = "pointer";
-                    portfolio_eng.style.cursor = "pointer";
-                    contact_eng.style.cursor = "pointer";
-                }
-                if (page === 'knowledge') {
-                    home_eng.style.pointerEvents = "auto";
-                    knowledge_eng.style.pointerEvents = "none";
-                    portfolio_eng.style.pointerEvents = "auto";
-                    contact_eng.style.pointerEvents = "auto";
-                    home_eng.style.cursor = "pointer";
-                    knowledge_eng.style.cursor = "default";
-                    portfolio_eng.style.cursor = "pointer";
-                    contact_eng.style.cursor = "pointer";
-                }
-                if (page === 'portfolio') {
-                    home_eng.style.pointerEvents = "auto";
-                    knowledge_eng.style.pointerEvents = "auto";
-                    portfolio_eng.style.pointerEvents = "none";
-                    contact_eng.style.pointerEvents = "auto";
-                    home_eng.style.cursor = "pointer";
-                    knowledge_eng.style.cursor = "pointer";
-                    portfolio_eng.style.cursor = "default";
-                    contact_eng.style.cursor = "pointer";
-                }
-                if (page === 'contact') {
-                    home_eng.style.pointerEvents = "auto";
-                    knowledge_eng.style.pointerEvents = "auto";
-                    portfolio_eng.style.pointerEvents = "auto";
-                    contact_eng.style.pointerEvents = "none";
-                    home_eng.style.cursor = "pointer";
-                    knowledge_eng.style.cursor = "pointer";
-                    portfolio_eng.style.cursor = "pointer";
-                    contact_eng.style.cursor = "default";
-                }
-            });
-        }
-        if (cookies.get('lang') === 'gr') {
-            const home = document.querySelector(".home") as HTMLButtonElement;
-            const knowledge = document.querySelector(".knowledge") as HTMLButtonElement;
-            const portfolio = document.querySelector(".portfolio") as HTMLButtonElement;
-            const contact = document.querySelector(".contact") as HTMLButtonElement;
-
-            if (page === 'home') {
-                home.style.pointerEvents = "none";
-                knowledge.style.pointerEvents = "auto";
-                portfolio.style.pointerEvents = "auto";
-                contact.style.pointerEvents = "auto";
-                home.style.cursor = "default";
-                knowledge.style.cursor = "pointer";
-                portfolio.style.cursor = "pointer";
-                contact.style.cursor = "pointer";
+        pages.forEach((pageName) => {
+            const button = document.querySelector(`.${langPrefix}_${pageName}`) as HTMLButtonElement;
+            if (button) {
+                button.style.pointerEvents = page === pageName ? "none" : "auto";
+                button.style.cursor = page === pageName ? "default" : "pointer";
             }
-            if (page === 'knowledge') {
-                home.style.pointerEvents = "auto";
-                knowledge.style.pointerEvents = "none";
-                portfolio.style.pointerEvents = "auto";
-                contact.style.pointerEvents = "auto";
-                home.style.cursor = "pointer";
-                knowledge.style.cursor = "default";
-                portfolio.style.cursor = "pointer";
-                contact.style.cursor = "pointer";
-            }
-            if (page === 'portfolio') {
-                home.style.pointerEvents = "auto";
-                knowledge.style.pointerEvents = "auto";
-                portfolio.style.pointerEvents = "none";
-                contact.style.pointerEvents = "auto";
-                home.style.cursor = "pointer";
-                knowledge.style.cursor = "pointer";
-                portfolio.style.cursor = "default";
-                contact.style.cursor = "pointer";
-            }
-            if (page === 'contact') {
-                home.style.pointerEvents = "auto";
-                knowledge.style.pointerEvents = "auto";
-                portfolio.style.pointerEvents = "auto";
-                contact.style.pointerEvents = "none";
-                home.style.cursor = "pointer";
-                knowledge.style.cursor = "pointer";
-                portfolio.style.cursor = "pointer";
-                contact.style.cursor = "default";
-            }
-        }
+        });
     };
 
     const applyLanguageStyles = (language: string) => {
-        const home = document.querySelector('.home') as HTMLElement | null;
-        const knowledge = document.querySelector('.knowledge') as HTMLElement | null;
-        const portfolio = document.querySelector('.portfolio') as HTMLElement | null;
-        const contact = document.querySelector('.contact') as HTMLElement | null;
+        const langPrefix = language === 'eng' ? 'eng' : 'gr';
+        const pages = ['home', 'knowledge', 'portfolio', 'contact'];
 
-        const homeEng = document.querySelector('.home_eng') as HTMLElement | null;
-        const knowledgeEng = document.querySelector('.knowledge_eng') as HTMLElement | null;
-        const portfolioEng = document.querySelector('.portfolio_eng') as HTMLElement | null;
-        const contactEng = document.querySelector('.contact_eng') as HTMLElement | null;
-
-        if (language === 'eng') {
-            if (homeEng) {
-                homeEng.style.animation = 'none';
-                homeEng.style.opacity = '100%';
-                homeEng.style.width = '3em';
+        pages.forEach((pageName) => {
+            const button = document.querySelector(`.${langPrefix}_${pageName}`) as HTMLElement | null;
+            if (button) {
+                if (pageName === 'contact') {
+                    button.style.animation = 'blinktext 700ms steps(40) 1s infinite normal forwards';
+                    button.style.borderRight = '1px solid white';
+                }
+                button.style.opacity = '100%';
+                button.style.width = pageName === 'contact' ? (language === 'eng' ? '6.5em' : '9em') :
+                    pageName === 'portfolio' ? (language === 'eng' ? '7.5em' : '12em') :
+                        (language === 'eng' ? '3em' : '7em');
             }
-
-            if (knowledgeEng) {
-                knowledgeEng.style.animation = 'none';
-                knowledgeEng.style.opacity = '100%';
-                knowledgeEng.style.width = '7.5em';
-            }
-
-            if (portfolioEng) {
-                portfolioEng.style.animation = 'none';
-                portfolioEng.style.opacity = '100%';
-                portfolioEng.style.width = '7.5em';
-            }
-
-            if (contactEng) {
-                contactEng.style.animation = 'blinktext 700ms steps(40) 1s infinite normal forwards';
-                contactEng.style.borderRight = '1px solid white';
-                contactEng.style.opacity = '100%';
-                contactEng.style.width = '6.5em';
-            }
-        } else {
-            if (home) {
-                home.style.animation = 'none';
-                home.style.opacity = '100%';
-                home.style.width = '3em';
-            }
-
-            if (knowledge) {
-                knowledge.style.animation = 'none';
-                knowledge.style.opacity = '100%';
-                knowledge.style.width = '7em';
-            }
-
-            if (portfolio) {
-                portfolio.style.animation = 'none';
-                portfolio.style.opacity = '100%';
-                portfolio.style.width = '12em';
-            }
-
-            if (contact) {
-                contact.style.animation = 'blinktext 700ms steps(40) 1s infinite normal forwards';
-                contact.style.borderRight = '1px solid white';
-                contact.style.opacity = '100%';
-                contact.style.width = '9em';
-            }
-        }
+        });
     };
 
     useEffect(() => {
         applyLanguageStyles(language);
     }, [language]);
+
+
+    const updateFooterButtonWidths = (language: string, page: string) => {
+        const final_width: Record<string, string> = {
+            typewriter_home: "3em",
+            typewriter_knowledge: "7em",
+            typewriter_portfolio: "13em",
+            typewriter_contact: "9em",
+            typewriter_span: "1.5em",
+            typewriter_home_eng: "3em",
+            typewriter_knowledge_eng: "7.5em",
+            typewriter_portfolio_eng: "7.5em",
+            typewriter_contact_eng: "6.5em"
+        };
+
+        const pages = ['home', 'knowledge', 'portfolio', 'contact'];
+
+        // Loop through all pages and apply appropriate styles based on the language
+        pages.forEach((pageName) => {
+            const langPrefix = language === 'eng' ? '_eng' : '';  // Check if the language is 'eng' and apply _eng suffix for English buttons
+            const button = document.querySelector(`.${pageName}${langPrefix}`) as HTMLElement | null;
+
+            if (button) {
+                // Apply width based on the language and page
+                const buttonWidthKey = `typewriter_${pageName}${langPrefix}`;
+                button.style.width = final_width[buttonWidthKey] || 'auto'; // Default to 'auto' if the key is missing
+
+                // Adjust pointer events based on the active page
+                if (page === pageName) {
+                    button.style.pointerEvents = "none";
+                    button.style.cursor = "default";
+                } else {
+                    button.style.pointerEvents = "auto";
+                    button.style.cursor = "pointer";
+                }
+            }
+        });
+    };
+
+    useEffect(() => {
+        // This ensures that the widths are updated after the DOM has re-rendered
+        const timer = setTimeout(() => {
+            updateFooterButtonWidths(language, page);
+        }, 0); // Using a 0ms timeout to allow the DOM to reflow first
+
+        return () => clearTimeout(timer); // Cleanup the timeout if the component unmounts
+
+    }, [language, page]); // Update when either language or page changes
+
 
     return (
         <footer>
