@@ -6,6 +6,7 @@ const Portfolio_gr = () => {
     const [selected_links, set_selected_links] = useState<{ id: number, www?: string, git: string } | null>(null);
     const [fade_out, func_fade_out] = useState(false);
     const [window_height, set_window_height] = useState(window.innerHeight);
+    const [window_width, set_window_width] = useState(window.innerWidth);
 
     const projects = [
         { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
@@ -65,11 +66,15 @@ const Portfolio_gr = () => {
 
     useEffect(() => {
         const detect_height = () => set_window_height(window.innerHeight);
+        const detect_width = () => set_window_width(window.innerWidth);
         detect_height();
+        detect_width();
         window.addEventListener('resize', detect_height);
+        window.addEventListener('resize', detect_width);
 
         return () => {
             window.removeEventListener('resize', detect_height);
+            window.removeEventListener('resize', detect_width);
         };
     }, []);
 
@@ -86,14 +91,20 @@ const Portfolio_gr = () => {
     const p_scroll = selected?.id === 2 ? "hidden" : "hidden";
     const p_scroll_media = window_height <= 600 ? "scroll" : p_scroll;
 
+    const p_scroll_4 = selected?.id === 4 ? "hidden" : "hidden";
+    const p_scroll_media_4 = window_height <= 545 ? "scroll" : p_scroll_4;
+
+    const p_scroll_6 = selected?.id === 4 ? "hidden" : "hidden";
+    const p_scroll_media_6 = window_height <= 525 ? "scroll" : p_scroll_6;
+
     const p_scroll_7 = selected?.id === 7 ? "hidden" : "hidden";
-    const p_scroll_media_7 = window_height <= 465 ? "scroll" : p_scroll_7;
+    const p_scroll_media_7 = window_height <= 560 ? "scroll" : p_scroll_7;
 
     const p_scroll_8 = selected?.id === 8 ? "hidden" : "hidden";
-    const p_scroll_media_8 = window_height <= 600 ? "scroll" : p_scroll_8;
+    const p_scroll_media_8 = window_height <= 650 ? "scroll" : p_scroll_8;
 
     const p_scroll_9 = selected?.id === 8 ? "hidden" : "hidden";
-    const p_scroll_media_9 = window_height <= 500 ? "scroll" : p_scroll_9;
+    const p_scroll_media_9 = window_height <= 600 ? "scroll" : p_scroll_9;
 
     const p_scale = selected?.id === 2 ? "0.9" : "";
     const p_scale_media = window_height <= 600 ? "0.75" : p_scale;
@@ -101,8 +112,38 @@ const Portfolio_gr = () => {
     const p_scale_8 = selected?.id === 8 ? "0.9" : "";
     const p_scale_media_8 = window_height <= 600 ? "0.7" : p_scale_8;
 
+    const skillz_scale_2 = selected?.id === 2 ? "" : "";
+    const skillz_scale_media_2 = window_width <= 600 ? "0.65" : skillz_scale_2;
+
+    const skillz_width_2 = selected?.id === 2 ? "" : "";
+    const skillz_width_media_2 = window_width <= 335 ? "50vw" : (window_width >= 600 ? "50vw" : skillz_width_2);
+
+    const skillz_bottom_1 = selected?.id === 1 ? "-1rem" : "";
+    const skillz_bottom_media_1 = window_height <= 450 ? "-0.5rem" : (window_width <= 412 ? "-0.8rem" : skillz_bottom_1);
+
+    const skillz_bottom_2 = selected?.id === 2 ? "-0.8rem" : "";
+    const skillz_bottom_media_2 = window_height >= 454 ? "-1.5rem" : (window_width <= 412 ? "rem" : window_width <= 556 ? "-0.8rem" : skillz_bottom_2);
+
+    const skillz_bottom_4 = selected?.id === 4 ? "0.5rem" : "";
+    const skillz_bottom_media_4 = window_height <= 600 ? "-.5rem" : (window_width <= 585 ? "0rem" : skillz_bottom_4);
+
     const skillz_bottom_10 = selected?.id === 10 ? "0.5rem" : "";
-    const skillz_bottom_media_10 = window_height <= 390 ? "-0.5rem" : skillz_bottom_10;
+    const skillz_bottom_media_10 = window_height <= 600 ? "0rem" : skillz_bottom_10;
+
+    const skillz_height_1 = selected?.id === 2 ? "" : "";
+    const skillz_height_media_1 = window_height <= 590 ? "3rem" : (window_width <= 585 ? "5rem" : skillz_height_1);
+
+    const skillz_height_2 = selected?.id === 2 ? "2.5rem" : "";
+    const skillz_height_media_2 = window_width <= 335 ? "3.5rem" : (window_width <= 557 ? "3rem" : window_width <= 1831 ? "2.5rem" : skillz_height_2);
+
+    const skillz_height_7 = selected?.id === 7 ? "2rem" : "";
+    const skillz_height_media_7 = window_width <= 557 ? "2rem" : skillz_height_7;
+
+    const skillz_height_10 = selected?.id === 10 ? "2rem" : "";
+    const skillz_height_media_10 = window_width <= 557 ? "1.5rem" : skillz_height_10;
+
+    const skillz_background_2 = selected?.id === 2 ? "" : "";
+    const skillz_background_media_2 = window_height <= 600 ? `linear-gradient(135deg, rgb(50, 54, 62), rgb(30, 32, 40))` : (window_width <= 399 ? `linear-gradient(135deg, rgb(50, 54, 62), rgb(30, 32, 40))` : skillz_background_2);
 
     return (
         <div className="content">
@@ -200,8 +241,9 @@ const Portfolio_gr = () => {
                             position: "relative",
                             textAlign: "justify",
                             paddingRight: "1rem",
+                            paddingBottom: selected?.id === 6 ? "3rem" : "",
                             scale: selected?.id === 2 ? p_scale_media : selected?.id === 8 ? p_scale_media_8 : "",
-                            overflowY: selected?.id === 2 ? p_scroll_media : selected?.id === 7 ? p_scroll_media_7 : selected?.id === 8 ? p_scroll_media_8 : selected?.id === 9 ? p_scroll_media_9 : "hidden",
+                            overflowY: selected?.id === 2 ? p_scroll_media : selected?.id === 4 ? p_scroll_media_4 : selected?.id === 6 ? p_scroll_media_6 : selected?.id === 7 ? p_scroll_media_7 : selected?.id === 8 ? p_scroll_media_8 : selected?.id === 9 ? p_scroll_media_9 : "hidden",
                             top: selected?.id === 2 ? p_top_media : selected?.id === 8 ? p_top_media_8 : selected?.id === 9 ? p_top_media_9 : "",
                             width: selected?.id === 2 ? "70vw" : "",
                         }}>
@@ -225,9 +267,17 @@ const Portfolio_gr = () => {
                         </p>
                         <p className="overlay_skillz"
                             style={{
-                                position: "absolute",
                                 alignSelf: "center",
-                                bottom: selected?.id === 10 ? skillz_bottom_media_10 : "",
+                                background: skillz_background_media_2,
+                                bottom: selected?.id === 1 ? skillz_bottom_media_1 : selected?.id === 2 ? skillz_bottom_media_2 : selected?.id === 4 ? skillz_bottom_media_4 : selected?.id === 10 ? skillz_bottom_media_10 : "",
+                                position: "absolute",
+                                paddingInline: "100%",
+                                paddingBlock: "1rem",
+                                marginLeft: selected?.id === 2 ? "0.6rem" : "",
+                                transform: selected?.id === 1 ? "" : selected?.id === 2 ? "translateY(-3vh)" : "translateY(3vh)",
+                                scale: selected?.id === 2 ? skillz_scale_media_2 : "",
+                                height: selected?.id === 1 ? skillz_height_media_1 : selected?.id === 2 ? skillz_height_media_2 : selected?.id === 4 ? "" : selected?.id === 7 ? skillz_height_media_7 : selected?.id === 10 ? skillz_height_media_10 : "3.8rem",
+                                width: selected?.id === 2 ? skillz_width_media_2 : "",
                             }}>
                             {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
                                 selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"` :
@@ -249,7 +299,7 @@ const Portfolio_gr = () => {
                                     disabled={selected?.id === 1}
                                     style={{
                                         position: "absolute",
-                                        bottom: "0",
+                                        bottom: selected?.id === 2 ? "-0.1rem" : "0",
                                         left: "-0.25rem",
                                         color: "white",
                                         borderRadius: "5px 20px 5px",
@@ -258,9 +308,9 @@ const Portfolio_gr = () => {
                                         fontSize: "10px",
                                         letterSpacing: "1.5px",
                                         backgroundColor: "rgb(40,55,70)",
-                                        marginLeft: selected?.id === 2 ? "7px" : "12px",
+                                        marginLeft: selected?.id === 2 ? "8px" : "12px",
                                         marginBottom: selected?.id === 1 ? "5.8px" : "0px",
-                                        width: selected?.id === 1 ? "4.5rem" : selected?.id === 2 ? "6rem" : "5rem",
+                                        width: selected?.id === 1 ? "4.5rem" : selected?.id === 2 ? "5rem" : "5rem",
                                         pointerEvents: selected?.id === 1 ? "none" : "auto",
                                         filter: `brightness(${[1, 2, 5].includes(selected?.id) ? 0.6 : 1})`,
                                         boxShadow: selected?.id === 1 ? "inset 0 4px 6px rgba(0, 0, 0, 0.5)" : "none"
@@ -276,16 +326,18 @@ const Portfolio_gr = () => {
                                     style={{
                                         position: "absolute",
                                         bottom: "0",
-                                        right: "10px",
+                                        right: "15px",
                                         color: "white",
                                         borderRadius: "5px 10px 5px",
                                         height: "30px",
+                                        width: selected?.id === 2 ? "2rem" : "",
                                         cursor: "pointer",
                                         fontSize: "1ch",
                                         letterSpacing: "1.5px",
                                         backgroundColor: "rgb(40,55,70)",
-                                        marginBottom: "5px",
-                                        paddingInline: "10px",
+                                        marginBottom: "8px",
+                                        marginRight: selected?.id === 2 ? "-1px" : "",
+                                        paddingInline: selected?.id === 2 ? "1px" : "10px",
                                     }}
                                 >
                                     <a href={selected_links?.git} target="_blank" rel="noopener">
@@ -296,7 +348,8 @@ const Portfolio_gr = () => {
                         )}
                     </div>
                 </div>
-            )}
+            )
+            }
 
             <div className="content_portfolio">
                 {projects.map(({ id, title, img, vid }) => (
@@ -326,7 +379,7 @@ const Portfolio_gr = () => {
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }
 
