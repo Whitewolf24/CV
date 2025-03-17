@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { use_language } from './header'; // Import the language context
+import { use_language } from './header';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
@@ -15,10 +15,9 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
     });
 
     useEffect(() => {
-        // Initial load: Set "home" as active page with "/"
         if (language === 'eng') {
             set_text({
-                home: page === 'home' || page === '' ? "</G>" : "<G>", // Set / on home initially
+                home: page === 'home' || page === '' ? "</G>" : "<G>",
                 knowledge: page === 'knowledge' ? "</KNOWLEDGE>" : "<KNOWLEDGE>",
                 portfolio: page === 'portfolio' ? "</PORTFOLIO>" : "<PORTFOLIO>",
                 contact: page === 'contact' ? "</CONTACT>" : "<CONTACT>",
@@ -31,7 +30,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.documentElement.setAttribute('lang', 'en');
         } else {
             set_text({
-                home: page === 'home' || page === '' ? "</Γ>" : "<Γ>", // Set / on home initially
+                home: page === 'home' || page === '' ? "</Γ>" : "<Γ>",
                 knowledge: page === 'knowledge' ? "</ΓΝΩΣΕΙΣ>" : "<ΓΝΩΣΕΙΣ>",
                 portfolio: page === 'portfolio' ? "</ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>" : "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
                 contact: page === 'contact' ? "</ΕΠΙΚΟΙΝΩΝΙΑ>" : "<ΕΠΙΚΟΙΝΩΝΙΑ>",
@@ -75,7 +74,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
                 button.style.opacity = '100%';
                 button.style.width = pageName === 'contact' ? (language === 'eng' ? '6.5em' : '9em') :
                     pageName === 'portfolio' ? (language === 'eng' ? '7.5em' : '12em') :
-                        (language === 'eng' ? '3em' : '7em');
+                        (language === 'eng' ? '3em' : '7rem');
             }
         });
     };
@@ -85,32 +84,30 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
     }, [language]);
 
 
-    const updateFooterButtonWidths = (language: string, page: string) => {
+    const footer_button_widths = (language: string, page: string) => {
         const final_width: Record<string, string> = {
             typewriter_home: "3em",
             typewriter_knowledge: "7em",
             typewriter_portfolio: "13em",
             typewriter_contact: "9em",
             typewriter_span: "1.5em",
-            typewriter_home_eng: "3em",
-            typewriter_knowledge_eng: "7.5em",
-            typewriter_portfolio_eng: "7.5em",
-            typewriter_contact_eng: "6.5em"
+            typewriter_home_eng: "4em",
+            typewriter_knowledge_eng: "8.5em",
+            typewriter_portfolio_eng: "8.5em",
+            typewriter_contact_eng: "7em"
         };
 
         const pages = ['home', 'knowledge', 'portfolio', 'contact'];
 
-        // Loop through all pages and apply appropriate styles based on the language
+
         pages.forEach((pageName) => {
-            const langPrefix = language === 'eng' ? '_eng' : '';  // Check if the language is 'eng' and apply _eng suffix for English buttons
+            const langPrefix = language === 'eng' ? '_eng' : '';
             const button = document.querySelector(`.${pageName}${langPrefix}`) as HTMLElement | null;
 
             if (button) {
-                // Apply width based on the language and page
                 const buttonWidthKey = `typewriter_${pageName}${langPrefix}`;
-                button.style.width = final_width[buttonWidthKey] || 'auto'; // Default to 'auto' if the key is missing
+                button.style.width = final_width[buttonWidthKey] || 'auto';
 
-                // Adjust pointer events based on the active page
                 if (page === pageName) {
                     button.style.pointerEvents = "none";
                     button.style.cursor = "default";
@@ -123,14 +120,13 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
     };
 
     useEffect(() => {
-        // This ensures that the widths are updated after the DOM has re-rendered
         const timer = setTimeout(() => {
-            updateFooterButtonWidths(language, page);
-        }, 0); // Using a 0ms timeout to allow the DOM to reflow first
+            footer_button_widths(language, page);
+        }, 0);
 
-        return () => clearTimeout(timer); // Cleanup the timeout if the component unmounts
+        return () => clearTimeout(timer);
 
-    }, [language, page]); // Update when either language or page changes
+    }, [language, page]);
 
 
     return (

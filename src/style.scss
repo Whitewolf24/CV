@@ -353,7 +353,23 @@ header {
         margin-bottom: 4rem;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
+        //grid-template-columns: 23vw 27vw 26vw 10vw;
+        font-size: clamp(.4rem, 2vw, .5rem);
+        grid-column-gap: 20vw;
+        transform: translate(-75%, -70%);
+        scale: 0.7;
+
+        p {
+            width: 25ch;
+        }
+
+        h3 {
+            font-size: clamp(.8rem, 2.5vw, .9rem);
+        }
+    }
+
+    @media (max-width: 600px) and (min-width: 480px) {
         //grid-template-columns: 23vw 27vw 26vw 10vw;
         font-size: clamp(.4rem, 2.5vw, .5rem);
         grid-column-gap: 10vw;
@@ -696,7 +712,7 @@ header {
             text-align: center !important;
             margin-left: 1rem;
             scale: 0.75;
-            width: 40ch;
+            width: 39ch;
         }
 
         button {
@@ -730,15 +746,14 @@ header {
     @media (max-height: 500px) and (min-height: 390px) {
 
         img {
-            transform: translateY(-18vh);
+            transform: translateY(-15vh);
         }
 
         p:not(.overlay_skillz) {
             padding-bottom: 2rem;
             scale: 0.7;
-            overflow-y: scroll !important;
             scrollbar-width: thin;
-            transform: translateY(-10vh);
+            transform: translateY(-9vh);
         }
     }
 
@@ -753,13 +768,12 @@ header {
         p:not(.overlay_skillz) {
             padding-bottom: 3rem;
             scale: 0.7 !important;
-            overflow-y: scroll !important;
-            transform: translateY(-20vh);
+            transform: translateY(-18vh);
             scrollbar-width: thin;
         }
 
         img {
-            transform: translateY(-22vh);
+            transform: translateY(-20vh);
         }
     }
 }
@@ -970,12 +984,11 @@ input:user-invalid {
 
 footer {
     animation: appear 1s steps(60) 1 3s normal forwards;
-    //padding-block: 45px;
+    align-items: center;
     background-color: rgba(18, 18, 24, 0.9);
     border-top: 2px dashed rgb(42, 42, 42);
     cursor: default;
     display: flex;
-    font-size: clamp(0.75rem, .5vw, 0.8rem);
     height: 50px;
     justify-content: center;
     left: 0;
@@ -989,8 +1002,8 @@ footer {
     button {
         border-bottom: 1px dashed transparent;
         border-right: 0;
-        color: white;
-        font-size: clamp(0.55rem, 1.5vw, 0.8rem);
+        color: #ffffff;
+        font-size: clamp(0.6rem, 1vw, 0.6rem);
         text-shadow: -1px 1px 0 #000,
             1px 1px 0 #000,
             1px -1px 0 #000,
@@ -1004,75 +1017,23 @@ footer {
     span {
         cursor: default;
         display: inline-flex;
+        font-size: clamp(0.6rem, 1vw, 0.6rem);
         overflow: hidden;
         white-space: nowrap;
         width: 0rem;
     }
 
     nav {
-        top: 1rem;
         position: relative;
         white-space: nowrap;
         left: 2%;
     }
 
-    @media (min-width: 800px) {
-        button {
-            font-size: clamp(0.7rem, .5vw, 0.8rem);
-        }
-    }
+    @media (max-width: 350px) {
 
-    @media (max-height: 730px) and (min-width: 482px) and (max-width: 532px) {
-        font-size: $portfolio_fontsize_h_rest_alt;
-    }
-
-    @media (max-height: 700px) and (min-width: 800px) and (max-width: 1020px) {
-
-        nav {
-            top: 3vh;
-        }
-    }
-
-    @media (max-height: 580px) and (min-width: 1550px) {
-        font-size: $portfolio_fontsize_h_rest_alt;
-    }
-
-
-    @media (max-height: 550px) and (min-width: 1235px) and (max-width: 1550px) {
-        font-size: $portfolio_fontsize_h_rest_alt;
-    }
-
-    @media (min-height: 360px) and (max-height: 525px) {
-        top: 90vh;
-        font-size: $portfolio_fontsize_h_rest_alt;
-
-        nav {
-            top: 1rem;
-        }
-    }
-
-    @media (min-height: 215px) and (max-height: 360px) {
-        top: 88vh;
-
-        nav {
-            top: 3vh;
-        }
-    }
-
-    @media (max-height: 215px) {
-        top: 85vh;
-        font-size: $portfolio_fontsize_h_rest_alt;
-
-        nav {
-            top: 3vh;
-        }
-    }
-
-    @media (max-height: 450px) and (min-width: 600px) and (max-width: 800px) {
-        font-size: $portfolio_fontsize_h_rest_alt;
-
-        nav {
-            top: 4vh;
+        button,
+        span {
+            font-size: clamp(0.5rem, 1vw, 0.5rem);
         }
     }
 }

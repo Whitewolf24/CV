@@ -28,7 +28,6 @@ const Contact_gr = () => {
             setTimeout(() => {
                 emailjs.sendForm("service_csf2yrt", "template_vz3nrl7", form.current, "vlmZE8H22O2e_lQFj")
                     .then(() => {
-                        //console.log('Email sent successfully:', response);
                         submit_butt.classList.remove("submit_butt_anime");
                         e.target.reset();
                     })
@@ -77,7 +76,7 @@ const Contact_gr = () => {
         }}>
             <p className="contact_desc" style={{ fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", lineHeight: "1.2rem", whiteSpace: "pre-line", width: "58ch" }}>Για να επικοινωνήσετε μαζί μου συμπληρώστε την παρακάτω φόρμα, με το email σας και το μήνυμα σας, ή γράψτε μου στο&nbsp;
                 <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a> </p>
-            <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)} /*method="POST"  data-sitekey="vlmZE8H22O2e_lQFj"*/>
+            <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)}>
                 <div>
                     <input className="email_form" type="email" name="email" placeholder="Email Επικοινωνίας" title=""
                         required onInput={() => {

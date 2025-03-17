@@ -88,24 +88,6 @@ const Portfolio_gr = () => {
     const p_top_9 = selected?.id === 9 ? "0vh" : "";
     const p_top_media_9 = window_height <= 560 ? "-1vh" : p_top_9;
 
-    const p_scroll = selected?.id === 2 ? "hidden" : "hidden";
-    const p_scroll_media = window_height <= 600 ? "scroll" : p_scroll;
-
-    const p_scroll_4 = selected?.id === 4 ? "hidden" : "hidden";
-    const p_scroll_media_4 = window_height <= 545 ? "scroll" : p_scroll_4;
-
-    const p_scroll_6 = selected?.id === 4 ? "hidden" : "hidden";
-    const p_scroll_media_6 = window_height <= 525 ? "scroll" : p_scroll_6;
-
-    const p_scroll_7 = selected?.id === 7 ? "hidden" : "hidden";
-    const p_scroll_media_7 = window_height <= 560 ? "scroll" : p_scroll_7;
-
-    const p_scroll_8 = selected?.id === 8 ? "hidden" : "hidden";
-    const p_scroll_media_8 = window_height <= 650 ? "scroll" : p_scroll_8;
-
-    const p_scroll_9 = selected?.id === 8 ? "hidden" : "hidden";
-    const p_scroll_media_9 = window_height <= 600 ? "scroll" : p_scroll_9;
-
     const p_scale = selected?.id === 2 ? "0.9" : "";
     const p_scale_media = window_height <= 600 ? "0.75" : p_scale;
 
@@ -243,7 +225,7 @@ const Portfolio_gr = () => {
                             paddingRight: "1rem",
                             paddingBottom: selected?.id === 6 ? "3rem" : "",
                             scale: selected?.id === 2 ? p_scale_media : selected?.id === 8 ? p_scale_media_8 : "",
-                            overflowY: selected?.id === 2 ? p_scroll_media : selected?.id === 4 ? p_scroll_media_4 : selected?.id === 6 ? p_scroll_media_6 : selected?.id === 7 ? p_scroll_media_7 : selected?.id === 8 ? p_scroll_media_8 : selected?.id === 9 ? p_scroll_media_9 : "hidden",
+                            overflowY: "auto",
                             top: selected?.id === 2 ? p_top_media : selected?.id === 8 ? p_top_media_8 : selected?.id === 9 ? p_top_media_9 : "",
                             width: selected?.id === 2 ? "70vw" : "",
                         }}>
@@ -317,7 +299,7 @@ const Portfolio_gr = () => {
                                     }}
                                 >
                                     <a href={selected_links?.www} target="_blank" rel="noopener">
-                                        {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : "ΑΝΟΙΞΤΕ"}
+                                        {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : "ΑΝΟΙΞΤΕ"}
                                     </a>
                                 </button>
                                 <button
