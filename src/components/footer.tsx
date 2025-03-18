@@ -89,7 +89,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             typewriter_home: "3em",
             typewriter_knowledge: "7em",
             typewriter_portfolio: "13em",
-            typewriter_contact: "9em",
+            typewriter_contact: "9.5em",
             typewriter_span: "1.5em",
             typewriter_home_eng: "4em",
             typewriter_knowledge_eng: "8.5em",

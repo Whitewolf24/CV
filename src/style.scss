@@ -909,7 +909,7 @@ header {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55%);
     text-align: center;
 
     input {
@@ -936,11 +936,88 @@ header {
         border-radius: 10px;
         font-size: 0.7rem;
         padding: 8px;
+        scale: 0.9;
     }
 
     button:hover {
         background-color: rgb(93, 101, 106);
         color: #161616;
+    }
+
+    p:last-of-type {
+        margin-top: 4rem !important;
+    }
+
+    span {
+        text-decoration: none;
+        position: relative;
+        top: 1rem;
+    }
+
+    @media (max-width: 400px) {
+        scale: 0.9;
+        transform: translate(-55%, -65%);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        p:not(:last-of-type) {
+            margin-left: 7rem !important;
+            width: 45ch !important;
+        }
+
+    }
+
+    @media (max-height: 550px) and (min-height:430px) {
+        scale: 0.9;
+        transform: translate(-55%, -50%);
+        padding-bottom: 10rem !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        p:not(:last-of-type) {
+            margin-left: 7rem !important;
+            width: 45ch !important;
+        }
+
+        span {
+            text-decoration: none;
+            position: relative;
+            top: 1rem;
+        }
+
+        textarea {
+            margin-block: 0rem;
+        }
+
+        button {
+            scale: 0.8;
+        }
+    }
+
+    @media (max-height: 430px) {
+        scale: 0.8;
+        transform: translate(-63%, -45%);
+        padding-bottom: 5rem !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        p:not(:last-of-type) {
+            margin-bottom: 0rem !important;
+            width: 45ch !important;
+        }
+
+        p:last-of-type {
+            margin-top: 2rem !important;
+        }
+
+        textarea {
+            margin-block: 0;
+
+        }
+
+        button {
+            scale: 0.8;
+        }
     }
 }
 

@@ -4,6 +4,7 @@ const Portfolio_gr = () => {
     const [hover_number, set_number] = useState<number | null>(null);
     const [selected, set_selected] = useState<{ id: number, title: string, img: string, vid?: string } | null>(null);
     const [selected_links, set_selected_links] = useState<{ id: number, www?: string, git: string } | null>(null);
+    const [is_overlay_open, set_overlay_open] = useState(false);
     const [fade_out, func_fade_out] = useState(false);
     const [window_height, set_window_height] = useState(window.innerHeight);
     const [window_width, set_window_width] = useState(window.innerWidth);
@@ -36,23 +37,29 @@ const Portfolio_gr = () => {
 
     useEffect(() => {
         const overflow = () => {
-            if (window.innerWidth < 1240 || (window.innerWidth >= 1240 && window.innerHeight <= 610)) {
-                document.body.style.overflowY = "scroll";
-            } else {
+            if (is_overlay_open) {
                 document.body.style.overflowY = "hidden";
+            } else {
+                if (window.innerWidth < 1240 || (window.innerWidth >= 1240 && window.innerHeight <= 610)) {
+                    document.body.style.overflowY = "scroll";
+                } else {
+                    document.body.style.overflowY = "hidden";
+                }
             }
         };
+
 
         overflow();
         window.addEventListener("resize", overflow);
         return () => window.removeEventListener("resize", overflow);
-    }, []);
+    }, [is_overlay_open]);
 
     const open_overlay = (id: number, title: string, img: string, vid?: string) => {
-        set_selected({ id, title, img, vid });
         const project_links = sites.find(site => site.id === id) || null;
+        set_selected({ id, title, img, vid });
         set_selected_links(project_links);
         func_fade_out(false);
+        set_overlay_open(true);
     };
 
     const close_overlay = () => {
@@ -62,6 +69,7 @@ const Portfolio_gr = () => {
             set_selected(null);
             func_fade_out(false);
         }, 300);
+        set_overlay_open(false);
     };
 
     useEffect(() => {

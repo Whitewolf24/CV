@@ -74,11 +74,18 @@ const Contact_gr = () => {
                 }
             }
         }}>
-            <p className="contact_desc" style={{ fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", lineHeight: "1.2rem", whiteSpace: "pre-line", width: "58ch" }}>Για να επικοινωνήσετε μαζί μου συμπληρώστε την παρακάτω φόρμα, με το email σας και το μήνυμα σας, ή γράψτε μου στο&nbsp;
-                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a> </p>
+            <p className="contact_desc" style={{ textAlign: "left", fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", lineHeight: "1.2rem" }}>
+                Email Επικοινωνίας:&nbsp;
+                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a>
+                <br></br>
+                <a href="https://www.linkedin.com/in/george-marinos-934596309/" style={{ color: "white" }}><span>Linkedin </span>
+                </a>
+            </p>
+
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)}>
                 <div>
-                    <input className="email_form" type="email" name="email" placeholder="Email Επικοινωνίας" title=""
+                    <p>Φόρμα Επικοινωνίας</p>
+                    <input className="email_form" type="email" name="email" placeholder="Email σας" title=""
                         required onInput={() => {
                             const email_form = document.querySelector(".email_form");
 
