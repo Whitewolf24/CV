@@ -15,6 +15,16 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
     });
 
     useEffect(() => {
+        const meta = document.querySelector("meta[name='robots']");
+        if (!meta) {
+            const newMeta = document.createElement("meta");
+            newMeta.name = "robots";
+            newMeta.content = "index, follow";
+            document.head.appendChild(newMeta);
+        } else {
+            meta.setAttribute("content", "index, follow");
+        }
+        
         if (language === 'eng') {
             set_text({
                 home: page === 'home' || page === '' ? "</G>" : "<G>",

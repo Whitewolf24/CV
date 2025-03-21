@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, ReactNode, useEffect } from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import Cookies from 'universal-cookie';
 
 const cookies = new Cookies();
@@ -31,17 +31,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
     );
 };
 
-useEffect(() => {
-    const meta = document.querySelector("meta[name='robots']");
-    if (!meta) {
-        const newMeta = document.createElement("meta");
-        newMeta.name = "robots";
-        newMeta.content = "index, follow";
-        document.head.appendChild(newMeta);
-    } else {
-        meta.setAttribute("content", "index, follow");
-    }
-}, []);
+
 
 export const Header = () => {
     const { language, switch_lang } = use_language();

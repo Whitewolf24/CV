@@ -309,14 +309,14 @@ header {
     position: absolute;
     scale: 0.6;
     top: 0;
-    left: 48%;
-    transform: translate(-45%, 0%);
+    left: 50%;
+    transform: translate(-75%, 0%);
     height: 13ch;
     width: 13ch;
 
     @media (max-height: 400px) {
         scale: 0.55;
-        transform: translate(-35%, -10vh);
+        transform: translate(-65%, -10vh);
     }
 }
 
