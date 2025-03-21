@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 User-agent: *
 Disallow: /
+=======
+Sitemap: https://marinoscv.website/sitemap.xml
+>>>>>>> 650427c1b2aa07d5a4f15a335961e5fe951e105b
