@@ -5,6 +5,42 @@ $portfolio_fontsize_h_rest_alt: clamp(0.5rem, .5vw, 0.6rem);
 $portfolio_fontsize: clamp(.52rem, 2.5vw, .72rem);
 $tech_height: 2rem;
 
+@media (hover: none),
+(pointer: coarse) {
+
+    .content_skills {
+        scale: 0.8 !important;
+        transform: translate(-65%, -54%) !important;
+        grid-template-rows: 1fr 1fr !important;
+        grid-column-gap: 0 !important;
+    }
+
+    #frontend {
+        margin-left: -4rem;
+    }
+
+    #backend {
+        margin-left: 10rem;
+    }
+
+    #wordp {
+        grid-row: 2;
+    }
+
+    #tools {
+        margin-left: 6rem;
+        grid-row: 2;
+    }
+
+    .description_div {
+        opacity: 1;
+    }
+
+    .content_contact {
+        transform: translate(-55%, -0%) !important;
+    }
+}
+
 html {
     scrollbar-color: rgb(113, 121, 126) rgb(61, 65, 75);
     scrollbar-width: thin;
@@ -1392,123 +1428,3 @@ footer span {
         width: 1.5em;
     }
 }
-
-
-//--------------------------//
-
-@media (hover: none),
-(pointer: coarse) {
-    /*    @supports (-moz-appearance:none) { */
-
-    html,
-    main {
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        -webkit-background-size: cover;
-        background-attachment: fixed;
-        background-image: repeating-linear-gradient(to left bottom, #181818, #1a1a1c, #1d1c21, #1f1e25, #21202a, #21202a, #21202a, #21202a, #1f1e25, #1d1c21, #1a1a1c, #181818);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    body {
-        background-image: none !important;
-        background-color: transparent !important;
-        overflow-y: scroll !important;
-        overflow-x: hidden !important;
-        //height: 0%;
-    }
-
-    .content_skills {
-        overflow: hidden !important;
-        scale: 0.8 !important;
-        transform: translate(-50%, -50%) !important;
-        height: 100%;
-        width: 100%;
-    }
-
-    #wordp {
-        position: absolute !important;
-        top: 20rem !important;
-    }
-
-    #tools {
-        position: absolute !important;
-        top: 20rem !important;
-        left: 8.5rem !important;
-    }
-
-    .description_div {
-        opacity: 1 !important;
-    }
-
-    .content_contact {
-        position: absolute !important;
-        left: 50% !important;
-        top: 50% !important;
-        transform: translate(-55%, -10%) !important;
-    }
-
-
-    /*
-        header {
-            background-image: none !important;
-            background-color: transparent !important;
-            top: 0;
-            height: 0rem;
-            position: fixed;
-            width: 100%;
-            padding-right: 5rem !important;
-        }
-
-        footer {
-            height: 4rem !important;
-            top: auto !important;
-            bottom: 0 !important;
-            position: fixed !important;
-            width: 100%;
-        }
-
-        .content_skills {
-            top: -0.8rem !important;
-            font-size: clamp(.3rem, 2vw, .6rem);
-            height: fit-content !important;
-            padding-right: 0;
-            left: -0.6rem !important;
-            width: fit-content !important;
-        }
-
-        .content_contact {
-            height: fit-content !important;
-        }
-
-        .contact_desc {
-            font-size: clamp(.5rem, 2.5vw, .6rem) !important;
-        }
-
-        .content_portfolio {
-            height: fit-content !important;
-            margin: 0 auto;
-            //left: 0rem !important;
-            position: relative;
-            top: -2rem !important;
-            transform: scale(0.8);
-            width: 125vw !important;
-        }
-
-        .content_contact {
-            bottom: 1rem !important;
-            position: relative !important;
-        }
-
-
-        .email_form,
-        .msg_form {
-            color: white !important;
-            //background-color: white !important;
-            width: 15rem !important;
-        }*/
-}
-
-/* } */

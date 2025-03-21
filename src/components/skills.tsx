@@ -17,20 +17,13 @@ const Skills = () => {
     window.addEventListener("resize", overflow);
 
     return <div className="content"
-        onAnimationStart={() => {
+     /*    onAnimationStart={() => {
             if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
                 const content = document?.querySelector(".content") as HTMLDivElement;
                 content.style.cssText += "overflow: hidden !important";
             }
-        }}>
-        <div className="content_skills" onAnimationStart={() => {
-            if (navigator.userAgent.includes("Chrome") && navigator.userAgent.includes("Mobi")) {
-                const content_skills = document?.querySelector(".content_skills") as HTMLDivElement;
-                content_skills.style.cssText += "height: fit-content !important";
-                //content_skills.style.cssText += "right: 0.2rem !important";
-                content_skills.style.cssText += "margin: 0 auto !important";
-            }
-        }}>
+        }} */>
+        <div className="content_skills">
             <div id="backend">
                 <h3>Backend</h3>
                 <p>{"<?php"}</p>
