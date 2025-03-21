@@ -1,9 +1,5 @@
 
-<<<<<<< HEAD
 import { useEffect } from 'react';
-=======
-//import { useEffect, useState } from 'react';
->>>>>>> 650427c1b2aa07d5a4f15a335961e5fe951e105b
 import Cookies from 'universal-cookie';
 import { Footer } from './components/footer';
 
@@ -15,7 +11,6 @@ if (!cookies.get('lang')) {
 
 function App() {
 
-<<<<<<< HEAD
   useEffect(() => {
     const meta = document.createElement("meta");
     meta.name = "robots";
@@ -23,8 +18,6 @@ function App() {
     document.head.appendChild(meta);
   }, []);
 
-=======
->>>>>>> 650427c1b2aa07d5a4f15a335961e5fe951e105b
   return <div>
     {/* <Main name={name} job={"Web Developer"} />
      <Footer lang_gr={change_lang("ελληνικά")} lang_eng={change_lang("ελληνικά")} knowhow_butt={"knowledge"} projects_butt={"projects"} contact_butt={"contact"} />
