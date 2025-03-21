@@ -1422,6 +1422,21 @@ footer span {
 
     .content_skills {
         overflow: hidden !important;
+        scale: 0.8 !important;
+        transform: translate(-50%, -50%) !important;
+        height: 100%;
+        width: 100%;
+    }
+
+    #wordp {
+        position: absolute !important;
+        top: 20rem !important;
+    }
+
+    #tools {
+        position: absolute !important;
+        top: 20rem !important;
+        left: 8.5rem !important;
     }
 
     .description_div {
@@ -1429,10 +1444,10 @@ footer span {
     }
 
     .content_contact {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -55%);
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-55%, -10%) !important;
     }
 
 
