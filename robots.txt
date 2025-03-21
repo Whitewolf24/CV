@@ -1,1 +1,5 @@
 Sitemap: https://marinoscv.website/sitemap.xml
+
+User-agent: *
+Disallow: /*.marinoscv.website/
+Allow: /
