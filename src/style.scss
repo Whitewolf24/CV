@@ -357,8 +357,8 @@ header {
         //grid-template-columns: 23vw 27vw 26vw 10vw;
         font-size: clamp(.4rem, 2vw, .5rem);
         grid-column-gap: 20vw;
-        transform: translate(-75%, -70%);
-        scale: 0.7;
+        transform: translate(-82%, -80%);
+        scale: 0.65;
 
         p {
             width: 25ch;
@@ -1420,10 +1420,21 @@ footer span {
         //height: 0%;
     }
 
+    .content_skills {
+        overflow: hidden !important;
+    }
 
     .description_div {
         opacity: 1 !important;
     }
+
+    .content_contact {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -55%);
+    }
+
 
     /*
         header {
