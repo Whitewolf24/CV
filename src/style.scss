@@ -1397,7 +1397,7 @@ footer span {
 //--------------------------//
 
 @media (hover: none) {
-    @supports (-moz-appearance:none) {
+ /*    @supports (-moz-appearance:none) { */
 
         html,
         main {
@@ -1483,4 +1483,4 @@ footer span {
             width: 15rem !important;
         }*/
     }
-}
+/* } */
