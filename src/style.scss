@@ -1396,35 +1396,36 @@ footer span {
 
 //--------------------------//
 
-@media (hover: none) {
- /*    @supports (-moz-appearance:none) { */
+@media (hover: none),
+(pointer: coarse) {
+    /*    @supports (-moz-appearance:none) { */
 
-        html,
-        main {
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            -webkit-background-size: cover;
-            background-attachment: fixed;
-            background-image: repeating-linear-gradient(to left bottom, #181818, #1a1a1c, #1d1c21, #1f1e25, #21202a, #21202a, #21202a, #21202a, #1f1e25, #1d1c21, #1a1a1c, #181818);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+    html,
+    main {
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        -webkit-background-size: cover;
+        background-attachment: fixed;
+        background-image: repeating-linear-gradient(to left bottom, #181818, #1a1a1c, #1d1c21, #1f1e25, #21202a, #21202a, #21202a, #21202a, #1f1e25, #1d1c21, #1a1a1c, #181818);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 
-        body {
-            background-image: none !important;
-            background-color: transparent !important;
-            overflow-y: scroll !important;
-            overflow-x: hidden !important;
-            //height: 0%;
-        }
+    body {
+        background-image: none !important;
+        background-color: transparent !important;
+        overflow-y: scroll !important;
+        overflow-x: hidden !important;
+        //height: 0%;
+    }
 
 
-        .description_div {
-            opacity: 1 !important;
-        }
+    .description_div {
+        opacity: 1 !important;
+    }
 
-        /*
+    /*
         header {
             background-image: none !important;
             background-color: transparent !important;
@@ -1482,5 +1483,6 @@ footer span {
             //background-color: white !important;
             width: 15rem !important;
         }*/
-    }
+}
+
 /* } */
