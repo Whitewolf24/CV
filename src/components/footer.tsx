@@ -35,7 +35,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.title = 'George Marinos, Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', 'On this page you will find my Portfolio, and references to all my knowledge surrounding Frontend, Backend and Wordpress Web Development.');
+                meta.setAttribute('content', 'Explore my portfolio and expertise in Frontend, Backend, and WordPress Web Development. Explore my projects that showcase my technical skills and experience in website development.');
             }
             document.documentElement.setAttribute('lang', 'en');
         } else {
@@ -48,7 +48,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', "Αυτή η ιστοσελίδα περιέχει το Portfolio μου, και αναφορές στις γνώσεις μου, γύρω από το Frontend, Backend και Wordpress Web Development.");
+                meta.setAttribute('content', "Ανακαλύψτε το Portfolio μου και τις γνώσεις μου στο Frontend, Backend και Wordpress Web Development. Εξερευνήστε τα έργα μου, που αναδεικνύουν τις τεχνικές μου δεξιότητες και την εμπειρία στον προγραμματισμό ιστοσελίδων.");
             }
             document.documentElement.setAttribute('lang', 'el');
         }
