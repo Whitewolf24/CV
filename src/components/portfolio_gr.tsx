@@ -307,7 +307,7 @@ const Portfolio_gr = () => {
                                     }}
                                 >
                                     <a href={selected_links?.www} target="_blank" rel="noopener">
-                                        {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : "ΑΝΟΙΞΤΕ"}
+                                        {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : selected?.id === 5 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : "ΑΝΟΙΞΤΕ"}
                                     </a>
                                 </button>
                                 <button
