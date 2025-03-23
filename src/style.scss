@@ -41,18 +41,6 @@ $tech_height: 2rem;
     }
 }
 
-@font-face {
-    font-family: 'JetBrains Mono';
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/jetbrainsmono/v14/2sDzM2XBHyKYs6wW5ulVAOReNk5b-zo.woff2') format('woff2');
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-display: swap;
-    src: url('https://fonts.gstatic.com/s/opensans/v19/mem8YaGs126MiZpBA-UN7BMMmWsLz1q5uITpwmww1mM.woff2') format('woff2');
-}
-
 html {
     scrollbar-color: rgb(113, 121, 126) rgb(61, 65, 75);
     scrollbar-width: thin;
