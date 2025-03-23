@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense } from 'react';
+import { useState, lazy, Suspense, useEffect } from 'react';
 import { Header } from './components/header';
 import { Footer } from './components/footer';
 import { LanguageProvider, use_language } from './components/header'; // Import the context
@@ -13,7 +13,25 @@ const ContactEng = lazy(() => import('./components/contact_eng'));
 
 function AppContent() {
   const [page, set_page] = useState("home");
-  const { language } = use_language(); // Get language from context
+  const { language } = use_language();
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.innerHTML = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "George Marinos",
+      "jobTitle": "Fullstack Web Developer",
+      "url": "https://marinoscv.website/"
+    });
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script); 
+    };
+  }, []);
 
   const render_page = () => {
     switch (page) {

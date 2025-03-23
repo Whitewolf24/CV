@@ -24,7 +24,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
         } else {
             meta.setAttribute("content", "index, follow");
         }
-        
+
         if (language === 'eng') {
             set_text({
                 home: page === 'home' || page === '' ? "</G>" : "<G>",
@@ -35,7 +35,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.title = 'George Marinos, Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', 'Explore my portfolio and expertise in Frontend, Backend, and WordPress Web Development. Explore my projects that showcase my technical skills and experience in website development.');
+                meta.setAttribute('content', "Web Developer specializing in Frontend, Backend & WordPress, creating fast, secure, and modern websites. Check out my portfolio, and let's collaborate on your next project!");
             }
             document.documentElement.setAttribute('lang', 'en');
         } else {
@@ -48,7 +48,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', "Ανακαλύψτε το Portfolio μου και τις γνώσεις μου στο Frontend, Backend και Wordpress Web Development. Εξερευνήστε τα έργα μου, που αναδεικνύουν τις τεχνικές μου δεξιότητες και την εμπειρία στον προγραμματισμό ιστοσελίδων.");
+                meta.setAttribute('content', "Web Developer που δημιουργεί γρήγορα, ασφαλή και μοντέρνα websites με Frontend, Backend & WordPress. Δείτε το portfolio μου και ας συνεργαστούμε για το δικό σας project!");
             }
             document.documentElement.setAttribute('lang', 'el');
         }
