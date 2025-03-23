@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { use_language } from './header';
 import Cookies from 'universal-cookie';
 
@@ -6,6 +6,7 @@ const cookies = new Cookies();
 
 export const Footer = ({ set_page, page }: { set_page: (page: string) => void, page: string }) => {
     const { language, switch_lang } = use_language();
+    const animation_done = useRef(false);
 
     const [text, set_text] = useState({
         home: "",
@@ -92,6 +93,15 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
     useEffect(() => {
         applyLanguageStyles(language);
     }, [language]);
+
+
+    useEffect(() => {
+        if (!animation_done.current) {
+            animation_done.current = true;
+
+            applyLanguageStyles(language);
+        }
+    }, [language, page]);
 
 
     const footer_button_widths = (language: string, page: string) => {
