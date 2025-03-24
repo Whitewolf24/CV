@@ -48,7 +48,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
             document.title = 'Γ. Μαρίνος,Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', "Frontend, Backend & WordPress Web Developer που δημιουργώ γρήγορα, ασφαλή και μοντέρνα websites. Δείτε το portfolio μου και ας συνεργαστούμε για το δικό σας project!");
+                meta.setAttribute('content', "Frontend, Backend & WordPress Web Developer ικανός στο να δημιουργώ γρήγορα, ασφαλή και μοντέρνα websites. Δείτε το portfolio μου και ας συνεργαστούμε για το δικό σας project!");
             }
             document.documentElement.setAttribute('lang', 'el');
         }

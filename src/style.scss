@@ -256,23 +256,29 @@ header {
 }
 
 .name_gr,
-.job_gr {
-    opacity: 0;
-    width: 0;
-}
-
-.start-animation.name_gr,
-.start-animation.job_gr {
+.name_eng {
     animation: typewriter 2.5s steps(40) 0.5s 1 normal forwards,
         blinktext 0ms steps(2) 6 normal forwards;
-    opacity: 1;
     border-right: 1px solid white;
     overflow: hidden;
     white-space: nowrap;
+    width: 0rem;
+
+    @media (max-height:400px) {
+        transform: translate(-5%, 55%);
+    }
 }
 
 .job_gr,
 .job_eng {
+    animation: typewriter_job 2.5s steps(40) 3s 1 normal forwards,
+        blinktext 800ms steps(40) 3.5s 3 normal forwards;
+    border-right: 0;
+    opacity: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0rem;
+
     @media (max-height:400px) {
         transform: translate(-8%, 45%);
     }

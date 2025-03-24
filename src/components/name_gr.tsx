@@ -1,10 +1,7 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 const Name_gr = () => {
     const [show_butt, show_butt_state] = useState(false);
-
-    const name_ref = useRef<HTMLHeadingElement | null>(null);
-    const job_ref = useRef<HTMLHeadingElement | null>(null);
 
     useEffect(() => {
         const resize_scale = () => {
@@ -29,7 +26,7 @@ const Name_gr = () => {
 
         const timeout = setTimeout(() => {
             show_butt_state(false);
-        }, 7000);
+        }, 9500);
 
         return () => {
             clearTimeout(timein);
@@ -82,24 +79,6 @@ const Name_gr = () => {
         });
     };
 
-    useEffect(() => {
-        if (name_ref.current && job_ref.current) {
-            const name_element = name_ref.current;
-            const job_element = job_ref.current;
-
-            name_element.classList.add("start-animation");
-            job_element.classList.add("start-animation");
-
-            setTimeout(() => {
-                name_element.classList.remove("start-animation");
-                name_element.classList.add("start-animation");
-
-                job_element.classList.remove("start-animation");
-                job_element.classList.add("start-animation");
-            }, 10);
-        }
-    }, []);
-
     return (
         <div className="content">
             <button
@@ -112,8 +91,8 @@ const Name_gr = () => {
                 Παράλειψη animations
             </button>
             <div className="content_name">
-                <h1 className="name_gr" ref={name_ref}>ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
-                <h2 className="job_gr" ref={job_ref}>WEB_DEVELOPER</h2>
+                <h1 className="name_gr">ΓΕΩΡΓΙΟΣ_ΜΑΡΙΝΟΣ</h1>
+                <h2 className="job_gr">WEB_DEVELOPER</h2>
 
             </div>
         </div>
