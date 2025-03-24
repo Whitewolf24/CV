@@ -24,7 +24,7 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
         } else {
             meta.setAttribute("content", "index, follow");
         }
-        
+
         if (language === 'eng') {
             set_text({
                 home: page === 'home' || page === '' ? "</G>" : "<G>",
@@ -32,10 +32,10 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
                 portfolio: page === 'portfolio' ? "</PORTFOLIO>" : "<PORTFOLIO>",
                 contact: page === 'contact' ? "</CONTACT>" : "<CONTACT>",
             });
-            document.title = 'George Marinos, Fullstack Web Developer Portfolio';
+            document.title = 'G. Marinos,Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', 'Explore my portfolio and expertise in Frontend, Backend, and WordPress Web Development. Explore my projects that showcase my technical skills and experience in website development.');
+                meta.setAttribute('content', `Frontend, Backend & WordPress Web Developer able to create fast ,safe and modern websites. Explore my portfolio and then let's cooperate on your project!`);
             }
             document.documentElement.setAttribute('lang', 'en');
         } else {
@@ -45,10 +45,10 @@ export const Footer = ({ set_page, page }: { set_page: (page: string) => void, p
                 portfolio: page === 'portfolio' ? "</ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>" : "<ΔΕΙΓΜΑΤΑ ΔΟΥΛΕΙΑΣ>",
                 contact: page === 'contact' ? "</ΕΠΙΚΟΙΝΩΝΙΑ>" : "<ΕΠΙΚΟΙΝΩΝΙΑ>",
             });
-            document.title = 'Γεώργιος Μαρίνος, Fullstack Web Developer Portfolio';
+            document.title = 'Γ. Μαρίνος,Fullstack Web Developer Portfolio';
             const meta = document.querySelector("meta[name='description']") as HTMLMetaElement;
             if (meta) {
-                meta.setAttribute('content', "Ανακαλύψτε το Portfolio μου και τις γνώσεις μου στο Frontend, Backend και Wordpress Web Development. Εξερευνήστε τα έργα μου, που αναδεικνύουν τις τεχνικές μου δεξιότητες και την εμπειρία στον προγραμματισμό ιστοσελίδων.");
+                meta.setAttribute('content', "Frontend, Backend & WordPress Web Developer που δημιουργώ γρήγορα, ασφαλή και μοντέρνα websites. Δείτε το portfolio μου και ας συνεργαστούμε για το δικό σας project!");
             }
             document.documentElement.setAttribute('lang', 'el');
         }
