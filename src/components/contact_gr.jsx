@@ -78,8 +78,11 @@ const Contact_gr = () => {
                 Email Επικοινωνίας:&nbsp;
                 <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a>
                 <br></br>
-                <a href="https://www.linkedin.com/in/george-marinos-934596309/" style={{ color: "white" }}><span>Linkedin </span>
+                {/* 
+                <a href="https://www.linkedin.com/in/george-marinos-934596309/" style={{ color: "white" }}>
+                <span>Linkedin </span>
                 </a>
+                */}
             </p>
 
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)}>
