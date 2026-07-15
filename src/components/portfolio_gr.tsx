@@ -112,7 +112,7 @@ const Portfolio_gr = () => {
     const skillz_bottom_media_1 = window_height <= 450 ? "-0.5rem" : (window_width <= 412 ? "-0.8rem" : skillz_bottom_1);
 
     const skillz_bottom_2 = selected?.id === 2 ? "-0.8rem" : "";
-    const skillz_bottom_media_2 = window_height >= 454 ? "-1.5rem" : (window_width <= 412 ? "rem" : window_width <= 556 ? "-0.8rem" : skillz_bottom_2);
+    const skillz_bottom_media_2 = window_height >= 454 ? "-1.5rem" : (window_width <= 412 ? "" : window_width <= 556 ? "-0.8rem" : skillz_bottom_2);
 
     const skillz_bottom_4 = selected?.id === 4 ? "0.5rem" : "";
     const skillz_bottom_media_4 = window_height <= 600 ? "-.5rem" : (window_width <= 585 ? "0rem" : skillz_bottom_4);
@@ -161,7 +161,7 @@ const Portfolio_gr = () => {
                             background: "linear-gradient(135deg, rgb(40, 44, 52), rgb(20, 22, 30))",
                             borderRadius: "30px",
                             boxShadow: "8px 8px 10px rgba(0, 0, 0, 0.3)",
-                            padding: "20px",
+                            paddingTop: "20px",
                             textAlign: "center",
                             position: "relative",
                             width: "70%",
@@ -269,7 +269,7 @@ const Portfolio_gr = () => {
                                 height: selected?.id === 1 ? skillz_height_media_1 : selected?.id === 2 ? skillz_height_media_2 : selected?.id === 4 ? "" : selected?.id === 7 ? skillz_height_media_7 : selected?.id === 10 ? skillz_height_media_10 : "3.8rem",
                                 width: selected?.id === 2 ? skillz_width_media_2 : "",
                             }}>
-                            {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
+                            {selected?.id === 1 ? `<2024-2026> : "react19", "sass", "typescript", "vite", "responsive"` :
                                 selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"` :
                                     selected?.id === 3 ? `<2020-2021, 2023> : "react18", "sass", "typescript", "vite", "responsive"` :
                                         selected?.id === 4 ? `<2022, 2024> : "api", "ejs", "postcss", "tailwind", "mongodb", "redis", "express", "node", "responsive"` :
@@ -282,14 +282,16 @@ const Portfolio_gr = () => {
                         </p>
 
                         {selected_links && (
-                            <div className="overlay_buttons_div">
-                                <button
+                            <div className="overlay_buttons_div" onClick={close_overlay}>
+                                <a
+                                    href={selected_links?.www}
+                                    target="_blank"
+                                    rel="noopener"
                                     className="www"
-                                    onClick={close_overlay}
-                                    disabled={selected?.id === 1}
+                                    data-disabled={selected?.id === 1}
                                     style={{
                                         position: "absolute",
-                                        bottom: selected?.id === 2 ? "-0.1rem" : "0",
+                                        bottom: selected?.id === 1 ? "-0.8rem" : selected?.id === 2 ? "-0.5rem" : "-0.25rem",
                                         left: "-0.25rem",
                                         color: "white",
                                         borderRadius: "5px 20px 5px",
@@ -302,21 +304,35 @@ const Portfolio_gr = () => {
                                         marginBottom: selected?.id === 1 ? "5.8px" : "0px",
                                         width: selected?.id === 1 ? "4.5rem" : selected?.id === 2 ? "5rem" : "5rem",
                                         pointerEvents: selected?.id === 1 ? "none" : "auto",
-                                        filter: `brightness(${[1, 2, 5].includes(selected?.id) ? 0.6 : 1})`,
-                                        boxShadow: selected?.id === 1 ? "inset 0 4px 6px rgba(0, 0, 0, 0.5)" : "none"
+                                        textDecoration: "none",
+                                        ...([1, 2, 5].includes(selected?.id) && { filter: "brightness(0.6)" }),
+                                        boxShadow: selected?.id === 1 ? "inset 0 4px 6px rgba(0, 0, 0, 0.5)" : "none",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
                                     }}
                                 >
-                                    <a href={selected_links?.www} target="_blank" rel="noopener">
-                                        {selected?.id === 1 ? "ΕΙΣΤΕ ΕΔΩ" : selected?.id === 2 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : selected?.id === 5 ? "ΜΗ ΔΙΑΘΕΣΙΜΟ" : "ΑΝΟΙΞΤΕ"}
-                                    </a>
-                                </button>
-                                <button
+                                    {selected?.id === 1
+                                        ? "ΕΙΣΤΕ ΕΔΩ"
+                                        : selected?.id === 2
+                                            ? "ΜΗ ΔΙΑΘΕΣΙΜΟ"
+                                            : selected?.id === 5
+                                                ? "ΜΗ ΔΙΑΘΕΣΙΜΟ"
+                                                : "ΑΝΟΙΞΤΕ"}
+                                </a>
+
+                                {/*       */}
+
+                                <a
+                                    href={selected_links?.git}
+                                    target="_blank"
+                                    rel="noopener"
                                     className="git"
-                                    onClick={close_overlay}
+                                    //onClick={close_overlay}
                                     style={{
                                         position: "absolute",
-                                        bottom: "0",
-                                        right: "15px",
+                                        bottom: "-0.15rem",
+                                        right: "10px",
                                         color: "white",
                                         borderRadius: "5px 10px 5px",
                                         height: "30px",
@@ -325,15 +341,15 @@ const Portfolio_gr = () => {
                                         fontSize: "1ch",
                                         letterSpacing: "1.5px",
                                         backgroundColor: "rgb(40,55,70)",
-                                        marginBottom: "8px",
                                         marginRight: selected?.id === 2 ? "-1px" : "",
                                         paddingInline: selected?.id === 2 ? "1px" : "10px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
                                     }}
                                 >
-                                    <a href={selected_links?.git} target="_blank" rel="noopener">
-                                        GIT
-                                    </a>
-                                </button>
+                                    GIT
+                                </a>
                             </div>
                         )}
                     </div>

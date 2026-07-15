@@ -108,26 +108,11 @@ const Portfolio_eng = () => {
     const skillz_width_2 = selected?.id === 2 ? "" : "";
     const skillz_width_media_2 = window_width <= 335 ? "50vw" : (window_width >= 600 ? "50vw" : skillz_width_2);
 
-    const skillz_bottom_1 = selected?.id === 1 ? "-1rem" : "";
-    const skillz_bottom_media_1 = window_height <= 450 ? "-0.5rem" : (window_width <= 412 ? "-0.8rem" : skillz_bottom_1);
-
-    const skillz_bottom_2 = selected?.id === 2 ? "-0.8rem" : "";
-    const skillz_bottom_media_2 = window_height >= 454 ? "-1.5rem" : (window_width <= 412 ? "rem" : window_width <= 556 ? "-0.8rem" : skillz_bottom_2);
-
-    const skillz_bottom_4 = selected?.id === 4 ? "0.5rem" : "";
-    const skillz_bottom_media_4 = window_height <= 600 ? "-.5rem" : (window_width <= 585 ? "0rem" : skillz_bottom_4);
-
-    const skillz_bottom_8 = selected?.id === 8 ? "0rem" : "";
-    const skillz_bottom_media_8 = window_width >= 345 ? "-1.5rem" : (window_height <= 600 ? "-.5rem" : skillz_bottom_8);
-
-    const skillz_bottom_10 = selected?.id === 10 ? "0.5rem" : "";
-    const skillz_bottom_media_10 = window_height <= 600 ? "0rem" : skillz_bottom_10;
-
     const skillz_height_1 = selected?.id === 2 ? "" : "";
-    const skillz_height_media_1 = window_height <= 590 ? "3rem" : (window_width <= 585 ? "5rem" : skillz_height_1);
+    const skillz_height_media_1 = window_height <= 590 ? "4rem" : (window_width <= 585 ? "5rem" : skillz_height_1);
 
     const skillz_height_2 = selected?.id === 2 ? "2.5rem" : "";
-    const skillz_height_media_2 = window_width <= 335 ? "3.5rem" : (window_width <= 557 ? "3rem" : window_width <= 1831 ? "2.5rem" : skillz_height_2);
+    const skillz_height_media_2 = window_width <= 335 ? "3.5rem" : (window_width <= 557 ? "6rem" : window_width <= 1831 ? "2.5rem" : skillz_height_2);
 
     const skillz_height_7 = selected?.id === 7 ? "2rem" : "";
     const skillz_height_media_7 = window_width <= 557 ? "2rem" : skillz_height_7;
@@ -138,8 +123,8 @@ const Portfolio_eng = () => {
     const skillz_height_10 = selected?.id === 10 ? "2rem" : "";
     const skillz_height_media_10 = window_width <= 557 ? "1.5rem" : skillz_height_10;
 
-    const skillz_background_2 = selected?.id === 2 ? "" : "";
-    const skillz_background_media_2 = window_height <= 600 ? `linear-gradient(135deg, rgb(50, 54, 62), rgb(30, 32, 40))` : (window_width <= 399 ? `linear-gradient(135deg, rgb(50, 54, 62), rgb(30, 32, 40))` : skillz_background_2);
+    //const skillz_background_2 = selected?.id === 2 ? "" : "";
+    //const skillz_background_media_2 = window_height <= 600 ? `linear-gradient(135deg, rgb(50, 54, 62), rgb(30, 32, 40))` : (window_width <= 399 ? `linear-gradient(135deg, rgb(50, 54, 62), rgb(30, 32, 40))` : skillz_background_2);
 
     return (
         <div className="content">
@@ -167,7 +152,7 @@ const Portfolio_eng = () => {
                             background: "linear-gradient(135deg, rgb(40, 44, 52), rgb(20, 22, 30))",
                             borderRadius: "30px",
                             boxShadow: "8px 8px 10px rgba(0, 0, 0, 0.3)",
-                            padding: "20px",
+                            paddingTop: "20px",
                             textAlign: "center",
                             position: "relative",
                             width: "70%",
@@ -262,19 +247,16 @@ const Portfolio_eng = () => {
                         </p>
                         <p className="overlay_skillz"
                             style={{
-                                alignSelf: "center",
-                                background: skillz_background_media_2,
-                                bottom: selected?.id === 1 ? skillz_bottom_media_1 : selected?.id === 2 ? skillz_bottom_media_2 : selected?.id === 4 ? skillz_bottom_media_4 : selected?.id === 8 ? skillz_bottom_media_8 : selected?.id === 10 ? skillz_bottom_media_10 : "",
                                 position: "absolute",
                                 paddingInline: "100%",
-                                paddingBlock: "1rem",
                                 marginLeft: selected?.id === 2 ? "0.6rem" : "",
-                                transform: selected?.id === 1 ? "" : selected?.id === 2 ? "translateY(-3vh)" : "translateY(3vh)",
                                 scale: selected?.id === 2 ? skillz_scale_media_2 : "",
                                 height: selected?.id === 1 ? skillz_height_media_1 : selected?.id === 2 ? skillz_height_media_2 : selected?.id === 4 ? "" : selected?.id === 7 ? skillz_height_media_7 : selected?.id === 8 ? skillz_height_media_8 : selected?.id === 10 ? skillz_height_media_10 : "3.8rem",
                                 width: selected?.id === 2 ? skillz_width_media_2 : "",
                             }}>
-                            {selected?.id === 1 ? `<2024-2025> : "react19", "sass", "typescript", "vite", "responsive"` :
+                            {selected?.id === 1 ?
+                                `2024-2026& : "react19", "sass", "typescript", "vite", "responsive"`
+                                :
                                 selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
                                     :
                                     selected?.id === 3 ? `<2020-2021, 2023> : "react18", "sass", "typescript", "vite", "responsive"`
@@ -292,15 +274,18 @@ const Portfolio_eng = () => {
                                                                 selected?.id === 10 ? `<2013>: "jquery", "css"`
                                                                     : ""}
                         </p>
+
                         {selected_links && (
                             <div className="overlay_buttons_div">
-                                <button
+                                <a
+                                    href={selected_links?.www}
+                                    target="_blank"
+                                    rel="noopener"
                                     className="www"
-                                    onClick={close_overlay}
-                                    disabled={selected?.id === 1}
+                                    data-disabled={selected?.id === 1}
                                     style={{
                                         position: "absolute",
-                                        bottom: selected?.id === 2 ? "-0.1rem" : "0",
+                                        bottom: selected?.id === 1 ? "-0.5rem" : "0",
                                         left: "-0.25rem",
                                         color: "white",
                                         borderRadius: "5px 20px 5px",
@@ -313,21 +298,34 @@ const Portfolio_eng = () => {
                                         marginBottom: selected?.id === 1 ? "5.8px" : "0px",
                                         width: selected?.id === 1 ? "4.5rem" : selected?.id === 2 ? "5rem" : "5rem",
                                         pointerEvents: selected?.id === 1 ? "none" : "auto",
-                                        filter: `brightness(${[1, 2, 5].includes(selected?.id) ? 0.6 : 1})`,
-                                        boxShadow: selected?.id === 1 ? "inset 0 4px 6px rgba(0, 0, 0, 0.5)" : "none"
+                                        textDecoration: "none",
+                                        ...([1, 2, 5].includes(selected?.id) && { filter: "brightness(0.6)" }),
+                                        boxShadow: selected?.id === 1 ? "inset 0 4px 6px rgba(0, 0, 0, 0.5)" : "none",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
                                     }}
                                 >
-                                    <a href={selected_links?.www} target="_blank" rel="noopener">
-                                        {selected?.id === 1 ? "YOU ARE HERE" : selected?.id === 2 ? "NOT AVAILABLE" : selected?.id === 5 ? "NOT AVAILABLE" : "VISIT"}
-                                    </a>
-                                </button>
-                                <button
+                                    {selected?.id === 1
+                                        ? "YOU ARE HERE"
+                                        : selected?.id === 2
+                                            ? "NOT AVAILABLE" : selected?.id === 5
+                                                ? "NOT AVAILABLE"
+                                                : "VISIT"}
+                                </a>
+
+                                {/*       */}
+
+                                <a
+                                    href={selected_links?.git}
+                                    target="_blank"
+                                    rel="noopener"
                                     className="git"
-                                    onClick={close_overlay}
+                                    //onClick={close_overlay}
                                     style={{
                                         position: "absolute",
-                                        bottom: "0",
-                                        right: "15px",
+                                        bottom: "0.05rem",
+                                        right: "10px",
                                         color: "white",
                                         borderRadius: "5px 10px 5px",
                                         height: "30px",
@@ -336,15 +334,15 @@ const Portfolio_eng = () => {
                                         fontSize: "1ch",
                                         letterSpacing: "1.5px",
                                         backgroundColor: "rgb(40,55,70)",
-                                        marginBottom: "8px",
                                         marginRight: selected?.id === 2 ? "-1px" : "",
                                         paddingInline: selected?.id === 2 ? "1px" : "10px",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
                                     }}
                                 >
-                                    <a href={selected_links?.git} target="_blank" rel="noopener">
-                                        GIT
-                                    </a>
-                                </button>
+                                    GIT
+                                </a>
                             </div>
                         )}
                     </div>
