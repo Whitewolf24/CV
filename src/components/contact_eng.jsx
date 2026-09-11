@@ -27,9 +27,9 @@ const Contact_eng = () => {
         submit_butt.classList.add("submit_butt_anime");
         return new Promise((resolve) => {
             setTimeout(() => {
-                emailjs.sendForm("service_csf2yrt", "template_vz3nrl7", form.current, "vlmZE8H22O2e_lQFj")
+                emailjs.sendForm("service_qsgcjid", "template_vz3nrl7", form.current, "vlmZE8H22O2e_lQFj")
                     .then(() => {
-        
+
                         submit_butt.classList.remove("submit_butt_anime");
                         e.target.reset();
                     })
@@ -76,8 +76,10 @@ const Contact_eng = () => {
                 }
             }
         }}>
-            <p className="contact_desc" style={{ fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", lineHeight: "1.2rem", whiteSpace: "pre-line", width: "58ch" }}>To contact me fill the form bellow with<br />your email address and message, or email<br /> me at&nbsp;
-                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a> </p>
+            <p className="contact_desc" style={{ fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", lineHeight: "1.2rem", whiteSpace: "pre-line", width: "58ch" }}>If you wish to contact me, fill the form bellow with your email address and message, or&nbsp;
+                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">email</a> me.</p>
+            {/* <a href="https://www.linkedin.com/in/george-marinos-934596309/" style={{ fontSize: " clamp(.7rem, 2.5vw, .9rem)", color: "white" }} target="_blank">
+                <span>Linkedin:</span> </a> */}
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)}>
                 <div>
                     <input className="email_form" type="email" name="email" placeholder="Contact Email" title=""

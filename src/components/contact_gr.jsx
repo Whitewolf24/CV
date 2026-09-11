@@ -26,7 +26,7 @@ const Contact_gr = () => {
         submit_butt.classList.add("submit_butt_anime");
         return new Promise((resolve) => {
             setTimeout(() => {
-                emailjs.sendForm("service_csf2yrt", "template_vz3nrl7", form.current, "vlmZE8H22O2e_lQFj")
+                emailjs.sendForm("service_qsgcjid", "template_vz3nrl7", form.current, "vlmZE8H22O2e_lQFj")
                     .then(() => {
                         submit_butt.classList.remove("submit_butt_anime");
                         e.target.reset();
@@ -74,20 +74,13 @@ const Contact_gr = () => {
                 }
             }
         }}>
-            <p className="contact_desc" style={{ textAlign: "left", fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginBottom: "2rem", marginInline: "auto", lineHeight: "1.2rem" }}>
-                Email Επικοινωνίας:&nbsp;
-                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">contactme@marinoscv.website</a>
-                <br></br>
-                {/* 
-                <a href="https://www.linkedin.com/in/george-marinos-934596309/" style={{ color: "white" }}>
-                <span>Linkedin </span>
-                </a>
-                */}
-            </p>
+            <p className="contact_desc" style={{ fontSize: " clamp(.7rem, 2.5vw, .8rem)", marginInline: "auto", marginBottom: "2rem", lineHeight: "1.2rem", whiteSpace: "pre-line", width: "58ch" }}>Αν επιθυμείτε να επικοινωνήσετε μαζί μου συμπληρώστε την παρακάτω φόρμα με τη<br />διεύθυνση email σας και το μήνυμά σας,<br />ή στείλτε μου απευθείας&nbsp;
+                <a style={{ color: "white" }} href="mailto:contactme@marinoscv.website" target="_blank">email</a> </p>
 
+            {/* <a href="https://www.linkedin.com/in/george-marinos-934596309/" style={{ fontSize: " clamp(.7rem, 2.5vw, .9rem)", color: "white" }} target="_blank">
+                <span>Linkedin:</span> </a> */}
             <form className="contact_form" ref={form} onSubmit={handleSubmit(submit_form)}>
                 <div>
-                    <p>Φόρμα Επικοινωνίας</p>
                     <input className="email_form" type="email" name="email" placeholder="Email σας" title=""
                         required onInput={() => {
                             const email_form = document.querySelector(".email_form");
