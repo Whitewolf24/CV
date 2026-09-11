@@ -10,18 +10,19 @@ const Portfolio_eng = () => {
     const [window_width, set_window_width] = useState(window.innerWidth);
 
     const projects = [
-        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
-        { id: 2, title: "JOYSPOT CALENDAR", img: "joyspot.webp", vid: "vid_joyspot.webp" },
-        { id: 3, title: "MARINOS.WEBSITE v1", img: "cv.webp", vid: "vid_cv.webp" },
-        { id: 4, title: "MONGOXPRESS", img: "express.webp", vid: "vid_express.webp" },
-        { id: 5, title: "E-KIOSK", img: "woocommerce.webp", vid: "vid_woocomerce.webp" },
-        { id: 6, title: "WAREHOUSE", img: "warehouse.webp", vid: "vid_warehouse.webp" },
-        { id: 7, title: "SWLYN", img: "swlyn.webp", vid: "vid_swlyn.webp" },
-        { id: 8, title: "EYE LOGIN", img: "eye.webp", vid: "vid_eye.webp" },
-        { id: 9, title: "EKNEXA", img: "eknexa.webp", vid: "vid_eknexa.webp" },
-        { id: 10, title: "MUSEUMS OF LESVOS", img: "mouseia.webp", vid: "vid_mouseia.webp" },
+        { id: 1, title: "Marinos CV Website v2", img: "cv2.webp" },
+        { id: 2, title: "Joyspot Calendar", img: "joyspot.webp", vid: "vid_joyspot.webp" },
+        { id: 3, title: "Marinos CV Website v1", img: "cv.webp", vid: "vid_cv.webp" },
+        { id: 4, title: "MongoXpress", img: "express.webp", vid: "vid_express.webp" },
+        { id: 5, title: "E-Kiosk", img: "woocommerce.webp", vid: "vid_woocomerce.webp" },
+        { id: 6, title: "Warehouse", img: "warehouse.webp", vid: "vid_warehouse.webp" },
+        { id: 7, title: "Swlyn", img: "swlyn.webp", vid: "vid_swlyn.webp" },
+        { id: 8, title: "EYE Login", img: "eye.webp", vid: "vid_eye.webp" },
+        { id: 9, title: "ΕΚΝΕΧΑ", img: "eknexa.webp", vid: "vid_eknexa.webp" },
+        { id: 10, title: "Museums of Lesvos", img: "mouseia.webp", vid: "vid_mouseia.webp" },
+        { id: 11, title: "WeatherNext", img: "weatherapi.webp", vid: "vid_weatherapi.webp" },
+        { id: 12, title: "SkyAPI", img: "skyapi.webp", vid: "vid_skyapi.webp" },
     ];
-
     const sites = [
         { id: 1, git: "https://github.com/Whitewolf24/CV/tree/v3" },
         { id: 2, git: "https://github.com/Whitewolf24/joyspot/tree/main/wp-content" },
@@ -33,6 +34,8 @@ const Portfolio_eng = () => {
         { id: 8, www: "https://eye.marinoscv.website", git: "https://github.com/Whitewolf24/eye" },
         { id: 9, www: "https://eknexa.marinoscv.website", git: "https://github.com/Whitewolf24/eknexa/tree/render" },
         { id: 10, www: "https://mouseia.marinoscv.website", git: "https://github.com/Whitewolf24/mouseia" },
+        { id: 11, www: "https://weathernext.marinoscv.website/", git: "https://github.com/Whitewolf24/weathernext" },
+        { id: 12, www: "https://skyapi.marinoscv.website/", git: "https://github.com/Whitewolf24/skyapi" },
     ];
 
     useEffect(() => {
@@ -243,7 +246,9 @@ const Portfolio_eng = () => {
                                                         :
                                                         selected?.id === 9 ? "A web application created to fulfill the needs of the office where I completed my internship. Through a form, text was stored in local .txt files via PHP, and images were saved locally whenever a post was created. The current version was upgraded to Laravel and modified to store text and images in Backblaze cloud storage"
                                                             : selected?.id === 10 ? "A project developed during my studies. It serves as a prototype for a website designed to promote museums and the natural beauty of the island of Lesvos."
-                                                                : ""}
+                                                                    : selected?.id === 11 ? "This application calls the OPENMETEO API using Laravel. Combined with Next.js, it displays the current weather conditions of the searched area."
+                                                                        : selected?.id === 12 ? "An application that calls the OPENSKY API using Laravel. Depending on the search, it shows the departures and arrivals from the previous day."
+                                                                        : ""}
                         </p>
                         <p className="overlay_skillz"
                             style={{
@@ -254,25 +259,19 @@ const Portfolio_eng = () => {
                                 height: selected?.id === 1 ? skillz_height_media_1 : selected?.id === 2 ? skillz_height_media_2 : selected?.id === 4 ? "" : selected?.id === 7 ? skillz_height_media_7 : selected?.id === 8 ? skillz_height_media_8 : selected?.id === 10 ? skillz_height_media_10 : "3.8rem",
                                 width: selected?.id === 2 ? skillz_width_media_2 : "",
                             }}>
-                            {selected?.id === 1 ?
-                                `2024-2026& : "react19", "sass", "typescript", "vite", "responsive"`
-                                :
-                                selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"`
-                                    :
-                                    selected?.id === 3 ? `<2020-2021, 2023> : "react18", "sass", "typescript", "vite", "responsive"`
-                                        :
-                                        selected?.id === 4 ? `<2022, 2024> : "api", "ejs", "postcss", "tailwind", "mongodb", "redis", "express", "node", "responsive"`
-                                            : selected?.id === 5 ? `<2021>: "wordpress", "woocomerce", "elementor", "responsive"` :
-                                                selected?.id === 6 ? `<2020, 2024> : "jquery", "sass", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
-                                                    :
-                                                    selected?.id === 7 ? `<2018> : "js", "css", "responsive"`
-                                                        :
-                                                        selected?.id === 8 ? `<2016, 2024> : "jquery", "bootstrap", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
-                                                            :
-                                                            selected?.id === 9 ? `<2014, 2024>: "api", "js", "css", "laravel", "php", "mysql", "pqsl", "docker", "responsive"`
-                                                                :
-                                                                selected?.id === 10 ? `<2013>: "jquery", "css"`
-                                                                    : ""}
+                            {selected?.id === 1 ? `<2024-2026> : "react19", "sass", "typescript", "vite", "responsive"` :
+                                selected?.id === 2 ? `<2024-2025> : "wordpress", "wordpress themes", "wordpress plugins", "php", "mysql"` :
+                                    selected?.id === 3 ? `<2020-2021, 2023> : "react18", "sass", "typescript", "vite", "responsive"` :
+                                        selected?.id === 4 ? `<2022, 2024> : "api", "ejs", "postcss", "tailwind", "mongodb", "redis", "express", "node", "responsive"` :
+                                            selected?.id === 5 ? `<2021>: "wordpress", "woocomerce", "elementor", "responsive"` :
+                                                selected?.id === 6 ? `<2020, 2024> : "jquery", "sass", "laravel", "php", "mysql", "pqsl", "docker", "responsive"` :
+                                                    selected?.id === 7 ? `<2018> : "js", "css", "responsive"` :
+                                                        selected?.id === 8 ? `<2016, 2024> : "jquery", "bootstrap", "laravel", "mysql", "pqsl", "docker", "responsive"` :
+                                                            selected?.id === 9 ? `<2014, 2024> : "js", "css", "laravel", "mysql", "pqsl", "docker", "responsive"` :
+                                                                selected?.id === 10 ? `<2013> : "jquery", "css"` :
+                                                                    selected?.id === 11 ? `<2026> : "api", "react19", "tailwind", "laravel", "vite", "responsive"` :
+                                                                        selected?.id === 12 ? `<2026> : "api", "react19", "next.js", "tailwind", "laravel", "docker", "vite", "responsive"`
+                                                                            : ""}
                         </p>
 
                         {selected_links && (

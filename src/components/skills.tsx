@@ -1,20 +1,24 @@
+import { useEffect } from "react";
+
 const Skills = () => {
 
-    const overflow = () => {
-        const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
+    useEffect(() => {
+        const resiz = () => {
+            const content_skills = document.querySelector(".content_skills") as HTMLDivElement;
+            if (!content_skills) return;
 
-        if (!content_skills) return;
+            if (window.innerHeight <= 415) {
+                document.body.style.overflowY = "scroll";
+            } else {
+                document.body.style.overflowY = "hidden";
+            }
+        };
 
-        if (window.innerHeight <= 415) {
-            document.body.style.overflowY = "scroll";
-        }
-        else {
-            document.body.style.overflowY = "hidden";
-        }
-    };
+        resiz();
+        window.addEventListener("resize", resiz);
 
-    overflow();
-    window.addEventListener("resize", overflow);
+        return () => window.removeEventListener("resize", resiz);
+    }, []);
 
     return <div className="content"
      /*    onAnimationStart={() => {

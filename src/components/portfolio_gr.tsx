@@ -10,16 +10,18 @@ const Portfolio_gr = () => {
     const [window_width, set_window_width] = useState(window.innerWidth);
 
     const projects = [
-        { id: 1, title: "MARINOS.WEBSITE v2", img: "cv2.webp" },
-        { id: 2, title: "ΗΜΕΡΟΛΟΓΙΟ JOYSPOT", img: "joyspot.webp", vid: "vid_joyspot.webp" },
-        { id: 3, title: "MARINOS.WEBSITE v1", img: "cv.webp", vid: "vid_cv.webp" },
-        { id: 4, title: "MONGOXPRESS", img: "express.webp", vid: "vid_express.webp" },
-        { id: 5, title: "E-KIOSK", img: "woocommerce.webp", vid: "vid_woocomerce.webp" },
-        { id: 6, title: "ΑΠΟΘΗΚΗ", img: "warehouse.webp", vid: "vid_warehouse.webp" },
-        { id: 7, title: "SWLYN", img: "swlyn.webp", vid: "vid_swlyn.webp" },
-        { id: 8, title: "EYE LOGIN", img: "eye.webp", vid: "vid_eye.webp" },
+        { id: 1, title: "Marinos CV Website v2", img: "cv2.webp" },
+        { id: 2, title: "Ημερολόγιο Joyspot", img: "joyspot.webp", vid: "vid_joyspot.webp" },
+        { id: 3, title: "Marinos CV Website v1", img: "cv.webp", vid: "vid_cv.webp" },
+        { id: 4, title: "MongoXpress", img: "express.webp", vid: "vid_express.webp" },
+        { id: 5, title: "E-Kiosk", img: "woocommerce.webp", vid: "vid_woocomerce.webp" },
+        { id: 6, title: "Αποθήκη", img: "warehouse.webp", vid: "vid_warehouse.webp" },
+        { id: 7, title: "Swlyn", img: "swlyn.webp", vid: "vid_swlyn.webp" },
+        { id: 8, title: "EYE Login", img: "eye.webp", vid: "vid_eye.webp" },
         { id: 9, title: "ΕΚΝΕΧΑ", img: "eknexa.webp", vid: "vid_eknexa.webp" },
-        { id: 10, title: "ΜΟΥΣΕΙΑ ΛΕΣΒΟΥ", img: "mouseia.webp", vid: "vid_mouseia.webp" },
+        { id: 10, title: "Μουσεία Λέσβου", img: "mouseia.webp", vid: "vid_mouseia.webp" },
+        { id: 11, title: "WeatherNext", img: "weatherapi.webp", vid: "vid_weatherapi.webp" },
+        { id: 12, title: "SkyAPI", img: "skyapi.webp", vid: "vid_skyapi.webp" },
     ];
 
     const sites = [
@@ -33,6 +35,8 @@ const Portfolio_gr = () => {
         { id: 8, www: "https://eye.marinoscv.website", git: "https://github.com/Whitewolf24/eye" },
         { id: 9, www: "https://eknexa.marinoscv.website", git: "https://github.com/Whitewolf24/eknexa/tree/render" },
         { id: 10, www: "https://mouseia.marinoscv.website", git: "https://github.com/Whitewolf24/mouseia" },
+        { id: 11, www: "https://weathernext.marinoscv.website/", git: "https://github.com/Whitewolf24/weathernext" },
+        { id: 12, www: "https://skyapi.marinoscv.website/", git: "https://github.com/Whitewolf24/skyapi" },
     ];
 
     useEffect(() => {
@@ -253,7 +257,9 @@ const Portfolio_gr = () => {
                                                             :
                                                             selected?.id === 9 ? "Διαδικτυακή εφαρμογή που δημιουργήθηκε για να ικανοποιήσει της ανάγκες του γραφείου στο οποίο πραγματοποίησα την πρακτική μου. Μέσω μιας φόρμας, τα κείμενα καταγραφόντουσαν σε τοπικά αρχεία txt μέσω PHP, όπως και οι εικόνες, όποτε δημιουργούταν μια ανάρτηση. Η παρούσα έκδοση αναβαθμίστηκε σε Laravel, και τροποποιήθηκε για να τοποθετεί τα κείμενα και τις φωτογραφίες στην cloud αποθήκη Backblaze"
                                                                 : selected?.id === 10 ? "Ένα project που υλοποιήθηκε κατά τη διάρκεια των σπουδών μου. Αποτελεί ένα προσχέδιο, με βάση το οποίο θα κατασκευαζόταν μια ιστοσελίδα με στόχο την προώθηση των μουσείων και της φυσικής ομορφιάς του νησιού της Λέσβου."
-                                                                    : ""}
+                                                                    : selected?.id === 11 ? "Αυτή η εφαρμογή καλεί το API του OPENMETEO χρησιμοποιώντας Laravel. Σε συνδυασμό με Next.js, εμφανίζει τις τωρινές καιρικές συνθήκες της περιοχής που αναζητήθηκε."
+                                                                        : selected?.id === 12 ? "Μια εφαρμογή που καλεί το API του OPENSKY, με την χρήση Laravel. Ανάλογα με την αναζήτηση, δείχνει τις αναχωρήσεις και αφίξεις της προηγούμενης ημέρας."
+                                                                            : ""}
                         </p>
                         <p className="overlay_skillz"
                             style={{
@@ -276,9 +282,12 @@ const Portfolio_gr = () => {
                                             selected?.id === 5 ? `<2021>: "wordpress", "woocomerce", "elementor", "responsive"` :
                                                 selected?.id === 6 ? `<2020, 2024> : "jquery", "sass", "laravel", "php", "mysql", "pqsl", "docker", "responsive"` :
                                                     selected?.id === 7 ? `<2018> : "js", "css", "responsive"` :
-                                                        selected?.id === 8 ? `<2016, 2024> : "jquery", "bootstrap", "laravel", "php", "mysql", "pqsl", "docker", "responsive"` :
-                                                            selected?.id === 9 ? `<2014, 2024>: "api", "js", "css", "laravel", "php", "mysql", "pqsl", "docker", "responsive"` :
-                                                                selected?.id === 10 ? `<2013>: "jquery", "css"` : ""}
+                                                        selected?.id === 8 ? `<2016, 2024> : "jquery", "bootstrap", "laravel", "mysql", "pqsl", "docker", "responsive"` :
+                                                            selected?.id === 9 ? `<2014, 2024> : "js", "css", "laravel", "mysql", "pqsl", "docker", "responsive"` :
+                                                                selected?.id === 10 ? `<2013> : "jquery", "css"` :
+                                                                    selected?.id === 11 ? `<2026> : "api", "react19", "tailwind", "laravel", "vite", "responsive"` :
+                                                                        selected?.id === 12 ? `<2026> : "api", "react19", "next.js", "tailwind", "laravel", "docker", "vite", "responsive"`
+                                                                            : ""}
                         </p>
 
                         {selected_links && (
