@@ -25,7 +25,7 @@ const Portfolio_gr = () => {
     ];
 
     const sites = [
-        { id: 1, git: "https://github.com/Whitewolf24/CV/tree/v3" },
+        { id: 1, git: "https://github.com/Whitewolf24/CV/tree/v3_upd" },
         { id: 2, git: "https://github.com/Whitewolf24/joyspot/tree/main/wp-content" },
         { id: 3, www: "https://old.marinoscv.website", git: "https://github.com/Whitewolf24/CV/tree/main" },
         { id: 4, www: "https://mongoxpress.marinoscv.website", git: "https://github.com/Whitewolf24/Xblog/tree/final" },

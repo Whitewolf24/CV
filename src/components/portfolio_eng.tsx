@@ -24,7 +24,7 @@ const Portfolio_eng = () => {
         { id: 12, title: "SkyAPI", img: "skyapi.webp", vid: "vid_skyapi.webp" },
     ];
     const sites = [
-        { id: 1, git: "https://github.com/Whitewolf24/CV/tree/v3" },
+        { id: 1, git: "https://github.com/Whitewolf24/CV/tree/v3_upd" },
         { id: 2, git: "https://github.com/Whitewolf24/joyspot/tree/main/wp-content" },
         { id: 3, www: "https://old.marinoscv.website", git: "https://github.com/Whitewolf24/CV/tree/main" },
         { id: 4, www: "https://mongoxpress.marinoscv.website", git: "https://github.com/Whitewolf24/Xblog/tree/final" },
@@ -246,8 +246,8 @@ const Portfolio_eng = () => {
                                                         :
                                                         selected?.id === 9 ? "A web application created to fulfill the needs of the office where I completed my internship. Through a form, text was stored in local .txt files via PHP, and images were saved locally whenever a post was created. The current version was upgraded to Laravel and modified to store text and images in Backblaze cloud storage"
                                                             : selected?.id === 10 ? "A project developed during my studies. It serves as a prototype for a website designed to promote museums and the natural beauty of the island of Lesvos."
-                                                                    : selected?.id === 11 ? "This application calls the OPENMETEO API using Laravel. Combined with Next.js, it displays the current weather conditions of the searched area."
-                                                                        : selected?.id === 12 ? "An application that calls the OPENSKY API using Laravel. Depending on the search, it shows the departures and arrivals from the previous day."
+                                                                : selected?.id === 11 ? "This application calls the OPENMETEO API using Laravel. Combined with Next.js, it displays the current weather conditions of the searched area."
+                                                                    : selected?.id === 12 ? "An application that calls the OPENSKY API using Laravel. Depending on the search, it shows the departures and arrivals from the previous day."
                                                                         : ""}
                         </p>
                         <p className="overlay_skillz"
